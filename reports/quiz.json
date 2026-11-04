@@ -1,0 +1,443 @@
+[
+  {
+    "model": "ollama:exaone3.5:7.8b",
+    "at": "2026-11-04T11:44:54.111Z",
+    "repeats": 3,
+    "questions": {
+      "own_control_machinery": {
+        "correct": 3,
+        "answers": [
+          1,
+          1,
+          1
+        ]
+      },
+      "rival_control_machinery": {
+        "correct": 3,
+        "answers": [
+          0,
+          0,
+          0
+        ]
+      },
+      "own_tariff_machinery": {
+        "correct": 3,
+        "answers": [
+          2.5,
+          2.5,
+          2.5
+        ]
+      },
+      "controlled_goods": {
+        "correct": 0,
+        "answers": [
+          [],
+          [
+            "machinery"
+          ],
+          [
+            "machinery"
+          ]
+        ]
+      },
+      "dir_control": {
+        "correct": 3,
+        "answers": [
+          "강화",
+          "강화",
+          "강화"
+        ]
+      },
+      "dir_tariff": {
+        "correct": 2,
+        "answers": [
+          "변화 없음",
+          "인상",
+          "인상"
+        ]
+      },
+      "must_change_appliances": {
+        "correct": 3,
+        "answers": [
+          "아니오",
+          "아니오",
+          "아니오"
+        ]
+      },
+      "own_es_last": {
+        "correct": 3,
+        "answers": [
+          12,
+          12,
+          12
+        ]
+      },
+      "violated_id": {
+        "correct": 0,
+        "answers": [
+          "[B1-1.1A]",
+          "X2-1.1A",
+          "X1-1.1A"
+        ]
+      },
+      "grain_tariff_cap": {
+        "correct": 2,
+        "answers": [
+          3,
+          0,
+          0
+        ]
+      },
+      "full_ban_level": {
+        "correct": 3,
+        "answers": [
+          3,
+          3,
+          3
+        ]
+      }
+    },
+    "tasks": {
+      "ease_controls": {
+        "passed": 0,
+        "errors": [
+          [
+            "machinery 통제 1→2 (정답 0)",
+            "electronics 통제 1→2 (정답 0)",
+            "machinery 관세 2.5→1",
+            "electronics 관세 2.5→1"
+          ],
+          [
+            "machinery 관세 2.5→1.25",
+            "electronics 관세 2.5→1.25"
+          ],
+          [
+            "machinery 관세 2.5→0",
+            "electronics 관세 2.5→0"
+          ]
+        ]
+      },
+      "comply_tariffs": {
+        "passed": 0,
+        "errors": [
+          [
+            "appliances 통제 0→1",
+            "machinery 통제 1→0",
+            "electronics 통제 1→0"
+          ],
+          [
+            "appliances 통제 0→1",
+            "machinery 통제 1→0",
+            "electronics 통제 1→0"
+          ],
+          [
+            "appliances 통제 0→1"
+          ]
+        ]
+      }
+    },
+    "failedCalls": 0,
+    "latencyMs": [
+      86780,
+      84992,
+      34455,
+      21243,
+      52291,
+      49097,
+      20325,
+      56504,
+      75548
+    ]
+  },
+  {
+    "model": "ollama:qwen3.5:9b",
+    "at": "2026-11-04T11:52:59.066Z",
+    "repeats": 3,
+    "questions": {
+      "own_control_machinery": {
+        "correct": 3,
+        "answers": [
+          1,
+          1,
+          1
+        ]
+      },
+      "rival_control_machinery": {
+        "correct": 3,
+        "answers": [
+          0,
+          0,
+          0
+        ]
+      },
+      "own_tariff_machinery": {
+        "correct": 3,
+        "answers": [
+          2.5,
+          2.5,
+          2.5
+        ]
+      },
+      "controlled_goods": {
+        "correct": 3,
+        "answers": [
+          [
+            "machinery",
+            "electronics"
+          ],
+          [
+            "machinery",
+            "electronics"
+          ],
+          [
+            "machinery",
+            "electronics"
+          ]
+        ]
+      },
+      "dir_control": {
+        "correct": 3,
+        "answers": [
+          "강화",
+          "강화",
+          "강화"
+        ]
+      },
+      "dir_tariff": {
+        "correct": 3,
+        "answers": [
+          "인상",
+          "인상",
+          "인상"
+        ]
+      },
+      "must_change_appliances": {
+        "correct": 3,
+        "answers": [
+          "아니오",
+          "아니오",
+          "아니오"
+        ]
+      },
+      "own_es_last": {
+        "correct": 3,
+        "answers": [
+          12,
+          12,
+          12
+        ]
+      },
+      "violated_id": {
+        "correct": 3,
+        "answers": [
+          "B1-1.1A",
+          "B1-1.1A",
+          "B1-1.1A"
+        ]
+      },
+      "grain_tariff_cap": {
+        "correct": 3,
+        "answers": [
+          0,
+          0,
+          0
+        ]
+      },
+      "full_ban_level": {
+        "correct": 3,
+        "answers": [
+          3,
+          3,
+          3
+        ]
+      }
+    },
+    "tasks": {
+      "ease_controls": {
+        "passed": 0,
+        "errors": [
+          [
+            "machinery 통제 1→1 (정답 0)",
+            "electronics 통제 1→1 (정답 0)",
+            "grain 관세 5→20",
+            "energy 관세 5→15",
+            "medicine 관세 5→18",
+            "household 관세 5→18",
+            "appliances 관세 5→18",
+            "apparel 관세 5→18",
+            "machinery 관세 2.5→5",
+            "electronics 관세 2.5→5",
+            "투자율 22→25"
+          ],
+          [
+            "machinery 통제 1→1 (정답 0)",
+            "electronics 통제 1→1 (정답 0)",
+            "appliances 통제 0→1"
+          ],
+          [
+            "medicine 관세 5→10"
+          ]
+        ]
+      },
+      "comply_tariffs": {
+        "passed": 1,
+        "errors": [
+          [],
+          [
+            "machinery 통제 1→0",
+            "electronics 통제 1→0"
+          ],
+          [
+            "appliances 통제 0→1"
+          ]
+        ]
+      }
+    },
+    "failedCalls": 0,
+    "latencyMs": [
+      95939,
+      141367,
+      92298,
+      16263,
+      69947,
+      69188,
+      61672,
+      153318,
+      48189
+    ]
+  },
+  {
+    "model": "ollama:gemma4:12b",
+    "at": "2026-11-03T10:36:58.183Z",
+    "repeats": 3,
+    "questions": {
+      "own_control_machinery": {
+        "correct": 3,
+        "answers": [
+          1,
+          1,
+          1
+        ]
+      },
+      "rival_control_machinery": {
+        "correct": 3,
+        "answers": [
+          0,
+          0,
+          0
+        ]
+      },
+      "own_tariff_machinery": {
+        "correct": 3,
+        "answers": [
+          2.5,
+          2.5,
+          2.5
+        ]
+      },
+      "controlled_goods": {
+        "correct": 3,
+        "answers": [
+          [
+            "machinery",
+            "electronics"
+          ],
+          [
+            "machinery",
+            "electronics"
+          ],
+          [
+            "machinery",
+            "electronics"
+          ]
+        ]
+      },
+      "dir_control": {
+        "correct": 3,
+        "answers": [
+          "강화",
+          "강화",
+          "강화"
+        ]
+      },
+      "dir_tariff": {
+        "correct": 3,
+        "answers": [
+          "인상",
+          "인상",
+          "인상"
+        ]
+      },
+      "must_change_appliances": {
+        "correct": 3,
+        "answers": [
+          "아니오",
+          "아니오",
+          "아니오"
+        ]
+      },
+      "own_es_last": {
+        "correct": 3,
+        "answers": [
+          12,
+          12,
+          12
+        ]
+      },
+      "violated_id": {
+        "correct": 3,
+        "answers": [
+          "B1-1.1A",
+          "B1-1.1A",
+          "B1-1.1A"
+        ]
+      },
+      "grain_tariff_cap": {
+        "correct": 3,
+        "answers": [
+          0,
+          0,
+          0
+        ]
+      },
+      "full_ban_level": {
+        "correct": 3,
+        "answers": [
+          3,
+          3,
+          3
+        ]
+      }
+    },
+    "tasks": {
+      "ease_controls": {
+        "passed": 3,
+        "errors": [
+          [],
+          [],
+          []
+        ]
+      },
+      "comply_tariffs": {
+        "passed": 3,
+        "errors": [
+          [],
+          [],
+          []
+        ]
+      }
+    },
+    "failedCalls": 0,
+    "latencyMs": [
+      44389,
+      95470,
+      37292,
+      8536,
+      47142,
+      52829,
+      9316,
+      64951,
+      44247
+    ]
+  }
+]
