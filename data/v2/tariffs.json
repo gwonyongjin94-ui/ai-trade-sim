@@ -1,0 +1,2914 @@
+{
+ "meta": {
+  "source": "World Bank WITS TradeStats-Tariff, AHS weighted average (%), year 2022 (fallback 2021, 2020, 2023); Taiwan from WITS TRAINS (reporter 158, MFN HS6, 2022) weighted by Comtrade 2023 chapter imports; overlays from PIIE (Bown)",
+  "fetched": "2026-11-05",
+  "unit": "rate (0.05 = 5%)",
+  "groupMapping": {
+   "food": [
+    "Food"
+   ],
+   "energy": [
+    "27-27_Fuels"
+   ],
+   "medicine": [
+    "28-38_Chemicals"
+   ],
+   "chemicals": [
+    "Chemical"
+   ],
+   "apparel_household": [
+    "50-63_TextCloth",
+    "64-67_Footwear",
+    "41-43_HidesSkin",
+    "44-49_Wood",
+    "90-99_Miscellan"
+   ],
+   "vehicles": [
+    "86-89_Transport"
+   ],
+   "metals": [
+    "25-26_Minerals",
+    "68-71_StoneGlas",
+    "72-83_Metals"
+   ],
+   "machinery": [
+    "84-85_MachElec"
+   ],
+   "semiconductors": [],
+   "electronics": [
+    "84-85_MachElec"
+   ]
+  },
+  "notes": [
+   "WITS 품목군은 기계·반도체·전기·전자(HS 84–85)를 나누지 않는다. 반도체는 ITA로 0에서 시작",
+   "의약품은 화학(HS 28–38) 품목군 관세를 쓴다",
+   "여러 품목군을 묶은 물품은 단순 평균",
+   "미국 232조(철강·알루미늄) 등 다른 추가 관세는 넣지 않았다",
+   "나머지 세계가 매기는 관세는 EU 관세로 대신한다",
+   "대만의 관세는 TRAINS 최혜국 세율 (장 안은 단순 평균, 장끼리는 수입액 가중). 중국과의 ECFA 조기 수확 품목은 넣지 않았다",
+   "대만에 매기는 관세는 수입국의 최혜국 세율 (WITS MFN-WGHTD-AVRG, 대세계). WITS에 대만이 상대국으로 없어서",
+   "블록이 나머지 세계에 매기는 관세는 회원국의 대세계 관세를 단순 평균"
+  ],
+  "missing": [
+   "MEX←KWT",
+   "MEX←IRQ"
+  ]
+ },
+ "overlays": [
+  {
+   "importer": "USA",
+   "exporter": "CHN",
+   "before": 0.03,
+   "add": 0.163,
+   "target": 0.193,
+   "source": "PIIE (Bown), US-China Trade War Tariffs: 미국의 대중국 평균 관세 19.3% (2023년)"
+  },
+  {
+   "importer": "CHN",
+   "exporter": "USA",
+   "before": 0.0668,
+   "add": 0.1432,
+   "target": 0.21,
+   "source": "PIIE (Bown): 중국의 대미국 평균 관세 21% (2020년 2월 이후 거의 그대로)"
+  }
+ ],
+ "bloc": {
+  "A": {
+   "B": {
+    "food": 0.7954528968604833,
+    "energy": 0.021801285250262297,
+    "medicine": 0.027171725285190265,
+    "apparel_household": 0.059515142464599734,
+    "chemicals": 0.03562001700296708,
+    "vehicles": 0.045417711803647585,
+    "metals": 0.02895549025640371,
+    "machinery": 0.018292832979244892,
+    "semiconductors": 0,
+    "electronics": 0.018330741714922796
+   },
+   "C": {
+    "food": 0.21546890194833399,
+    "energy": 0.030582026001701998,
+    "medicine": 0.033456436255437,
+    "apparel_household": 0.045834429128238464,
+    "chemicals": 0.043601766957601804,
+    "vehicles": 0.040931712328161396,
+    "metals": 0.022625621149471198,
+    "machinery": 0.0207924799764388,
+    "semiconductors": 0,
+    "electronics": 0.0207924799764388
+   },
+   "D": {
+    "food": 0.19508180178700552,
+    "energy": 0.030007067728831403,
+    "medicine": 0.029474238864088516,
+    "apparel_household": 0.055134372849797955,
+    "chemicals": 0.029170648163321884,
+    "vehicles": 0.04521892717963022,
+    "metals": 0.025302397557433735,
+    "machinery": 0.02583937667318229,
+    "semiconductors": 0,
+    "electronics": 0.0200906108806931
+   },
+   "E": {
+    "food": 0.16138963981248808,
+    "energy": 0.0026903383871306457,
+    "medicine": 0.0007259878543331135,
+    "apparel_household": 0.0009722595372715022,
+    "chemicals": 0.0021271242734547478,
+    "vehicles": 0.010517819447473372,
+    "metals": 0.004774760472234679,
+    "machinery": 0.004018202539121991,
+    "semiconductors": 0,
+    "electronics": 0.004871590447108002
+   },
+   "F": {
+    "food": 0.949973679029794,
+    "energy": 0.025705786380742994,
+    "medicine": 0.057866829078464396,
+    "apparel_household": 0.07093734702267868,
+    "chemicals": 0.0719274100748691,
+    "vehicles": 0.0629378322246485,
+    "metals": 0.028058427127341686,
+    "machinery": 0.022301202093408898,
+    "semiconductors": 0,
+    "electronics": 0.022301202093408898
+   }
+  },
+  "B": {
+   "A": {
+    "food": 0.08726854924128315,
+    "energy": 0.048827100419400304,
+    "medicine": 0.01550218034265767,
+    "apparel_household": 0.0323151644585961,
+    "chemicals": 0.03167516499166936,
+    "vehicles": 0.04195907107188533,
+    "metals": 0.025781213795765954,
+    "machinery": 0.0036098281775925256,
+    "semiconductors": 0,
+    "electronics": 0.003753771099770913
+   },
+   "C": {
+    "food": 0.06585929557751644,
+    "energy": 0.038703323885534956,
+    "medicine": 0.03263198893681247,
+    "apparel_household": 0.01901030136187264,
+    "chemicals": 0.03771801331811762,
+    "vehicles": 0.09882589912288872,
+    "metals": 0.018253521214666963,
+    "machinery": 0.020479369488052342,
+    "semiconductors": 0,
+    "electronics": 0.018101990080852347
+   },
+   "D": {
+    "food": 0.103187414582422,
+    "energy": 0.0027515323507759553,
+    "medicine": 0.051104087217248566,
+    "apparel_household": 0.058865445286179006,
+    "chemicals": 0.05518416125155222,
+    "vehicles": 0.06374336868668627,
+    "metals": 0.03338975301353136,
+    "machinery": 0.015421382214202948,
+    "semiconductors": 0,
+    "electronics": 0.002989592286016028
+   },
+   "E": {
+    "food": 0.244736275189527,
+    "energy": 0.13543735391440773,
+    "medicine": 0.1833707245241758,
+    "apparel_household": 0.12106618350140212,
+    "chemicals": 0.16505918852295906,
+    "vehicles": 0.21282025694495044,
+    "metals": 0.05193301863104071,
+    "machinery": 0.14028397776963972,
+    "semiconductors": 0.0840115720015686,
+    "electronics": 0.09761634881937019
+   },
+   "F": {
+    "food": 0.05841761928014738,
+    "energy": 0.003966748883424324,
+    "medicine": 0.03593859149770642,
+    "apparel_household": 0.04286812186074515,
+    "chemicals": 0.04376323606444651,
+    "vehicles": 0.09927137897949977,
+    "metals": 0.013407546785681781,
+    "machinery": 0.010421318116862265,
+    "semiconductors": 0,
+    "electronics": 0.009433969432820028
+   }
+  },
+  "C": {
+   "A": {
+    "food": 0.125772198653964,
+    "energy": 0.0000034941091197784003,
+    "medicine": 0.00591983694512859,
+    "apparel_household": 0.051725162141712515,
+    "chemicals": 0.0109699918905832,
+    "vehicles": 0,
+    "metals": 0.0013937521936414387,
+    "machinery": 0.00033754517981923797,
+    "semiconductors": 0,
+    "electronics": 0.00033754517981923797
+   },
+   "B": {
+    "food": 0.11821187874682147,
+    "energy": 0.008196937185370354,
+    "medicine": 0.010070172552877716,
+    "apparel_household": 0.053656226955542084,
+    "chemicals": 0.012237848620462273,
+    "vehicles": 0,
+    "metals": 0.005613563869909704,
+    "machinery": 0.00011357617018120042,
+    "semiconductors": 0,
+    "electronics": 0.00011348642778211854
+   },
+   "D": {
+    "food": 0.14672540910567167,
+    "energy": 4.777102649430061e-8,
+    "medicine": 0.007151491999929021,
+    "apparel_household": 0.05472516208209813,
+    "chemicals": 0.009047768412910894,
+    "vehicles": 0.046221265657639767,
+    "metals": 0.002122680591447814,
+    "machinery": 0.000001529312039274063,
+    "semiconductors": 0,
+    "electronics": 0.000001519253764909355
+   },
+   "E": {
+    "food": 0.16826114375139606,
+    "energy": 0.000036687115222495644,
+    "medicine": 0.006010685133356196,
+    "apparel_household": 0.07763429236324575,
+    "chemicals": 0.008646093324312031,
+    "vehicles": 0.00004538218839559113,
+    "metals": 0.005432428047957736,
+    "machinery": 0.00002744977421487662,
+    "semiconductors": 0,
+    "electronics": 0.000024279449592570298
+   },
+   "F": {
+    "food": 0.17038652718815,
+    "energy": 0.000058840247747440394,
+    "medicine": 0.0110040700961931,
+    "apparel_household": 0.09388678700831868,
+    "chemicals": 0.014910717235222,
+    "vehicles": 0.0000217090302157898,
+    "metals": 0.005089938290545454,
+    "machinery": 0.000191207879762564,
+    "semiconductors": 0,
+    "electronics": 0.000191207879762564
+   }
+  },
+  "D": {
+   "A": {
+    "food": 0.692280614395786,
+    "energy": 0.049597988804989085,
+    "medicine": 0.03855208831158365,
+    "apparel_household": 0.053894495826202565,
+    "chemicals": 0.040567161716532345,
+    "vehicles": 0.04193042789300984,
+    "metals": 0.0690360649751714,
+    "machinery": 0.047922045833335834,
+    "semiconductors": 0,
+    "electronics": 0.050661473000355825
+   },
+   "B": {
+    "food": 0.1825404601525948,
+    "energy": 0.049791698851456526,
+    "medicine": 0.0442206488453426,
+    "apparel_household": 0.05196104517569199,
+    "chemicals": 0.04455758351352857,
+    "vehicles": 0.04498740628480617,
+    "metals": 0.05939008491246184,
+    "machinery": 0.03077514346692563,
+    "semiconductors": 0,
+    "electronics": 0.032757710333618045
+   },
+   "C": {
+    "food": 0.051863252873319214,
+    "energy": 0.0497087921596024,
+    "medicine": 0.03993818008429529,
+    "apparel_household": 0.04778739662259637,
+    "chemicals": 0.037591667379332866,
+    "vehicles": 0.05278874877314228,
+    "metals": 0.051777932179490956,
+    "machinery": 0.041872324353277784,
+    "semiconductors": 0,
+    "electronics": 0.040398800108160854
+   },
+   "E": {
+    "food": 0.053373653312028015,
+    "energy": 0.02552581529771395,
+    "medicine": 0.023527633886492757,
+    "apparel_household": 0.03232561607603612,
+    "chemicals": 0.024059096907654242,
+    "vehicles": 0.0391448537786012,
+    "metals": 0.0216534167863492,
+    "machinery": 0.03757751301962166,
+    "semiconductors": 0,
+    "electronics": 0.03279556839643876
+   },
+   "F": {
+    "food": 0.08468727063475927,
+    "energy": 0.049999149355273845,
+    "medicine": 0.0219842862524602,
+    "apparel_household": 0.04651437845700495,
+    "chemicals": 0.031121122665498074,
+    "vehicles": 0.04565954853327052,
+    "metals": 0.04343660732449433,
+    "machinery": 0.029646263116397287,
+    "semiconductors": 0,
+    "electronics": 0.029688851120190866
+   }
+  },
+  "E": {
+   "A": {
+    "food": 0.0139658831874836,
+    "energy": 0.0008903577334047006,
+    "medicine": 0.002057011174041262,
+    "apparel_household": 0.020970207872827513,
+    "chemicals": 0.004694931732676531,
+    "vehicles": 0.0022447073588003174,
+    "metals": 0.008570494983123267,
+    "machinery": 0.00299169305586263,
+    "semiconductors": 0,
+    "electronics": 0.00265198362992376
+   },
+   "B": {
+    "food": 0.1897878979679087,
+    "energy": 0.023490224996873928,
+    "medicine": 0.1755492092343635,
+    "apparel_household": 0.20400091147232835,
+    "chemicals": 0.13896033205419375,
+    "vehicles": 0.14241787734894193,
+    "metals": 0.13451142060116023,
+    "machinery": 0.12509202851510864,
+    "semiconductors": 0.052057172422154914,
+    "electronics": 0.12536732914476348
+   },
+   "C": {
+    "food": 0.04287725455627904,
+    "energy": 0.00014202849798249467,
+    "medicine": 0.011931632351163199,
+    "apparel_household": 0.02529390549179736,
+    "chemicals": 0.015380473441922062,
+    "vehicles": 0.020399098063681925,
+    "metals": 0.008397173052574165,
+    "machinery": 0.007139921775566714,
+    "semiconductors": 0,
+    "electronics": 0.006683520503760516
+   },
+   "D": {
+    "food": 0.04217645356042758,
+    "energy": 0.014714180574126072,
+    "medicine": 0.00019906154743337223,
+    "apparel_household": 0.025946434691582653,
+    "chemicals": 0.005726632175680343,
+    "vehicles": 0.002084900317483764,
+    "metals": 0.006302224667553044,
+    "machinery": 0.0025224451558068014,
+    "semiconductors": 0,
+    "electronics": 0.0007252647881049895
+   },
+   "F": {
+    "food": 0.05994215421410225,
+    "energy": 0.013546546130886477,
+    "medicine": 0.014762705092005448,
+    "apparel_household": 0.07455641069809128,
+    "chemicals": 0.01927552655417602,
+    "vehicles": 0.046270469688654885,
+    "metals": 0.01552386375942821,
+    "machinery": 0.009353740373235,
+    "semiconductors": 0,
+    "electronics": 0.00954207665694388
+   }
+  },
+  "F": {
+   "A": {
+    "food": 0.12376429771917753,
+    "energy": 0.01327272732149471,
+    "medicine": 0.003337529139085249,
+    "apparel_household": 0.04808530040341875,
+    "chemicals": 0.03219657740388606,
+    "vehicles": 0.0880553591615493,
+    "metals": 0.017783914451511208,
+    "machinery": 0.02914927329665931,
+    "semiconductors": 0,
+    "electronics": 0.025699017385683455
+   },
+   "B": {
+    "food": 0.12376429771917753,
+    "energy": 0.01327272732149471,
+    "medicine": 0.003337529139085249,
+    "apparel_household": 0.04808530040341874,
+    "chemicals": 0.03219657740388606,
+    "vehicles": 0.0880553591615493,
+    "metals": 0.017783914451511208,
+    "machinery": 0.029149273296659308,
+    "semiconductors": 0,
+    "electronics": 0.025699017385683455
+   },
+   "C": {
+    "food": 0.12376429771917753,
+    "energy": 0.013272727321494709,
+    "medicine": 0.003337529139085249,
+    "apparel_household": 0.04808530040341874,
+    "chemicals": 0.03219657740388606,
+    "vehicles": 0.0880553591615493,
+    "metals": 0.017783914451511208,
+    "machinery": 0.02914927329665931,
+    "semiconductors": 0,
+    "electronics": 0.025699017385683455
+   },
+   "D": {
+    "food": 0.12376429771917753,
+    "energy": 0.013272727321494713,
+    "medicine": 0.003337529139085249,
+    "apparel_household": 0.04808530040341873,
+    "chemicals": 0.03219657740388606,
+    "vehicles": 0.0880553591615493,
+    "metals": 0.017783914451511208,
+    "machinery": 0.02914927329665931,
+    "semiconductors": 0,
+    "electronics": 0.025699017385683455
+   },
+   "E": {
+    "food": 0.12376429771917753,
+    "energy": 0.01327272732149471,
+    "medicine": 0.003337529139085249,
+    "apparel_household": 0.04808530040341875,
+    "chemicals": 0.03219657740388607,
+    "vehicles": 0.0880553591615493,
+    "metals": 0.017783914451511208,
+    "machinery": 0.029149273296659315,
+    "semiconductors": 0,
+    "electronics": 0.025699017385683455
+   }
+  }
+ },
+ "row": {
+  "blocOnRow": {
+   "A": {
+    "food": 0.690734666821887,
+    "energy": 0.0169601903518102,
+    "medicine": 0.0228763469230849,
+    "apparel_household": 0.02783591336999112,
+    "chemicals": 0.0334233776406379,
+    "vehicles": 0.016026438572729798,
+    "metals": 0.012706976851981572,
+    "machinery": 0.0106453569076111,
+    "semiconductors": 0,
+    "electronics": 0.0106453569076111
+   },
+   "B": {
+    "food": 0.044565141080310997,
+    "energy": 0.0022255020081899703,
+    "medicine": 0.01624201518800145,
+    "apparel_household": 0.01823216363985162,
+    "chemicals": 0.0177447065889237,
+    "vehicles": 0.053931700302985996,
+    "metals": 0.005665832156115697,
+    "machinery": 0.0048777385889751355,
+    "semiconductors": 0,
+    "electronics": 0.0048777385889751355
+   },
+   "C": {
+    "food": 0.12787971022987502,
+    "energy": 0.000039399206850352595,
+    "medicine": 0.00548971773236022,
+    "apparel_household": 0.044028709560423485,
+    "chemicals": 0.00852968214751451,
+    "vehicles": 0.0000100442376447457,
+    "metals": 0.0026664183755915165,
+    "machinery": 0.00006870506174626469,
+    "semiconductors": 0,
+    "electronics": 0.00006870506174626469
+   },
+   "D": {
+    "food": 0.08656216846641257,
+    "energy": 0.02087166303164528,
+    "medicine": 0.02288201217880162,
+    "apparel_household": 0.03841302280617186,
+    "chemicals": 0.023129136367824096,
+    "vehicles": 0.039126392141772666,
+    "metals": 0.03286340270449847,
+    "machinery": 0.031663282883053936,
+    "semiconductors": 0,
+    "electronics": 0.031663282883053936
+   },
+   "E": {
+    "food": 0.0440978465074199,
+    "energy": 0.0010092221868126048,
+    "medicine": 0.00608210753544567,
+    "apparel_household": 0.058985646525957926,
+    "chemicals": 0.006169585967422626,
+    "vehicles": 0.017800991170870334,
+    "metals": 0.008525981786128685,
+    "machinery": 0.0045087519003448396,
+    "semiconductors": 0,
+    "electronics": 0.0045087519003448396
+   },
+   "F": {
+    "food": 0.12376429771917753,
+    "energy": 0.01327272732149471,
+    "medicine": 0.003337529139085249,
+    "apparel_household": 0.04808530040341874,
+    "chemicals": 0.03219657740388606,
+    "vehicles": 0.0880553591615493,
+    "metals": 0.017783914451511208,
+    "machinery": 0.02914927329665931,
+    "semiconductors": 0,
+    "electronics": 0.025699017385683455
+   }
+  },
+  "rowOnBloc": {
+   "A": {
+    "food": 0.000469126128337946,
+    "energy": 0,
+    "medicine": 0,
+    "apparel_household": 0,
+    "chemicals": 0,
+    "vehicles": 0,
+    "metals": 0,
+    "machinery": 0,
+    "semiconductors": 0,
+    "electronics": 0
+   },
+   "B": {
+    "food": 0.11533824729237485,
+    "energy": 0.00403247473081353,
+    "medicine": 0.0429437804662302,
+    "apparel_household": 0.05699589809781895,
+    "chemicals": 0.0463591705891836,
+    "vehicles": 0.033110681668756047,
+    "metals": 0.02194046550373619,
+    "machinery": 0.008428839008904121,
+    "semiconductors": 0,
+    "electronics": 0.008428839008904121
+   },
+   "C": {
+    "food": 0.0024731930588553098,
+    "energy": 0,
+    "medicine": 0.0019374835884163899,
+    "apparel_household": 0.001447619477196006,
+    "chemicals": 0.0006971372687631281,
+    "vehicles": 0.0288633262547607,
+    "metals": 0.0004389205947365857,
+    "machinery": 0.00186925123134704,
+    "semiconductors": 0,
+    "electronics": 0.00186925123134704
+   },
+   "D": {
+    "food": 0.06242201765478935,
+    "energy": 0.00015049872896082903,
+    "medicine": 0.02371689247711527,
+    "apparel_household": 0.03866350442652685,
+    "chemicals": 0.034370430854190406,
+    "vehicles": 0.04310734671530546,
+    "metals": 0.015188261981598438,
+    "machinery": 0.016038382591568656,
+    "semiconductors": 0,
+    "electronics": 0.016038382591568656
+   },
+   "E": {
+    "food": 0.03742993337500594,
+    "energy": 0.00023187746728033768,
+    "medicine": 0.005437592585653027,
+    "apparel_household": 0.012300078749419976,
+    "chemicals": 0.006999728878693803,
+    "vehicles": 0.01406981150142548,
+    "metals": 0.004009689936240506,
+    "machinery": 0.0053878629775907,
+    "semiconductors": 0,
+    "electronics": 0.0053878629775907
+   },
+   "F": {
+    "food": 0.0895613412220067,
+    "energy": 0.000314199394780061,
+    "medicine": 0.032049357040169604,
+    "apparel_household": 0.05768550680740879,
+    "chemicals": 0.0352638032446429,
+    "vehicles": 0.0568114825837661,
+    "metals": 0.012130507156790753,
+    "machinery": 0.0133785904596824,
+    "semiconductors": 0,
+    "electronics": 0.0133785904596824
+   }
+  }
+ },
+ "exportControls": [
+  {
+   "from": "E",
+   "to": "B",
+   "good": "semiconductors",
+   "level": 1,
+   "reason": "2022·2023년 미국의 첨단 반도체 대중 수출 통제. 반도체 전체가 아니라 첨단 칩 일부만 대상이라 1단계(약한 통제)"
+  }
+ ],
+ "pair": {
+  "KOR": {
+   "CHN": {
+    "year": 2022,
+    "rates": {
+     "food": 0.8207137552983841,
+     "energy": 0.021663743197382897,
+     "medicine": 0.027026741100829,
+     "apparel_household": 0.059491766306581984,
+     "chemicals": 0.0355812139009349,
+     "vehicles": 0.0454433927809842,
+     "metals": 0.028985862655672868,
+     "machinery": 0.018464878248834,
+     "semiconductors": 0,
+     "electronics": 0.018464878248834
+    }
+   },
+   "HKG": {
+    "year": 2022,
+    "rates": {
+     "food": 0.09028868731006989,
+     "energy": 0.03,
+     "medicine": 0.0588270364515014,
+     "apparel_household": 0.06846590510660694,
+     "chemicals": 0.0600048036263173,
+     "vehicles": 0.007193256476687801,
+     "metals": 0.025016390932902293,
+     "machinery": 0.00119036481915372,
+     "semiconductors": 0,
+     "electronics": 0.00119036481915372
+    }
+   },
+   "JPN": {
+    "year": 2022,
+    "rates": {
+     "food": 0.21546890194833399,
+     "energy": 0.030582026001701998,
+     "medicine": 0.033456436255437,
+     "apparel_household": 0.045834429128238464,
+     "chemicals": 0.043601766957601804,
+     "vehicles": 0.040931712328161396,
+     "metals": 0.022625621149471198,
+     "machinery": 0.0207924799764388,
+     "semiconductors": 0,
+     "electronics": 0.0207924799764388
+    }
+   },
+   "SAU": {
+    "year": 2022,
+    "rates": {
+     "food": 0.29171892524882,
+     "energy": 0.0300177018519198,
+     "medicine": 0.020119160814121302,
+     "apparel_household": 0.0621130720460349,
+     "chemicals": 0.0229458979485327,
+     "vehicles": 0.0793507304628791,
+     "metals": 0.027397606825862886,
+     "machinery": 0.056418231880692504,
+     "semiconductors": 0,
+     "electronics": 0.056418231880692504
+    }
+   },
+   "ARE": {
+    "year": 2022,
+    "rates": {
+     "food": 0.15328236865978298,
+     "energy": 0.0299748291931672,
+     "medicine": 0.019853182276531302,
+     "apparel_household": 0.06566747265016738,
+     "chemicals": 0.036704339345655604,
+     "vehicles": 0.0799566410939452,
+     "metals": 0.012692373147677308,
+     "machinery": 0.0713311835426444,
+     "semiconductors": 0,
+     "electronics": 0.0713311835426444
+    }
+   },
+   "QAT": {
+    "year": 2022,
+    "rates": {
+     "food": 0.5046496043137281,
+     "energy": 0.0300273856639115,
+     "medicine": 0.045295773890385096,
+     "apparel_household": 0.06382485299682122,
+     "chemicals": 0.0471073975091486,
+     "vehicles": 0.08,
+     "metals": 0.0388932903305493,
+     "machinery": 0.0100700774184826,
+     "semiconductors": 0,
+     "electronics": 0.0100700774184826
+    }
+   },
+   "KWT": {
+    "year": 2022,
+    "rates": {
+     "food": 0.287589493391523,
+     "energy": 0.0300000002707618,
+     "medicine": 0.027016061840907702,
+     "apparel_household": 0.06960460320529122,
+     "chemicals": 0.0271814665246638,
+     "vehicles": 0.000049897579048013504,
+     "metals": 0.03326318720658178,
+     "machinery": 0.0594685176158224,
+     "semiconductors": 0,
+     "electronics": 0.0594685176158224
+    }
+   },
+   "IRQ": {
+    "year": 2022,
+    "rates": {
+     "food": 0.201297886220502,
+     "energy": 0.03,
+     "medicine": 0.0540643374173024,
+     "apparel_household": 0.053755743299306394,
+     "chemicals": 0.0540643374173024,
+     "vehicles": 0.050743604630891496,
+     "metals": 0.03992500661168718,
+     "machinery": 0.0649020361365692,
+     "semiconductors": 0,
+     "electronics": 0.0649020361365692
+    }
+   },
+   "OMN": {
+    "year": 2022,
+    "rates": {
+     "food": 0.060252945544430905,
+     "energy": 0.03,
+     "medicine": 0.0192501019166228,
+     "apparel_household": 0.06187823903118561,
+     "chemicals": 0.0196135453027664,
+     "vehicles": 0.000688172754899326,
+     "metals": 0.04133413961632983,
+     "machinery": 0.0752230846621153,
+     "semiconductors": 0,
+     "electronics": 0.0752230846621153
+    }
+   },
+   "ISR": {
+    "year": 2022,
+    "rates": {
+     "food": 0.31114985622916597,
+     "energy": 0.0572459668945088,
+     "medicine": 0.032015243995266396,
+     "apparel_household": 0.05097082521678191,
+     "chemicals": 0.0319938396945062,
+     "vehicles": 0.0154379661329778,
+     "metals": 0.03583905935668033,
+     "machinery": 0.019421069573915498,
+     "semiconductors": 0,
+     "electronics": 0.019421069573915498
+    }
+   },
+   "USA": {
+    "year": 2022,
+    "rates": {
+     "food": 0.159963293897137,
+     "energy": 0,
+     "medicine": 0.000257640398545063,
+     "apparel_household": 0,
+     "chemicals": 0.00033536267672985197,
+     "vehicles": 0,
+     "metals": 0,
+     "machinery": 0,
+     "semiconductors": 0,
+     "electronics": 0
+    }
+   },
+   "CAN": {
+    "year": 2022,
+    "rates": {
+     "food": 0.14189538989085299,
+     "energy": 0,
+     "medicine": 0.0000122879667182183,
+     "apparel_household": 0.00001154273662517408,
+     "chemicals": 0.000178279155041177,
+     "vehicles": 0,
+     "metals": 0,
+     "machinery": 0,
+     "semiconductors": 0,
+     "electronics": 0
+    }
+   },
+   "MEX": {
+    "year": 2022,
+    "rates": {
+     "food": 0.32326717262406396,
+     "energy": 0.0300000041994211,
+     "medicine": 0.062380464719169096,
+     "apparel_household": 0.05979290794309408,
+     "chemicals": 0.0852327150169894,
+     "vehicles": 0.0799242423081425,
+     "metals": 0.01991914889385372,
+     "machinery": 0.039950699311511205,
+     "semiconductors": 0,
+     "electronics": 0.039950699311511205
+    }
+   },
+   "TWN": {
+    "year": 2022,
+    "rates": {
+     "food": 0.949973679029794,
+     "energy": 0.025705786380742997,
+     "medicine": 0.057866829078464396,
+     "apparel_household": 0.07093734702267868,
+     "chemicals": 0.0719274100748691,
+     "vehicles": 0.0629378322246485,
+     "metals": 0.028058427127341686,
+     "machinery": 0.022301202093408898,
+     "semiconductors": 0,
+     "electronics": 0.022301202093408898
+    }
+   },
+   "WLD": {
+    "year": 2022,
+    "rates": {
+     "food": 0.690734666821887,
+     "energy": 0.0169601903518102,
+     "medicine": 0.0228763469230849,
+     "apparel_household": 0.02783591336999112,
+     "chemicals": 0.0334233776406379,
+     "vehicles": 0.016026438572729798,
+     "metals": 0.012706976851981572,
+     "machinery": 0.0106453569076111,
+     "semiconductors": 0,
+     "electronics": 0.0106453569076111
+    }
+   }
+  },
+  "CHN": {
+   "KOR": {
+    "year": 2022,
+    "rates": {
+     "food": 0.113473873679934,
+     "energy": 0.0585787528408494,
+     "medicine": 0.0215764249646723,
+     "apparel_household": 0.0388321922156708,
+     "chemicals": 0.0326613082022012,
+     "vehicles": 0.061050773088447204,
+     "metals": 0.028200040737421498,
+     "machinery": 0.00405101527978146,
+     "semiconductors": 0,
+     "electronics": 0.00405101527978146
+    }
+   },
+   "JPN": {
+    "year": 2022,
+    "rates": {
+     "food": 0.131076741380062,
+     "energy": 0.0438355718091134,
+     "medicine": 0.0374420358531121,
+     "apparel_household": 0.05232226679196446,
+     "chemicals": 0.039937527431139104,
+     "vehicles": 0.104836293238396,
+     "metals": 0.026303786532452123,
+     "machinery": 0.0212416516950888,
+     "semiconductors": 0,
+     "electronics": 0.0212416516950888
+    }
+   },
+   "SAU": {
+    "year": 2022,
+    "rates": {
+     "food": 0.250456859249383,
+     "energy": 0.000708178889865561,
+     "medicine": 0.0487870864410843,
+     "apparel_household": 0.060822977801505834,
+     "chemicals": 0.05467474294840011,
+     "vehicles": 0.0584823731728289,
+     "metals": 0.029206499389785135,
+     "machinery": 0.040845101021563995,
+     "semiconductors": 0,
+     "electronics": 0.040845101021563995
+    }
+   },
+   "ARE": {
+    "year": 2022,
+    "rates": {
+     "food": 0.08134539893606689,
+     "energy": 0.00632077960289683,
+     "medicine": 0.0511335574421829,
+     "apparel_household": 0.056409640690053914,
+     "chemicals": 0.061834460615477004,
+     "vehicles": 0.06526580392133301,
+     "metals": 0.017915839355619762,
+     "machinery": 0.04942333770503159,
+     "semiconductors": 0,
+     "electronics": 0.04942333770503159
+    }
+   },
+   "QAT": {
+    "year": 2022,
+    "rates": {
+     "food": 0.155789506769446,
+     "energy": 0.00635154963841186,
+     "medicine": 0.046285307435869,
+     "apparel_household": 0.06366280506749668,
+     "chemicals": 0.058226437696981305,
+     "vehicles": 0.0691870380898238,
+     "metals": 0.05339240108476223,
+     "machinery": 0.0472483107790829,
+     "semiconductors": 0,
+     "electronics": 0.0472483107790829
+    }
+   },
+   "KWT": {
+    "year": 2022,
+    "rates": {
+     "food": 0.0755232558139535,
+     "energy": 0.00131697090823029,
+     "medicine": 0.0321556354208816,
+     "apparel_household": 0.06343513430040063,
+     "chemicals": 0.040361850003214406,
+     "vehicles": 0.00257359485256371,
+     "metals": 0.05233547720832776,
+     "machinery": 0.0751824812800838,
+     "semiconductors": 0,
+     "electronics": 0.0751824812800838
+    }
+   },
+   "IRQ": {
+    "year": 2022,
+    "rates": {
+     "food": 0.145198379397158,
+     "energy": 0.000128012679036905,
+     "medicine": 0.0649878485524905,
+     "apparel_household": 0.06611653204731828,
+     "chemicals": 0.0649878485524905,
+     "vehicles": 0.06,
+     "metals": 0.050322213737010235,
+     "machinery": 0.062209996097954204,
+     "semiconductors": 0,
+     "electronics": 0.062209996097954204
+    }
+   },
+   "OMN": {
+    "year": 2022,
+    "rates": {
+     "food": 0.0959071881620158,
+     "energy": 0.00405582374105054,
+     "medicine": 0.0495191149883967,
+     "apparel_household": 0.031765184508306815,
+     "chemicals": 0.0510084731354604,
+     "vehicles": 0.149911908646003,
+     "metals": 0.04886740906480367,
+     "machinery": 0.0198672357505792,
+     "semiconductors": 0,
+     "electronics": 0.0198672357505792
+    }
+   },
+   "ISR": {
+    "year": 2022,
+    "rates": {
+     "food": 0.0749637401775684,
+     "energy": 0.0139013897489616,
+     "medicine": 0.0511040295202628,
+     "apparel_household": 0.05906209598075234,
+     "chemicals": 0.0498322002586196,
+     "vehicles": 0.06483149685691031,
+     "metals": 0.044998829835679405,
+     "machinery": 0.0020596247447329298,
+     "semiconductors": 0,
+     "electronics": 0.0020596247447329298
+    }
+   },
+   "USA": {
+    "year": 2022,
+    "rates": {
+     "food": 0.3254216633850481,
+     "energy": 0.1696476365574262,
+     "medicine": 0.204361348889984,
+     "apparel_household": 0.20152070530065389,
+     "chemicals": 0.1888948690492105,
+     "vehicles": 0.2575773637118671,
+     "metals": 0.1912909666223351,
+     "machinery": 0.1631470033280948,
+     "semiconductors": 0.1431963567920121,
+     "electronics": 0.1631470033280948
+    }
+   },
+   "CAN": {
+    "year": 2022,
+    "rates": {
+     "food": 0.0611354397619357,
+     "energy": 0.024764270780182902,
+     "medicine": 0.033479190139877,
+     "apparel_household": 0.0391602292872392,
+     "chemicals": 0.035396316772867295,
+     "vehicles": 0.04064250683283879,
+     "metals": 0.010406158101464811,
+     "machinery": 0.028154545729116,
+     "semiconductors": 0,
+     "electronics": 0.028154545729116
+    }
+   },
+   "MEX": {
+    "year": 2022,
+    "rates": {
+     "food": 0.058804567203391,
+     "energy": 0.07996536732738929,
+     "medicine": 0.0603793108473662,
+     "apparel_household": 0.05232831231908573,
+     "chemicals": 0.0627953658953011,
+     "vehicles": 0.0722159261318673,
+     "metals": 0.012332630618025673,
+     "machinery": 0.0212424416177775,
+     "semiconductors": 0,
+     "electronics": 0.0212424416177775
+    }
+   },
+   "TWN": {
+    "year": 2022,
+    "rates": {
+     "food": 0.128502604747032,
+     "energy": 0.007354431140511371,
+     "medicine": 0.045048617537895,
+     "apparel_household": 0.05525527502882798,
+     "chemicals": 0.0471589322804804,
+     "vehicles": 0.109938360947965,
+     "metals": 0.017657806771058996,
+     "machinery": 0.0119282350978945,
+     "semiconductors": 0,
+     "electronics": 0.0119282350978945
+    }
+   },
+   "WLD": {
+    "year": 2022,
+    "rates": {
+     "food": 0.08913028216062199,
+     "energy": 0.0044510040163799405,
+     "medicine": 0.0324840303760029,
+     "apparel_household": 0.03646432727970324,
+     "chemicals": 0.0354894131778474,
+     "vehicles": 0.10786340060597199,
+     "metals": 0.011331664312231393,
+     "machinery": 0.009755477177950271,
+     "semiconductors": 0,
+     "electronics": 0.009755477177950271
+    }
+   }
+  },
+  "HKG": {
+   "KOR": {
+    "year": 2022,
+    "rates": {
+     "food": 0,
+     "energy": 0,
+     "medicine": 0,
+     "apparel_household": 0,
+     "chemicals": 0,
+     "vehicles": 0,
+     "metals": 0,
+     "machinery": 0,
+     "semiconductors": 0,
+     "electronics": 0
+    }
+   },
+   "JPN": {
+    "year": 2022,
+    "rates": {
+     "food": 0,
+     "energy": 0,
+     "medicine": 0,
+     "apparel_household": 0,
+     "chemicals": 0,
+     "vehicles": 0,
+     "metals": 0,
+     "machinery": 0,
+     "semiconductors": 0,
+     "electronics": 0
+    }
+   },
+   "SAU": {
+    "year": 2022,
+    "rates": {
+     "food": 0,
+     "energy": 0,
+     "medicine": 0,
+     "apparel_household": 0,
+     "chemicals": 0,
+     "vehicles": 0,
+     "metals": 0,
+     "machinery": 0,
+     "semiconductors": 0,
+     "electronics": 0
+    }
+   },
+   "ARE": {
+    "year": 2022,
+    "rates": {
+     "food": 0,
+     "energy": 0,
+     "medicine": 0,
+     "apparel_household": 0,
+     "chemicals": 0,
+     "vehicles": 0,
+     "metals": 0,
+     "machinery": 0,
+     "semiconductors": 0,
+     "electronics": 0
+    }
+   },
+   "QAT": {
+    "year": 2022,
+    "rates": {
+     "food": 0,
+     "energy": 0,
+     "medicine": 0,
+     "apparel_household": 0,
+     "chemicals": 0,
+     "vehicles": 0,
+     "metals": 0,
+     "machinery": 0,
+     "semiconductors": 0,
+     "electronics": 0
+    }
+   },
+   "KWT": {
+    "year": 2022,
+    "rates": {
+     "food": 0,
+     "energy": 0,
+     "medicine": 0,
+     "apparel_household": 0,
+     "chemicals": 0,
+     "vehicles": 0,
+     "metals": 0,
+     "machinery": 0,
+     "semiconductors": 0,
+     "electronics": 0
+    }
+   },
+   "IRQ": {
+    "year": 2022,
+    "rates": {
+     "food": 0,
+     "energy": 0,
+     "medicine": 0,
+     "apparel_household": 0,
+     "chemicals": 0,
+     "vehicles": 0,
+     "metals": 0,
+     "machinery": 0,
+     "semiconductors": 0,
+     "electronics": 0
+    }
+   },
+   "OMN": {
+    "year": 2022,
+    "rates": {
+     "food": 0,
+     "energy": 0,
+     "medicine": 0,
+     "apparel_household": 0,
+     "chemicals": 0,
+     "vehicles": 0,
+     "metals": 0,
+     "machinery": 0,
+     "semiconductors": 0,
+     "electronics": 0
+    }
+   },
+   "ISR": {
+    "year": 2022,
+    "rates": {
+     "food": 0,
+     "energy": 0,
+     "medicine": 0,
+     "apparel_household": 0,
+     "chemicals": 0,
+     "vehicles": 0,
+     "metals": 0,
+     "machinery": 0,
+     "semiconductors": 0,
+     "electronics": 0
+    }
+   },
+   "USA": {
+    "year": 2022,
+    "rates": {
+     "food": 0,
+     "energy": 0,
+     "medicine": 0,
+     "apparel_household": 0,
+     "chemicals": 0,
+     "vehicles": 0,
+     "metals": 0,
+     "machinery": 0,
+     "semiconductors": 0,
+     "electronics": 0
+    }
+   },
+   "CAN": {
+    "year": 2022,
+    "rates": {
+     "food": 0,
+     "energy": 0,
+     "medicine": 0,
+     "apparel_household": 0,
+     "chemicals": 0,
+     "vehicles": 0,
+     "metals": 0,
+     "machinery": 0,
+     "semiconductors": 0,
+     "electronics": 0
+    }
+   },
+   "MEX": {
+    "year": 2022,
+    "rates": {
+     "food": 0,
+     "energy": 0,
+     "medicine": 0,
+     "apparel_household": 0,
+     "chemicals": 0,
+     "vehicles": 0,
+     "metals": 0,
+     "machinery": 0,
+     "semiconductors": 0,
+     "electronics": 0
+    }
+   },
+   "TWN": {
+    "year": 2022,
+    "rates": {
+     "food": 0,
+     "energy": 0,
+     "medicine": 0,
+     "apparel_household": 0,
+     "chemicals": 0,
+     "vehicles": 0,
+     "metals": 0,
+     "machinery": 0,
+     "semiconductors": 0,
+     "electronics": 0
+    }
+   },
+   "WLD": {
+    "year": 2022,
+    "rates": {
+     "food": 0,
+     "energy": 0,
+     "medicine": 0,
+     "apparel_household": 0,
+     "chemicals": 0,
+     "vehicles": 0,
+     "metals": 0,
+     "machinery": 0,
+     "semiconductors": 0,
+     "electronics": 0
+    }
+   }
+  },
+  "JPN": {
+   "KOR": {
+    "year": 2022,
+    "rates": {
+     "food": 0.125772198653964,
+     "energy": 0.0000034941091197784003,
+     "medicine": 0.00591983694512859,
+     "apparel_household": 0.05172516214171252,
+     "chemicals": 0.0109699918905832,
+     "vehicles": 0,
+     "metals": 0.0013937521936414387,
+     "machinery": 0.00033754517981923797,
+     "semiconductors": 0,
+     "electronics": 0.00033754517981923797
+    }
+   },
+   "CHN": {
+    "year": 2022,
+    "rates": {
+     "food": 0.11998818004346999,
+     "energy": 0.00819018366504429,
+     "medicine": 0.0100770646083131,
+     "apparel_household": 0.052040608662930206,
+     "chemicals": 0.0122438193694672,
+     "vehicles": 0,
+     "metals": 0.005628043704717963,
+     "machinery": 0.000113657615168754,
+     "semiconductors": 0,
+     "electronics": 0.000113657615168754
+    }
+   },
+   "HKG": {
+    "year": 2022,
+    "rates": {
+     "food": 0.030999759715746703,
+     "energy": 0.0133397256772637,
+     "medicine": 0.00162540793304533,
+     "apparel_household": 0.11442898589989808,
+     "chemicals": 0.00186311827632849,
+     "vehicles": 0,
+     "metals": 0.004513143789776819,
+     "machinery": 0.00000223526918286525,
+     "semiconductors": 0,
+     "electronics": 0.00000223526918286525
+    }
+   },
+   "SAU": {
+    "year": 2022,
+    "rates": {
+     "food": 0.00441560019635988,
+     "energy": 0,
+     "medicine": 0.0019936620503182402,
+     "apparel_household": 0.014820197326690543,
+     "chemicals": 0.007106605159524469,
+     "vehicles": 0.0000818842655520552,
+     "metals": 0.000040419064186957216,
+     "machinery": 0,
+     "semiconductors": 0,
+     "electronics": 0
+    }
+   },
+   "ARE": {
+    "year": 2022,
+    "rates": {
+     "food": 0.12495261761498,
+     "energy": 0,
+     "medicine": 0.00696659738433714,
+     "apparel_household": 0.048909689999697054,
+     "chemicals": 0.035451866634038404,
+     "vehicles": 0,
+     "metals": 0.000015771586218478927,
+     "machinery": 0,
+     "semiconductors": 0,
+     "electronics": 0
+    }
+   },
+   "QAT": {
+    "year": 2022,
+    "rates": {
+     "food": 0.0000354342406063641,
+     "energy": 0,
+     "medicine": 0.0000415839932729752,
+     "apparel_household": 0,
+     "chemicals": 0.00392312453964673,
+     "vehicles": 0,
+     "metals": 0.023009058671387816,
+     "machinery": 0,
+     "semiconductors": 0,
+     "electronics": 0
+    }
+   },
+   "KWT": {
+    "year": 2022,
+    "rates": {
+     "food": 0.00000775654296463878,
+     "energy": 0,
+     "medicine": 0.0189902937464421,
+     "apparel_household": 0.024666666984558102,
+     "chemicals": 0.0189902937464421,
+     "vehicles": 0.00000775654296463878,
+     "metals": 0,
+     "machinery": 0,
+     "semiconductors": 0,
+     "electronics": 0
+    }
+   },
+   "IRQ": {
+    "year": 2021,
+    "rates": {
+     "food": 0,
+     "energy": 0,
+     "medicine": 0,
+     "apparel_household": 0,
+     "chemicals": 0,
+     "vehicles": 0,
+     "metals": 0,
+     "machinery": 0,
+     "semiconductors": 0,
+     "electronics": 0
+    }
+   },
+   "OMN": {
+    "year": 2022,
+    "rates": {
+     "food": 0.00613171885424121,
+     "energy": 0,
+     "medicine": 0.000147491621217994,
+     "apparel_household": 0.00103457249935098,
+     "chemicals": 0.0013128325157089598,
+     "vehicles": 0,
+     "metals": 0,
+     "machinery": 0,
+     "semiconductors": 0,
+     "electronics": 0
+    }
+   },
+   "ISR": {
+    "year": 2022,
+    "rates": {
+     "food": 0.20316139373985098,
+     "energy": 0.0153477278046833,
+     "medicine": 0.007151491999929021,
+     "apparel_household": 0.1425448284550934,
+     "chemicals": 0.00696596416895309,
+     "vehicles": 0.0648967964905148,
+     "metals": 0.0027486023718527345,
+     "machinery": 0.00000155478865690062,
+     "semiconductors": 0,
+     "electronics": 0.00000155478865690062
+    }
+   },
+   "USA": {
+    "year": 2022,
+    "rates": {
+     "food": 0.167857481723693,
+     "energy": 0.0000496479634698204,
+     "medicine": 0.00666219903521477,
+     "apparel_household": 0.09747474159238476,
+     "chemicals": 0.0091018451925181,
+     "vehicles": 0.000055857260433953405,
+     "metals": 0.008346485329306695,
+     "machinery": 0.000029678041676510702,
+     "semiconductors": 0,
+     "electronics": 0.000029678041676510702
+    }
+   },
+   "CAN": {
+    "year": 2022,
+    "rates": {
+     "food": 0.150049964674206,
+     "energy": 0,
+     "medicine": 0.00078677805581,
+     "apparel_household": 0.010579735241826285,
+     "chemicals": 0.0015578667080077498,
+     "vehicles": 0,
+     "metals": 3.972838024766534e-8,
+     "machinery": 0,
+     "semiconductors": 0,
+     "electronics": 0
+    }
+   },
+   "MEX": {
+    "year": 2022,
+    "rates": {
+     "food": 0.22967882350079102,
+     "energy": 0,
+     "medicine": 0,
+     "apparel_household": 0.015216864625137785,
+     "chemicals": 0.000283622007416298,
+     "vehicles": 0,
+     "metals": 0.0009196447575300354,
+     "machinery": 0,
+     "semiconductors": 0,
+     "electronics": 0
+    }
+   },
+   "TWN": {
+    "year": 2022,
+    "rates": {
+     "food": 0.17038652718815,
+     "energy": 0.000058840247747440394,
+     "medicine": 0.0110040700961931,
+     "apparel_household": 0.09388678700831868,
+     "chemicals": 0.014910717235222,
+     "vehicles": 0.0000217090302157898,
+     "metals": 0.005089938290545454,
+     "machinery": 0.000191207879762564,
+     "semiconductors": 0,
+     "electronics": 0.000191207879762564
+    }
+   },
+   "WLD": {
+    "year": 2022,
+    "rates": {
+     "food": 0.12787971022987502,
+     "energy": 0.000039399206850352595,
+     "medicine": 0.00548971773236022,
+     "apparel_household": 0.044028709560423485,
+     "chemicals": 0.00852968214751451,
+     "vehicles": 0.0000100442376447457,
+     "metals": 0.0026664183755915165,
+     "machinery": 0.00006870506174626469,
+     "semiconductors": 0,
+     "electronics": 0.00006870506174626469
+    }
+   }
+  },
+  "SAU": {
+   "KOR": {
+    "year": 2022,
+    "rates": {
+     "food": 0.0628797824818659,
+     "energy": 0.0507294646858605,
+     "medicine": 0.0447275068113671,
+     "apparel_household": 0.06040254307417188,
+     "chemicals": 0.0488135513440886,
+     "vehicles": 0.040362320296843696,
+     "metals": 0.08881478856790574,
+     "machinery": 0.0665478513045215,
+     "semiconductors": 0,
+     "electronics": 0.0665478513045215
+    }
+   },
+   "CHN": {
+    "year": 2022,
+    "rates": {
+     "food": 0.0525694021262769,
+     "energy": 0.050320209896388406,
+     "medicine": 0.0514264931851173,
+     "apparel_household": 0.06664488055248109,
+     "chemicals": 0.052552739135089004,
+     "vehicles": 0.05159606455354129,
+     "metals": 0.08252742870537996,
+     "machinery": 0.0576915035565599,
+     "semiconductors": 0,
+     "electronics": 0.0576915035565599
+    }
+   },
+   "HKG": {
+    "year": 2022,
+    "rates": {
+     "food": 0.052154104037721395,
+     "energy": 0.021277231745282,
+     "medicine": 0.04119045618705831,
+     "apparel_household": 0.0707688819669375,
+     "chemicals": 0.0420406935066888,
+     "vehicles": 0.0499809995663214,
+     "metals": 0.059330677819570354,
+     "machinery": 0.0091485639877083,
+     "semiconductors": 0,
+     "electronics": 0.0091485639877083
+    }
+   },
+   "JPN": {
+    "year": 2022,
+    "rates": {
+     "food": 0.0687082290352065,
+     "energy": 0.05,
+     "medicine": 0.0427182049961554,
+     "apparel_household": 0.05441977749816563,
+     "chemicals": 0.043603954249985304,
+     "vehicles": 0.0580818307275569,
+     "metals": 0.0776757133149072,
+     "machinery": 0.0610806194904491,
+     "semiconductors": 0,
+     "electronics": 0.0610806194904491
+    }
+   },
+   "USA": {
+    "year": 2022,
+    "rates": {
+     "food": 0.0360620682692204,
+     "energy": 0.0515110075776834,
+     "medicine": 0.0348513514578128,
+     "apparel_household": 0.053286333285689075,
+     "chemicals": 0.0374489837700356,
+     "vehicles": 0.038734278827605696,
+     "metals": 0.057832750003078325,
+     "machinery": 0.0502788046423525,
+     "semiconductors": 0,
+     "electronics": 0.0502788046423525
+    }
+   },
+   "CAN": {
+    "year": 2022,
+    "rates": {
+     "food": 0.0460354952965428,
+     "energy": 0.05,
+     "medicine": 0.011419083174245299,
+     "apparel_household": 0.05268783848763026,
+     "chemicals": 0.011866924114511599,
+     "vehicles": 0.0498992015052962,
+     "metals": 0.08320900969321327,
+     "machinery": 0.0469299193113073,
+     "semiconductors": 0,
+     "electronics": 0.0469299193113073
+    }
+   },
+   "MEX": {
+    "year": 2022,
+    "rates": {
+     "food": 0.0417184535265059,
+     "energy": 0.050040442656065796,
+     "medicine": 0.050040442656065796,
+     "apparel_household": 0.050040442656065796,
+     "chemicals": 0.050040442656065796,
+     "vehicles": 0.0539977358011511,
+     "metals": 0.0548043516622435,
+     "machinery": 0.0343861770818389,
+     "semiconductors": 0,
+     "electronics": 0.0343861770818389
+    }
+   },
+   "TWN": {
+    "year": 2022,
+    "rates": {
+     "food": 0.061418463888292994,
+     "energy": 0.0501575922244454,
+     "medicine": 0.0338473100822224,
+     "apparel_household": 0.06181692505364212,
+     "chemicals": 0.0364286342253747,
+     "vehicles": 0.04610769275208711,
+     "metals": 0.06367962791408434,
+     "machinery": 0.049053560949521506,
+     "semiconductors": 0,
+     "electronics": 0.049053560949521506
+    }
+   },
+   "WLD": {
+    "year": 2022,
+    "rates": {
+     "food": 0.061418463888292994,
+     "energy": 0.0501575922244454,
+     "medicine": 0.0338473100822224,
+     "apparel_household": 0.06181692505364212,
+     "chemicals": 0.0364286342253747,
+     "vehicles": 0.04610769275208711,
+     "metals": 0.06367962791408434,
+     "machinery": 0.049053560949521506,
+     "semiconductors": 0,
+     "electronics": 0.049053560949521506
+    }
+   }
+  },
+  "ARE": {
+   "KOR": {
+    "year": 2022,
+    "rates": {
+     "food": 0.9074317355019861,
+     "energy": 0.05,
+     "medicine": 0.0392974521080641,
+     "apparel_household": 0.04855427407563328,
+     "chemicals": 0.0430370902752614,
+     "vehicles": 0.0499899904361206,
+     "metals": 0.0469874333450284,
+     "machinery": 0.0392802156594189,
+     "semiconductors": 0,
+     "electronics": 0.0392802156594189
+    }
+   },
+   "CHN": {
+    "year": 2022,
+    "rates": {
+     "food": 0.253293940612978,
+     "energy": 0.05,
+     "medicine": 0.047751318566411696,
+     "apparel_household": 0.04964855175297198,
+     "chemicals": 0.0482552480508996,
+     "vehicles": 0.042567039311052,
+     "metals": 0.04962710559619246,
+     "machinery": 0.0161756904325633,
+     "semiconductors": 0,
+     "electronics": 0.0161756904325633
+    }
+   },
+   "HKG": {
+    "year": 2022,
+    "rates": {
+     "food": 0.0511043319840874,
+     "energy": 0.0196575229945556,
+     "medicine": 0.049953528591674796,
+     "apparel_household": 0.04589985101638477,
+     "chemicals": 0.0499779541785242,
+     "vehicles": 0.0499549343834856,
+     "metals": 0.039749313840982965,
+     "machinery": 0.0174771329246038,
+     "semiconductors": 0,
+     "electronics": 0.0174771329246038
+    }
+   },
+   "JPN": {
+    "year": 2022,
+    "rates": {
+     "food": 0.047663057425394104,
+     "energy": 0.05,
+     "medicine": 0.0424944420172689,
+     "apparel_household": 0.04892720690376544,
+     "chemicals": 0.0428584390336672,
+     "vehicles": 0.0499971675204021,
+     "metals": 0.03680313432678937,
+     "machinery": 0.0353098140396407,
+     "semiconductors": 0,
+     "electronics": 0.0353098140396407
+    }
+   },
+   "USA": {
+    "year": 2022,
+    "rates": {
+     "food": 0.045930605313219,
+     "energy": 0.05,
+     "medicine": 0.0313983228841663,
+     "apparel_household": 0.04417277541458594,
+     "chemicals": 0.0319764169112043,
+     "vehicles": 0.044531344648618194,
+     "metals": 0.039663882698978,
+     "machinery": 0.04330900277858771,
+     "semiconductors": 0,
+     "electronics": 0.04330900277858771
+    }
+   },
+   "CAN": {
+    "year": 2022,
+    "rates": {
+     "food": 0.0487434910247261,
+     "energy": 0.05,
+     "medicine": 0.0278244435070396,
+     "apparel_household": 0.04721122118928596,
+     "chemicals": 0.0257297565853207,
+     "vehicles": 0.0454402031714465,
+     "metals": 0.03344960587499262,
+     "machinery": 0.0378633560537319,
+     "semiconductors": 0,
+     "electronics": 0.0378633560537319
+    }
+   },
+   "MEX": {
+    "year": 2022,
+    "rates": {
+     "food": 0.030843434089909,
+     "energy": 0.05,
+     "medicine": 0.046186108770641,
+     "apparel_household": 0.04263121955822032,
+     "chemicals": 0.045573030067332,
+     "vehicles": 0.049989257836993206,
+     "metals": 0.03384079360716946,
+     "machinery": 0.0254378436972181,
+     "semiconductors": 0,
+     "electronics": 0.0254378436972181
+    }
+   },
+   "TWN": {
+    "year": 2022,
+    "rates": {
+     "food": 0.09202593448369219,
+     "energy": 0.05,
+     "medicine": 0.036345108836154896,
+     "apparel_household": 0.0483595077532474,
+     "chemicals": 0.0377183556403359,
+     "vehicles": 0.047035789018229704,
+     "metals": 0.037486040894556136,
+     "machinery": 0.029228398584827498,
+     "semiconductors": 0,
+     "electronics": 0.029228398584827498
+    }
+   },
+   "WLD": {
+    "year": 2022,
+    "rates": {
+     "food": 0.0851629381838957,
+     "energy": 0.012326381237881401,
+     "medicine": 0.0280218025479807,
+     "apparel_household": 0.04222091447868312,
+     "chemicals": 0.0260221183009256,
+     "vehicles": 0.045030647063280395,
+     "metals": 0.023390989893550925,
+     "machinery": 0.0273253891410995,
+     "semiconductors": 0,
+     "electronics": 0.0273253891410995
+    }
+   }
+  },
+  "ISR": {
+   "KOR": {
+    "year": 2022,
+    "rates": {
+     "food": 0.00649955959856113,
+     "energy": 0,
+     "medicine": 0.00165759989972271,
+     "apparel_household": 0.010341325352864758,
+     "chemicals": 0.00281254758184856,
+     "vehicles": 0.038046045570369905,
+     "metals": 0.027056275888758065,
+     "machinery": 0.011303979597129801,
+     "semiconductors": 0,
+     "electronics": 0.011303979597129801
+    }
+   },
+   "CHN": {
+    "year": 2022,
+    "rates": {
+     "food": 0.173799067974604,
+     "energy": 0,
+     "medicine": 0.0115066390520091,
+     "apparel_household": 0.01399223337652402,
+     "chemicals": 0.0120177493269782,
+     "vehicles": 0.037228464299775596,
+     "metals": 0.028130821823203384,
+     "machinery": 0.033465914552257996,
+     "semiconductors": 0,
+     "electronics": 0.033465914552257996
+    }
+   },
+   "HKG": {
+    "year": 2022,
+    "rates": {
+     "food": 0.0910912143332831,
+     "energy": 0,
+     "medicine": 0.0019403712659272,
+     "apparel_household": 0.011613640887773932,
+     "chemicals": 0.00292181506122969,
+     "vehicles": 0.0328095605105811,
+     "metals": 0.005989772417312396,
+     "machinery": 0.011423751886440401,
+     "semiconductors": 0,
+     "electronics": 0.011423751886440401
+    }
+   },
+   "JPN": {
+    "year": 2022,
+    "rates": {
+     "food": 0.030157770839026,
+     "energy": 0.024859299712497597,
+     "medicine": 0.00533420969912068,
+     "apparel_household": 0.0064296681979976655,
+     "chemicals": 0.006147436838067209,
+     "vehicles": 0.0376037856341098,
+     "metals": 0.017658420859478975,
+     "machinery": 0.0176092866748197,
+     "semiconductors": 0,
+     "electronics": 0.0176092866748197
+    }
+   },
+   "USA": {
+    "year": 2022,
+    "rates": {
+     "food": 0.140307282380994,
+     "energy": 0,
+     "medicine": 0.0000250723336988697,
+     "apparel_household": 0.000060076258482525984,
+     "chemicals": 0.0000213640512622208,
+     "vehicles": 0,
+     "metals": 0.00014662624701106228,
+     "machinery": 0.0000972888510340553,
+     "semiconductors": 0,
+     "electronics": 0.0000972888510340553
+    }
+   },
+   "CAN": {
+    "year": 2022,
+    "rates": {
+     "food": 0.0577951487083938,
+     "energy": 0,
+     "medicine": 0,
+     "apparel_household": 0.00010752968387024619,
+     "chemicals": 0,
+     "vehicles": 0,
+     "metals": 0.00008818912280751767,
+     "machinery": 0.0000202785742855879,
+     "semiconductors": 0,
+     "electronics": 0.0000202785742855879
+    }
+   },
+   "MEX": {
+    "year": 2022,
+    "rates": {
+     "food": 0.0856732792212532,
+     "energy": 0.0373468008783679,
+     "medicine": 0.005664420256409511,
+     "apparel_household": 0.013599683909097694,
+     "chemicals": 0.00137340571285951,
+     "vehicles": 0.045593996901738,
+     "metals": 0.07392326709449196,
+     "machinery": 0.0146654873084673,
+     "semiconductors": 0,
+     "electronics": 0.0146654873084673
+    }
+   },
+   "TWN": {
+    "year": 2022,
+    "rates": {
+     "food": 0.11490898104578101,
+     "energy": 0.00013317006563999,
+     "medicine": 0.00732868205753759,
+     "apparel_household": 0.012051296681766594,
+     "chemicals": 0.00746107871330701,
+     "vehicles": 0.0284042101189551,
+     "metals": 0.012929482440078998,
+     "machinery": 0.0213651255460892,
+     "semiconductors": 0,
+     "electronics": 0.0213651255460892
+    }
+   },
+   "WLD": {
+    "year": 2022,
+    "rates": {
+     "food": 0.11310510332704901,
+     "energy": 0.000131015632609029,
+     "medicine": 0.00677692390620176,
+     "apparel_household": 0.011201228886190346,
+     "chemicals": 0.00693665657717198,
+     "vehicles": 0.0262408366099505,
+     "metals": 0.011519590305860155,
+     "machinery": 0.0186108985585408,
+     "semiconductors": 0,
+     "electronics": 0.0186108985585408
+    }
+   }
+  },
+  "USA": {
+   "KOR": {
+    "year": 2022,
+    "rates": {
+     "food": 0.00373746244340975,
+     "energy": 0,
+     "medicine": 0,
+     "apparel_household": 0.0012593374101849538,
+     "chemicals": 0,
+     "vehicles": 0.0000232593493284874,
+     "metals": 0,
+     "machinery": 0,
+     "semiconductors": 0,
+     "electronics": 0
+    }
+   },
+   "CHN": {
+    "year": 2022,
+    "rates": {
+     "food": 0.23038626703796927,
+     "energy": 0.16362053656832387,
+     "medicine": 0.18575063090940208,
+     "apparel_household": 0.23524386686991217,
+     "chemicals": 0.1858374829493587,
+     "vehicles": 0.1796155156462786,
+     "metals": 0.19143675607713512,
+     "machinery": 0.17200423652849736,
+     "semiconductors": 0.162995962080816,
+     "electronics": 0.17200423652849736
+    }
+   },
+   "HKG": {
+    "year": 2022,
+    "rates": {
+     "food": 0.0527659218667513,
+     "energy": 0.0329898402144023,
+     "medicine": 0.0198729878588723,
+     "apparel_household": 0.06507371731800587,
+     "chemicals": 0.0213894144634273,
+     "vehicles": 0.0116149105169711,
+     "metals": 0.025043006632693276,
+     "machinery": 0.00743242001084994,
+     "semiconductors": 0,
+     "electronics": 0.00743242001084994
+    }
+   },
+   "JPN": {
+    "year": 2022,
+    "rates": {
+     "food": 0.0438626731123122,
+     "energy": 0.00029722918328412896,
+     "medicine": 0.0123776726154583,
+     "apparel_household": 0.03126069522485937,
+     "chemicals": 0.018313971515188102,
+     "vehicles": 0.023280240028537902,
+     "metals": 0.013316854232568853,
+     "machinery": 0.00853988187394881,
+     "semiconductors": 0,
+     "electronics": 0.00853988187394881
+    }
+   },
+   "SAU": {
+    "year": 2022,
+    "rates": {
+     "food": 0.0858422573549147,
+     "energy": 0.0161432349681854,
+     "medicine": 0.00534049126646291,
+     "apparel_household": 0.023650722911458314,
+     "chemicals": 0.00787707084845946,
+     "vehicles": 0.0240598978974523,
+     "metals": 0.013597851297122092,
+     "machinery": 0.0101141287774335,
+     "semiconductors": 0,
+     "electronics": 0.0101141287774335
+    }
+   },
+   "ARE": {
+    "year": 2022,
+    "rates": {
+     "food": 0.0663874608697593,
+     "energy": 0.0155494232456134,
+     "medicine": 0.00469729643613311,
+     "apparel_household": 0.0547942304144812,
+     "chemicals": 0.015401161040714999,
+     "vehicles": 0.0117743521417835,
+     "metals": 0.010468964290658508,
+     "machinery": 0.016065386532232898,
+     "semiconductors": 0,
+     "electronics": 0.016065386532232898
+    }
+   },
+   "QAT": {
+    "year": 2022,
+    "rates": {
+     "food": 0.10450137000939601,
+     "energy": 0.0161432349681854,
+     "medicine": 0.00190798554459354,
+     "apparel_household": 0.07388360636043129,
+     "chemicals": 0.0019079998965605299,
+     "vehicles": 0.00130160269495533,
+     "metals": 0.005367448748794893,
+     "machinery": 0.015181512120002,
+     "semiconductors": 0,
+     "electronics": 0.015181512120002
+    }
+   },
+   "KWT": {
+    "year": 2022,
+    "rates": {
+     "food": 0.0694116230404039,
+     "energy": 0.0158364892989891,
+     "medicine": 0.0000058844927173002705,
+     "apparel_household": 0.053243893851093294,
+     "chemicals": 0.0000438087201482564,
+     "vehicles": 0.000198970102820792,
+     "metals": 0.0238441718458475,
+     "machinery": 0.0115235466717002,
+     "semiconductors": 0,
+     "electronics": 0.0115235466717002
+    }
+   },
+   "IRQ": {
+    "year": 2022,
+    "rates": {
+     "food": 0.021649554881121903,
+     "energy": 0.0161432349681854,
+     "medicine": 0.016135040856194,
+     "apparel_household": 0.01477712440057375,
+     "chemicals": 0.016135040856194,
+     "vehicles": 0,
+     "metals": 0,
+     "machinery": 0.00360434007054107,
+     "semiconductors": 0,
+     "electronics": 0.00360434007054107
+    }
+   },
+   "OMN": {
+    "year": 2022,
+    "rates": {
+     "food": 0,
+     "energy": 0,
+     "medicine": 0,
+     "apparel_household": 0,
+     "chemicals": 0,
+     "vehicles": 0,
+     "metals": 0,
+     "machinery": 0,
+     "semiconductors": 0,
+     "electronics": 0
+    }
+   },
+   "ISR": {
+    "year": 2022,
+    "rates": {
+     "food": 0.025371034635041298,
+     "energy": 0,
+     "medicine": 0,
+     "apparel_household": 0,
+     "chemicals": 0,
+     "vehicles": 0,
+     "metals": 0,
+     "machinery": 0,
+     "semiconductors": 0,
+     "electronics": 0
+    }
+   },
+   "TWN": {
+    "year": 2022,
+    "rates": {
+     "food": 0.047926626836133704,
+     "energy": 0.013756317607145201,
+     "medicine": 0.0146999891486741,
+     "apparel_household": 0.06984707321514033,
+     "chemicals": 0.0181367108165559,
+     "vehicles": 0.0427602995954318,
+     "metals": 0.014600660804030274,
+     "machinery": 0.00886355988391636,
+     "semiconductors": 0,
+     "electronics": 0.00886355988391636
+    }
+   },
+   "WLD": {
+    "year": 2022,
+    "rates": {
+     "food": 0.023841452150671797,
+     "energy": 0.0030142652860810797,
+     "medicine": 0.0118060649645059,
+     "apparel_household": 0.06142213479089611,
+     "chemicals": 0.0124331678069409,
+     "vehicles": 0.00882720908108682,
+     "metals": 0.008856456337394075,
+     "machinery": 0.0051241279657566596,
+     "semiconductors": 0,
+     "electronics": 0.0051241279657566596
+    }
+   }
+  },
+  "CAN": {
+   "KOR": {
+    "year": 2022,
+    "rates": {
+     "food": 0.08135730980910949,
+     "energy": 0,
+     "medicine": 0.015798171655098402,
+     "apparel_household": 0.001347836624451998,
+     "chemicals": 0.010070567290224798,
+     "vehicles": 0.0012471652036781201,
+     "metals": 0,
+     "machinery": 0,
+     "semiconductors": 0,
+     "electronics": 0
+    }
+   },
+   "CHN": {
+    "year": 2022,
+    "rates": {
+     "food": 0.08227513594031519,
+     "energy": 0.00633164431147509,
+     "medicine": 0.0199636476669411,
+     "apparel_household": 0.07570706469997018,
+     "chemicals": 0.0138907452408899,
+     "vehicles": 0.0447230137910165,
+     "metals": 0.014970045336471872,
+     "machinery": 0.00519505885051559,
+     "semiconductors": 0,
+     "electronics": 0.00519505885051559
+    }
+   },
+   "HKG": {
+    "year": 2022,
+    "rates": {
+     "food": 0.0949065368317053,
+     "energy": 0.0005360412676639581,
+     "medicine": 0.0196815075626532,
+     "apparel_household": 0.06329308841113926,
+     "chemicals": 0.0160191537276598,
+     "vehicles": 0.0388765971751843,
+     "metals": 0.015955952721501417,
+     "machinery": 0.00359738275245765,
+     "semiconductors": 0,
+     "electronics": 0.00359738275245765
+    }
+   },
+   "JPN": {
+    "year": 2022,
+    "rates": {
+     "food": 0.036938918610532,
+     "energy": 0,
+     "medicine": 0,
+     "apparel_household": 0.0010270949332606028,
+     "chemicals": 0.00000129166307352133,
+     "vehicles": 0.00028543126701697797,
+     "metals": 0,
+     "machinery": 0,
+     "semiconductors": 0,
+     "electronics": 0
+    }
+   },
+   "SAU": {
+    "year": 2022,
+    "rates": {
+     "food": 0.0222067993576603,
+     "energy": 1.12501393835443e-7,
+     "medicine": 0.000854405005154655,
+     "apparel_household": 0.04830922749717171,
+     "chemicals": 0.000593735258467118,
+     "vehicles": 0.0269175318301994,
+     "metals": 0.000035998374723137085,
+     "machinery": 0.0009508866030241781,
+     "semiconductors": 0,
+     "electronics": 0.0009508866030241781
+    }
+   },
+   "ARE": {
+    "year": 2022,
+    "rates": {
+     "food": 0.051189611333504505,
+     "energy": 0,
+     "medicine": 0.032357499987872,
+     "apparel_household": 0.057238590746105954,
+     "chemicals": 0.0243798604035768,
+     "vehicles": 0.0373783981920788,
+     "metals": 0.01611957285632646,
+     "machinery": 0.0018088275568846398,
+     "semiconductors": 0,
+     "electronics": 0.0018088275568846398
+    }
+   },
+   "QAT": {
+    "year": 2022,
+    "rates": {
+     "food": 0.00479565380619364,
+     "energy": 0,
+     "medicine": 0.000889785629396775,
+     "apparel_household": 0.06728906251618665,
+     "chemicals": 0.000878972072437149,
+     "vehicles": 0.0115076407967003,
+     "metals": 0.00006840990096115613,
+     "machinery": 0.0307459270189905,
+     "semiconductors": 0,
+     "electronics": 0.0307459270189905
+    }
+   },
+   "KWT": {
+    "year": 2022,
+    "rates": {
+     "food": 0.057244875331271,
+     "energy": 0,
+     "medicine": 0.000511489970835106,
+     "apparel_household": 0.051727251305477874,
+     "chemicals": 0.000511441515658213,
+     "vehicles": 0.03,
+     "metals": 0.02968397484420913,
+     "machinery": 0.00217649518936152,
+     "semiconductors": 0,
+     "electronics": 0.00217649518936152
+    }
+   },
+   "IRQ": {
+    "year": 2022,
+    "rates": {
+     "food": 0.040016553472084,
+     "energy": 0,
+     "medicine": 0,
+     "apparel_household": 0.0799558292239889,
+     "chemicals": 0,
+     "vehicles": 0.0353270101962121,
+     "metals": 0.018007054294172698,
+     "machinery": 0.00009540090861141239,
+     "semiconductors": 0,
+     "electronics": 0.00009540090861141239
+    }
+   },
+   "OMN": {
+    "year": 2022,
+    "rates": {
+     "food": 0.0442270273651208,
+     "energy": 0,
+     "medicine": 0.000859541595858377,
+     "apparel_household": 0.09951596609358548,
+     "chemicals": 0.00047634710499901,
+     "vehicles": 0,
+     "metals": 0.005416464489648543,
+     "machinery": 0.00020905743602382998,
+     "semiconductors": 0,
+     "electronics": 0.00020905743602382998
+    }
+   },
+   "ISR": {
+    "year": 2022,
+    "rates": {
+     "food": 0.07862790097798329,
+     "energy": 0,
+     "medicine": 0,
+     "apparel_household": 0,
+     "chemicals": 5.79992701303141e-7,
+     "vehicles": 0,
+     "metals": 0,
+     "machinery": 0,
+     "semiconductors": 0,
+     "electronics": 0
+    }
+   },
+   "TWN": {
+    "year": 2022,
+    "rates": {
+     "food": 0.12558939527282098,
+     "energy": 0.00045028338621132204,
+     "medicine": 0.0149057438215637,
+     "apparel_household": 0.07422128577518952,
+     "chemicals": 0.0116237786559195,
+     "vehicles": 0.0498506969675171,
+     "metals": 0.005796826530191298,
+     "machinery": 0.0037050943575115303,
+     "semiconductors": 0,
+     "electronics": 0.0037050943575115303
+    }
+   },
+   "WLD": {
+    "year": 2022,
+    "rates": {
+     "food": 0.09721265649093941,
+     "energy": 0.00000901157245904935,
+     "medicine": 0.00152145401586821,
+     "apparel_household": 0.03706897492942695,
+     "chemicals": 0.00110179971911986,
+     "vehicles": 0.005127501341034379,
+     "metals": 0.002392085922986557,
+     "machinery": 0.0014382919496559198,
+     "semiconductors": 0,
+     "electronics": 0.0014382919496559198
+    }
+   }
+  },
+  "MEX": {
+   "KOR": {
+    "year": 2022,
+    "rates": {
+     "food": 0.121263480610684,
+     "energy": 0.0175,
+     "medicine": 0.041187553933939906,
+     "apparel_household": 0.0736541705241824,
+     "chemicals": 0.034686531357065,
+     "vehicles": 0.05524499953560379,
+     "metals": 0.048598990376531405,
+     "machinery": 0.0158602750790527,
+     "semiconductors": 0,
+     "electronics": 0.0158602750790527
+    }
+   },
+   "CHN": {
+    "year": 2022,
+    "rates": {
+     "food": 0.136341286266075,
+     "energy": 0.000210947051316279,
+     "medicine": 0.027346934021315602,
+     "apparel_household": 0.12153721948991755,
+     "chemicals": 0.026575779940122,
+     "vehicles": 0.12662861512485202,
+     "metals": 0.04353321780868449,
+     "machinery": 0.0154747892235148,
+     "semiconductors": 0,
+     "electronics": 0.0154747892235148
+    }
+   },
+   "HKG": {
+    "year": 2022,
+    "rates": {
+     "food": 0.2,
+     "energy": 0.0135636080770706,
+     "medicine": 0.12096634168439299,
+     "apparel_household": 0.09668815100660094,
+     "chemicals": 0.06410017438617001,
+     "vehicles": 0.00809222457602644,
+     "metals": 0.0544448008054863,
+     "machinery": 0.007541711190062011,
+     "semiconductors": 0,
+     "electronics": 0.007541711190062011
+    }
+   },
+   "JPN": {
+    "year": 2022,
+    "rates": {
+     "food": 0.018161971831503,
+     "energy": 0,
+     "medicine": 0,
+     "apparel_household": 0,
+     "chemicals": 0,
+     "vehicles": 0.0167905824899665,
+     "metals": 0.0007014704450896366,
+     "machinery": 0,
+     "semiconductors": 0,
+     "electronics": 0
+    }
+   },
+   "SAU": {
+    "year": 2022,
+    "rates": {
+     "food": 0.0639192397660819,
+     "energy": 0.0639192397660819,
+     "medicine": 0.0125,
+     "apparel_household": 0.15,
+     "chemicals": 0.0464235877246289,
+     "vehicles": 0.0639192397660819,
+     "metals": 0.0639192397660819,
+     "machinery": 0.00403653095370887,
+     "semiconductors": 0,
+     "electronics": 0.00403653095370887
+    }
+   },
+   "ARE": {
+    "year": 2022,
+    "rates": {
+     "food": 0.00987743419037909,
+     "energy": 0.00987743419037909,
+     "medicine": 0.125,
+     "apparel_household": 0.021428570747375503,
+     "chemicals": 0.0599329913704074,
+     "vehicles": 0.0125,
+     "metals": 0.061328882064140514,
+     "machinery": 0.0209313037926813,
+     "semiconductors": 0,
+     "electronics": 0.0209313037926813
+    }
+   },
+   "QAT": {
+    "year": 2022,
+    "rates": {
+     "food": 0.00000288958989038806,
+     "energy": 0.00000288958989038806,
+     "medicine": 0,
+     "apparel_household": 0.00000288958989038806,
+     "chemicals": 0,
+     "vehicles": 0.00000288958989038806,
+     "metals": 0.00000223332053292602,
+     "machinery": 0.00000288958989038806,
+     "semiconductors": 0,
+     "electronics": 0.00000288958989038806
+    }
+   },
+   "OMN": {
+    "year": 2022,
+    "rates": {
+     "food": 0.0007877165191808549,
+     "energy": 0.0007877165191808549,
+     "medicine": 0.00000936817105265742,
+     "apparel_household": 0.0007877165191808549,
+     "chemicals": 0.000758879059728325,
+     "vehicles": 0.0007877165191808549,
+     "metals": 0.107748280259595,
+     "machinery": 0.0007877165191808549,
+     "semiconductors": 0,
+     "electronics": 0.0007877165191808549
+    }
+   },
+   "ISR": {
+    "year": 2022,
+    "rates": {
+     "food": 0.11955091311393501,
+     "energy": 0.0000990517370658045,
+     "medicine": 0,
+     "apparel_household": 0,
+     "chemicals": 0,
+     "vehicles": 0,
+     "metals": 0.000062958703741989,
+     "machinery": 0,
+     "semiconductors": 0,
+     "electronics": 0
+    }
+   },
+   "TWN": {
+    "year": 2022,
+    "rates": {
+     "food": 0.183339498538269,
+     "energy": 0.000055477400567900895,
+     "medicine": 0.0298739652819234,
+     "apparel_household": 0.10908286138798846,
+     "chemicals": 0.0331706228153694,
+     "vehicles": 0.09588919181760171,
+     "metals": 0.03506547081563516,
+     "machinery": 0.015952822482356598,
+     "semiconductors": 0,
+     "electronics": 0.015952822482356598
+    }
+   },
+   "WLD": {
+    "year": 2022,
+    "rates": {
+     "food": 0.0112394308806485,
+     "energy": 0.00000438970189768542,
+     "medicine": 0.0049188036259629,
+     "apparel_household": 0.07846582985755074,
+     "chemicals": 0.00497379037620712,
+     "vehicles": 0.0394482630904898,
+     "metals": 0.014329403098005422,
+     "machinery": 0.006963835785621941,
+     "semiconductors": 0,
+     "electronics": 0.006963835785621941
+    }
+   }
+  },
+  "TWN": {
+   "KOR": {
+    "year": 2022,
+    "rates": {
+     "food": 0.12376429771917753,
+     "energy": 0.01327272732149471,
+     "medicine": 0.003337529139085249,
+     "apparel_household": 0.04808530040341874,
+     "chemicals": 0.03219657740388606,
+     "vehicles": 0.0880553591615493,
+     "metals": 0.017783914451511208,
+     "machinery": 0.02914927329665931,
+     "semiconductors": 0,
+     "electronics": 0.025699017385683455
+    }
+   },
+   "CHN": {
+    "year": 2022,
+    "rates": {
+     "food": 0.12376429771917753,
+     "energy": 0.01327272732149471,
+     "medicine": 0.003337529139085249,
+     "apparel_household": 0.04808530040341874,
+     "chemicals": 0.03219657740388606,
+     "vehicles": 0.0880553591615493,
+     "metals": 0.017783914451511208,
+     "machinery": 0.02914927329665931,
+     "semiconductors": 0,
+     "electronics": 0.025699017385683455
+    }
+   },
+   "HKG": {
+    "year": 2022,
+    "rates": {
+     "food": 0.12376429771917753,
+     "energy": 0.01327272732149471,
+     "medicine": 0.003337529139085249,
+     "apparel_household": 0.04808530040341874,
+     "chemicals": 0.03219657740388606,
+     "vehicles": 0.0880553591615493,
+     "metals": 0.017783914451511208,
+     "machinery": 0.02914927329665931,
+     "semiconductors": 0,
+     "electronics": 0.025699017385683455
+    }
+   },
+   "JPN": {
+    "year": 2022,
+    "rates": {
+     "food": 0.12376429771917753,
+     "energy": 0.01327272732149471,
+     "medicine": 0.003337529139085249,
+     "apparel_household": 0.04808530040341874,
+     "chemicals": 0.03219657740388606,
+     "vehicles": 0.0880553591615493,
+     "metals": 0.017783914451511208,
+     "machinery": 0.02914927329665931,
+     "semiconductors": 0,
+     "electronics": 0.025699017385683455
+    }
+   },
+   "SAU": {
+    "year": 2022,
+    "rates": {
+     "food": 0.12376429771917753,
+     "energy": 0.01327272732149471,
+     "medicine": 0.003337529139085249,
+     "apparel_household": 0.04808530040341874,
+     "chemicals": 0.03219657740388606,
+     "vehicles": 0.0880553591615493,
+     "metals": 0.017783914451511208,
+     "machinery": 0.02914927329665931,
+     "semiconductors": 0,
+     "electronics": 0.025699017385683455
+    }
+   },
+   "ARE": {
+    "year": 2022,
+    "rates": {
+     "food": 0.12376429771917753,
+     "energy": 0.01327272732149471,
+     "medicine": 0.003337529139085249,
+     "apparel_household": 0.04808530040341874,
+     "chemicals": 0.03219657740388606,
+     "vehicles": 0.0880553591615493,
+     "metals": 0.017783914451511208,
+     "machinery": 0.02914927329665931,
+     "semiconductors": 0,
+     "electronics": 0.025699017385683455
+    }
+   },
+   "QAT": {
+    "year": 2022,
+    "rates": {
+     "food": 0.12376429771917753,
+     "energy": 0.01327272732149471,
+     "medicine": 0.003337529139085249,
+     "apparel_household": 0.04808530040341874,
+     "chemicals": 0.03219657740388606,
+     "vehicles": 0.0880553591615493,
+     "metals": 0.017783914451511208,
+     "machinery": 0.02914927329665931,
+     "semiconductors": 0,
+     "electronics": 0.025699017385683455
+    }
+   },
+   "KWT": {
+    "year": 2022,
+    "rates": {
+     "food": 0.12376429771917753,
+     "energy": 0.01327272732149471,
+     "medicine": 0.003337529139085249,
+     "apparel_household": 0.04808530040341874,
+     "chemicals": 0.03219657740388606,
+     "vehicles": 0.0880553591615493,
+     "metals": 0.017783914451511208,
+     "machinery": 0.02914927329665931,
+     "semiconductors": 0,
+     "electronics": 0.025699017385683455
+    }
+   },
+   "IRQ": {
+    "year": 2022,
+    "rates": {
+     "food": 0.12376429771917753,
+     "energy": 0.01327272732149471,
+     "medicine": 0.003337529139085249,
+     "apparel_household": 0.04808530040341874,
+     "chemicals": 0.03219657740388606,
+     "vehicles": 0.0880553591615493,
+     "metals": 0.017783914451511208,
+     "machinery": 0.02914927329665931,
+     "semiconductors": 0,
+     "electronics": 0.025699017385683455
+    }
+   },
+   "OMN": {
+    "year": 2022,
+    "rates": {
+     "food": 0.12376429771917753,
+     "energy": 0.01327272732149471,
+     "medicine": 0.003337529139085249,
+     "apparel_household": 0.04808530040341874,
+     "chemicals": 0.03219657740388606,
+     "vehicles": 0.0880553591615493,
+     "metals": 0.017783914451511208,
+     "machinery": 0.02914927329665931,
+     "semiconductors": 0,
+     "electronics": 0.025699017385683455
+    }
+   },
+   "ISR": {
+    "year": 2022,
+    "rates": {
+     "food": 0.12376429771917753,
+     "energy": 0.01327272732149471,
+     "medicine": 0.003337529139085249,
+     "apparel_household": 0.04808530040341874,
+     "chemicals": 0.03219657740388606,
+     "vehicles": 0.0880553591615493,
+     "metals": 0.017783914451511208,
+     "machinery": 0.02914927329665931,
+     "semiconductors": 0,
+     "electronics": 0.025699017385683455
+    }
+   },
+   "USA": {
+    "year": 2022,
+    "rates": {
+     "food": 0.12376429771917753,
+     "energy": 0.01327272732149471,
+     "medicine": 0.003337529139085249,
+     "apparel_household": 0.04808530040341874,
+     "chemicals": 0.03219657740388606,
+     "vehicles": 0.0880553591615493,
+     "metals": 0.017783914451511208,
+     "machinery": 0.02914927329665931,
+     "semiconductors": 0,
+     "electronics": 0.025699017385683455
+    }
+   },
+   "CAN": {
+    "year": 2022,
+    "rates": {
+     "food": 0.12376429771917753,
+     "energy": 0.01327272732149471,
+     "medicine": 0.003337529139085249,
+     "apparel_household": 0.04808530040341874,
+     "chemicals": 0.03219657740388606,
+     "vehicles": 0.0880553591615493,
+     "metals": 0.017783914451511208,
+     "machinery": 0.02914927329665931,
+     "semiconductors": 0,
+     "electronics": 0.025699017385683455
+    }
+   },
+   "MEX": {
+    "year": 2022,
+    "rates": {
+     "food": 0.12376429771917753,
+     "energy": 0.01327272732149471,
+     "medicine": 0.003337529139085249,
+     "apparel_household": 0.04808530040341874,
+     "chemicals": 0.03219657740388606,
+     "vehicles": 0.0880553591615493,
+     "metals": 0.017783914451511208,
+     "machinery": 0.02914927329665931,
+     "semiconductors": 0,
+     "electronics": 0.025699017385683455
+    }
+   },
+   "WLD": {
+    "year": 2022,
+    "rates": {
+     "food": 0.12376429771917753,
+     "energy": 0.01327272732149471,
+     "medicine": 0.003337529139085249,
+     "apparel_household": 0.04808530040341874,
+     "chemicals": 0.03219657740388606,
+     "vehicles": 0.0880553591615493,
+     "metals": 0.017783914451511208,
+     "machinery": 0.02914927329665931,
+     "semiconductors": 0,
+     "electronics": 0.025699017385683455
+    }
+   }
+  },
+  "EUN": {
+   "KOR": {
+    "year": 2022,
+    "rates": {
+     "food": 0.000469126128337946,
+     "energy": 0,
+     "medicine": 0,
+     "apparel_household": 0,
+     "chemicals": 0,
+     "vehicles": 0,
+     "metals": 0,
+     "machinery": 0,
+     "semiconductors": 0,
+     "electronics": 0
+    }
+   },
+   "CHN": {
+    "year": 2022,
+    "rates": {
+     "food": 0.134372752718009,
+     "energy": 0.00489805835158492,
+     "medicine": 0.0471325086958878,
+     "apparel_household": 0.059304452998666,
+     "chemicals": 0.047845184493825806,
+     "vehicles": 0.0384030122278089,
+     "metals": 0.026296875543176564,
+     "machinery": 0.012345003082728002,
+     "semiconductors": 0,
+     "electronics": 0.012345003082728002
+    }
+   },
+   "HKG": {
+    "year": 2022,
+    "rates": {
+     "food": 0.09630374186674069,
+     "energy": 0.0031668911100421397,
+     "medicine": 0.0387550522365726,
+     "apparel_household": 0.0546873431969719,
+     "chemicals": 0.0448731566845414,
+     "vehicles": 0.0278183511097032,
+     "metals": 0.017584055464295815,
+     "machinery": 0.00451267493508024,
+     "semiconductors": 0,
+     "electronics": 0.00451267493508024
+    }
+   },
+   "JPN": {
+    "year": 2022,
+    "rates": {
+     "food": 0.0024731930588553098,
+     "energy": 0,
+     "medicine": 0.0019374835884163899,
+     "apparel_household": 0.001447619477196006,
+     "chemicals": 0.0006971372687631281,
+     "vehicles": 0.0288633262547607,
+     "metals": 0.0004389205947365857,
+     "machinery": 0.00186925123134704,
+     "semiconductors": 0,
+     "electronics": 0.00186925123134704
+    }
+   },
+   "SAU": {
+    "year": 2022,
+    "rates": {
+     "food": 0.06514538760401,
+     "energy": 0.0000193875453025554,
+     "medicine": 0.0325795164327479,
+     "apparel_household": 0.035371962134102736,
+     "chemicals": 0.0416749175705005,
+     "vehicles": 0.048682861210115204,
+     "metals": 0.011528552304080402,
+     "machinery": 0.0142920931701319,
+     "semiconductors": 0,
+     "electronics": 0.0142920931701319
+    }
+   },
+   "ARE": {
+    "year": 2022,
+    "rates": {
+     "food": 0.103091750825718,
+     "energy": 0.00000382345175221027,
+     "medicine": 0.015495047138187501,
+     "apparel_household": 0.04975418267196216,
+     "chemicals": 0.0319029916875039,
+     "vehicles": 0.0199850451343677,
+     "metals": 0.016390937410623703,
+     "machinery": 0.016465414463221098,
+     "semiconductors": 0,
+     "electronics": 0.016465414463221098
+    }
+   },
+   "QAT": {
+    "year": 2022,
+    "rates": {
+     "food": 0.0566587130320292,
+     "energy": 0.0000190234926099732,
+     "medicine": 0.0302307067737849,
+     "apparel_household": 0.054119394403308124,
+     "chemicals": 0.0431075796580056,
+     "vehicles": 0.0583966360101124,
+     "metals": 0.018400419218209663,
+     "machinery": 0.0109966645778786,
+     "semiconductors": 0,
+     "electronics": 0.0109966645778786
+    }
+   },
+   "KWT": {
+    "year": 2022,
+    "rates": {
+     "food": 0.0562618451012981,
+     "energy": 0.000992707427538873,
+     "medicine": 0.005302001691408939,
+     "apparel_household": 0.05196569379887948,
+     "chemicals": 0.032732157284746405,
+     "vehicles": 0.0936429226265155,
+     "metals": 0.020974180765257127,
+     "machinery": 0.0225577639301192,
+     "semiconductors": 0,
+     "electronics": 0.0225577639301192
+    }
+   },
+   "IRQ": {
+    "year": 2022,
+    "rates": {
+     "food": 0.0580938252294305,
+     "energy": 2.11679613374627e-11,
+     "medicine": 0.0292730220793944,
+     "apparel_household": 0.036981041023551944,
+     "chemicals": 0.036634201653376504,
+     "vehicles": 0.0271121744292131,
+     "metals": 0.009330713707439237,
+     "machinery": 0.021124663700828397,
+     "semiconductors": 0,
+     "electronics": 0.021124663700828397
+    }
+   },
+   "OMN": {
+    "year": 2022,
+    "rates": {
+     "food": 0.0868509098041927,
+     "energy": 0.0000185491643542302,
+     "medicine": 0.053134953733395406,
+     "apparel_household": 0.04245225695388356,
+     "chemicals": 0.0545384166239752,
+     "vehicles": 0.053931787596814294,
+     "metals": 0.029693030465578935,
+     "machinery": 0.0268320782988014,
+     "semiconductors": 0,
+     "electronics": 0.0268320782988014
+    }
+   },
+   "ISR": {
+    "year": 2022,
+    "rates": {
+     "food": 0.010851691986847,
+     "energy": 0,
+     "medicine": 0.00000299949088783236,
+     "apparel_household": 0,
+     "chemicals": 0.0000027515012247366002,
+     "vehicles": 0,
+     "metals": 0,
+     "machinery": 0,
+     "semiconductors": 0,
+     "electronics": 0
+    }
+   },
+   "USA": {
+    "year": 2022,
+    "rates": {
+     "food": 0.0782057605572945,
+     "energy": 0.000695632401841013,
+     "medicine": 0.0162828073881887,
+     "apparel_household": 0.03690023624825993,
+     "chemicals": 0.0205198927466538,
+     "vehicles": 0.0405813163116051,
+     "metals": 0.012029069808721517,
+     "machinery": 0.0161635889327721,
+     "semiconductors": 0,
+     "electronics": 0.0161635889327721
+    }
+   },
+   "CAN": {
+    "year": 2022,
+    "rates": {
+     "food": 0.00522102250356003,
+     "energy": 0,
+     "medicine": 0,
+     "apparel_household": 0,
+     "chemicals": 0.00000203612086479788,
+     "vehicles": 0.00162811819267134,
+     "metals": 0,
+     "machinery": 0,
+     "semiconductors": 0,
+     "electronics": 0
+    }
+   },
+   "MEX": {
+    "year": 2022,
+    "rates": {
+     "food": 0.028863017064163297,
+     "energy": 0,
+     "medicine": 0.0000299703687703794,
+     "apparel_household": 0,
+     "chemicals": 0.00047725776856281303,
+     "vehicles": 0,
+     "metals": 0,
+     "machinery": 0,
+     "semiconductors": 0,
+     "electronics": 0
+    }
+   },
+   "TWN": {
+    "year": 2022,
+    "rates": {
+     "food": 0.0895613412220067,
+     "energy": 0.000314199394780061,
+     "medicine": 0.032049357040169604,
+     "apparel_household": 0.05768550680740879,
+     "chemicals": 0.0352638032446429,
+     "vehicles": 0.0568114825837661,
+     "metals": 0.012130507156790753,
+     "machinery": 0.0133785904596824,
+     "semiconductors": 0,
+     "electronics": 0.0133785904596824
+    }
+   }
+  }
+ }
+}

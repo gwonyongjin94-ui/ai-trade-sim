@@ -305,7 +305,7 @@ async function runOne(spec: RunSpec) {
 }
 
 const queue = [...todo]
-let aborted: string | null = null
+let aborted = null as string | null // 콜백 안에서 바뀌어 TS가 좁히지 않도록
 await Promise.all(
   Array.from({ length: Math.max(1, concurrency) }, async () => {
     for (let s = queue.shift(); s && !aborted; s = queue.shift()) {
