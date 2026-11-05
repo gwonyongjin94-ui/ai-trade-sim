@@ -143,7 +143,7 @@
 - Hua et al. (2024) *War and Peace (WarAgent): LLM-based Multi-Agent Simulation of World Wars*
 - Piatti et al. (2024) *Cooperate or Collapse (GovSim)*
 - Li et al. (2024) *EconAgent*
-- TradeWar 시뮬레이션 연구 (2025, GPT-4o-mini 6개국)
+- Kong et al. (2026) *TradeWar: A Benchmark for Execution-Grounded Trade Negotiation with Adaptive LLM Agents* (arXiv 2610.42004, GPT-4o-mini, 익명 6개국)
 - Atkin (2013) *Trade, Tastes, and Nutrition in India*
 - Alesina, Giuliano & Nunn (2013) *On the Origins of Gender Roles: Women and the Plough*
 - Hofstede (2001) *Culture's Consequences*; Hall (1976) *Beyond Culture*

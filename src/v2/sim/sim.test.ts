@@ -9,8 +9,9 @@ import { createWorld, statusQuoPolicies } from '../world'
 import { applyDecision, Game, keepPolicyAction } from './game'
 import { decisionSchema, describeObservation, LlmLeader, systemPrompt } from './llm'
 import { RuleLeader } from './rules'
+import { Scripted } from './scripted'
 import type { RuleKind } from './rules'
-import type { DecisionAction, DiplomacyAction, GameConfig, Leader, Observation } from './types'
+import type { GameConfig, Leader } from './types'
 import { DEFAULT_CONFIG } from './types'
 
 const world = createWorld()
@@ -19,27 +20,6 @@ const cfg = (over: Partial<GameConfig> = {}): GameConfig => ({ ...DEFAULT_CONFIG
 const all = (f: (b: BlocId) => Leader) => Object.fromEntries(BLOCS.map((b) => [b, f(b)])) as Record<BlocId, Leader>
 const rules = (kind: RuleKind) => all(() => new RuleLeader(kind))
 const REAL_NAMES = ['대한민국', '한국', '중국', '북한', '홍콩', '일본', '중동', '사우디', '이란', '이스라엘', '미국', '캐나다', '멕시코', '대만', '유럽연합', '미중']
-
-// 정해진 분기에 정해진 일을 하는 시험용 지도자
-class Scripted implements Leader {
-  kind = 'rule' as const
-  label = 'test:scripted'
-  seen: { round: 1 | 2; obs: Observation }[] = []
-  constructor(
-    private dip: (obs: Observation) => Partial<DiplomacyAction> = () => ({}),
-    private dec: (obs: Observation, a: DecisionAction) => void = () => {},
-  ) {}
-  async diplomacy(obs: Observation) {
-    this.seen.push({ round: 1, obs })
-    return { action: { statement: { text: '', tone: 'neutral' as const }, messages: [], proposals: [], ...this.dip(obs) } }
-  }
-  async decide(obs: Observation) {
-    this.seen.push({ round: 2, obs })
-    const a = keepPolicyAction(obs.policies[obs.country], obs.country)
-    this.dec(obs, a)
-    return { action: a }
-  }
-}
 
 describe('v2 게임 진행', () => {
   it('시작 정책을 그대로 다시 쓰면 정책이 한 자리도 바뀌지 않는다 (0.1% 단위 반올림)', () => {
