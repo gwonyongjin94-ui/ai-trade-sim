@@ -1,0 +1,1194 @@
+{
+ "meta": {
+  "source": "World Bank WDI API (NV.AGR.TOTL.ZS, NV.IND.TOTL.ZS, NV.IND.MANF.ZS, NV.SRV.TOTL.ZS, NY.GDP.PETR.RT.ZS, NY.GDP.NGAS.RT.ZS, NY.GDP.COAL.RT.ZS, NY.GDP.MINR.RT.ZS, NV.MNF.FBTO.ZS.UN, NV.MNF.TXTL.ZS.UN, NV.MNF.CHEM.ZS.UN, NV.MNF.MTRN.ZS.UN, NV.MNF.OTHR.ZS.UN, NY.GDP.MKTP.CD, SP.POP.TOTL, SL.TLF.TOTL.IN, NE.GDI.TOTL.ZS, NE.CON.PRVT.CD), latest value 2015–2023",
+  "fetched": "2026-11-05",
+  "note": "대만은 World Bank에 없다. data/v2/manual-2023.json 참고. 값 단위는 % (GDP 또는 제조업 부가가치 대비)"
+ },
+ "countries": {
+  "KOR": {
+   "bloc": "A",
+   "agriculturePct": {
+    "value": 1.44773871445502,
+    "year": 2023
+   },
+   "industryPct": {
+    "value": 32.5234690063974,
+    "year": 2023
+   },
+   "manufacturingPct": {
+    "value": 25.4551420827792,
+    "year": 2023
+   },
+   "servicesPct": {
+    "value": 58.8846232184384,
+    "year": 2023
+   },
+   "oilRentsPct": {
+    "value": 0.0283124162355571,
+    "year": 2021
+   },
+   "gasRentsPct": {
+    "value": 0.00519896806845811,
+    "year": 2021
+   },
+   "coalRentsPct": {
+    "value": 0.00109890187258597,
+    "year": 2021
+   },
+   "mineralRentsPct": {
+    "value": 0.000483293114651688,
+    "year": 2021
+   },
+   "mfgFoodPct": {
+    "value": 7.56034797596316,
+    "year": 2023
+   },
+   "mfgTextilePct": {
+    "value": 2.67123848556194,
+    "year": 2023
+   },
+   "mfgChemicalPct": {
+    "value": 12.1017989493277,
+    "year": 2023
+   },
+   "mfgMachineryTransportPct": {
+    "value": 42.0706664060189,
+    "year": 2023
+   },
+   "mfgOtherPct": {
+    "value": 35.5959481831283,
+    "year": 2023
+   }
+  },
+  "CHN": {
+   "bloc": "B",
+   "agriculturePct": {
+    "value": 6.88951941080068,
+    "year": 2023
+   },
+   "industryPct": {
+    "value": 36.7725030223561,
+    "year": 2023
+   },
+   "manufacturingPct": {
+    "value": 25.0144267929987,
+    "year": 2023
+   },
+   "servicesPct": {
+    "value": 56.3379775668432,
+    "year": 2023
+   },
+   "oilRentsPct": {
+    "value": 0.308578757061099,
+    "year": 2021
+   },
+   "gasRentsPct": {
+    "value": 0.210524604380993,
+    "year": 2021
+   },
+   "coalRentsPct": {
+    "value": 0.607568894164746,
+    "year": 2021
+   },
+   "mineralRentsPct": {
+    "value": 0.510049245324858,
+    "year": 2021
+   },
+   "mfgFoodPct": {
+    "value": 11.8250827576024,
+    "year": 2019
+   },
+   "mfgTextilePct": {
+    "value": 9.99191634312839,
+    "year": 2019
+   },
+   "mfgChemicalPct": {
+    "value": 10.8113828297999,
+    "year": 2019
+   },
+   "mfgMachineryTransportPct": {
+    "value": 24.52693529006,
+    "year": 2019
+   },
+   "mfgOtherPct": {
+    "value": 42.8446827794093,
+    "year": 2019
+   }
+  },
+  "PRK": {
+   "bloc": "B",
+   "agriculturePct": null,
+   "industryPct": null,
+   "manufacturingPct": null,
+   "servicesPct": null,
+   "oilRentsPct": null,
+   "gasRentsPct": null,
+   "coalRentsPct": null,
+   "mineralRentsPct": null,
+   "mfgFoodPct": null,
+   "mfgTextilePct": null,
+   "mfgChemicalPct": null,
+   "mfgMachineryTransportPct": null,
+   "mfgOtherPct": null
+  },
+  "HKG": {
+   "bloc": "B",
+   "agriculturePct": {
+    "value": 0.0379376159344696,
+    "year": 2023
+   },
+   "industryPct": {
+    "value": 6.28208009499498,
+    "year": 2023
+   },
+   "manufacturingPct": {
+    "value": 0.946125901898893,
+    "year": 2023
+   },
+   "servicesPct": {
+    "value": 91.4378389982591,
+    "year": 2023
+   },
+   "oilRentsPct": {
+    "value": 0.00035629289325357,
+    "year": 2021
+   },
+   "gasRentsPct": {
+    "value": 0,
+    "year": 2021
+   },
+   "coalRentsPct": {
+    "value": 0,
+    "year": 2021
+   },
+   "mineralRentsPct": {
+    "value": 0,
+    "year": 2021
+   },
+   "mfgFoodPct": {
+    "value": 35.1244023016452,
+    "year": 2023
+   },
+   "mfgTextilePct": {
+    "value": 3.07426317637842,
+    "year": 2023
+   },
+   "mfgChemicalPct": {
+    "value": 12.4051111651403,
+    "year": 2023
+   },
+   "mfgMachineryTransportPct": {
+    "value": 27.7115919712564,
+    "year": 2023
+   },
+   "mfgOtherPct": {
+    "value": 21.6846313855796,
+    "year": 2023
+   }
+  },
+  "MAC": {
+   "bloc": "B",
+   "agriculturePct": null,
+   "industryPct": {
+    "value": 5.43429807775942,
+    "year": 2023
+   },
+   "manufacturingPct": {
+    "value": 0.761339914760372,
+    "year": 2023
+   },
+   "servicesPct": {
+    "value": 90.8609311124641,
+    "year": 2023
+   },
+   "oilRentsPct": {
+    "value": 0,
+    "year": 2021
+   },
+   "gasRentsPct": {
+    "value": 0,
+    "year": 2021
+   },
+   "coalRentsPct": {
+    "value": 0,
+    "year": 2021
+   },
+   "mineralRentsPct": {
+    "value": 0,
+    "year": 2021
+   },
+   "mfgFoodPct": {
+    "value": 53.7002292662116,
+    "year": 2023
+   },
+   "mfgTextilePct": {
+    "value": 2.89639764021338,
+    "year": 2023
+   },
+   "mfgChemicalPct": {
+    "value": 4.43417161963577,
+    "year": 2023
+   },
+   "mfgMachineryTransportPct": null,
+   "mfgOtherPct": {
+    "value": 38.9692014739392,
+    "year": 2023
+   }
+  },
+  "JPN": {
+   "bloc": "C",
+   "agriculturePct": {
+    "value": 0.825345395457711,
+    "year": 2023
+   },
+   "industryPct": {
+    "value": 27.6517978744645,
+    "year": 2023
+   },
+   "manufacturingPct": {
+    "value": 19.4882904000273,
+    "year": 2023
+   },
+   "servicesPct": {
+    "value": 70.7921491218815,
+    "year": 2023
+   },
+   "oilRentsPct": {
+    "value": 0.00223132111964285,
+    "year": 2021
+   },
+   "gasRentsPct": {
+    "value": 0.00880700355707987,
+    "year": 2021
+   },
+   "coalRentsPct": {
+    "value": 0.000357494585802386,
+    "year": 2021
+   },
+   "mineralRentsPct": {
+    "value": 0.00720553637123228,
+    "year": 2021
+   },
+   "mfgFoodPct": {
+    "value": 12.1768137740345,
+    "year": 2023
+   },
+   "mfgTextilePct": {
+    "value": 1.50499178582412,
+    "year": 2023
+   },
+   "mfgChemicalPct": {
+    "value": 10.7938786653567,
+    "year": 2023
+   },
+   "mfgMachineryTransportPct": {
+    "value": 47.4032409251021,
+    "year": 2023
+   },
+   "mfgOtherPct": {
+    "value": 28.1210748496827,
+    "year": 2023
+   }
+  },
+  "SAU": {
+   "bloc": "D",
+   "agriculturePct": {
+    "value": 2.45769245330047,
+    "year": 2023
+   },
+   "industryPct": {
+    "value": 47.6052986491653,
+    "year": 2023
+   },
+   "manufacturingPct": {
+    "value": 15.8916802507302,
+    "year": 2023
+   },
+   "servicesPct": {
+    "value": 44.7549539980038,
+    "year": 2023
+   },
+   "oilRentsPct": {
+    "value": 23.6862940574499,
+    "year": 2021
+   },
+   "gasRentsPct": {
+    "value": 1.715848461975,
+    "year": 2021
+   },
+   "coalRentsPct": {
+    "value": 0,
+    "year": 2021
+   },
+   "mineralRentsPct": {
+    "value": 0.162202190483481,
+    "year": 2021
+   },
+   "mfgFoodPct": {
+    "value": 9.31119482054851,
+    "year": 2022
+   },
+   "mfgTextilePct": {
+    "value": 2.4251474846071,
+    "year": 2022
+   },
+   "mfgChemicalPct": {
+    "value": 21.8619188438314,
+    "year": 2022
+   },
+   "mfgMachineryTransportPct": {
+    "value": 2.93010487268041,
+    "year": 2022
+   },
+   "mfgOtherPct": {
+    "value": 63.4716339783326,
+    "year": 2022
+   }
+  },
+  "ARE": {
+   "bloc": "D",
+   "agriculturePct": {
+    "value": 0.764071417912981,
+    "year": 2023
+   },
+   "industryPct": {
+    "value": 45.4007042021104,
+    "year": 2023
+   },
+   "manufacturingPct": {
+    "value": 9.45859478112557,
+    "year": 2023
+   },
+   "servicesPct": {
+    "value": 53.8352243799769,
+    "year": 2023
+   },
+   "oilRentsPct": {
+    "value": 15.6730945329946,
+    "year": 2021
+   },
+   "gasRentsPct": {
+    "value": 1.96089498612487,
+    "year": 2021
+   },
+   "coalRentsPct": {
+    "value": 0,
+    "year": 2021
+   },
+   "mineralRentsPct": {
+    "value": 0,
+    "year": 2021
+   },
+   "mfgFoodPct": {
+    "value": 9.4840673340256,
+    "year": 2023
+   },
+   "mfgTextilePct": {
+    "value": 3.2511690008462,
+    "year": 2023
+   },
+   "mfgChemicalPct": {
+    "value": 28.9076751570062,
+    "year": 2023
+   },
+   "mfgMachineryTransportPct": {
+    "value": 12.1592932743462,
+    "year": 2023
+   },
+   "mfgOtherPct": {
+    "value": 46.1977952337758,
+    "year": 2023
+   }
+  },
+  "QAT": {
+   "bloc": "D",
+   "agriculturePct": {
+    "value": 0.292779131249811,
+    "year": 2023
+   },
+   "industryPct": {
+    "value": 60.3680507871752,
+    "year": 2023
+   },
+   "manufacturingPct": {
+    "value": 8.66470474736787,
+    "year": 2023
+   },
+   "servicesPct": {
+    "value": 45.280617448803,
+    "year": 2023
+   },
+   "oilRentsPct": {
+    "value": 15.2784667126988,
+    "year": 2021
+   },
+   "gasRentsPct": {
+    "value": 12.0112545642563,
+    "year": 2021
+   },
+   "coalRentsPct": {
+    "value": 0,
+    "year": 2021
+   },
+   "mineralRentsPct": {
+    "value": 0,
+    "year": 2021
+   },
+   "mfgFoodPct": {
+    "value": 2.80128547707186,
+    "year": 2022
+   },
+   "mfgTextilePct": {
+    "value": 1.35657955491372,
+    "year": 2022
+   },
+   "mfgChemicalPct": {
+    "value": 54.7720338131362,
+    "year": 2022
+   },
+   "mfgMachineryTransportPct": {
+    "value": 2.87720836109781,
+    "year": 2022
+   },
+   "mfgOtherPct": {
+    "value": 38.1928927937804,
+    "year": 2022
+   }
+  },
+  "KWT": {
+   "bloc": "D",
+   "agriculturePct": {
+    "value": 0.468514016254576,
+    "year": 2023
+   },
+   "industryPct": {
+    "value": 60.2656226708529,
+    "year": 2023
+   },
+   "manufacturingPct": {
+    "value": 7.54800991399076,
+    "year": 2023
+   },
+   "servicesPct": {
+    "value": 52.1545642214846,
+    "year": 2023
+   },
+   "oilRentsPct": {
+    "value": 27.5816891390019,
+    "year": 2020
+   },
+   "gasRentsPct": {
+    "value": 1.70268520321554,
+    "year": 2020
+   },
+   "coalRentsPct": {
+    "value": 0,
+    "year": 2020
+   },
+   "mineralRentsPct": {
+    "value": 0,
+    "year": 2020
+   },
+   "mfgFoodPct": {
+    "value": 7.69827346460623,
+    "year": 2021
+   },
+   "mfgTextilePct": {
+    "value": 3.15313159934225,
+    "year": 2021
+   },
+   "mfgChemicalPct": {
+    "value": 22.7834735136681,
+    "year": 2021
+   },
+   "mfgMachineryTransportPct": {
+    "value": 4.52486812727006,
+    "year": 2021
+   },
+   "mfgOtherPct": {
+    "value": 61.8402532951133,
+    "year": 2021
+   }
+  },
+  "OMN": {
+   "bloc": "D",
+   "agriculturePct": {
+    "value": 2.41559858874993,
+    "year": 2023
+   },
+   "industryPct": {
+    "value": 55.3716024616708,
+    "year": 2023
+   },
+   "manufacturingPct": {
+    "value": 9.3490459545157,
+    "year": 2023
+   },
+   "servicesPct": {
+    "value": 45.3040383777307,
+    "year": 2023
+   },
+   "oilRentsPct": {
+    "value": 23.5387435070386,
+    "year": 2021
+   },
+   "gasRentsPct": {
+    "value": 5.67148047353265,
+    "year": 2021
+   },
+   "coalRentsPct": {
+    "value": 0,
+    "year": 2021
+   },
+   "mineralRentsPct": {
+    "value": 0,
+    "year": 2021
+   },
+   "mfgFoodPct": {
+    "value": 7.89817594062156,
+    "year": 2023
+   },
+   "mfgTextilePct": {
+    "value": 0.100445458967959,
+    "year": 2023
+   },
+   "mfgChemicalPct": {
+    "value": 39.5350797720592,
+    "year": 2023
+   },
+   "mfgMachineryTransportPct": {
+    "value": 4.75747890430682,
+    "year": 2023
+   },
+   "mfgOtherPct": {
+    "value": 47.7088199240444,
+    "year": 2023
+   }
+  },
+  "BHR": {
+   "bloc": "D",
+   "agriculturePct": {
+    "value": 0.251492806718451,
+    "year": 2023
+   },
+   "industryPct": {
+    "value": 43.4381277604186,
+    "year": 2023
+   },
+   "manufacturingPct": {
+    "value": 20.1297882520386,
+    "year": 2023
+   },
+   "servicesPct": {
+    "value": 51.944952554339,
+    "year": 2023
+   },
+   "oilRentsPct": {
+    "value": 10.9376756365994,
+    "year": 2021
+   },
+   "gasRentsPct": {
+    "value": 5.70191051100315,
+    "year": 2021
+   },
+   "coalRentsPct": {
+    "value": 0,
+    "year": 2021
+   },
+   "mineralRentsPct": {
+    "value": 0,
+    "year": 2021
+   },
+   "mfgFoodPct": {
+    "value": 1.23282005050279,
+    "year": 2018
+   },
+   "mfgTextilePct": {
+    "value": 5.29885652947436,
+    "year": 2018
+   },
+   "mfgChemicalPct": {
+    "value": 16.0992811828927,
+    "year": 2018
+   },
+   "mfgMachineryTransportPct": {
+    "value": 5.75991741023291,
+    "year": 2018
+   },
+   "mfgOtherPct": {
+    "value": 71.6091248268973,
+    "year": 2018
+   }
+  },
+  "IRN": {
+   "bloc": "D",
+   "agriculturePct": {
+    "value": 10.750872506583,
+    "year": 2023
+   },
+   "industryPct": {
+    "value": 38.7761581460708,
+    "year": 2023
+   },
+   "manufacturingPct": {
+    "value": 21.6209508991788,
+    "year": 2023
+   },
+   "servicesPct": {
+    "value": 47.6289165729509,
+    "year": 2023
+   },
+   "oilRentsPct": {
+    "value": 18.2658980929233,
+    "year": 2021
+   },
+   "gasRentsPct": {
+    "value": 8.80888556489953,
+    "year": 2021
+   },
+   "coalRentsPct": {
+    "value": 0.00939526245305688,
+    "year": 2021
+   },
+   "mineralRentsPct": {
+    "value": 3.355880410138,
+    "year": 2021
+   },
+   "mfgFoodPct": {
+    "value": 11.468111712289,
+    "year": 2022
+   },
+   "mfgTextilePct": {
+    "value": 2.85407631068771,
+    "year": 2022
+   },
+   "mfgChemicalPct": {
+    "value": 25.1677584922026,
+    "year": 2022
+   },
+   "mfgMachineryTransportPct": {
+    "value": 7.82812082862075,
+    "year": 2022
+   },
+   "mfgOtherPct": {
+    "value": 52.6819326561999,
+    "year": 2022
+   }
+  },
+  "IRQ": {
+   "bloc": "D",
+   "agriculturePct": {
+    "value": 3.10603121448412,
+    "year": 2023
+   },
+   "industryPct": {
+    "value": 53.9604851597879,
+    "year": 2023
+   },
+   "manufacturingPct": {
+    "value": 3.01603625131993,
+    "year": 2023
+   },
+   "servicesPct": {
+    "value": 43.6679408901657,
+    "year": 2023
+   },
+   "oilRentsPct": {
+    "value": 42.7870984915076,
+    "year": 2021
+   },
+   "gasRentsPct": {
+    "value": 0.65552292508507,
+    "year": 2021
+   },
+   "coalRentsPct": {
+    "value": 0,
+    "year": 2021
+   },
+   "mineralRentsPct": {
+    "value": 0,
+    "year": 2021
+   },
+   "mfgFoodPct": {
+    "value": 33.6122358435763,
+    "year": 2022
+   },
+   "mfgTextilePct": {
+    "value": 0.858258136177488,
+    "year": 2022
+   },
+   "mfgChemicalPct": {
+    "value": 0.669657852266714,
+    "year": 2022
+   },
+   "mfgMachineryTransportPct": {
+    "value": 2.55879878026141,
+    "year": 2022
+   },
+   "mfgOtherPct": {
+    "value": 62.3010493877181,
+    "year": 2022
+   }
+  },
+  "ISR": {
+   "bloc": "D",
+   "agriculturePct": {
+    "value": 1.39228590650126,
+    "year": 2023
+   },
+   "industryPct": {
+    "value": 18.1095322410277,
+    "year": 2023
+   },
+   "manufacturingPct": {
+    "value": 11.4833400691841,
+    "year": 2023
+   },
+   "servicesPct": {
+    "value": 72.4524533292347,
+    "year": 2023
+   },
+   "oilRentsPct": {
+    "value": 0.0115224616168168,
+    "year": 2021
+   },
+   "gasRentsPct": {
+    "value": 0.429728212550477,
+    "year": 2021
+   },
+   "coalRentsPct": {
+    "value": 0,
+    "year": 2021
+   },
+   "mineralRentsPct": {
+    "value": 0,
+    "year": 2021
+   },
+   "mfgFoodPct": {
+    "value": 12.94565187374,
+    "year": 2021
+   },
+   "mfgTextilePct": {
+    "value": 1.39460384965894,
+    "year": 2021
+   },
+   "mfgChemicalPct": null,
+   "mfgMachineryTransportPct": {
+    "value": 46.9981497335064,
+    "year": 2021
+   },
+   "mfgOtherPct": {
+    "value": 38.6615945430946,
+    "year": 2021
+   }
+  },
+  "JOR": {
+   "bloc": "D",
+   "agriculturePct": {
+    "value": 4.95629590864962,
+    "year": 2023
+   },
+   "industryPct": {
+    "value": 26.790780203604,
+    "year": 2023
+   },
+   "manufacturingPct": {
+    "value": 16.3810729367401,
+    "year": 2023
+   },
+   "servicesPct": {
+    "value": 57.5358008679515,
+    "year": 2023
+   },
+   "oilRentsPct": {
+    "value": 0.0143633135367042,
+    "year": 2021
+   },
+   "gasRentsPct": {
+    "value": 0.0430035744363791,
+    "year": 2021
+   },
+   "coalRentsPct": {
+    "value": 0,
+    "year": 2021
+   },
+   "mineralRentsPct": {
+    "value": 0,
+    "year": 2021
+   },
+   "mfgFoodPct": {
+    "value": 23.5054509473111,
+    "year": 2022
+   },
+   "mfgTextilePct": {
+    "value": 11.2879394579617,
+    "year": 2022
+   },
+   "mfgChemicalPct": {
+    "value": 14.8136663714699,
+    "year": 2022
+   },
+   "mfgMachineryTransportPct": {
+    "value": 2.95749935564149,
+    "year": 2022
+   },
+   "mfgOtherPct": {
+    "value": 47.4354438676159,
+    "year": 2022
+   }
+  },
+  "LBN": {
+   "bloc": "D",
+   "agriculturePct": {
+    "value": 0.966455367369224,
+    "year": 2023
+   },
+   "industryPct": {
+    "value": 2.0863020184691,
+    "year": 2023
+   },
+   "manufacturingPct": {
+    "value": 1.42682987688995,
+    "year": 2021
+   },
+   "servicesPct": {
+    "value": 42.3804623372256,
+    "year": 2023
+   },
+   "oilRentsPct": {
+    "value": 0,
+    "year": 2021
+   },
+   "gasRentsPct": {
+    "value": 0,
+    "year": 2021
+   },
+   "coalRentsPct": {
+    "value": 0,
+    "year": 2021
+   },
+   "mineralRentsPct": {
+    "value": 0,
+    "year": 2021
+   },
+   "mfgFoodPct": {
+    "value": 40.6659487423679,
+    "year": 2020
+   },
+   "mfgTextilePct": {
+    "value": 3.55403271052944,
+    "year": 2020
+   },
+   "mfgChemicalPct": {
+    "value": 14.5615463575343,
+    "year": 2020
+   },
+   "mfgMachineryTransportPct": null,
+   "mfgOtherPct": {
+    "value": 41.2184721895684,
+    "year": 2020
+   }
+  },
+  "SYR": {
+   "bloc": "D",
+   "agriculturePct": {
+    "value": 42.8517272820162,
+    "year": 2022
+   },
+   "industryPct": {
+    "value": 11.9429158166427,
+    "year": 2022
+   },
+   "manufacturingPct": null,
+   "servicesPct": {
+    "value": 44.7217048163099,
+    "year": 2022
+   },
+   "oilRentsPct": {
+    "value": 4.01504490668102,
+    "year": 2020
+   },
+   "gasRentsPct": {
+    "value": 2.33049215153531,
+    "year": 2020
+   },
+   "coalRentsPct": {
+    "value": 0,
+    "year": 2020
+   },
+   "mineralRentsPct": {
+    "value": 0,
+    "year": 2020
+   },
+   "mfgFoodPct": null,
+   "mfgTextilePct": null,
+   "mfgChemicalPct": null,
+   "mfgMachineryTransportPct": null,
+   "mfgOtherPct": null
+  },
+  "YEM": {
+   "bloc": "D",
+   "agriculturePct": {
+    "value": 28.7451403146812,
+    "year": 2018
+   },
+   "industryPct": {
+    "value": 25.4429978433173,
+    "year": 2018
+   },
+   "manufacturingPct": null,
+   "servicesPct": {
+    "value": 41.8118618427961,
+    "year": 2018
+   },
+   "oilRentsPct": {
+    "value": 4.82356153067882,
+    "year": 2018
+   },
+   "gasRentsPct": {
+    "value": 0.000212589998147195,
+    "year": 2016
+   },
+   "coalRentsPct": {
+    "value": 0,
+    "year": 2018
+   },
+   "mineralRentsPct": {
+    "value": 0,
+    "year": 2018
+   },
+   "mfgFoodPct": null,
+   "mfgTextilePct": null,
+   "mfgChemicalPct": null,
+   "mfgMachineryTransportPct": null,
+   "mfgOtherPct": null
+  },
+  "USA": {
+   "bloc": "E",
+   "agriculturePct": {
+    "value": 0.942961672907101,
+    "year": 2021
+   },
+   "industryPct": {
+    "value": 17.5751653495616,
+    "year": 2021
+   },
+   "manufacturingPct": {
+    "value": 10.5250313827085,
+    "year": 2021
+   },
+   "servicesPct": {
+    "value": 76.2563816410471,
+    "year": 2021
+   },
+   "oilRentsPct": {
+    "value": 0.61148265568772,
+    "year": 2021
+   },
+   "gasRentsPct": {
+    "value": 0.363207721748918,
+    "year": 2021
+   },
+   "coalRentsPct": {
+    "value": 0.165541837941739,
+    "year": 2021
+   },
+   "mineralRentsPct": {
+    "value": 0.101999501227916,
+    "year": 2021
+   },
+   "mfgFoodPct": {
+    "value": 12.313154624534,
+    "year": 2023
+   },
+   "mfgTextilePct": {
+    "value": 0.990591159240192,
+    "year": 2023
+   },
+   "mfgChemicalPct": {
+    "value": 18.2744541097106,
+    "year": 2023
+   },
+   "mfgMachineryTransportPct": {
+    "value": 30.7331794780756,
+    "year": 2023
+   },
+   "mfgOtherPct": {
+    "value": 37.6886206284396,
+    "year": 2023
+   }
+  },
+  "CAN": {
+   "bloc": "E",
+   "agriculturePct": {
+    "value": 1.93275289413659,
+    "year": 2022
+   },
+   "industryPct": {
+    "value": 27.3506338523117,
+    "year": 2022
+   },
+   "manufacturingPct": {
+    "value": 9.32446695410476,
+    "year": 2022
+   },
+   "servicesPct": {
+    "value": 64.1108208953921,
+    "year": 2022
+   },
+   "oilRentsPct": {
+    "value": 2.82978528865474,
+    "year": 2021
+   },
+   "gasRentsPct": {
+    "value": 0.793958417895896,
+    "year": 2021
+   },
+   "coalRentsPct": {
+    "value": 0.0730211132400775,
+    "year": 2021
+   },
+   "mineralRentsPct": {
+    "value": 1.18426034810901,
+    "year": 2021
+   },
+   "mfgFoodPct": {
+    "value": 18.7077028916227,
+    "year": 2023
+   },
+   "mfgTextilePct": {
+    "value": 1.06306528945282,
+    "year": 2023
+   },
+   "mfgChemicalPct": {
+    "value": 9.88111452338395,
+    "year": 2023
+   },
+   "mfgMachineryTransportPct": {
+    "value": 23.9867447727056,
+    "year": 2023
+   },
+   "mfgOtherPct": {
+    "value": 46.3613725228349,
+    "year": 2023
+   }
+  },
+  "MEX": {
+   "bloc": "E",
+   "agriculturePct": {
+    "value": 3.84569758598285,
+    "year": 2023
+   },
+   "industryPct": {
+    "value": 32.4707165626052,
+    "year": 2023
+   },
+   "manufacturingPct": {
+    "value": 20.4651290537164,
+    "year": 2023
+   },
+   "servicesPct": {
+    "value": 57.6769252512863,
+    "year": 2023
+   },
+   "oilRentsPct": {
+    "value": 2.06594374719816,
+    "year": 2021
+   },
+   "gasRentsPct": {
+    "value": 0.0909613894136,
+    "year": 2021
+   },
+   "coalRentsPct": {
+    "value": 0.0161205544445626,
+    "year": 2021
+   },
+   "mineralRentsPct": {
+    "value": 1.36465937318187,
+    "year": 2021
+   },
+   "mfgFoodPct": {
+    "value": 22.2334652206254,
+    "year": 2023
+   },
+   "mfgTextilePct": {
+    "value": 2.75272650225239,
+    "year": 2023
+   },
+   "mfgChemicalPct": {
+    "value": 7.28838932250984,
+    "year": 2023
+   },
+   "mfgMachineryTransportPct": {
+    "value": 33.1779978008956,
+    "year": 2023
+   },
+   "mfgOtherPct": {
+    "value": 34.5474211537168,
+    "year": 2023
+   }
+  },
+  "WLD": {
+   "bloc": null,
+   "agriculturePct": {
+    "value": 4.13682559934491,
+    "year": 2023
+   },
+   "industryPct": {
+    "value": 26.1933428273257,
+    "year": 2023
+   },
+   "manufacturingPct": {
+    "value": 15.2465175130439,
+    "year": 2023
+   },
+   "servicesPct": {
+    "value": 63.0410618356026,
+    "year": 2023
+   },
+   "oilRentsPct": {
+    "value": 1.36253966369895,
+    "year": 2021
+   },
+   "gasRentsPct": {
+    "value": 0.524778865374974,
+    "year": 2021
+   },
+   "coalRentsPct": {
+    "value": 0.260180253179248,
+    "year": 2021
+   },
+   "mineralRentsPct": {
+    "value": 0.765383236584423,
+    "year": 2021
+   },
+   "mfgFoodPct": null,
+   "mfgTextilePct": null,
+   "mfgChemicalPct": null,
+   "mfgMachineryTransportPct": null,
+   "mfgOtherPct": null
+  }
+ },
+ "world": {
+  "gdpUsd": {
+   "value": 107348614073350,
+   "year": 2023
+  },
+  "population": {
+   "value": 8062923417,
+   "year": 2023
+  },
+  "laborForce": {
+   "value": 3657009128,
+   "year": 2023
+  },
+  "grossCapitalFormationPctGdp": {
+   "value": 26.6577465889383,
+   "year": 2023
+  },
+  "householdConsumptionUsd": {
+   "value": 60356348466918.2,
+   "year": 2023
+  }
+ }
+}

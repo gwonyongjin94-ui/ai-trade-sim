@@ -13,7 +13,9 @@
     "transcript": "tsx scripts/transcript.ts",
     "quiz": "tsx scripts/quiz.ts",
     "data:v2": "tsx scripts/fetch-v2-data.ts",
-    "tariffs:v2": "tsx scripts/fetch-v2-tariffs.ts"
+    "tariffs:v2": "tsx scripts/fetch-v2-tariffs.ts",
+    "production:v2": "tsx scripts/fetch-v2-production.ts",
+    "base:v2": "tsx scripts/build-v2-base.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^1.4.0",
