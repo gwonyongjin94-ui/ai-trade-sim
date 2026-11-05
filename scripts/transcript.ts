@@ -20,7 +20,7 @@ import type { CountryId, Policy } from '../src/engine/types'
 import { statusQuoPolicy } from '../src/engine/world'
 import { AWARENESS_LABEL, codeMotives, dynamicsOf, hostileChange, KIND_LABEL, MOTIVES, OUTCOME_LABEL, outcomeReading, privateTexts, selfAwareness, STRATEGY_LABEL, summarizeAwareness, summarizeOutcome } from '../src/sim/behavior'
 import type { Claim, PolicyChange } from '../src/sim/behavior'
-import { RECAP_LABEL } from '../src/sim/types'
+import { ES_VIEW_LABEL, RECAP_LABEL } from '../src/sim/types'
 import type { GameEvent } from '../src/sim/types'
 
 const ROOT = resolve(import.meta.dirname, '..')
@@ -68,7 +68,7 @@ function transcript(id: string, events: GameEvent[]): string {
 
   const md: string[] = [`# 행동 기록부: ${id}`, '']
   md.push(`- 대통령: ${COUNTRIES.map((c) => `${who(c)}, ${OBJECTIVE_LABEL[start.config.objectives[c]]}`).join(' · ')}`)
-  md.push(`- 물품 이름: ${naming === 'real' ? '실제' : '익명'} · ${CULTURE_BRIEF_LABEL[culture]} · ${RECAP_LABEL[start.config.recap ?? 'off']} · ${quarters.length}분기 진행`)
+  md.push(`- 물품 이름: ${naming === 'real' ? '실제' : '익명'} · ${CULTURE_BRIEF_LABEL[culture]} · ${RECAP_LABEL[start.config.recap ?? 'off']} · ${ES_VIEW_LABEL[start.config.esView ?? 'shown']} · ${quarters.length}분기 진행`)
   md.push('')
 
   md.push('## 행동 요약', '')

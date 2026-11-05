@@ -19,7 +19,7 @@ import { ENGINE } from '../engine/params'
 import { annualRate, DEFAULT_PARAMS } from '../engine/world'
 import { keepPolicyAction } from './game'
 import type { Effort, LlmResponse, LlmTransport } from './llmTypes'
-import type { DecisionAction, DiplomacyAction, Leader, LeaderCallMeta, Observation, Recap } from './types'
+import type { DecisionAction, DiplomacyAction, EsView, Leader, LeaderCallMeta, Observation, Recap } from './types'
 
 const TONES: Tone[] = ['cooperative', 'neutral', 'warning', 'threat']
 
@@ -97,7 +97,7 @@ ${cultureSection}
 }
 
 // recap: 지난 분기 우리나라가 실제로 한 일을 보여줄지 (실험 조건, types.ts의 Recap)
-export function describeObservation(obs: Observation, recap = false): string {
+export function describeObservation(obs: Observation, recap = false, showEs = true): string {
   const c = obs.country
   const r = rival(c)
   const name = (id: GoodId) => goodName(GOODS.find((g) => g.id === id)!, obs.naming)
@@ -130,8 +130,8 @@ export function describeObservation(obs: Observation, recap = false): string {
   if (recap && obs.recap) {
     lines.push(`\n# 지난 분기(${obs.recap.quarter + 1}분기)에 우리나라가 실제로 한 일 (게임 기록)`)
     if (obs.recap.actions.length === 0) lines.push('- 바뀐 정책 없음')
-    for (const a of obs.recap.actions) lines.push(`- ${a.description}: ${ES_LEVEL_LABEL[a.level]} ${a.weight > 0 ? '+' : ''}${a.weight}`)
-    lines.push(`합계 확전점수 ${obs.recap.score > 0 ? '+' : ''}${obs.recap.score}. 메시지나 메모가 아니라 실제로 적용된 정책에서 계산한 기록이다.`)
+    for (const a of obs.recap.actions) lines.push(showEs ? `- ${a.description}: ${ES_LEVEL_LABEL[a.level]} ${a.weight > 0 ? '+' : ''}${a.weight}` : `- ${a.description}`)
+    lines.push(showEs ? `합계 확전점수 ${obs.recap.score > 0 ? '+' : ''}${obs.recap.score}. 메시지나 메모가 아니라 실제로 적용된 정책에서 계산한 기록이다.` : '메시지나 메모가 아니라 실제로 적용된 정책에서 뽑은 기록이다.')
   }
 
   lines.push(`\n# 물품별 현재 정책과 교역 (교역액은 직전 분기, 명목)`)
@@ -145,13 +145,14 @@ export function describeObservation(obs: Observation, recap = false): string {
 
   if (obs.history.length) {
     lines.push(`\n# 최근 기록`)
-    lines.push(`| 분기 | 우리 생활수준 | 우리 GDP | 우리 자본 | 우리 물가상승률 | ${r}국 생활수준 | ${r}국 GDP | ${r}국 자본 | ${r}국 물가상승률 | 우리 평균관세 | ${r}국 평균관세 | 우리 확전점수 | ${r}국 확전점수 |\n|---|---|---|---|---|---|---|---|---|---|---|---|---|`)
+    const esHead = showEs ? ` 우리 확전점수 | ${r}국 확전점수 |` : ''
+    lines.push(`| 분기 | 우리 생활수준 | 우리 GDP | 우리 자본 | 우리 물가상승률 | ${r}국 생활수준 | ${r}국 GDP | ${r}국 자본 | ${r}국 물가상승률 | 우리 평균관세 | ${r}국 평균관세 |${esHead}\n|${'---|'.repeat(showEs ? 13 : 11)}`)
     for (const h of obs.history) {
       lines.push(
-        `| ${h.quarter + 1} | ${f1(h[c].livingStandard)} | ${f1(h[c].realGdp)} | ${f1(h[c].capital)} | ${signedPct(h[c].inflation)} | ${f1(h[r].livingStandard)} | ${f1(h[r].realGdp)} | ${f1(h[r].capital)} | ${signedPct(h[r].inflation)} | ${policyPct(h[c].avgTariff)} | ${policyPct(h[r].avgTariff)} | ${h[c].es} | ${h[r].es} |`,
+        `| ${h.quarter + 1} | ${f1(h[c].livingStandard)} | ${f1(h[c].realGdp)} | ${f1(h[c].capital)} | ${signedPct(h[c].inflation)} | ${f1(h[r].livingStandard)} | ${f1(h[r].realGdp)} | ${f1(h[r].capital)} | ${signedPct(h[r].inflation)} | ${policyPct(h[c].avgTariff)} | ${policyPct(h[r].avgTariff)} |${showEs ? ` ${h[c].es} | ${h[r].es} |` : ''}`,
       )
     }
-    lines.push('(확전점수: 관세 인상·수출 통제·위협·합의 위반은 +, 관세 인하·통제 완화·제안 수락은 −로 매긴 분기별 점수)')
+    if (showEs) lines.push('(확전점수: 관세 인상·수출 통제·위협·합의 위반은 +, 관세 인하·통제 완화·제안 수락은 −로 매긴 분기별 점수)')
   }
 
   const active = obs.commitments
@@ -349,6 +350,7 @@ export interface LlmLeaderOptions {
   effort?: Effort
   logPrompts?: boolean // 배치 실험에서 프롬프트 전문 기록
   recap?: Recap // 지난 분기 실제 변화 알려주기 (없으면 off)
+  esView?: EsView // 확전점수 보여주기 (없으면 shown)
 }
 
 export class LlmLeader implements Leader {
@@ -394,13 +396,13 @@ export class LlmLeader implements Leader {
   }
 
   async diplomacy(obs: Observation) {
-    const user = describeObservation(obs, this.opts.recap === 'on') + round1Instruction(obs)
+    const user = describeObservation(obs, this.opts.recap === 'on', this.opts.esView !== 'hidden') + round1Instruction(obs)
     const { value, meta } = await this.call(user, diplomacySchema(obs.naming), (j) => parseDiplomacy(j, obs.naming))
     return { action: value ?? { message: '', tone: 'neutral' as Tone, proposals: [] }, meta }
   }
 
   async decide(obs: Observation, rivalMessage: DiplomacyAction) {
-    const user = describeObservation(obs, this.opts.recap === 'on') + round2Instruction(obs, rivalMessage)
+    const user = describeObservation(obs, this.opts.recap === 'on', this.opts.esView !== 'hidden') + round2Instruction(obs, rivalMessage)
     const { value, meta } = await this.call(user, decisionSchema(obs.naming), (j) => parseDecision(j, obs.naming))
     return { action: value ?? keepPolicyAction(obs.policies[obs.country]), meta }
   }

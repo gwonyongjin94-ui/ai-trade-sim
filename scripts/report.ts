@@ -24,7 +24,7 @@ import type { BaselineData } from '../src/sim/baseline'
 import { comboKey } from '../src/sim/baseline'
 import { DEFAULT_PARAMS } from '../src/engine/world'
 import { RECAP_LABEL } from '../src/sim/types'
-import type { GameEvent, Recap } from '../src/sim/types'
+import type { EsView, GameEvent, Recap } from '../src/sim/types'
 import { estimateCost } from '../server/providers'
 
 const ROOT = resolve(import.meta.dirname, '..')
@@ -86,6 +86,7 @@ interface Rec {
   naming: string
   culture: string
   recap: Recap
+  esView: EsView
   termScores: number[]
   termLs: number[]
   coopIndex: number[] // 임기별 협력지수 (세계 후생): 1 = 자유무역 수준, 0 = 동적 내시 수준. 게임 단위라 양국 값이 같다
@@ -212,6 +213,7 @@ function recordsOf(run: Run): Rec[] {
       naming: start.config.naming,
       culture: start.config.culture ?? 'shown',
       recap: start.config.recap ?? 'off',
+      esView: start.config.esView ?? 'shown',
       termScores: terms.filter((t) => t.country === c).map((t) => t.score),
       termLs,
       coopIndex,
@@ -303,13 +305,13 @@ md.push(`- 관세지수: 1 − 게임 평균 관세 ÷ 동적 내시 평균 관�
 
 md.push('## 조건별 결과', '')
 md.push('평균 ± 표준편차 (나라·런 단위). 목표 점수는 임기별 점수의 평균.', '')
-md.push('| 목표 | 이름 | 문화 설명 | 변화 알림 | 대통령 | 상대 | 나라 | n | 목표 점수 | 생활수준 | 평균 관세 | 협력지수 | 관세지수 | 누적 확전점수 | 합의 수 | 약속 파기율 |')
-md.push('|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|')
-const conds = groupBy(recs, (r) => [r.objectives, r.naming, r.culture, r.recap, r.self, r.opp, r.country].join('|'))
+md.push('| 목표 | 이름 | 문화 설명 | 변화 알림 | 확전점수 | 대통령 | 상대 | 나라 | n | 목표 점수 | 생활수준 | 평균 관세 | 협력지수 | 관세지수 | 누적 확전점수 | 합의 수 | 약속 파기율 |')
+md.push('|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|')
+const conds = groupBy(recs, (r) => [r.objectives, r.naming, r.culture, r.recap, r.esView, r.self, r.opp, r.country].join('|'))
 for (const [, rs] of [...conds.entries()].sort(([a], [b]) => a.localeCompare(b))) {
   const r0 = rs[0]
   md.push(
-    `| ${r0.objectives} | ${r0.naming === 'real' ? '실제' : '익명'} | ${r0.culture === 'hidden' ? '없음' : '있음'} | ${r0.recap === 'on' ? '알림' : '-'} | ${r0.self} | ${r0.opp} | ${r0.country} (${OBJECTIVE_LABEL[r0.objective]}) | ${rs.length} | ${ms(rs.map((r) => mean(r.termScores)))} | ${ms(rs.map((r) => r.lsMean))} | ${ms(rs.map((r) => r.avgTariffMean * 100))}% | ${ms(rs.map((r) => mean(r.coopIndex)), 2)} | ${ms(rs.map((r) => r.tariffIndex), 2)} | ${ms(rs.map((r) => r.esCum), 0)} | ${ms(rs.map((r) => r.acceptedByMe + r.acceptedByRival), 1)} | ${pct(mean(rs.map((r) => r.breakRate).filter(Number.isFinite)))} |`,
+    `| ${r0.objectives} | ${r0.naming === 'real' ? '실제' : '익명'} | ${r0.culture === 'hidden' ? '없음' : '있음'} | ${r0.recap === 'on' ? '알림' : '-'} | ${r0.esView === 'hidden' ? '숨김' : '보임'} | ${r0.self} | ${r0.opp} | ${r0.country} (${OBJECTIVE_LABEL[r0.objective]}) | ${rs.length} | ${ms(rs.map((r) => mean(r.termScores)))} | ${ms(rs.map((r) => r.lsMean))} | ${ms(rs.map((r) => r.avgTariffMean * 100))}% | ${ms(rs.map((r) => mean(r.coopIndex)), 2)} | ${ms(rs.map((r) => r.tariffIndex), 2)} | ${ms(rs.map((r) => r.esCum), 0)} | ${ms(rs.map((r) => r.acceptedByMe + r.acceptedByRival), 1)} | ${pct(mean(rs.map((r) => r.breakRate).filter(Number.isFinite)))} |`,
   )
 }
 md.push('')

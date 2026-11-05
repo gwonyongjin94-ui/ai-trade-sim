@@ -13,6 +13,7 @@
 //   --naming real,abstract      물품 실제 이름 / 익명 (WarAgent식 비교)
 //   --culture shown,hidden      대통령 프롬프트에 두 나라 문화 설명 있음 / 없음 (경제 수치의 문화 차이는 항상 있음)
 //   --recap off,on              지난 분기 우리나라가 실제로 한 일(정책 변화와 확전점수)을 대통령에게 알려주지 않음 / 알려줌
+//   --es shown,hidden           대통령 관측에 확전점수를 보여줌 / 숨김 (기록·보고서에는 항상 남는다)
 //   --repeats 10  --years 12  --effort medium  --concurrency 2
 // 결과: runs/<name>/<run>.jsonl (이벤트 한 줄씩), runs/<name>/manifest.json
 // 이미 끝난 런은 건너뛰므로 중단 후 같은 명령으로 이어서 돌릴 수 있다.
@@ -33,7 +34,7 @@ import { decisionSchema, describeObservation, diplomacySchema, LlmLeader, system
 import type { Effort } from '../src/sim/llmTypes'
 import { RuleLeader } from '../src/sim/rules'
 import type { RuleKind } from '../src/sim/rules'
-import type { GameConfig, Leader, Recap } from '../src/sim/types'
+import type { EsView, GameConfig, Leader, Recap } from '../src/sim/types'
 import { projectEnv } from '../server/env'
 import { callLlm, estimateCost, isFatalLlmError, isLocalModel, listModels, localModels, PRICES } from '../server/providers'
 
@@ -61,6 +62,8 @@ const cultures = list('culture', 'shown') as CultureBrief[]
 for (const c of cultures) if (c !== 'shown' && c !== 'hidden') throw new Error(`--culture 값은 shown, hidden 중 하나: ${c}`)
 const recaps = list('recap', 'off') as Recap[]
 for (const x of recaps) if (x !== 'off' && x !== 'on') throw new Error(`--recap 값은 off, on 중 하나: ${x}`)
+const esViews = list('es', 'shown') as EsView[]
+for (const x of esViews) if (x !== 'shown' && x !== 'hidden') throw new Error(`--es 값은 shown, hidden 중 하나: ${x}`)
 const years = Number(opt('years', '12'))
 const effort = opt('effort', 'medium') as Effort
 const concurrency = Number(opt('concurrency', models.some(isLocalModel) ? '1' : '2')) // 로컬 모델은 한 번에 하나씩
@@ -85,6 +88,7 @@ interface RunSpec {
   naming: Naming
   culture: CultureBrief
   recap?: Recap // 없으면 off (이 조건을 넣기 전 런)
+  esView?: EsView // 없으면 shown (이 조건을 넣기 전 런)
   repeat: number
 }
 
@@ -112,19 +116,21 @@ for (const objectives of objectiveKeys)
   for (const naming of namings)
     for (const culture of cultures)
       for (const recap of recaps)
-        for (const [A, B] of pairs)
-          for (let r = 1; r <= repeats; r++)
-            plan.push({
-              // off는 예전 런 id와 같게 둔다 (이어 돌리기)
-              id: `${objectives}-${naming}-${culture}${recap === 'on' ? '-recap' : ''}-${slug(A)}-vs-${slug(B)}-r${String(r).padStart(2, '0')}`,
-              A,
-              B,
-              objectives,
-              naming,
-              culture,
-              recap,
-              repeat: r,
-            })
+        for (const esView of esViews)
+          for (const [A, B] of pairs)
+            for (let r = 1; r <= repeats; r++)
+              plan.push({
+                // off·shown은 예전 런 id와 같게 둔다 (이어 돌리기)
+                id: `${objectives}-${naming}-${culture}${recap === 'on' ? '-recap' : ''}${esView === 'hidden' ? '-noes' : ''}-${slug(A)}-vs-${slug(B)}-r${String(r).padStart(2, '0')}`,
+                A,
+                B,
+                objectives,
+                naming,
+                culture,
+                recap,
+                esView,
+                repeat: r,
+              })
 
 // 반복 우선 순서: 모든 조건의 1회차, 모든 조건의 2회차 … (중간에 멈춰도 조건별 판 수가 고르게 남는다)
 plan.sort((a, b) => a.repeat - b.repeat)
@@ -168,7 +174,7 @@ const todo = plan.filter((s) => !done(s.id))
 
 console.log(`실험 ${name}: 런 ${plan.length}개 (남은 것 ${todo.length}개), ${years}년 = ${totalQuarters}분기, effort ${effort}`)
 console.log(`조합: ${pairs.map(([a, b]) => `${a} vs ${b}`).join(' | ')}`)
-console.log(`목표: ${objectiveKeys.join(', ')} · 물품 이름: ${namings.join(', ')} · 문화 설명: ${cultures.join(', ')} · 실제 변화 알림: ${recaps.join(', ')} · 반복 ${repeats}`)
+console.log(`목표: ${objectiveKeys.join(', ')} · 물품 이름: ${namings.join(', ')} · 문화 설명: ${cultures.join(', ')} · 실제 변화 알림: ${recaps.join(', ')} · 확전점수: ${esViews.join(', ')} · 반복 ${repeats}`)
 if (costByModel.size) {
   console.log(`\n호출 1회 추정 토큰: 시스템 ${perCall.system} (캐시) + 관측 ${perCall.user} + 출력(사고 포함) ${perCall.output}`)
   let total = 0
@@ -259,6 +265,7 @@ function leaderFor(spec: string, c: CountryId, config: GameConfig): Leader {
     naming: config.naming,
     culture: config.culture,
     recap: config.recap,
+    esView: config.esView,
     objective: config.objectives[c],
     country: c,
     termQuarters: config.termYears * 4,
@@ -273,7 +280,7 @@ class FatalRunError extends Error {}
 async function runOne(spec: RunSpec) {
   const file = resolve(dir, `${spec.id}.jsonl`)
   rmSync(file, { force: true }) // 중간에 끊긴 런은 처음부터
-  const config: GameConfig = { years, termYears: 4, objectives: objectivesOf(spec.objectives), naming: spec.naming, culture: spec.culture, recap: spec.recap ?? 'off', realtime: null }
+  const config: GameConfig = { years, termYears: 4, objectives: objectivesOf(spec.objectives), naming: spec.naming, culture: spec.culture, recap: spec.recap ?? 'off', esView: spec.esView ?? 'shown', realtime: null }
   const game = new Game(config, { A: leaderFor(spec.A, 'A', config), B: leaderFor(spec.B, 'B', config) }, world)
   appendFileSync(file, JSON.stringify({ type: 'run', spec, promptHash, code, ollamaEnv }) + '\n')
   let cost = 0

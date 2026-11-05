@@ -9,6 +9,10 @@ import type { CountryId, ExportLevel, Indicators, Policy } from '../engine/types
 // 반대로 알고 있었다 (수출 통제를 올리고 "완화했다"고 메모). 실제 기록을 알려주면 알아채고 고치는지 본다.
 export type Recap = 'on' | 'off'
 export const RECAP_LABEL: Record<Recap, string> = { off: '알려주지 않음', on: '실제 변화 알려줌' }
+// 대통령 관측에 확전점수를 보여줄지. 확전점수는 연구자의 측정값인데, 보이면 벌점처럼 읽혀 행동을 누를 수 있다
+// (Haiku 시험판 2026-11-05: "확전 점수를 불러 GDP 비율에 불리"). Rivera 외는 사후에만 계산한다
+export type EsView = 'shown' | 'hidden'
+export const ES_VIEW_LABEL: Record<EsView, string> = { shown: '확전점수 보임', hidden: '확전점수 숨김' }
 
 export interface GameConfig {
   years: number // 기본 12년 = 대통령 3명
@@ -17,6 +21,7 @@ export interface GameConfig {
   naming: Naming
   culture: CultureBrief // LLM 대통령 프롬프트에 두 나라 문화 설명을 넣을지 (경제 수치의 문화 차이는 항상 있음)
   recap?: Recap // LLM 대통령에게 지난 분기 자기 나라의 실제 정책 변화를 알려줄지 (없으면 off)
+  esView?: EsView // LLM 대통령 관측에 확전점수를 보여줄지 (없으면 shown, 이 조건을 넣기 전 런)
   realtime: { secondsPerYear: number } | null // null = 빠르게 (배치 실험)
 }
 

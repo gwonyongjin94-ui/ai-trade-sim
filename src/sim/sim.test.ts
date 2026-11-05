@@ -77,6 +77,29 @@ describe('게임 진행', () => {
     expect(describeObservation(obs, false)).not.toContain('실제로 한 일')
   })
 
+  it('확전점수 숨김: 대통령 관측에서 확전점수가 모두 빠지고 나머지는 그대로 남는다', async () => {
+    const seen: Observation[] = []
+    class Spy extends Hiker {
+      async decide(obs: Observation) {
+        seen.push(obs)
+        return super.decide(obs)
+      }
+    }
+    const g = new Game({ ...DEFAULT_CONFIG, naming: 'abstract', years: 1 }, { A: new Spy(), B: new RuleLeader('status-quo') }, world)
+    await g.run()
+    const obs = seen[2]
+    const shown = describeObservation(obs, true, true)
+    const hidden = describeObservation(obs, true, false)
+    expect(shown).toContain('확전')
+    expect(hidden).not.toContain('확전')
+    expect(hidden).toContain('소비재 C1 관세 인상 +25%p') // 실제로 한 일은 남는다
+    expect(hidden).toContain('# 최근 기록')
+    const headerCols = (t: string) => t.split('\n').find((l) => l.startsWith('| 분기 |'))!.split('|').length
+    const rowCols = (t: string) => t.split('\n').find((l) => /^\| 1 \|/.test(l))!.split('|').length
+    expect(rowCols(hidden)).toBe(headerCols(hidden))
+    expect(headerCols(shown) - headerCols(hidden)).toBe(2)
+  })
+
   it('자기 인식 검사: 실제 변화와 비공개 텍스트를 맞춰 알고 함·반대로 앎·말만 함을 가른다', () => {
     const applied = statusQuoPolicy()
     applied.tariffs[goodIndex('grain')] = 0.02 // 내림 (알고 함)

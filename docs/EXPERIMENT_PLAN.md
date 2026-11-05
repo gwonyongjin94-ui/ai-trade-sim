@@ -105,3 +105,4 @@ npm run experiment -- --name main-gemma --models ollama:gemma4:12b --objectives 
 ## 변경 기록
 
 - 2026-11-04 초안.
+- 2026-11-05 확전점수 표시를 요인 후보로 추가 (`--es shown,hidden`). Haiku RR 시험판에서 확전점수를 벌점처럼 읽은 기록이 나와, 숨긴 조건으로 Haiku RR 1판을 먼저 돌려 본다. 가설과 주 지표는 그대로다.
