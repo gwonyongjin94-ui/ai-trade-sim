@@ -185,27 +185,51 @@ for (const f of pairFlows) {
 }
 const missing = pairFlows.filter((f) => f.source === 'none' && included(f.from) && included(f.to)).map((f) => `${f.from}→${f.to}`)
 
-writeFileSync(
-  resolve(OUT, `trade-${YEAR}.json`),
-  JSON.stringify(
-    {
-      meta: {
-        source: `UN Comtrade public preview API, HS, annual ${YEAR}, primaryValue (USD), importer-reported preferred, exporter-reported as mirror`,
-        unit: 'USD million',
-        fetched: new Date().toISOString().slice(0, 10),
-        reporters: REPORTERS,
-        goods: GOODS_V2,
-        hsMapping: 'food 01–24 · energy 27 · medicine 30 · chemicals 28–29,31–40 · vehicles 86–89 · metals 25–26,68–83 · machinery 84 · semiconductors 8542 · electronics 85(−8542),90–92 · apparel_household 41–67,93–97',
-        blocs: Object.fromEntries(Object.entries(BLOCS).map(([k, b]) => [k, { name: b.name, members: b.members }])),
-        missingPairs: missing.length,
-      },
-      blocFlows,
-      pairFlows,
-    },
-    null,
-    1,
-  ),
-)
+// ── 나머지 세계 (6개 블록 밖: EU, 아세안, 인도 등) ──
+// 보고국마다 대세계 총액 − 6개 블록 회원국(같은 블록 포함, 선택국 제외)과의 교역. 모두 보고국 자신의 보고값이다
+console.log('UN Comtrade: 대세계 총액, 같은 블록 안 교역 (나머지 세계 계산용)')
+const world: Record<'M' | 'X', Record<number, Partial<Record<GoodV2, number>>>> = { M: {}, X: {} }
+const addTo = (t: Partial<Record<GoodV2, number>>, g: GoodV2, v: number) => (t[g] = (t[g] ?? 0) + v / 1e6)
+for (const rep of REPORTERS) {
+  const own = blocOfCode.get(rep)
+  const sameBloc = allMembers.filter((m) => m.bloc === own && m.code !== rep).map((m) => m.code)
+  for (const flow of ['M', 'X'] as const) {
+    const w = (world[flow][rep] ??= {})
+    for (const r of await comtrade(rep, flow, [0], 'AG2')) addTo(w, goodOfChapter(Number(r.cmdCode)), r.primaryValue)
+    for (const r of await comtrade(rep, flow, [0], '8542')) {
+      addTo(w, 'semiconductors', r.primaryValue)
+      addTo(w, 'electronics', -r.primaryValue)
+    }
+    if (sameBloc.length) {
+      for (const r of await comtrade(rep, flow, sameBloc, 'AG2')) add(flow, rep, r.partnerCode, goodOfChapter(Number(r.cmdCode)), r.primaryValue)
+      for (const r of await comtrade(rep, flow, sameBloc, '8542')) {
+        add(flow, rep, r.partnerCode, 'semiconductors', r.primaryValue)
+        add(flow, rep, r.partnerCode, 'electronics', -r.primaryValue)
+      }
+    }
+  }
+  console.log(`  보고국 ${rep} 완료 (호출 ${calls}회)`)
+}
+const zero = () => Object.fromEntries(GOODS_V2.map((g) => [g, 0])) as Record<GoodV2, number>
+const toRow: Record<string, Record<GoodV2, number>> = {}
+const fromRow: Record<string, Record<GoodV2, number>> = {}
+let clampedCells = 0
+for (const rep of REPORTERS) {
+  const bloc = blocOfCode.get(rep)!
+  const others = allMembers.filter((m) => m.code !== rep && included(m.code)).map((m) => m.code)
+  for (const [flow, target] of [['X', toRow], ['M', fromRow]] as const) {
+    const cell = (target[bloc] ??= zero())
+    for (const g of GOODS_V2) {
+      let v = world[flow][rep]?.[g] ?? 0
+      for (const p of others) v -= reported[flow][rep]?.[p]?.[g] ?? 0
+      if (v < 0) {
+        clampedCells++
+        v = 0
+      }
+      cell[g] += v
+    }
+  }
+}
 
 // ── World Bank ──
 const WB = 'https://api.worldbank.org/v2/country'
@@ -217,6 +241,8 @@ const WB_INDICATORS: Record<string, string> = {
   grossCapitalFormationPctGdp: 'NE.GDI.TOTL.ZS',
   exportsPctGdp: 'NE.EXP.GNFS.ZS',
   importsPctGdp: 'NE.IMP.GNFS.ZS',
+  merchExportsUsd: 'TX.VAL.MRCH.CD.WT',
+  merchImportsUsd: 'TM.VAL.MRCH.CD.WT',
 }
 const isoList = allMembers.filter((m) => m.iso !== 'TWN').map((m) => m.iso)
 const macro: Record<string, Record<string, { value: number; year: number } | null>> = {}
@@ -249,7 +275,30 @@ macro.TWN = {
   grossCapitalFormationPctGdp: imf.investmentPctGdp[YEAR] ? { value: imf.investmentPctGdp[YEAR], year: YEAR } : null,
   exportsPctGdp: null,
   importsPctGdp: null,
+  merchExportsUsd: null,
+  merchImportsUsd: null,
 }
+
+
+// 중동은 Comtrade 보고국이 없다: World Bank 상품 수출입 총액 − 다른 블록과의 교역(거울 자료). 물품 구성은 다른 블록과의 교역 비율로 나눈다
+const dMembers = BLOCS.D.members.filter((m) => !m.optional)
+const dTotal = (key: 'merchExportsUsd' | 'merchImportsUsd') => dMembers.reduce((s, m) => s + (macro[m.iso]?.[key]?.value ?? 0), 0) / 1e6
+const spread = (total: number, shape: Record<GoodV2, number>) => {
+  const sum = GOODS_V2.reduce((s, g) => s + shape[g], 0)
+  return Object.fromEntries(GOODS_V2.map((g) => [g, sum > 0 ? (Math.max(0, total) * shape[g]) / sum : 0])) as Record<GoodV2, number>
+}
+const dExportsToBlocs = zero()
+const dImportsFromBlocs = zero()
+for (const b of Object.keys(BLOCS)) {
+  if (b === 'D') continue
+  for (const g of GOODS_V2) {
+    dExportsToBlocs[g] += blocFlows.D?.[b]?.[g] ?? 0
+    dImportsFromBlocs[g] += blocFlows[b]?.D?.[g] ?? 0
+  }
+}
+const sumG = (x: Record<GoodV2, number>) => GOODS_V2.reduce((s, g) => s + x[g], 0)
+toRow.D = spread(dTotal('merchExportsUsd') - sumG(dExportsToBlocs), dExportsToBlocs)
+fromRow.D = spread(dTotal('merchImportsUsd') - sumG(dImportsFromBlocs), dImportsFromBlocs)
 
 writeFileSync(
   resolve(OUT, `macro-${YEAR}.json`),
@@ -257,6 +306,34 @@ writeFileSync(
     {
       meta: { source: `World Bank WDI API (${Object.values(WB_INDICATORS).join(', ')}); Taiwan from IMF WEO datamapper (NGDPD, LP, NID_NGDP)`, year: YEAR, fetched: new Date().toISOString().slice(0, 10) },
       countries: Object.fromEntries(allMembers.map((m) => [m.iso, { bloc: m.bloc, name: m.name, optional: !!m.optional, ...macro[m.iso] }])),
+    },
+    null,
+    1,
+  ),
+)
+
+writeFileSync(
+  resolve(OUT, `trade-${YEAR}.json`),
+  JSON.stringify(
+    {
+      meta: {
+        source: `UN Comtrade public preview API, HS, annual ${YEAR}, primaryValue (USD), importer-reported preferred, exporter-reported as mirror`,
+        unit: 'USD million',
+        fetched: new Date().toISOString().slice(0, 10),
+        reporters: REPORTERS,
+        goods: GOODS_V2,
+        hsMapping: 'food 01–24 · energy 27 · medicine 30 · chemicals 28–29,31–40 · vehicles 86–89 · metals 25–26,68–83 · machinery 84 · semiconductors 8542 · electronics 85(−8542),90–92 · apparel_household 41–67,93–97',
+        blocs: Object.fromEntries(Object.entries(BLOCS).map(([k, b]) => [k, { name: b.name, members: b.members }])),
+        missingPairs: missing.length,
+      },
+      blocFlows,
+      rowFlows: {
+        method: '보고국: 대세계 총액 − 6개 블록 회원국과의 교역 (자기 보고값). 중동: World Bank 상품 수출입 총액 − 다른 블록과의 교역(거울), 물품 구성은 다른 블록과의 교역 비율. 홍콩·마카오·북한의 나머지 세계 교역은 빠짐 (보고하지 않음)',
+        clampedCells,
+        toRow,
+        fromRow,
+      },
+      pairFlows,
     },
     null,
     1,

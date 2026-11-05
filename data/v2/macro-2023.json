@@ -1,6 +1,6 @@
 {
  "meta": {
-  "source": "World Bank WDI API (SP.POP.TOTL, SL.TLF.TOTL.IN, NY.GDP.MKTP.CD, NE.CON.PRVT.CD, NE.GDI.TOTL.ZS, NE.EXP.GNFS.ZS, NE.IMP.GNFS.ZS); Taiwan from IMF WEO datamapper (NGDPD, LP, NID_NGDP)",
+  "source": "World Bank WDI API (SP.POP.TOTL, SL.TLF.TOTL.IN, NY.GDP.MKTP.CD, NE.CON.PRVT.CD, NE.GDI.TOTL.ZS, NE.EXP.GNFS.ZS, NE.IMP.GNFS.ZS, TX.VAL.MRCH.CD.WT, TM.VAL.MRCH.CD.WT); Taiwan from IMF WEO datamapper (NGDPD, LP, NID_NGDP)",
   "year": 2023,
   "fetched": "2026-11-05"
  },
@@ -36,6 +36,14 @@
    "importsPctGdp": {
     "value": 40.9365283348931,
     "year": 2023
+   },
+   "merchExportsUsd": {
+    "value": 632226000000,
+    "year": 2023
+   },
+   "merchImportsUsd": {
+    "value": 642572000000,
+    "year": 2023
    }
   },
   "CHN": {
@@ -69,6 +77,14 @@
    "importsPctGdp": {
     "value": 17.3368405290018,
     "year": 2023
+   },
+   "merchExportsUsd": {
+    "value": 3379044000000,
+    "year": 2023
+   },
+   "merchImportsUsd": {
+    "value": 2556941000000,
+    "year": 2023
    }
   },
   "PRK": {
@@ -87,7 +103,15 @@
    "householdConsumptionUsd": null,
    "grossCapitalFormationPctGdp": null,
    "exportsPctGdp": null,
-   "importsPctGdp": null
+   "importsPctGdp": null,
+   "merchExportsUsd": {
+    "value": 330000000,
+    "year": 2023
+   },
+   "merchImportsUsd": {
+    "value": 2440000000,
+    "year": 2023
+   }
   },
   "HKG": {
    "bloc": "B",
@@ -119,6 +143,14 @@
    },
    "importsPctGdp": {
     "value": 176.340412114544,
+    "year": 2023
+   },
+   "merchExportsUsd": {
+    "value": 573871000000,
+    "year": 2023
+   },
+   "merchImportsUsd": {
+    "value": 653696000000,
     "year": 2023
    }
   },
@@ -153,6 +185,14 @@
    "importsPctGdp": {
     "value": 53.4574236757415,
     "year": 2023
+   },
+   "merchExportsUsd": {
+    "value": 1654000000,
+    "year": 2023
+   },
+   "merchImportsUsd": {
+    "value": 17542000000,
+    "year": 2023
    }
   },
   "JPN": {
@@ -185,6 +225,14 @@
    },
    "importsPctGdp": {
     "value": 22.5357732459138,
+    "year": 2023
+   },
+   "merchExportsUsd": {
+    "value": 717256000000,
+    "year": 2023
+   },
+   "merchImportsUsd": {
+    "value": 787199000000,
     "year": 2023
    }
   },
@@ -219,6 +267,14 @@
    "importsPctGdp": {
     "value": 25.0415071647045,
     "year": 2023
+   },
+   "merchExportsUsd": {
+    "value": 320018000000,
+    "year": 2023
+   },
+   "merchImportsUsd": {
+    "value": 206940000000,
+    "year": 2023
    }
   },
   "ARE": {
@@ -251,6 +307,14 @@
    },
    "importsPctGdp": {
     "value": 92.1988267361531,
+    "year": 2023
+   },
+   "merchExportsUsd": {
+    "value": 570245000000,
+    "year": 2023
+   },
+   "merchImportsUsd": {
+    "value": 470536000000,
     "year": 2023
    }
   },
@@ -285,6 +349,14 @@
    "importsPctGdp": {
     "value": 31.6152340257357,
     "year": 2022
+   },
+   "merchExportsUsd": {
+    "value": 97751000000,
+    "year": 2023
+   },
+   "merchImportsUsd": {
+    "value": 31431000000,
+    "year": 2023
    }
   },
   "KWT": {
@@ -317,6 +389,14 @@
    },
    "importsPctGdp": {
     "value": 38.3322886518802,
+    "year": 2023
+   },
+   "merchExportsUsd": {
+    "value": 83981000000,
+    "year": 2023
+   },
+   "merchImportsUsd": {
+    "value": 37490000000,
     "year": 2023
    }
   },
@@ -351,6 +431,14 @@
    "importsPctGdp": {
     "value": 44.8623883036834,
     "year": 2023
+   },
+   "merchExportsUsd": {
+    "value": 59011000000,
+    "year": 2023
+   },
+   "merchImportsUsd": {
+    "value": 38775000000,
+    "year": 2023
    }
   },
   "BHR": {
@@ -383,6 +471,14 @@
    },
    "importsPctGdp": {
     "value": 70.0967107297264,
+    "year": 2023
+   },
+   "merchExportsUsd": {
+    "value": 24814000000,
+    "year": 2023
+   },
+   "merchImportsUsd": {
+    "value": 15367000000,
     "year": 2023
    }
   },
@@ -417,6 +513,14 @@
    "importsPctGdp": {
     "value": 25.4719025417845,
     "year": 2023
+   },
+   "merchExportsUsd": {
+    "value": 97357000000,
+    "year": 2023
+   },
+   "merchImportsUsd": {
+    "value": 65826000000,
+    "year": 2023
    }
   },
   "IRQ": {
@@ -449,6 +553,14 @@
    },
    "importsPctGdp": {
     "value": 29.8300885590124,
+    "year": 2023
+   },
+   "merchExportsUsd": {
+    "value": 99149000000,
+    "year": 2023
+   },
+   "merchImportsUsd": {
+    "value": 65826000000,
     "year": 2023
    }
   },
@@ -483,6 +595,14 @@
    "importsPctGdp": {
     "value": 27.6493079272484,
     "year": 2023
+   },
+   "merchExportsUsd": {
+    "value": 63345000000,
+    "year": 2023
+   },
+   "merchImportsUsd": {
+    "value": 91889000000,
+    "year": 2023
    }
   },
   "JOR": {
@@ -504,7 +624,15 @@
    "householdConsumptionUsd": null,
    "grossCapitalFormationPctGdp": null,
    "exportsPctGdp": null,
-   "importsPctGdp": null
+   "importsPctGdp": null,
+   "merchExportsUsd": {
+    "value": 12552000000,
+    "year": 2023
+   },
+   "merchImportsUsd": {
+    "value": 25757000000,
+    "year": 2023
+   }
   },
   "LBN": {
    "bloc": "D",
@@ -537,6 +665,14 @@
    "importsPctGdp": {
     "value": 73.6549981017088,
     "year": 2023
+   },
+   "merchExportsUsd": {
+    "value": 4139000000,
+    "year": 2023
+   },
+   "merchImportsUsd": {
+    "value": 18125000000,
+    "year": 2023
    }
   },
   "SYR": {
@@ -567,6 +703,14 @@
    "importsPctGdp": {
     "value": 28.6600525880316,
     "year": 2022
+   },
+   "merchExportsUsd": {
+    "value": 3231000000,
+    "year": 2023
+   },
+   "merchImportsUsd": {
+    "value": 6001000000,
+    "year": 2023
    }
   },
   "YEM": {
@@ -600,6 +744,14 @@
    "importsPctGdp": {
     "value": 47.3217203387932,
     "year": 2018
+   },
+   "merchExportsUsd": {
+    "value": 249000000,
+    "year": 2023
+   },
+   "merchImportsUsd": {
+    "value": 4603000000,
+    "year": 2023
    }
   },
   "TUR": {
@@ -632,6 +784,14 @@
    },
    "importsPctGdp": {
     "value": 33.7696157928943,
+    "year": 2023
+   },
+   "merchExportsUsd": {
+    "value": 255627000000,
+    "year": 2023
+   },
+   "merchImportsUsd": {
+    "value": 361967000000,
     "year": 2023
    }
   },
@@ -666,6 +826,14 @@
    "importsPctGdp": {
     "value": 21.3443094314355,
     "year": 2023
+   },
+   "merchExportsUsd": {
+    "value": 42081000000,
+    "year": 2023
+   },
+   "merchImportsUsd": {
+    "value": 83210000000,
+    "year": 2023
    }
   },
   "USA": {
@@ -698,6 +866,14 @@
    },
    "importsPctGdp": {
     "value": 13.878624456192,
+    "year": 2023
+   },
+   "merchExportsUsd": {
+    "value": 2018059000000,
+    "year": 2023
+   },
+   "merchImportsUsd": {
+    "value": 3168237000000,
     "year": 2023
    }
   },
@@ -732,6 +908,14 @@
    "importsPctGdp": {
     "value": 33.2328904516085,
     "year": 2023
+   },
+   "merchExportsUsd": {
+    "value": 570079000000,
+    "year": 2023
+   },
+   "merchImportsUsd": {
+    "value": 570873000000,
+    "year": 2023
    }
   },
   "MEX": {
@@ -765,6 +949,14 @@
    "importsPctGdp": {
     "value": 37.5911414580596,
     "year": 2023
+   },
+   "merchExportsUsd": {
+    "value": 593001000000,
+    "year": 2023
+   },
+   "merchImportsUsd": {
+    "value": 628457000000,
+    "year": 2023
    }
   },
   "TWN": {
@@ -783,7 +975,9 @@
    "householdConsumptionUsd": null,
    "grossCapitalFormationPctGdp": null,
    "exportsPctGdp": null,
-   "importsPctGdp": null
+   "importsPctGdp": null,
+   "merchExportsUsd": null,
+   "merchImportsUsd": null
   }
  }
 }
