@@ -85,7 +85,8 @@ if (!violated || own.exportControls[M] !== 1) throw new Error('상황 만들기 
 
 // ── 질문 ──
 type Q = { key: string; text: string; schema: Record<string, unknown>; answer: unknown }
-const lvl = { type: 'integer', minimum: 0, maximum: 3 }
+// 게임 결정 스키마와 같은 표현 (Anthropic 구조화 출력은 integer의 minimum·maximum을 거부한다)
+const lvl = { type: 'integer', enum: [0, 1, 2, 3] }
 const QUESTIONS: Q[] = [
   { key: 'own_control_machinery', text: '지금 우리(A국) 산업기계 수출 통제는 몇 단계인가?', schema: lvl, answer: own.exportControls[M] },
   { key: 'rival_control_machinery', text: '지금 B국 산업기계 수출 통제는 몇 단계인가?', schema: lvl, answer: obs.policies.B.exportControls[M] },
@@ -177,7 +178,10 @@ for (const model of models) {
       process.exit(1)
     }
     r.latencyMs.push(res.latencyMs)
-    if (!res.ok || !res.json) r.failedCalls++
+    if (!res.ok || !res.json) {
+      r.failedCalls++
+      console.error(`  응답 실패 (확인 질문): ${res.error ?? '빈 응답'}`.slice(0, 300))
+    }
     const j = (res.json ?? {}) as Record<string, unknown>
     for (const q of QUESTIONS) {
       r.questions[q.key].answers.push(j[q.key] ?? null)
@@ -189,6 +193,7 @@ for (const model of models) {
       const d = tr.ok ? parseDecision(tr.json, 'real') : null
       if (!d) {
         r.failedCalls++
+        console.error(`  응답 실패 (실행 과제 ${t.key}): ${tr.error ?? '결정 형식 아님'}`.slice(0, 300))
         r.tasks[t.key].errors.push(['응답 해석 실패'])
         continue
       }
