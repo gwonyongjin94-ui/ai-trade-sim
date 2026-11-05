@@ -84,6 +84,8 @@ export interface Indicators {
   shortageByGood: number[] // 교역재 순서
   realGdp: number // 실질 GDP 지수 (시작=100)
   realGdpUsd: number // 실질 GDP (2023년 달러) = 2023년 GDP × 지수 ÷ 100
+  nominalGdp: number // 명목 GDP 지수 (시작=100): 그 분기 생산자 가격으로 잰 생산액. 기준재(세계 생산을 시작 가격으로 잰 값)가 고정이라 교역 조건이 좋아지면 오른다
+  nominalGdpUsd: number // 명목 GDP (달러) = 2023년 GDP × 명목 지수 ÷ 100. 상대 이익 목표가 이 값의 비율이다
   cpi: number
   inflation: number // 분기율
   importsValue: number // 국경 가격 (모형 단위)

@@ -64,6 +64,20 @@ function borderImports(market: MarketResult, policies: Record<RegionId, Policy>,
   }, 0)
 }
 
+// 물품별 교역액 flows[수출][수입][교역재] (국경 가격, 모형 단위 = 2023년 USD 10억, 연율)
+export function goodFlows(market: MarketResult, policies: Record<RegionId, Policy>): Record<RegionId, Record<RegionId, number[]>> {
+  return perRegion((j) =>
+    perRegion((i) =>
+      Array.from({ length: N_TRADED }, (_, g) => {
+        if (i === j) return 0
+        const m = market.purchases[i][j][g]
+        const xt = EXPORT_TAX_EQUIVALENT[policies[j].exportControls[i][g]]
+        return m > 0 && Number.isFinite(xt) ? m * market.prices[j][g] * (1 + xt) : 0
+      }),
+    ),
+  )
+}
+
 export function computeIndicators(world: World, market: MarketResult, policies: Record<RegionId, Policy>): Record<RegionId, Indicators> {
   return perRegion((r) => {
     const c = world.calib[r]
@@ -100,6 +114,8 @@ export function computeIndicators(world: World, market: MarketResult, policies: 
       shortageByGood,
       realGdp,
       realGdpUsd: (c.gdpUsd * realGdp) / 100,
+      nominalGdp: (100 * market.gdp[r]) / base.realGdp[r],
+      nominalGdpUsd: (c.gdpUsd * market.gdp[r]) / base.realGdp[r],
       cpi,
       inflation: cpi / world.lastCpi[r] - 1,
       importsValue,

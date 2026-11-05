@@ -62,6 +62,8 @@ function gdpOf(iso: string): number {
 const laborOf = (iso: string) => (iso === 'TWN' ? manual.TWN.laborForce : (mv(iso, 'laborForce') ?? 0))
 // 투자율: 없으면 같은 블록 첫 나라 값. 대만은 IMF API에 2023 값이 없어 주계총처 값 (manual)
 const gcfOf = (iso: string): number | null => (iso === 'TWN' ? manual.TWN.grossCapitalFormationPctGdp : mv(iso, 'grossCapitalFormationPctGdp'))
+// 관세·투자율은 0.1%p 단위로 반올림한다. 지도자는 정책을 0.1% 단위로 읽고 쓰므로, 시작 정책을 그대로 다시 써도 값이 바뀌지 않아야 한다
+const round1pct = (x: number) => Math.round(x * 1000) / 1000
 const macroOf: Record<string, { population: number; labor: number; gdpUsd: number; investmentRate: number }> = {}
 for (const b of BLOCS) {
   const ms = members(b)
@@ -71,7 +73,7 @@ for (const b of BLOCS) {
     population: sum(ms.map((m) => mv(m.iso, 'population') ?? 0)),
     labor: sum(ms.map((m) => laborOf(m.iso))),
     gdpUsd: gdp,
-    investmentRate: gcf / gdp,
+    investmentRate: round1pct(gcf / gdp),
   }
   for (const m of ms) if (gcfOf(m.iso) == null) note(`${m.iso} 투자율 없음 → ${ms[0].iso} 값`)
 }
@@ -81,9 +83,10 @@ macroOf.R = {
   population: W.population.value - blocTotal('population'),
   labor: W.laborForce.value - blocTotal('labor'),
   gdpUsd: W.gdpUsd.value - blocTotal('gdpUsd'),
-  investmentRate:
+  investmentRate: round1pct(
     ((W.grossCapitalFormationPctGdp.value / 100) * W.gdpUsd.value - sum(BLOCS.map((b) => macroOf[b].investmentRate * macroOf[b].gdpUsd))) /
-    (W.gdpUsd.value - blocTotal('gdpUsd')),
+      (W.gdpUsd.value - blocTotal('gdpUsd')),
+  ),
 }
 
 // ── 부가가치 (USD) → 부문 묶음별 총산출 (USD 10억) ──
@@ -195,7 +198,8 @@ for (const i of REGIONS) {
   tariff[i] = {}
   for (const j of REGIONS) {
     if (i === j) continue
-    tariff[i][j] = i === 'R' ? tariffs.row.rowOnBloc[j] : j === 'R' ? tariffs.row.blocOnRow[i] : tariffs.bloc[i][j]
+    const src = i === 'R' ? tariffs.row.rowOnBloc[j] : j === 'R' ? tariffs.row.blocOnRow[i] : tariffs.bloc[i][j]
+    tariff[i][j] = Object.fromEntries(Object.entries(src as Record<string, number>).map(([g, t]) => [g, round1pct(t)]))
   }
 }
 const EXPORT_TAX = [0, 0.25, 1.0]
