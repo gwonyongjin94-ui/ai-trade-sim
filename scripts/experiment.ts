@@ -19,7 +19,7 @@
 
 import { execSync } from 'node:child_process'
 import { createHash } from 'node:crypto'
-import { appendFileSync, existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
+import { appendFileSync, existsSync, mkdirSync, readFileSync, renameSync, rmSync, writeFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import type { CultureBrief } from '../src/engine/culture'
 import type { Naming } from '../src/engine/goods'
@@ -35,7 +35,7 @@ import { RuleLeader } from '../src/sim/rules'
 import type { RuleKind } from '../src/sim/rules'
 import type { GameConfig, Leader, Recap } from '../src/sim/types'
 import { projectEnv } from '../server/env'
-import { callLlm, estimateCost, isLocalModel, listModels, localModels, PRICES } from '../server/providers'
+import { callLlm, estimateCost, isFatalLlmError, isLocalModel, listModels, localModels, PRICES } from '../server/providers'
 
 const ROOT = resolve(import.meta.dirname, '..')
 
@@ -268,6 +268,8 @@ function leaderFor(spec: string, c: CountryId, config: GameConfig): Leader {
   })
 }
 
+class FatalRunError extends Error {}
+
 async function runOne(spec: RunSpec) {
   const file = resolve(dir, `${spec.id}.jsonl`)
   rmSync(file, { force: true }) // 중간에 끊긴 런은 처음부터
@@ -275,26 +277,42 @@ async function runOne(spec: RunSpec) {
   const game = new Game(config, { A: leaderFor(spec.A, 'A', config), B: leaderFor(spec.B, 'B', config) }, world)
   appendFileSync(file, JSON.stringify({ type: 'run', spec, promptHash, code, ollamaEnv }) + '\n')
   let cost = 0
+  let fatal: string | null = null
   game.onEvent((e) => {
     appendFileSync(file, JSON.stringify(e) + '\n')
+    if ((e.type === 'diplomacy' || e.type === 'decision') && !fatal && isFatalLlmError(e.meta?.error)) {
+      fatal = e.meta!.error!
+      game.stop()
+    }
     if ((e.type === 'diplomacy' || e.type === 'decision') && e.meta?.usage && e.meta.model) cost += estimateCost(e.meta.requestedModel ?? e.meta.model, e.meta.usage) || 0
     if (e.type === 'quarter' && (e.quarter + 1) % 8 === 0) console.log(`  ${spec.id}: ${e.quarter + 1}/${totalQuarters}분기, 비용 $${cost.toFixed(3)}`)
   })
   const t = Date.now()
   await game.run()
+  if (fatal) {
+    // .jsonl이 아니면 보고서·기록부가 읽지 않고, 이어 돌리면 처음부터 다시 한다
+    renameSync(file, `${file}.failed`)
+    throw new FatalRunError(fatal)
+  }
   console.log(`완료 ${spec.id} (${((Date.now() - t) / 1000).toFixed(0)}초, $${cost.toFixed(3)})`)
 }
 
 const queue = [...todo]
+let aborted: string | null = null
 await Promise.all(
   Array.from({ length: Math.max(1, concurrency) }, async () => {
-    for (let s = queue.shift(); s; s = queue.shift()) {
+    for (let s = queue.shift(); s && !aborted; s = queue.shift()) {
       try {
         await runOne(s)
       } catch (err) {
         console.error(`실패 ${s.id}: ${String(err)}`)
+        if (err instanceof FatalRunError) aborted = err.message
       }
     }
   }),
 )
+if (aborted) {
+  console.error(`\n멈춤: 다시 불러도 같은 오류가 날 문제입니다 (${aborted.slice(0, 120)}). .env의 키·크레딧·모델 이름을 확인하고 같은 명령으로 다시 돌리세요.`)
+  process.exit(1)
+}
 console.log(`\n끝. 보고서: npm run report -- ${name}`)

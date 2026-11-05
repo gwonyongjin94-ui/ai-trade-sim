@@ -18,7 +18,7 @@ import { DEFAULT_CONFIG } from '../src/sim/types'
 import type { DecisionAction, DiplomacyAction, Leader, Observation } from '../src/sim/types'
 import { decisionSchema, describeObservation, parseDecision, systemPrompt } from '../src/sim/llm'
 import { applyDecision, Game, keepPolicyAction } from '../src/sim/game'
-import { callLlm, isLocalModel, listModels } from '../server/providers'
+import { callLlm, isFatalLlmError, isLocalModel, listModels } from '../server/providers'
 
 const ROOT = resolve(import.meta.dirname, '..')
 const argv = process.argv.slice(2)
@@ -172,6 +172,10 @@ for (const model of models) {
   }
   for (let i = 0; i < repeats; i++) {
     const res = await callLlm({ model, system, user: view + quizText, schema: quizSchema, effort: 'medium' })
+    if (isFatalLlmError(res.error)) {
+      console.error(`멈춤 ${model}: ${res.error!.slice(0, 120)}. 보고서는 바꾸지 않았습니다.`)
+      process.exit(1)
+    }
     r.latencyMs.push(res.latencyMs)
     if (!res.ok || !res.json) r.failedCalls++
     const j = (res.json ?? {}) as Record<string, unknown>

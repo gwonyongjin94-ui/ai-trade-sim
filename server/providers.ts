@@ -256,6 +256,11 @@ async function callOllama(req: LlmRequest): Promise<LlmResponse> {
   }
 }
 
+// 다시 불러도 똑같이 실패할 오류 (키·권한·크레딧·모델 이름). 이런 오류로 게임을 끝까지 돌리면
+// 정책 유지만 64번 한 가짜 판이 "완료"로 남으니, 실험과 규칙 검사는 바로 멈춘다
+const FATAL_LLM_ERROR = /^(401|403|404)\b|authentication_error|permission_error|not_found_error|credit balance|\.env에 [A-Z_]+가 없습니다/i
+export const isFatalLlmError = (error?: string) => !!error && FATAL_LLM_ERROR.test(error)
+
 export function callLlm(req: LlmRequest): Promise<LlmResponse> {
   if (req.model.startsWith('claude-')) return callAnthropic(req)
   if (isLocalModel(req.model)) return callOllama(req)
