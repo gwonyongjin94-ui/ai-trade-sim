@@ -4,3 +4,4 @@ dist
 runs/
 *.tsbuildinfo
 .DS_Store
+data/raw/

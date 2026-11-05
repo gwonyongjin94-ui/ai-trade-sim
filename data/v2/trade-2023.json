@@ -1,0 +1,5380 @@
+{
+ "meta": {
+  "source": "UN Comtrade public preview API, HS, annual 2023, primaryValue (USD), importer-reported preferred, exporter-reported as mirror",
+  "unit": "USD million",
+  "fetched": "2026-11-05",
+  "reporters": [
+   410,
+   156,
+   392,
+   842,
+   124,
+   484,
+   490
+  ],
+  "goods": [
+   "food",
+   "energy",
+   "medicine",
+   "apparel_household",
+   "chemicals",
+   "vehicles",
+   "metals",
+   "machinery",
+   "semiconductors",
+   "electronics"
+  ],
+  "hsMapping": "food 01–24 · energy 27 · medicine 30 · chemicals 28–29,31–40 · vehicles 86–89 · metals 25–26,68–83 · machinery 84 · semiconductors 8542 · electronics 85(−8542),90–92 · apparel_household 41–67,93–97",
+  "blocs": {
+   "A": {
+    "name": "대한민국",
+    "members": [
+     {
+      "code": 410,
+      "iso": "KOR",
+      "name": "대한민국"
+     }
+    ]
+   },
+   "B": {
+    "name": "중국·북한",
+    "members": [
+     {
+      "code": 156,
+      "iso": "CHN",
+      "name": "중국"
+     },
+     {
+      "code": 408,
+      "iso": "PRK",
+      "name": "북한"
+     },
+     {
+      "code": 344,
+      "iso": "HKG",
+      "name": "홍콩"
+     },
+     {
+      "code": 446,
+      "iso": "MAC",
+      "name": "마카오"
+     }
+    ]
+   },
+   "C": {
+    "name": "일본",
+    "members": [
+     {
+      "code": 392,
+      "iso": "JPN",
+      "name": "일본"
+     }
+    ]
+   },
+   "D": {
+    "name": "중동",
+    "members": [
+     {
+      "code": 682,
+      "iso": "SAU",
+      "name": "사우디아라비아"
+     },
+     {
+      "code": 784,
+      "iso": "ARE",
+      "name": "아랍에미리트"
+     },
+     {
+      "code": 634,
+      "iso": "QAT",
+      "name": "카타르"
+     },
+     {
+      "code": 414,
+      "iso": "KWT",
+      "name": "쿠웨이트"
+     },
+     {
+      "code": 512,
+      "iso": "OMN",
+      "name": "오만"
+     },
+     {
+      "code": 48,
+      "iso": "BHR",
+      "name": "바레인"
+     },
+     {
+      "code": 364,
+      "iso": "IRN",
+      "name": "이란"
+     },
+     {
+      "code": 368,
+      "iso": "IRQ",
+      "name": "이라크"
+     },
+     {
+      "code": 376,
+      "iso": "ISR",
+      "name": "이스라엘"
+     },
+     {
+      "code": 400,
+      "iso": "JOR",
+      "name": "요르단"
+     },
+     {
+      "code": 422,
+      "iso": "LBN",
+      "name": "레바논"
+     },
+     {
+      "code": 760,
+      "iso": "SYR",
+      "name": "시리아"
+     },
+     {
+      "code": 887,
+      "iso": "YEM",
+      "name": "예멘"
+     },
+     {
+      "code": 792,
+      "iso": "TUR",
+      "name": "튀르키예",
+      "optional": true
+     },
+     {
+      "code": 818,
+      "iso": "EGY",
+      "name": "이집트",
+      "optional": true
+     }
+    ]
+   },
+   "E": {
+    "name": "미국·캐나다·멕시코",
+    "members": [
+     {
+      "code": 842,
+      "iso": "USA",
+      "name": "미국"
+     },
+     {
+      "code": 124,
+      "iso": "CAN",
+      "name": "캐나다"
+     },
+     {
+      "code": 484,
+      "iso": "MEX",
+      "name": "멕시코"
+     }
+    ]
+   },
+   "F": {
+    "name": "대만",
+    "members": [
+     {
+      "code": 490,
+      "iso": "TWN",
+      "name": "대만"
+     }
+    ]
+   }
+  },
+  "missingPairs": 90
+ },
+ "blocFlows": {
+  "A": {
+   "B": {
+    "food": 2074.1065869999998,
+    "energy": 5899.546684999999,
+    "medicine": 157.984916,
+    "apparel_household": 2731.5719510000004,
+    "chemicals": 33327.457642,
+    "vehicles": 2168.114286,
+    "metals": 12475.435579000003,
+    "machinery": 17526.040443,
+    "semiconductors": 82115.042887,
+    "electronics": 28476.837755999997
+   },
+   "C": {
+    "food": 2501.2877658389993,
+    "energy": 5646.350555229,
+    "medicine": 636.079923444,
+    "apparel_household": 2608.706886288,
+    "chemicals": 4605.436644533001,
+    "vehicles": 575.88813158,
+    "metals": 6062.264884715,
+    "machinery": 3386.926454064,
+    "semiconductors": 1572.671136029,
+    "electronics": 3408.0962405460004
+   },
+   "D": {
+    "food": 359.60121,
+    "energy": 546.9699999999999,
+    "medicine": 147.295798,
+    "apparel_household": 1233.3151319999995,
+    "chemicals": 1782.3762659999995,
+    "vehicles": 5529.166827,
+    "metals": 1687.2398149999997,
+    "machinery": 2670.9536049999997,
+    "semiconductors": 50.798836,
+    "electronics": 1913.5741299999997
+   },
+   "E": {
+    "food": 1835.6549482240005,
+    "energy": 5263.611612693,
+    "medicine": 2928.135557162,
+    "apparel_household": 7302.853604755999,
+    "chemicals": 16524.028954928002,
+    "vehicles": 45751.964327713,
+    "metals": 13956.495181129001,
+    "machinery": 27752.912498340003,
+    "semiconductors": 4240.230540455,
+    "electronics": 23991.726844355995
+   },
+   "F": {
+    "food": 417.108135448,
+    "energy": 1104.2389794330002,
+    "medicine": 39.849675012,
+    "apparel_household": 339.46705894300004,
+    "chemicals": 3100.3159698010004,
+    "vehicles": 695.449256771,
+    "metals": 1772.041478547,
+    "machinery": 1923.613006362,
+    "semiconductors": 16898.426757978,
+    "electronics": 2169.359302703
+   }
+  },
+  "B": {
+   "A": {
+    "food": 5046.913367,
+    "energy": 900.702421,
+    "medicine": 294.20538,
+    "apparel_household": 15906.837328,
+    "chemicals": 27519.960573000004,
+    "vehicles": 4402.57375,
+    "metals": 18898.028042999995,
+    "machinery": 16162.2771,
+    "semiconductors": 17770.441467,
+    "electronics": 37787.151691
+   },
+   "C": {
+    "food": 9185.065143050002,
+    "energy": 1641.675472017,
+    "medicine": 451.052958489,
+    "apparel_household": 40143.864836317,
+    "chemicals": 17737.028249889,
+    "vehicles": 5944.107766261,
+    "metals": 13152.463312930999,
+    "machinery": 30481.668426878,
+    "semiconductors": 1763.64795059,
+    "electronics": 54964.335223789996
+   },
+   "D": {
+    "food": 3129.9515020000003,
+    "energy": 1581.1105949999999,
+    "medicine": 273.356909,
+    "apparel_household": 41458.10905,
+    "chemicals": 16447.109613999997,
+    "vehicles": 17923.223637000003,
+    "metals": 26239.893809999998,
+    "machinery": 24864.724954,
+    "semiconductors": 106.09514000000001,
+    "electronics": 30511.46809
+   },
+   "E": {
+    "food": 9101.882249430997,
+    "energy": 1713.2828652169999,
+    "medicine": 6412.415616069001,
+    "apparel_household": 157442.32902896704,
+    "chemicals": 53263.942294742,
+    "vehicles": 34508.393002898,
+    "metals": 50457.730083115,
+    "machinery": 121359.79896451,
+    "semiconductors": 5779.616692875002,
+    "electronics": 194336.515721689
+   },
+   "F": {
+    "food": 1040.107242821,
+    "energy": 235.461220104,
+    "medicine": 42.882244435000004,
+    "apparel_household": 6573.2120592050005,
+    "chemicals": 6797.901327967999,
+    "vehicles": 1371.377479365,
+    "metals": 7043.614658797001,
+    "machinery": 11555.674510011999,
+    "semiconductors": 17241.349866257002,
+    "electronics": 19934.007244140004
+   }
+  },
+  "C": {
+   "A": {
+    "food": 560.7037990000001,
+    "energy": 1512.968893,
+    "medicine": 477.623812,
+    "apparel_household": 1643.6842199999996,
+    "chemicals": 9471.839474,
+    "vehicles": 1553.0830770000002,
+    "metals": 9886.134811,
+    "machinery": 8271.262856,
+    "semiconductors": 5058.78644,
+    "electronics": 9210.698597999999
+   },
+   "B": {
+    "food": 2757.2310685810003,
+    "energy": 1141.7254095360001,
+    "medicine": 1875.587928836,
+    "apparel_household": 14196.118159793,
+    "chemicals": 31905.391471861003,
+    "vehicles": 13008.486818008998,
+    "metals": 26996.145604977002,
+    "machinery": 35299.86868422,
+    "semiconductors": 24447.953850526,
+    "electronics": 41819.831314306
+   },
+   "D": {
+    "food": 108.79542138900001,
+    "energy": 20.936363637,
+    "medicine": 38.624031247999994,
+    "apparel_household": 3829.7436436279986,
+    "chemicals": 1106.5476220859998,
+    "vehicles": 14591.590724990001,
+    "metals": 1594.1812241760006,
+    "machinery": 2881.7994781920006,
+    "semiconductors": 3.766218157,
+    "electronics": 1054.084787143
+   },
+   "E": {
+    "food": 1711.7221141369996,
+    "energy": 1532.9983010629999,
+    "medicine": 6835.544077562,
+    "apparel_household": 8287.838207932,
+    "chemicals": 15204.327816863002,
+    "vehicles": 63772.079955193,
+    "metals": 12047.703677138998,
+    "machinery": 43352.091801262,
+    "semiconductors": 1606.0720760560002,
+    "electronics": 33274.48540493
+   },
+   "F": {
+    "food": 1004.2866776269998,
+    "energy": 304.368589115,
+    "medicine": 334.688698148,
+    "apparel_household": 1185.4548067660003,
+    "chemicals": 9206.495357592,
+    "vehicles": 3752.151160835,
+    "metals": 6718.641410985001,
+    "machinery": 7858.951326517,
+    "semiconductors": 7155.554366392,
+    "electronics": 6748.427973198999
+   }
+  },
+  "D": {
+   "A": {
+    "food": 111.32767099999998,
+    "energy": 84186.503714,
+    "medicine": 23.892356999999997,
+    "apparel_household": 83.22569800000001,
+    "chemicals": 1302.565432,
+    "vehicles": 508.32477200000005,
+    "metals": 1866.2465050000008,
+    "machinery": 135.768905,
+    "semiconductors": 45.252188,
+    "electronics": 1023.0338260000001
+   },
+   "B": {
+    "food": 972.8341709999999,
+    "energy": 189304.46571199998,
+    "medicine": 46.650869,
+    "apparel_household": 155.67965600000002,
+    "chemicals": 17579.182980999994,
+    "vehicles": 3.8459589999999997,
+    "metals": 7321.713174000001,
+    "machinery": 584.572282,
+    "semiconductors": 3776.322962,
+    "electronics": 2722.990252999999
+   },
+   "C": {
+    "food": 173.31626561000002,
+    "energy": 90826.18877931598,
+    "medicine": 30.610689043,
+    "apparel_household": 173.99490305899997,
+    "chemicals": 798.4212142419998,
+    "vehicles": 7.615070678,
+    "metals": 1947.8131674999997,
+    "machinery": 168.976521874,
+    "semiconductors": 277.178537034,
+    "electronics": 583.9037304909999
+   },
+   "E": {
+    "food": 1007.588362932,
+    "energy": 30091.632911950004,
+    "medicine": 1454.95589613,
+    "apparel_household": 6150.4348805320005,
+    "chemicals": 6218.754782534,
+    "vehicles": 593.743598675,
+    "metals": 14279.048422746002,
+    "machinery": 2576.5541336530005,
+    "semiconductors": 2288.234460063,
+    "electronics": 5576.867003671997
+   },
+   "F": {
+    "food": 59.569625659999986,
+    "energy": 22962.834777725,
+    "medicine": 2.5835388360000002,
+    "apparel_household": 27.208704877,
+    "chemicals": 1111.258384514,
+    "vehicles": 1.593867593,
+    "metals": 706.5636384709999,
+    "machinery": 95.53896895200002,
+    "semiconductors": 93.29246787,
+    "electronics": 1079.361516568
+   }
+  },
+  "E": {
+   "A": {
+    "food": 9801.927799,
+    "energy": 26897.792856,
+    "medicine": 2522.894363,
+    "apparel_household": 2272.7010480000004,
+    "chemicals": 7730.3521599999995,
+    "vehicles": 6043.771493,
+    "metals": 7066.016796,
+    "machinery": 10934.007978,
+    "semiconductors": 2552.107988,
+    "electronics": 9734.878517999998
+   },
+   "B": {
+    "food": 42678.172430642,
+    "energy": 29790.927129259,
+    "medicine": 7450.182788501,
+    "apparel_household": 15859.636141029001,
+    "chemicals": 28332.753722848003,
+    "vehicles": 17843.170890502002,
+    "metals": 46624.169312107995,
+    "machinery": 23562.541167473002,
+    "semiconductors": 14159.584891874998,
+    "electronics": 34210.471390306004
+   },
+   "C": {
+    "food": 19198.098394369,
+    "energy": 17731.280263431996,
+    "medicine": 9185.911389383,
+    "apparel_household": 6181.628701643001,
+    "chemicals": 10281.652557493002,
+    "vehicles": 5067.096210182,
+    "metals": 7972.687794345,
+    "machinery": 12646.170467479,
+    "semiconductors": 2158.2944196380004,
+    "electronics": 13609.786031851
+   },
+   "D": {
+    "food": 5821.526241049001,
+    "energy": 1262.9895561510002,
+    "medicine": 1761.2952969050002,
+    "apparel_household": 6779.949822928003,
+    "chemicals": 5101.824387109,
+    "vehicles": 23246.279112986995,
+    "metals": 9394.089554761002,
+    "machinery": 9733.834824648,
+    "semiconductors": 801.839328859,
+    "electronics": 10792.122670063003
+   },
+   "F": {
+    "food": 4146.046446814999,
+    "energy": 8427.173806101999,
+    "medicine": 1278.001907615,
+    "apparel_household": 3089.09800517,
+    "chemicals": 3806.9935270339997,
+    "vehicles": 2886.749813611,
+    "metals": 2424.0245809969997,
+    "machinery": 8208.765412439,
+    "semiconductors": 5077.955165354,
+    "electronics": 5234.179226511
+   }
+  },
+  "F": {
+   "A": {
+    "food": 258.07598,
+    "energy": 88.860298,
+    "medicine": 22.67044,
+    "apparel_household": 229.527953,
+    "chemicals": 1311.6483249999999,
+    "vehicles": 120.10755900000001,
+    "metals": 1075.365038,
+    "machinery": 1152.961593,
+    "semiconductors": 17283.31429,
+    "electronics": 2828.108172
+   },
+   "B": {
+    "food": 976.4137699889998,
+    "energy": 894.326612059,
+    "medicine": 285.760572386,
+    "apparel_household": 3118.9448367269993,
+    "chemicals": 12837.989344791,
+    "vehicles": 552.644552658,
+    "metals": 7343.076354162001,
+    "machinery": 22842.319470696,
+    "semiconductors": 177909.33149480802,
+    "electronics": 29122.905894225005
+   },
+   "C": {
+    "food": 721.0927909740001,
+    "energy": 61.337835075,
+    "medicine": 109.656740388,
+    "apparel_household": 3452.5723358210003,
+    "chemicals": 2884.5375237640005,
+    "vehicles": 427.75337835499994,
+    "metals": 3313.038999418,
+    "machinery": 2878.7835852870003,
+    "semiconductors": 17832.085561960997,
+    "electronics": 3972.0671651030025
+   },
+   "D": {
+    "food": 48.908965045,
+    "energy": 267.50851109099995,
+    "medicine": 2.55921426,
+    "apparel_household": 339.36327437299997,
+    "chemicals": 736.3470811790002,
+    "vehicles": 799.5441643789999,
+    "metals": 503.3075323609999,
+    "machinery": 702.1550567180001,
+    "semiconductors": 329.395020389,
+    "electronics": 669.138583345
+   },
+   "E": {
+    "food": 1077.2715944260003,
+    "energy": 611.743641334,
+    "medicine": 653.939044826,
+    "apparel_household": 7782.2601757739985,
+    "chemicals": 6016.386850934999,
+    "vehicles": 4685.272720154,
+    "metals": 10783.096523121,
+    "machinery": 39265.58681732701,
+    "semiconductors": 11980.088503567,
+    "electronics": 27373.996024235003
+   }
+  }
+ },
+ "pairFlows": [
+  {
+   "from": 410,
+   "to": 156,
+   "source": "importer",
+   "values": {
+    "electronics": 26384.632826,
+    "apparel_household": 2270.2725140000002,
+    "machinery": 15616.552236,
+    "chemicals": 32319.042594000002,
+    "food": 1594.2994579999997,
+    "metals": 11403.936474000002,
+    "medicine": 113.154989,
+    "vehicles": 1485.2727450000002,
+    "energy": 4917.444371,
+    "semiconductors": 65634.823868
+   }
+  },
+  {
+   "from": 410,
+   "to": 408,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 410,
+   "to": 344,
+   "source": "exporter",
+   "values": {
+    "vehicles": 675.810592,
+    "medicine": 44.337704,
+    "chemicals": 1006.1890579999999,
+    "apparel_household": 457.8478630000001,
+    "food": 478.742169,
+    "electronics": 2089.279910999998,
+    "energy": 982.102314,
+    "metals": 1069.932122,
+    "machinery": 1908.628635,
+    "semiconductors": 16480.217515
+   }
+  },
+  {
+   "from": 410,
+   "to": 446,
+   "source": "exporter",
+   "values": {
+    "vehicles": 7.030949,
+    "medicine": 0.492223,
+    "chemicals": 2.22599,
+    "apparel_household": 3.451573999999999,
+    "food": 1.06496,
+    "metals": 1.566983,
+    "electronics": 2.925019,
+    "machinery": 0.859572,
+    "semiconductors": 0.001504
+   }
+  },
+  {
+   "from": 410,
+   "to": 392,
+   "source": "importer",
+   "values": {
+    "apparel_household": 2608.706886288,
+    "electronics": 3408.0962405460004,
+    "vehicles": 575.88813158,
+    "food": 2501.2877658389993,
+    "medicine": 636.079923444,
+    "metals": 6062.264884715,
+    "chemicals": 4605.436644533001,
+    "machinery": 3386.926454064,
+    "energy": 5646.350555229,
+    "semiconductors": 1572.671136029
+   }
+  },
+  {
+   "from": 410,
+   "to": 682,
+   "source": "exporter",
+   "values": {
+    "food": 36.158643000000005,
+    "metals": 595.233449,
+    "energy": 97.610726,
+    "chemicals": 583.6832029999999,
+    "medicine": 37.607372,
+    "apparel_household": 617.3010419999999,
+    "machinery": 885.224024,
+    "electronics": 781.445573,
+    "vehicles": 1681.728219,
+    "semiconductors": 0.038288
+   }
+  },
+  {
+   "from": 410,
+   "to": 784,
+   "source": "exporter",
+   "values": {
+    "food": 234.692781,
+    "metals": 433.65065500000003,
+    "energy": 263.127706,
+    "chemicals": 599.225052,
+    "medicine": 33.167978,
+    "apparel_household": 435.036998,
+    "machinery": 976.080009,
+    "electronics": 527.6841310000001,
+    "vehicles": 897.8385450000001,
+    "semiconductors": 6.776855
+   }
+  },
+  {
+   "from": 410,
+   "to": 634,
+   "source": "exporter",
+   "values": {
+    "food": 10.581371999999998,
+    "metals": 316.528638,
+    "energy": 35.063739,
+    "chemicals": 50.275881999999996,
+    "apparel_household": 11.061878000000002,
+    "electronics": 71.965361,
+    "medicine": 0.328863,
+    "machinery": 213.475364,
+    "vehicles": 54.940605999999995,
+    "semiconductors": 0.026334
+   }
+  },
+  {
+   "from": 410,
+   "to": 414,
+   "source": "exporter",
+   "values": {
+    "food": 8.36579,
+    "metals": 31.525200000000005,
+    "energy": 2.682793,
+    "chemicals": 57.34506499999999,
+    "medicine": 2.453409,
+    "apparel_household": 29.441384999999997,
+    "machinery": 36.942315,
+    "vehicles": 330.853137,
+    "electronics": 58.834037
+   }
+  },
+  {
+   "from": 410,
+   "to": 512,
+   "source": "exporter",
+   "values": {
+    "food": 3.596287,
+    "metals": 131.98389600000002,
+    "energy": 62.581486,
+    "chemicals": 128.82812700000002,
+    "medicine": 1.110409,
+    "apparel_household": 14.606029999999999,
+    "machinery": 65.942646,
+    "vehicles": 59.738679999999995,
+    "electronics": 25.560968000000003,
+    "semiconductors": 0.666271
+   }
+  },
+  {
+   "from": 410,
+   "to": 48,
+   "source": "exporter",
+   "values": {
+    "food": 1.998001,
+    "metals": 12.868485,
+    "energy": 35.686822,
+    "chemicals": 9.848082,
+    "medicine": 0.230291,
+    "apparel_household": 3.7125619999999997,
+    "machinery": 26.209291,
+    "electronics": 14.13054,
+    "vehicles": 49.138389999999994,
+    "semiconductors": 0.011769
+   }
+  },
+  {
+   "from": 410,
+   "to": 364,
+   "source": "exporter",
+   "values": {
+    "food": 0.6801250000000001,
+    "metals": 16.650371,
+    "energy": 0.264112,
+    "chemicals": 22.088838,
+    "medicine": 8.674366,
+    "apparel_household": 10.812531999999996,
+    "machinery": 38.354043,
+    "electronics": 62.19359699999999,
+    "vehicles": 17.265968,
+    "semiconductors": 6.330215
+   }
+  },
+  {
+   "from": 410,
+   "to": 368,
+   "source": "exporter",
+   "values": {
+    "food": 4.911893,
+    "metals": 78.900686,
+    "energy": 41.379948,
+    "chemicals": 70.125425,
+    "medicine": 21.683878,
+    "apparel_household": 37.005461,
+    "machinery": 176.651344,
+    "electronics": 143.516901,
+    "vehicles": 621.798225,
+    "semiconductors": 0.000665
+   }
+  },
+  {
+   "from": 410,
+   "to": 376,
+   "source": "exporter",
+   "values": {
+    "food": 40.444592,
+    "metals": 52.681405999999996,
+    "energy": 4.359541,
+    "chemicals": 166.690147,
+    "medicine": 6.96482,
+    "apparel_household": 38.900275,
+    "machinery": 219.91584,
+    "electronics": 162.831282,
+    "vehicles": 1183.986212,
+    "semiconductors": 36.891717
+   }
+  },
+  {
+   "from": 410,
+   "to": 400,
+   "source": "exporter",
+   "values": {
+    "food": 6.579595,
+    "energy": 2.929172,
+    "chemicals": 52.102863,
+    "medicine": 24.364513,
+    "apparel_household": 17.378919000000003,
+    "metals": 9.955554,
+    "vehicles": 597.559888,
+    "electronics": 28.027177000000002,
+    "machinery": 19.898635
+   }
+  },
+  {
+   "from": 410,
+   "to": 422,
+   "source": "exporter",
+   "values": {
+    "food": 4.2783169999999995,
+    "metals": 4.366248000000001,
+    "energy": 0.621958,
+    "chemicals": 23.809807999999997,
+    "medicine": 5.36757,
+    "apparel_household": 5.495797,
+    "machinery": 7.749322,
+    "electronics": 25.288316,
+    "vehicles": 12.519051,
+    "semiconductors": 0.056722
+   }
+  },
+  {
+   "from": 410,
+   "to": 760,
+   "source": "exporter",
+   "values": {
+    "food": 1.1440350000000001,
+    "metals": 0.254423,
+    "energy": 0.200037,
+    "chemicals": 5.604533,
+    "medicine": 2.226154,
+    "apparel_household": 1.3696300000000001,
+    "machinery": 0.477348,
+    "electronics": 1.205176,
+    "vehicles": 4.067923
+   }
+  },
+  {
+   "from": 410,
+   "to": 887,
+   "source": "exporter",
+   "values": {
+    "food": 6.169779,
+    "energy": 0.46196,
+    "chemicals": 12.749241,
+    "medicine": 3.116175,
+    "apparel_household": 11.192623000000001,
+    "metals": 2.6408039999999997,
+    "machinery": 4.033424,
+    "electronics": 10.891071,
+    "vehicles": 17.731983
+   }
+  },
+  {
+   "from": 410,
+   "to": 792,
+   "source": "exporter",
+   "values": {
+    "food": 23.288576,
+    "metals": 2030.6644549999996,
+    "energy": 40.87602,
+    "chemicals": 2938.217932,
+    "medicine": 377.736059,
+    "apparel_household": 458.402124,
+    "machinery": 1284.878144,
+    "electronics": 534.343538,
+    "vehicles": 1179.992025,
+    "semiconductors": 98.387771
+   }
+  },
+  {
+   "from": 410,
+   "to": 818,
+   "source": "exporter",
+   "values": {
+    "food": 8.569768,
+    "metals": 115.94514200000003,
+    "energy": 15.270896,
+    "chemicals": 307.917508,
+    "medicine": 21.061766,
+    "apparel_household": 38.22489799999999,
+    "machinery": 162.189944,
+    "electronics": 150.73727800000003,
+    "vehicles": 450.53180299999997,
+    "semiconductors": 58.624753
+   }
+  },
+  {
+   "from": 410,
+   "to": 842,
+   "source": "importer",
+   "values": {
+    "apparel_household": 5011.523598,
+    "food": 1605.5870720000005,
+    "chemicals": 13788.128423000002,
+    "metals": 10092.014245000002,
+    "vehicles": 39038.591657,
+    "electronics": 19163.016023999997,
+    "energy": 4898.658962,
+    "machinery": 21101.91901,
+    "medicine": 2616.45609,
+    "semiconductors": 2400.49316
+   }
+  },
+  {
+   "from": 410,
+   "to": 124,
+   "source": "importer",
+   "values": {
+    "apparel_household": 303.360035756,
+    "electronics": 817.073788356,
+    "machinery": 1416.01520534,
+    "metals": 1403.234910129,
+    "food": 207.063471224,
+    "chemicals": 703.596724928,
+    "vehicles": 4983.320435713,
+    "medicine": 268.384131162,
+    "energy": 97.15280469300001,
+    "semiconductors": 99.799410455
+   }
+  },
+  {
+   "from": 410,
+   "to": 484,
+   "source": "importer",
+   "values": {
+    "food": 23.004405,
+    "metals": 2461.246026,
+    "chemicals": 2032.303807,
+    "apparel_household": 1987.969971,
+    "medicine": 43.295336,
+    "machinery": 5234.978283,
+    "vehicles": 1730.052235,
+    "electronics": 4011.6370319999996,
+    "energy": 267.799846,
+    "semiconductors": 1739.93797
+   }
+  },
+  {
+   "from": 410,
+   "to": 490,
+   "source": "importer",
+   "values": {
+    "apparel_household": 339.46705894300004,
+    "food": 417.108135448,
+    "metals": 1772.041478547,
+    "vehicles": 695.449256771,
+    "chemicals": 3100.3159698010004,
+    "machinery": 1923.613006362,
+    "electronics": 2169.359302703,
+    "medicine": 39.849675012,
+    "energy": 1104.2389794330002,
+    "semiconductors": 16898.426757978
+   }
+  },
+  {
+   "from": 156,
+   "to": 410,
+   "source": "importer",
+   "values": {
+    "metals": 18753.371517999996,
+    "apparel_household": 15863.324112999999,
+    "electronics": 37493.249358,
+    "vehicles": 4399.614727,
+    "food": 4871.969392,
+    "medicine": 292.863875,
+    "chemicals": 27476.145769000002,
+    "energy": 885.415073,
+    "machinery": 16001.128335,
+    "semiconductors": 16816.793018
+   }
+  },
+  {
+   "from": 156,
+   "to": 392,
+   "source": "importer",
+   "values": {
+    "food": 9001.719512446001,
+    "chemicals": 17725.976845869,
+    "metals": 12975.313508878999,
+    "machinery": 30459.333579904,
+    "vehicles": 5942.581204864,
+    "electronics": 54879.144822677,
+    "apparel_household": 39099.732845581,
+    "energy": 1639.522447798,
+    "medicine": 450.685139242,
+    "semiconductors": 1753.49547027
+   }
+  },
+  {
+   "from": 156,
+   "to": 682,
+   "source": "exporter",
+   "values": {
+    "food": 533.2785180000001,
+    "metals": 6901.37161,
+    "chemicals": 3902.8622339999997,
+    "apparel_household": 13059.402468,
+    "vehicles": 4545.307725,
+    "electronics": 8422.589478,
+    "medicine": 57.114602,
+    "machinery": 5190.435933,
+    "energy": 240.342791,
+    "semiconductors": 2.333138
+   }
+  },
+  {
+   "from": 156,
+   "to": 784,
+   "source": "exporter",
+   "values": {
+    "food": 1019.0205379999999,
+    "energy": 734.800625,
+    "apparel_household": 11798.238252999998,
+    "vehicles": 5605.6562539999995,
+    "metals": 8268.420145999999,
+    "chemicals": 5534.725543,
+    "medicine": 67.172656,
+    "electronics": 12771.86003,
+    "machinery": 9852.022932,
+    "semiconductors": 31.213097
+   }
+  },
+  {
+   "from": 156,
+   "to": 634,
+   "source": "exporter",
+   "values": {
+    "apparel_household": 857.1704240000001,
+    "food": 44.218446,
+    "metals": 876.222827,
+    "vehicles": 341.314181,
+    "electronics": 447.39392300000003,
+    "chemicals": 344.42056799999995,
+    "medicine": 6.103154,
+    "machinery": 576.450384,
+    "energy": 142.608152,
+    "semiconductors": 0.250959
+   }
+  },
+  {
+   "from": 156,
+   "to": 414,
+   "source": "exporter",
+   "values": {
+    "food": 100.232187,
+    "metals": 1216.3498269999998,
+    "energy": 35.681982,
+    "chemicals": 414.71549100000004,
+    "medicine": 9.646804,
+    "apparel_household": 1325.409863,
+    "machinery": 862.774893,
+    "electronics": 565.431354,
+    "vehicles": 694.201278,
+    "semiconductors": 0.136576
+   }
+  },
+  {
+   "from": 156,
+   "to": 512,
+   "source": "exporter",
+   "values": {
+    "food": 63.771361000000006,
+    "metals": 1010.4426669999998,
+    "energy": 116.064375,
+    "chemicals": 539.5525160000001,
+    "medicine": 4.957773,
+    "apparel_household": 685.964508,
+    "machinery": 657.700834,
+    "electronics": 464.86375100000004,
+    "vehicles": 254.55856200000002,
+    "semiconductors": 0.146826
+   }
+  },
+  {
+   "from": 156,
+   "to": 48,
+   "source": "exporter",
+   "values": {
+    "food": 53.01022400000001,
+    "metals": 225.40453499999998,
+    "energy": 124.900174,
+    "chemicals": 224.38283700000002,
+    "medicine": 1.258151,
+    "apparel_household": 299.825461,
+    "machinery": 215.919677,
+    "electronics": 169.39513599999998,
+    "vehicles": 232.698255,
+    "semiconductors": 0.009233
+   }
+  },
+  {
+   "from": 156,
+   "to": 364,
+   "source": "exporter",
+   "values": {
+    "food": 191.630714,
+    "metals": 1027.083684,
+    "energy": 45.750385,
+    "chemicals": 1102.9478530000001,
+    "apparel_household": 1122.109472,
+    "medicine": 23.595688,
+    "machinery": 2274.726772,
+    "electronics": 1706.98512,
+    "vehicles": 2501.8011070000002,
+    "semiconductors": 37.954262
+   }
+  },
+  {
+   "from": 156,
+   "to": 368,
+   "source": "exporter",
+   "values": {
+    "food": 491.9445840000001,
+    "metals": 2620.4940479999996,
+    "energy": 131.247435,
+    "chemicals": 1493.551894,
+    "medicine": 41.672622,
+    "machinery": 2726.254213,
+    "apparel_household": 4090.2243,
+    "electronics": 1917.9829080000002,
+    "vehicles": 771.8417469999999,
+    "semiconductors": 1.108029
+   }
+  },
+  {
+   "from": 156,
+   "to": 376,
+   "source": "exporter",
+   "values": {
+    "metals": 2525.8110690000003,
+    "energy": 5.625107,
+    "chemicals": 1587.8860659999998,
+    "apparel_household": 4331.944029999999,
+    "electronics": 2507.9386680000002,
+    "vehicles": 2122.794609,
+    "food": 318.99684399999995,
+    "medicine": 19.83014,
+    "machinery": 1533.576571,
+    "semiconductors": 30.84183
+   }
+  },
+  {
+   "from": 156,
+   "to": 400,
+   "source": "exporter",
+   "values": {
+    "food": 134.532827,
+    "metals": 698.8123679999999,
+    "energy": 0.780824,
+    "chemicals": 614.881222,
+    "medicine": 13.98567,
+    "apparel_household": 1963.184637,
+    "machinery": 437.011173,
+    "electronics": 680.6230100000001,
+    "vehicles": 536.426272,
+    "semiconductors": 0.343589
+   }
+  },
+  {
+   "from": 156,
+   "to": 422,
+   "source": "exporter",
+   "values": {
+    "food": 84.593899,
+    "metals": 414.30536600000005,
+    "energy": 0.641428,
+    "chemicals": 302.36169600000005,
+    "medicine": 7.71617,
+    "apparel_household": 636.677018,
+    "machinery": 283.648467,
+    "electronics": 463.51196200000004,
+    "vehicles": 177.123952,
+    "semiconductors": 1.751872
+   }
+  },
+  {
+   "from": 156,
+   "to": 760,
+   "source": "exporter",
+   "values": {
+    "food": 11.746335,
+    "metals": 61.376404,
+    "energy": 2.547701,
+    "chemicals": 76.36634,
+    "medicine": 1.065553,
+    "apparel_household": 104.03318900000001,
+    "machinery": 42.871994,
+    "electronics": 43.332614,
+    "vehicles": 12.676167,
+    "semiconductors": 0.000752
+   }
+  },
+  {
+   "from": 156,
+   "to": 887,
+   "source": "exporter",
+   "values": {
+    "food": 82.97502499999999,
+    "metals": 393.799259,
+    "energy": 0.119616,
+    "chemicals": 308.45535399999994,
+    "medicine": 19.237926,
+    "apparel_household": 1183.925427,
+    "machinery": 211.331111,
+    "electronics": 349.56013599999994,
+    "vehicles": 126.823528,
+    "semiconductors": 0.004977
+   }
+  },
+  {
+   "from": 156,
+   "to": 792,
+   "source": "exporter",
+   "values": {
+    "chemicals": 5331.380631,
+    "apparel_household": 4783.972098000001,
+    "metals": 5976.190897,
+    "food": 448.7484719999999,
+    "vehicles": 3286.9673840000005,
+    "electronics": 10198.874916,
+    "medicine": 131.936717,
+    "machinery": 8437.331692,
+    "energy": 162.078433,
+    "semiconductors": 115.380331
+   }
+  },
+  {
+   "from": 156,
+   "to": 818,
+   "source": "exporter",
+   "values": {
+    "chemicals": 2483.471686,
+    "apparel_household": 3752.3245449999995,
+    "food": 239.656427,
+    "metals": 2672.5680070000008,
+    "electronics": 2758.047938,
+    "vehicles": 912.369481,
+    "medicine": 47.673729,
+    "machinery": 2012.246015,
+    "energy": 28.195999,
+    "semiconductors": 27.992972
+   }
+  },
+  {
+   "from": 156,
+   "to": 842,
+   "source": "importer",
+   "values": {
+    "food": 6311.27794,
+    "energy": 239.303832,
+    "apparel_household": 121388.56222300003,
+    "vehicles": 18092.755824,
+    "electronics": 137604.87657999998,
+    "metals": 32615.223258,
+    "chemicals": 38030.187373,
+    "machinery": 85889.376499,
+    "medicine": 6000.14873,
+    "semiconductors": 1845.664125
+   }
+  },
+  {
+   "from": 156,
+   "to": 124,
+   "source": "importer",
+   "values": {
+    "apparel_household": 15030.262320359001,
+    "vehicles": 4960.489947811,
+    "chemicals": 5643.246038749,
+    "metals": 7353.624945884,
+    "medicine": 129.002106599,
+    "food": 1748.5308688699997,
+    "electronics": 17354.966241037,
+    "machinery": 13551.28508994,
+    "energy": 125.30427192299999,
+    "semiconductors": 190.676082295
+   }
+  },
+  {
+   "from": 156,
+   "to": 484,
+   "source": "importer",
+   "values": {
+    "food": 866.8229860000004,
+    "metals": 9186.742296999999,
+    "chemicals": 9446.561066,
+    "apparel_household": 18186.882123,
+    "machinery": 21701.094738,
+    "vehicles": 11388.995176,
+    "electronics": 38603.178463000004,
+    "energy": 1348.10387,
+    "medicine": 270.719041,
+    "semiconductors": 3678.589204
+   }
+  },
+  {
+   "from": 156,
+   "to": 490,
+   "source": "importer",
+   "values": {
+    "apparel_household": 6493.336101392,
+    "food": 1009.8251709069999,
+    "chemicals": 6772.638646991999,
+    "metals": 5848.235534596,
+    "vehicles": 1370.491455255,
+    "energy": 195.376453233,
+    "electronics": 19878.481429562005,
+    "medicine": 42.83531594,
+    "machinery": 11545.184964209999,
+    "semiconductors": 17190.721049764
+   }
+  },
+  {
+   "from": 408,
+   "to": 410,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 408,
+   "to": 392,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 408,
+   "to": 682,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 408,
+   "to": 784,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 408,
+   "to": 634,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 408,
+   "to": 414,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 408,
+   "to": 512,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 408,
+   "to": 48,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 408,
+   "to": 364,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 408,
+   "to": 368,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 408,
+   "to": 376,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 408,
+   "to": 400,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 408,
+   "to": 422,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 408,
+   "to": 760,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 408,
+   "to": 887,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 408,
+   "to": 792,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 408,
+   "to": 818,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 408,
+   "to": 842,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 408,
+   "to": 124,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 408,
+   "to": 484,
+   "source": "importer",
+   "values": {
+    "chemicals": 0.132802,
+    "apparel_household": 0.01524
+   }
+  },
+  {
+   "from": 408,
+   "to": 490,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 344,
+   "to": 410,
+   "source": "importer",
+   "values": {
+    "chemicals": 43.72233,
+    "apparel_household": 41.429271,
+    "metals": 144.597747,
+    "food": 174.52690800000002,
+    "electronics": 293.41329800000005,
+    "machinery": 160.966149,
+    "energy": 14.853768,
+    "vehicles": 2.955867,
+    "medicine": 1.341343,
+    "semiconductors": 953.642418
+   }
+  },
+  {
+   "from": 344,
+   "to": 392,
+   "source": "importer",
+   "values": {
+    "food": 183.343395616,
+    "electronics": 84.44511950500001,
+    "vehicles": 1.3987662840000001,
+    "chemicals": 10.201456337000002,
+    "apparel_household": 1039.449989088,
+    "machinery": 22.280761356,
+    "energy": 2.153024219,
+    "metals": 170.735157951,
+    "medicine": 0.36781924699999996,
+    "semiconductors": 10.14995125
+   }
+  },
+  {
+   "from": 344,
+   "to": 682,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 344,
+   "to": 784,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 344,
+   "to": 634,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 344,
+   "to": 414,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 344,
+   "to": 512,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 344,
+   "to": 48,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 344,
+   "to": 364,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 344,
+   "to": 368,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 344,
+   "to": 376,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 344,
+   "to": 400,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 344,
+   "to": 422,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 344,
+   "to": 760,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 344,
+   "to": 887,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 344,
+   "to": 792,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 344,
+   "to": 818,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 344,
+   "to": 842,
+   "source": "importer",
+   "values": {
+    "food": 135.568145,
+    "apparel_household": 2249.592964,
+    "vehicles": 13.835037,
+    "electronics": 427.163253,
+    "metals": 1174.5101989999998,
+    "chemicals": 97.36975300000002,
+    "machinery": 140.91732,
+    "energy": 0.379365,
+    "medicine": 3.226795,
+    "semiconductors": 15.377231
+   }
+  },
+  {
+   "from": 344,
+   "to": 124,
+   "source": "importer",
+   "values": {
+    "vehicles": 5.71554529,
+    "metals": 83.712837434,
+    "apparel_household": 86.58956321400001,
+    "food": 35.31213549499999,
+    "chemicals": 17.417866814,
+    "energy": 0.191521108,
+    "electronics": 43.042861595,
+    "medicine": 3.3083764700000002,
+    "machinery": 23.140508138999998,
+    "semiconductors": 1.092872473
+   }
+  },
+  {
+   "from": 344,
+   "to": 484,
+   "source": "importer",
+   "values": {
+    "chemicals": 22.864272,
+    "apparel_household": 370.65816899999993,
+    "metals": 40.970873999999995,
+    "food": 1.647285,
+    "machinery": 53.563954,
+    "vehicles": 45.919064,
+    "electronics": 289.071888,
+    "semiconductors": 47.550546
+   }
+  },
+  {
+   "from": 344,
+   "to": 490,
+   "source": "importer",
+   "values": {
+    "apparel_household": 79.22451197999999,
+    "food": 29.204770854000003,
+    "metals": 1192.097146839,
+    "chemicals": 24.436200203,
+    "vehicles": 0.88602411,
+    "electronics": 55.38714761600001,
+    "energy": 40.084766871,
+    "machinery": 10.466627234999999,
+    "medicine": 0.046928495,
+    "semiconductors": 50.6066041
+   }
+  },
+  {
+   "from": 446,
+   "to": 410,
+   "source": "importer",
+   "values": {
+    "apparel_household": 2.0839439999999994,
+    "food": 0.41706699999999997,
+    "chemicals": 0.092474,
+    "metals": 0.058778,
+    "machinery": 0.182616,
+    "vehicles": 0.003156,
+    "electronics": 0.48903500000000005,
+    "energy": 0.43358,
+    "medicine": 0.000162,
+    "semiconductors": 0.006031
+   }
+  },
+  {
+   "from": 446,
+   "to": 392,
+   "source": "importer",
+   "values": {
+    "electronics": 0.745281608,
+    "chemicals": 0.849947683,
+    "apparel_household": 4.682001648,
+    "vehicles": 0.127795113,
+    "food": 0.002234988,
+    "metals": 6.414646101000001,
+    "machinery": 0.054085618,
+    "semiconductors": 0.00252907
+   }
+  },
+  {
+   "from": 446,
+   "to": 682,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 446,
+   "to": 784,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 446,
+   "to": 634,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 446,
+   "to": 414,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 446,
+   "to": 512,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 446,
+   "to": 48,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 446,
+   "to": 364,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 446,
+   "to": 368,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 446,
+   "to": 376,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 446,
+   "to": 400,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 446,
+   "to": 422,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 446,
+   "to": 760,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 446,
+   "to": 887,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 446,
+   "to": 792,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 446,
+   "to": 818,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 446,
+   "to": 842,
+   "source": "importer",
+   "values": {
+    "electronics": 3.6386920000000003,
+    "metals": 2.9366260000000004,
+    "apparel_household": 119.386147,
+    "chemicals": 3.1830419999999995,
+    "vehicles": 0.675555,
+    "machinery": 0.134315,
+    "medicine": 6.010567,
+    "food": 1.95402,
+    "semiconductors": 0.2753
+   }
+  },
+  {
+   "from": 446,
+   "to": 124,
+   "source": "importer",
+   "values": {
+    "food": 0.7688690659999999,
+    "vehicles": 0.006853796999999999,
+    "apparel_household": 3.170406394,
+    "metals": 0.009045797,
+    "energy": 0.000005186,
+    "electronics": 1.177027057,
+    "chemicals": 1.491360179,
+    "machinery": 0.284947431,
+    "semiconductors": 0.019096107
+   }
+  },
+  {
+   "from": 446,
+   "to": 484,
+   "source": "importer",
+   "values": {
+    "chemicals": 1.488721,
+    "machinery": 0.001593,
+    "electronics": 9.400716,
+    "apparel_household": 7.209873,
+    "semiconductors": 0.372236
+   }
+  },
+  {
+   "from": 446,
+   "to": 490,
+   "source": "importer",
+   "values": {
+    "apparel_household": 0.651445833,
+    "food": 1.07730106,
+    "chemicals": 0.826480773,
+    "machinery": 0.022918567,
+    "electronics": 0.138666962,
+    "metals": 3.2819773619999997,
+    "semiconductors": 0.022212393
+   }
+  },
+  {
+   "from": 392,
+   "to": 410,
+   "source": "importer",
+   "values": {
+    "food": 560.7037990000001,
+    "metals": 9886.134811,
+    "chemicals": 9471.839474,
+    "apparel_household": 1643.6842199999996,
+    "energy": 1512.968893,
+    "electronics": 9210.698597999999,
+    "vehicles": 1553.0830770000002,
+    "machinery": 8271.262856,
+    "medicine": 477.623812,
+    "semiconductors": 5058.78644
+   }
+  },
+  {
+   "from": 392,
+   "to": 156,
+   "source": "importer",
+   "values": {
+    "electronics": 35606.954769,
+    "apparel_household": 5068.838708000001,
+    "machinery": 34019.165338,
+    "chemicals": 30119.118680000003,
+    "food": 1369.8179300000004,
+    "energy": 1007.999576,
+    "vehicles": 12208.831774999999,
+    "metals": 18686.191983,
+    "medicine": 1632.18678,
+    "semiconductors": 20757.221255
+   }
+  },
+  {
+   "from": 392,
+   "to": 408,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 392,
+   "to": 344,
+   "source": "exporter",
+   "values": {
+    "apparel_household": 8882.183222526999,
+    "chemicals": 1772.3576376679998,
+    "food": 1356.4679947719999,
+    "metals": 8241.084088551,
+    "electronics": 6175.773414345998,
+    "vehicles": 742.5168028720001,
+    "energy": 133.665618648,
+    "medicine": 240.58892037400003,
+    "machinery": 1266.259903681,
+    "semiconductors": 3690.730920402
+   }
+  },
+  {
+   "from": 392,
+   "to": 446,
+   "source": "exporter",
+   "values": {
+    "apparel_household": 245.09622926599997,
+    "chemicals": 13.915154192999998,
+    "food": 30.945143808999998,
+    "energy": 0.060214888,
+    "metals": 68.869533426,
+    "vehicles": 57.138240137,
+    "medicine": 2.8122284619999998,
+    "electronics": 37.10313096,
+    "machinery": 14.443442539000001,
+    "semiconductors": 0.001675124
+   }
+  },
+  {
+   "from": 392,
+   "to": 682,
+   "source": "exporter",
+   "values": {
+    "food": 21.973675678999996,
+    "metals": 360.9807553730001,
+    "energy": 7.374084757,
+    "chemicals": 339.030198718,
+    "apparel_household": 252.492780434,
+    "machinery": 654.8523513380001,
+    "vehicles": 4456.272880864,
+    "medicine": 19.022358728999997,
+    "electronics": 232.14486879500004,
+    "semiconductors": 0.628620284
+   }
+  },
+  {
+   "from": 392,
+   "to": 784,
+   "source": "exporter",
+   "values": {
+    "food": 61.898142461999996,
+    "chemicals": 383.562151943,
+    "medicine": 4.311294306,
+    "apparel_household": 3255.584599593999,
+    "metals": 555.0812323160002,
+    "machinery": 1484.860123676,
+    "vehicles": 4200.273324204,
+    "electronics": 435.01008013899997,
+    "energy": 4.477835228,
+    "semiconductors": 0.040182131
+   }
+  },
+  {
+   "from": 392,
+   "to": 634,
+   "source": "exporter",
+   "values": {
+    "food": 3.878194582,
+    "metals": 201.69298002200003,
+    "energy": 2.32583875,
+    "chemicals": 37.771552005000004,
+    "medicine": 0.959489636,
+    "apparel_household": 30.440202364000005,
+    "machinery": 172.003415638,
+    "electronics": 48.090605063,
+    "vehicles": 911.976039162,
+    "semiconductors": 0.031058748
+   }
+  },
+  {
+   "from": 392,
+   "to": 414,
+   "source": "exporter",
+   "values": {
+    "food": 4.76885717,
+    "metals": 54.905332101000006,
+    "energy": 0.136792298,
+    "chemicals": 58.022818193999996,
+    "medicine": 1.728902183,
+    "apparel_household": 59.418134295,
+    "machinery": 74.988729733,
+    "electronics": 56.34656798099999,
+    "vehicles": 1635.3815628879997,
+    "semiconductors": 0.0028497130000000002
+   }
+  },
+  {
+   "from": 392,
+   "to": 512,
+   "source": "exporter",
+   "values": {
+    "food": 3.927731642,
+    "metals": 218.259005591,
+    "energy": 0.355677233,
+    "chemicals": 37.034932604000005,
+    "medicine": 0.216530792,
+    "apparel_household": 12.155842664000001,
+    "machinery": 91.612190676,
+    "electronics": 38.412039191999995,
+    "vehicles": 815.409535979,
+    "semiconductors": 0.033851053
+   }
+  },
+  {
+   "from": 392,
+   "to": 48,
+   "source": "exporter",
+   "values": {
+    "food": 1.5578650350000003,
+    "metals": 35.76045726499999,
+    "energy": 1.332194025,
+    "chemicals": 19.518587292,
+    "medicine": 0.38210694500000003,
+    "apparel_household": 16.183913624,
+    "machinery": 134.765566599,
+    "electronics": 51.303885287,
+    "vehicles": 374.29759932099995,
+    "semiconductors": 0.00205453
+   }
+  },
+  {
+   "from": 392,
+   "to": 364,
+   "source": "exporter",
+   "values": {
+    "energy": 0.025446236,
+    "chemicals": 8.831345599999999,
+    "medicine": 2.204830494,
+    "apparel_household": 17.319291170999996,
+    "machinery": 5.988065259,
+    "electronics": 28.241959466,
+    "metals": 0.165805421,
+    "vehicles": 1.275141769
+   }
+  },
+  {
+   "from": 392,
+   "to": 368,
+   "source": "exporter",
+   "values": {
+    "food": 0.337937869,
+    "metals": 80.78927777400001,
+    "energy": 1.797566766,
+    "chemicals": 34.631060081,
+    "medicine": 1.9905197,
+    "apparel_household": 14.287514186,
+    "machinery": 70.94490195200001,
+    "electronics": 14.509430003,
+    "vehicles": 626.5687099129999,
+    "semiconductors": 0.00205453
+   }
+  },
+  {
+   "from": 392,
+   "to": 376,
+   "source": "exporter",
+   "values": {
+    "food": 5.0752960300000005,
+    "metals": 30.374741926000002,
+    "energy": 0.138891047,
+    "chemicals": 129.06918096500002,
+    "apparel_household": 130.214528001,
+    "machinery": 116.810903787,
+    "electronics": 113.535465205,
+    "medicine": 1.846707992,
+    "vehicles": 781.168396183,
+    "semiconductors": 3.013985559
+   }
+  },
+  {
+   "from": 392,
+   "to": 400,
+   "source": "exporter",
+   "values": {
+    "food": 3.050815201,
+    "metals": 7.594281183,
+    "energy": 1.060225595,
+    "chemicals": 42.600222775,
+    "medicine": 4.468404514,
+    "apparel_household": 22.416078378999998,
+    "machinery": 23.98403459,
+    "electronics": 17.872157459,
+    "vehicles": 372.36043713699996,
+    "semiconductors": 0.005140062
+   }
+  },
+  {
+   "from": 392,
+   "to": 422,
+   "source": "exporter",
+   "values": {
+    "food": 2.3269057190000004,
+    "energy": 0.022176699,
+    "chemicals": 8.254194183,
+    "medicine": 0.161609945,
+    "apparel_household": 11.314427867,
+    "metals": 37.63846742100001,
+    "electronics": 4.7213176489999995,
+    "vehicles": 251.72834167300002,
+    "machinery": 12.053373582,
+    "semiconductors": 0.006421547
+   }
+  },
+  {
+   "from": 392,
+   "to": 760,
+   "source": "exporter",
+   "values": {
+    "apparel_household": 0.7239863799999999,
+    "metals": 0.024717138,
+    "machinery": 0.06366226600000001,
+    "electronics": 0.610207301,
+    "chemicals": 1.1887901439999997,
+    "vehicles": 0.96957324
+   }
+  },
+  {
+   "from": 392,
+   "to": 887,
+   "source": "exporter",
+   "values": {
+    "energy": 1.889635003,
+    "chemicals": 7.032587582,
+    "medicine": 1.331276012,
+    "apparel_household": 7.192344669,
+    "metals": 10.914170645,
+    "machinery": 38.872159096000004,
+    "electronics": 13.286203603,
+    "vehicles": 163.909182657
+   }
+  },
+  {
+   "from": 392,
+   "to": 792,
+   "source": "exporter",
+   "values": {
+    "food": 2.924368248,
+    "metals": 748.6248351840001,
+    "energy": 13.245104429,
+    "chemicals": 274.448192216,
+    "medicine": 11.956996048,
+    "apparel_household": 208.23005235,
+    "machinery": 972.2669997749999,
+    "vehicles": 981.862423157,
+    "electronics": 764.4937186469999,
+    "semiconductors": 3.374904527
+   }
+  },
+  {
+   "from": 392,
+   "to": 818,
+   "source": "exporter",
+   "values": {
+    "food": 10.873402737000001,
+    "metals": 51.345341567999995,
+    "energy": 0.862487684,
+    "chemicals": 100.64359164700001,
+    "medicine": 1.281752071,
+    "apparel_household": 23.510042673,
+    "machinery": 241.219548993,
+    "electronics": 72.03856510199999,
+    "vehicles": 172.60419345000003,
+    "semiconductors": 0.220523841
+   }
+  },
+  {
+   "from": 392,
+   "to": 842,
+   "source": "importer",
+   "values": {
+    "food": 1530.8649999999998,
+    "metals": 7417.759245999999,
+    "chemicals": 12768.860689000001,
+    "medicine": 6589.219265,
+    "apparel_household": 6693.361263000001,
+    "machinery": 36245.295759,
+    "vehicles": 52521.848207,
+    "electronics": 26041.42642,
+    "energy": 732.530513,
+    "semiconductors": 1039.397928
+   }
+  },
+  {
+   "from": 392,
+   "to": 124,
+   "source": "importer",
+   "values": {
+    "machinery": 3538.110696262,
+    "metals": 1229.324963139,
+    "vehicles": 6708.588305193,
+    "apparel_household": 382.3111939319999,
+    "chemicals": 936.1959878629999,
+    "electronics": 2007.8613429299999,
+    "food": 157.71424213699999,
+    "energy": 158.394517063,
+    "medicine": 174.495269562,
+    "semiconductors": 38.263910056
+   }
+  },
+  {
+   "from": 392,
+   "to": 484,
+   "source": "importer",
+   "values": {
+    "food": 23.142871999999997,
+    "chemicals": 1499.27114,
+    "apparel_household": 1212.1657509999998,
+    "metals": 3400.619468,
+    "energy": 642.073271,
+    "medicine": 71.829543,
+    "vehicles": 4541.643443,
+    "electronics": 5225.197641999999,
+    "machinery": 3568.685346,
+    "semiconductors": 528.410238
+   }
+  },
+  {
+   "from": 392,
+   "to": 490,
+   "source": "importer",
+   "values": {
+    "apparel_household": 1185.4548067660003,
+    "food": 1004.2866776269998,
+    "vehicles": 3752.151160835,
+    "chemicals": 9206.495357592,
+    "metals": 6718.641410985001,
+    "machinery": 7858.951326517,
+    "electronics": 6748.427973198999,
+    "medicine": 334.688698148,
+    "energy": 304.368589115,
+    "semiconductors": 7155.554366392
+   }
+  },
+  {
+   "from": 682,
+   "to": 410,
+   "source": "importer",
+   "values": {
+    "food": 2.4887150000000005,
+    "chemicals": 698.61659,
+    "medicine": 0.010435,
+    "apparel_household": 22.620322,
+    "metals": 399.70708200000007,
+    "machinery": 1.009792,
+    "electronics": 2.784972,
+    "vehicles": 113.912934,
+    "energy": 31521.39835
+   }
+  },
+  {
+   "from": 682,
+   "to": 156,
+   "source": "importer",
+   "values": {
+    "electronics": 3.1006169999999997,
+    "apparel_household": 20.715405999999998,
+    "machinery": 130.061704,
+    "chemicals": 7935.956661,
+    "food": 99.92802299999998,
+    "metals": 1125.6356890000002,
+    "vehicles": 0.600991,
+    "energy": 55045.163801,
+    "medicine": 0.000149,
+    "semiconductors": 0.001075
+   }
+  },
+  {
+   "from": 682,
+   "to": 408,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 682,
+   "to": 344,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 682,
+   "to": 446,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 682,
+   "to": 392,
+   "source": "importer",
+   "values": {
+    "food": 2.3701296780000005,
+    "chemicals": 372.424456248,
+    "apparel_household": 34.08556959799999,
+    "metals": 342.828084599,
+    "machinery": 0.217904902,
+    "energy": 33954.143250823,
+    "electronics": 6.810583727,
+    "vehicles": 0.07344023300000001
+   }
+  },
+  {
+   "from": 682,
+   "to": 842,
+   "source": "importer",
+   "values": {
+    "food": 19.83765,
+    "metals": 299.10016,
+    "energy": 14125.452782,
+    "chemicals": 1640.338393,
+    "medicine": 0.359656,
+    "apparel_household": 361.10589799999997,
+    "machinery": 39.362849,
+    "electronics": 13.364847000000001,
+    "vehicles": 10.416473,
+    "semiconductors": 0.018461
+   }
+  },
+  {
+   "from": 682,
+   "to": 124,
+   "source": "importer",
+   "values": {
+    "metals": 30.572282897999997,
+    "food": 9.499495424,
+    "chemicals": 11.959218166000001,
+    "apparel_household": 7.966865780000002,
+    "energy": 1525.9209722839998,
+    "medicine": 0.002246819,
+    "electronics": 0.49639729400000004,
+    "vehicles": 0.148381893,
+    "machinery": 0.549096417,
+    "semiconductors": 0.045929775
+   }
+  },
+  {
+   "from": 682,
+   "to": 484,
+   "source": "importer",
+   "values": {
+    "metals": 1.0750300000000002,
+    "electronics": 0.767044,
+    "chemicals": 202.083886,
+    "apparel_household": 7.297283999999999,
+    "machinery": 20.143747,
+    "vehicles": 0.315809
+   }
+  },
+  {
+   "from": 682,
+   "to": 490,
+   "source": "importer",
+   "values": {
+    "apparel_household": 1.002671272,
+    "food": 3.5473063219999994,
+    "metals": 217.217430622,
+    "chemicals": 564.590978014,
+    "machinery": 0.182642364,
+    "vehicles": 0.000674076,
+    "electronics": 0.017814853,
+    "energy": 8363.490393902
+   }
+  },
+  {
+   "from": 784,
+   "to": 410,
+   "source": "importer",
+   "values": {
+    "food": 53.274812,
+    "metals": 584.287671,
+    "energy": 15594.484213,
+    "chemicals": 11.777778,
+    "apparel_household": 3.4346769999999998,
+    "machinery": 15.639577,
+    "electronics": 11.325833999999999,
+    "vehicles": 138.85601300000002,
+    "medicine": 9.629211,
+    "semiconductors": 0.05169
+   }
+  },
+  {
+   "from": 784,
+   "to": 156,
+   "source": "importer",
+   "values": {
+    "electronics": 50.662903,
+    "apparel_household": 20.267439999999997,
+    "machinery": 51.798735,
+    "chemicals": 2971.2061219999996,
+    "energy": 34021.022783,
+    "vehicles": 0.848189,
+    "metals": 1653.7321279999999,
+    "medicine": 0.102846,
+    "food": 539.547856,
+    "semiconductors": 0.021622
+   }
+  },
+  {
+   "from": 784,
+   "to": 408,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 784,
+   "to": 344,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 784,
+   "to": 446,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 784,
+   "to": 392,
+   "source": "importer",
+   "values": {
+    "food": 11.612140896000001,
+    "metals": 1100.253852099,
+    "energy": 35745.671713007,
+    "chemicals": 63.940859339,
+    "apparel_household": 24.046776009,
+    "machinery": 2.130213549,
+    "electronics": 6.463426676,
+    "vehicles": 2.052838696
+   }
+  },
+  {
+   "from": 784,
+   "to": 842,
+   "source": "importer",
+   "values": {
+    "food": 154.814147,
+    "metals": 2817.4104910000005,
+    "energy": 1343.393406,
+    "chemicals": 478.090243,
+    "medicine": 2.838171,
+    "apparel_household": 1496.5194709999998,
+    "machinery": 329.908015,
+    "electronics": 180.742312,
+    "vehicles": 66.349952,
+    "semiconductors": 0.212097
+   }
+  },
+  {
+   "from": 784,
+   "to": 124,
+   "source": "importer",
+   "values": {
+    "vehicles": 3.353309882,
+    "apparel_household": 22.802611199,
+    "food": 35.955452359,
+    "machinery": 22.887798445,
+    "electronics": 1.953168468,
+    "energy": 42.594794979,
+    "metals": 417.08876065800007,
+    "chemicals": 44.01773571300001,
+    "medicine": 7.923731013,
+    "semiconductors": 0.018492362000000002
+   }
+  },
+  {
+   "from": 784,
+   "to": 484,
+   "source": "importer",
+   "values": {
+    "chemicals": 46.120158,
+    "metals": 542.2331770000001,
+    "apparel_household": 36.364466,
+    "electronics": 41.440073,
+    "energy": 1.320801,
+    "machinery": 18.546856,
+    "vehicles": 2.340117,
+    "food": 0.0002
+   }
+  },
+  {
+   "from": 784,
+   "to": 490,
+   "source": "importer",
+   "values": {
+    "apparel_household": 0.331131569,
+    "food": 15.525082453999998,
+    "metals": 235.60768708199998,
+    "chemicals": 75.789679969,
+    "vehicles": 0.37430450099999996,
+    "electronics": 22.114427355999997,
+    "medicine": 0.5247838340000001,
+    "machinery": 8.475504474,
+    "energy": 3198.436038092,
+    "semiconductors": 0.010560515999999999
+   }
+  },
+  {
+   "from": 634,
+   "to": 410,
+   "source": "importer",
+   "values": {
+    "food": 0.168471,
+    "metals": 257.245908,
+    "energy": 14417.532034,
+    "chemicals": 266.681992,
+    "medicine": 4.263515,
+    "apparel_household": 0.28387999999999997,
+    "machinery": 1.507436,
+    "vehicles": 31.705837,
+    "electronics": 2.4261519999999983,
+    "semiconductors": 17.114274
+   }
+  },
+  {
+   "from": 634,
+   "to": 156,
+   "source": "importer",
+   "values": {
+    "electronics": 0.024368,
+    "apparel_household": 0.938257,
+    "machinery": 0.027958,
+    "chemicals": 1081.099166,
+    "metals": 235.13389899999999,
+    "vehicles": 0.000306,
+    "energy": 19610.460933,
+    "food": 0.001415,
+    "semiconductors": 0.000104
+   }
+  },
+  {
+   "from": 634,
+   "to": 408,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 634,
+   "to": 344,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 634,
+   "to": 446,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 634,
+   "to": 392,
+   "source": "importer",
+   "values": {
+    "energy": 8960.720429846,
+    "chemicals": 111.01396617700001,
+    "apparel_household": 12.676768682999999,
+    "metals": 146.30398211800002,
+    "machinery": 0.37902049699999996,
+    "electronics": 0.03993779
+   }
+  },
+  {
+   "from": 634,
+   "to": 842,
+   "source": "importer",
+   "values": {
+    "food": 0.018316,
+    "chemicals": 408.96153300000003,
+    "apparel_household": 83.88862499999999,
+    "metals": 319.917302,
+    "electronics": 2.967629,
+    "energy": 1312.784614,
+    "machinery": 1.57134,
+    "vehicles": 0.354677
+   }
+  },
+  {
+   "from": 634,
+   "to": 124,
+   "source": "importer",
+   "values": {
+    "apparel_household": 0.036475060000000004,
+    "metals": 45.980131470999986,
+    "chemicals": 14.277466154999999,
+    "medicine": 0.001315645,
+    "electronics": 0.366529247,
+    "food": 0.000873392,
+    "energy": 86.623507732,
+    "machinery": 0.566214612,
+    "vehicles": 0.078595688,
+    "semiconductors": 0.000109637
+   }
+  },
+  {
+   "from": 634,
+   "to": 484,
+   "source": "importer",
+   "values": {
+    "chemicals": 58.07550700000001,
+    "metals": 62.930271,
+    "machinery": 0.019007,
+    "energy": 0.582056,
+    "electronics": 0.004294,
+    "apparel_household": 1.678534
+   }
+  },
+  {
+   "from": 634,
+   "to": 490,
+   "source": "importer",
+   "values": {
+    "apparel_household": 0.0043975410000000005,
+    "chemicals": 178.137453547,
+    "vehicles": 0.000962965,
+    "metals": 79.664394395,
+    "energy": 3669.847407709,
+    "machinery": 0.001412349
+   }
+  },
+  {
+   "from": 414,
+   "to": 410,
+   "source": "importer",
+   "values": {
+    "food": 0.014955000000000003,
+    "apparel_household": 0.03998,
+    "metals": 3.7792559999999993,
+    "machinery": 0.044608,
+    "electronics": 0.065685,
+    "energy": 9404.917623,
+    "chemicals": 74.69921399999998,
+    "medicine": 0.000435,
+    "vehicles": 175.390695,
+    "semiconductors": 0.009787
+   }
+  },
+  {
+   "from": 414,
+   "to": 156,
+   "source": "importer",
+   "values": {
+    "chemicals": 544.591248,
+    "apparel_household": 0.193872,
+    "metals": 96.638827,
+    "machinery": 0.438963,
+    "electronics": 0.009516,
+    "vehicles": 0.000226,
+    "food": 0.002385,
+    "energy": 16522.821078,
+    "semiconductors": 0.000034
+   }
+  },
+  {
+   "from": 414,
+   "to": 408,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 414,
+   "to": 344,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 414,
+   "to": 446,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 414,
+   "to": 392,
+   "source": "importer",
+   "values": {
+    "food": 0.00258757,
+    "metals": 7.328473611,
+    "energy": 9138.306718782,
+    "chemicals": 3.585661452,
+    "machinery": 0.014715454,
+    "apparel_household": 1.2619420300000002
+   }
+  },
+  {
+   "from": 414,
+   "to": 842,
+   "source": "importer",
+   "values": {
+    "food": 1.6745889999999999,
+    "metals": 9.651303,
+    "energy": 1664.825613,
+    "chemicals": 11.844833000000001,
+    "machinery": 0.721142,
+    "electronics": 0.362405,
+    "vehicles": 0.062217,
+    "apparel_household": 91.66493
+   }
+  },
+  {
+   "from": 414,
+   "to": 124,
+   "source": "importer",
+   "values": {
+    "metals": 0.008310932,
+    "machinery": 0.010205135,
+    "apparel_household": 0.028701940999999998,
+    "chemicals": 2.299823777,
+    "electronics": 0.010727392,
+    "food": 0.5082047630000001,
+    "medicine": 0.000091858,
+    "energy": 306.324903056,
+    "semiconductors": 0.000297798
+   }
+  },
+  {
+   "from": 414,
+   "to": 484,
+   "source": "importer",
+   "values": {
+    "apparel_household": 0.102993
+   }
+  },
+  {
+   "from": 414,
+   "to": 490,
+   "source": "importer",
+   "values": {
+    "apparel_household": 0.0013160519999999998,
+    "metals": 6.814550318999999,
+    "chemicals": 70.622634391,
+    "food": 0.002150622,
+    "energy": 4632.379248255999,
+    "electronics": 0.000064198
+   }
+  },
+  {
+   "from": 512,
+   "to": 410,
+   "source": "importer",
+   "values": {
+    "food": 11.347754,
+    "metals": 73.68317,
+    "energy": 5172.208991,
+    "chemicals": 76.947895,
+    "medicine": 0.00011,
+    "apparel_household": 0.008499000000000001,
+    "electronics": 0.043284,
+    "machinery": 0.034516,
+    "vehicles": 31.000713,
+    "semiconductors": 0.00002
+   }
+  },
+  {
+   "from": 512,
+   "to": 156,
+   "source": "importer",
+   "values": {
+    "food": 0.031747,
+    "metals": 1069.6498139999999,
+    "energy": 28495.891871,
+    "chemicals": 1698.625818,
+    "apparel_household": 0.49593199999999993,
+    "machinery": 14.211657,
+    "electronics": 0.076416,
+    "vehicles": 0.000958,
+    "semiconductors": 0.000248
+   }
+  },
+  {
+   "from": 512,
+   "to": 408,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 512,
+   "to": 344,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 512,
+   "to": 446,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 512,
+   "to": 392,
+   "source": "importer",
+   "values": {
+    "food": 35.656128790000004,
+    "metals": 46.198489212999995,
+    "energy": 2409.1822880110003,
+    "chemicals": 7.5249298399999995,
+    "machinery": 0.023201957,
+    "apparel_household": 0.478488163
+   }
+  },
+  {
+   "from": 512,
+   "to": 842,
+   "source": "importer",
+   "values": {
+    "food": 9.559986000000002,
+    "chemicals": 621.069436,
+    "apparel_household": 114.809574,
+    "metals": 644.17212,
+    "electronics": 6.159116,
+    "energy": 352.820761,
+    "medicine": 0.262952,
+    "machinery": 5.523562,
+    "vehicles": 5.083989
+   }
+  },
+  {
+   "from": 512,
+   "to": 124,
+   "source": "importer",
+   "values": {
+    "food": 2.788929466,
+    "metals": 48.214931588999995,
+    "energy": 0.00019556899999999998,
+    "chemicals": 28.541155823,
+    "medicine": 2.535114514,
+    "apparel_household": 0.14714106799999999,
+    "machinery": 0.123057957,
+    "electronics": 0.012474177,
+    "vehicles": 0.000137046
+   }
+  },
+  {
+   "from": 512,
+   "to": 484,
+   "source": "importer",
+   "values": {
+    "chemicals": 32.199924,
+    "metals": 1.771275,
+    "apparel_household": 1.091966
+   }
+  },
+  {
+   "from": 512,
+   "to": 490,
+   "source": "importer",
+   "values": {
+    "food": 21.112686949,
+    "metals": 46.163965006,
+    "energy": 2295.301837646,
+    "chemicals": 74.358746054,
+    "medicine": 0.12412619,
+    "apparel_household": 0.011074097000000001
+   }
+  },
+  {
+   "from": 48,
+   "to": 410,
+   "source": "importer",
+   "values": {
+    "food": 10.025197,
+    "apparel_household": 0.17871299999999998,
+    "metals": 287.81818499999997,
+    "vehicles": 0.023792999999999998,
+    "electronics": 0.05250300000000001,
+    "energy": 184.639418,
+    "chemicals": 16.67782,
+    "medicine": 0.000759,
+    "machinery": 0.005135
+   }
+  },
+  {
+   "from": 48,
+   "to": 156,
+   "source": "importer",
+   "values": {
+    "apparel_household": 0.957816,
+    "metals": 71.11007400000001,
+    "vehicles": 0.00056,
+    "electronics": 3.6393029999999995,
+    "food": 0.004233,
+    "energy": 105.168243,
+    "chemicals": 7.2428230000000005,
+    "machinery": 0.201284,
+    "semiconductors": 3.167855
+   }
+  },
+  {
+   "from": 48,
+   "to": 408,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 48,
+   "to": 344,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 48,
+   "to": 446,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 48,
+   "to": 392,
+   "source": "importer",
+   "values": {
+    "food": 4.6372911210000005,
+    "metals": 130.328890316,
+    "energy": 587.8540844400001,
+    "chemicals": 3.3959808839999996,
+    "apparel_household": 50.304289522,
+    "machinery": 0.001443647,
+    "vehicles": 0.0041865439999999995
+   }
+  },
+  {
+   "from": 48,
+   "to": 842,
+   "source": "importer",
+   "values": {
+    "food": 10.129222,
+    "metals": 899.778169,
+    "energy": 161.002931,
+    "chemicals": 65.34218800000001,
+    "medicine": 0.003649,
+    "apparel_household": 91.036907,
+    "machinery": 3.083403,
+    "electronics": 0.7357889999999999,
+    "vehicles": 0.252134
+   }
+  },
+  {
+   "from": 48,
+   "to": 124,
+   "source": "importer",
+   "values": {
+    "chemicals": 3.428013455,
+    "apparel_household": 3.041016897999999,
+    "metals": 53.273030908,
+    "machinery": 0.0028631570000000003,
+    "electronics": 0.05004635,
+    "food": 0.395785301,
+    "energy": 0.000024446000000000003,
+    "medicine": 0.000002222,
+    "vehicles": 0.381331731
+   }
+  },
+  {
+   "from": 48,
+   "to": 484,
+   "source": "importer",
+   "values": {
+    "energy": 5.065866,
+    "chemicals": 0.926965,
+    "apparel_household": 3.6869240000000003,
+    "metals": 352.343603,
+    "machinery": 0.002083
+   }
+  },
+  {
+   "from": 48,
+   "to": 490,
+   "source": "importer",
+   "values": {
+    "food": 1.2248914979999999,
+    "apparel_household": 0.052545792,
+    "metals": 71.256072778,
+    "electronics": 0.0018296340000000001,
+    "energy": 0.24138323,
+    "chemicals": 49.498327666,
+    "machinery": 0.00715804
+   }
+  },
+  {
+   "from": 364,
+   "to": 410,
+   "source": "importer",
+   "values": {
+    "food": 1.275764,
+    "metals": 0.6727489999999999,
+    "energy": 0.017061,
+    "chemicals": 1.033455,
+    "medicine": 0.012768,
+    "apparel_household": 0.469049,
+    "machinery": 0.040745,
+    "electronics": 0.038637000000000005,
+    "vehicles": 0.162476
+   }
+  },
+  {
+   "from": 364,
+   "to": 156,
+   "source": "importer",
+   "values": {
+    "metals": 2347.233682,
+    "machinery": 0.483175,
+    "electronics": 0.428554,
+    "food": 217.375067,
+    "energy": 37.56815,
+    "chemicals": 1978.617604,
+    "apparel_household": 3.743541000000001,
+    "vehicles": 0.667937,
+    "semiconductors": 0.007652
+   }
+  },
+  {
+   "from": 364,
+   "to": 408,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 364,
+   "to": 344,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 364,
+   "to": 446,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 364,
+   "to": 392,
+   "source": "importer",
+   "values": {
+    "food": 13.441818446000001,
+    "metals": 0.032814492,
+    "energy": 0.067019708,
+    "chemicals": 0.027138814999999997,
+    "apparel_household": 17.321755985999996,
+    "machinery": 0.004045356,
+    "electronics": 0.055176594
+   }
+  },
+  {
+   "from": 364,
+   "to": 842,
+   "source": "importer",
+   "values": {
+    "food": 0.009826,
+    "apparel_household": 2.241689,
+    "metals": 0.017336
+   }
+  },
+  {
+   "from": 364,
+   "to": 124,
+   "source": "importer",
+   "values": {
+    "apparel_household": 1.5818996399999996,
+    "metals": 0.5229835399999999,
+    "vehicles": 0.00204236,
+    "electronics": 1.17536398,
+    "food": 22.326117473,
+    "energy": 7.41e-7,
+    "chemicals": 0.209880127,
+    "medicine": 0.018146413,
+    "machinery": 1.029166681,
+    "semiconductors": 0.035376468
+   }
+  },
+  {
+   "from": 364,
+   "to": 484,
+   "source": "importer",
+   "values": {
+    "chemicals": 0.212094,
+    "metals": 0.003856,
+    "electronics": 0.467001,
+    "apparel_household": 0.001068
+   }
+  },
+  {
+   "from": 364,
+   "to": 490,
+   "source": "importer",
+   "values": {
+    "food": 2.1133872179999997,
+    "metals": 2.5740696809999997,
+    "energy": 13.903674062,
+    "chemicals": 1.761808691,
+    "apparel_household": 0.047217384,
+    "machinery": 0.02311116,
+    "electronics": 0.003659267,
+    "vehicles": 0.036753165000000004
+   }
+  },
+  {
+   "from": 368,
+   "to": 410,
+   "source": "importer",
+   "values": {
+    "chemicals": 0.007437,
+    "apparel_household": 0.005823,
+    "electronics": 0.218342,
+    "food": 0.000241,
+    "metals": 8.299864,
+    "energy": 7890.076727,
+    "medicine": 0.000446,
+    "machinery": 0.656946,
+    "vehicles": 0.002627
+   }
+  },
+  {
+   "from": 368,
+   "to": 156,
+   "source": "importer",
+   "values": {
+    "food": 0.6071190000000001,
+    "metals": 0.068618,
+    "energy": 35464.039944,
+    "chemicals": 0.8404539999999999,
+    "apparel_household": 0.21532099999999998,
+    "machinery": 0.005328,
+    "electronics": 0.015862,
+    "vehicles": 0.012339
+   }
+  },
+  {
+   "from": 368,
+   "to": 408,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 368,
+   "to": 344,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 368,
+   "to": 446,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 368,
+   "to": 392,
+   "source": "importer",
+   "values": {
+    "apparel_household": 0.07380392799999999,
+    "machinery": 0.001778947,
+    "electronics": 0.001527362,
+    "food": 0.023920077,
+    "energy": 29.962400896000002
+   }
+  },
+  {
+   "from": 368,
+   "to": 842,
+   "source": "importer",
+   "values": {
+    "food": 1.8275849999999998,
+    "metals": 0.41781100000000004,
+    "energy": 8910.222205,
+    "chemicals": 0.025346,
+    "apparel_household": 28.286285,
+    "machinery": 0.116136,
+    "electronics": 0.621399,
+    "vehicles": 0.00416
+   }
+  },
+  {
+   "from": 368,
+   "to": 124,
+   "source": "importer",
+   "values": {
+    "food": 0.344940377,
+    "energy": 0.00056226,
+    "chemicals": 0.024192007,
+    "medicine": 0.000032595,
+    "apparel_household": 0.023114898000000002,
+    "metals": 0.004331405,
+    "machinery": 0.036969909,
+    "electronics": 0.10174170000000002,
+    "vehicles": 0.003028353,
+    "semiconductors": 0.038444083
+   }
+  },
+  {
+   "from": 368,
+   "to": 484,
+   "source": "importer",
+   "values": {
+    "apparel_household": 0.000895
+   }
+  },
+  {
+   "from": 368,
+   "to": 490,
+   "source": "importer",
+   "values": {
+    "energy": 635.959621403,
+    "apparel_household": 0.000096297
+   }
+  },
+  {
+   "from": 376,
+   "to": 410,
+   "source": "importer",
+   "values": {
+    "food": 29.834404,
+    "metals": 161.48275300000003,
+    "energy": 1.22604,
+    "chemicals": 127.64975199999998,
+    "medicine": 9.947512,
+    "apparel_household": 47.347382,
+    "machinery": 116.455382,
+    "electronics": 1003.611564,
+    "vehicles": 17.180749,
+    "semiconductors": 28.076088
+   }
+  },
+  {
+   "from": 376,
+   "to": 156,
+   "source": "importer",
+   "values": {
+    "food": 104.76363500000001,
+    "chemicals": 719.1565980000001,
+    "apparel_household": 79.90450100000002,
+    "metals": 620.8504660000001,
+    "machinery": 386.061897,
+    "electronics": 2660.1340629999995,
+    "vehicles": 1.696764,
+    "energy": 2.327164,
+    "medicine": 46.547694,
+    "semiconductors": 3773.107667
+   }
+  },
+  {
+   "from": 376,
+   "to": 408,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 376,
+   "to": 344,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 376,
+   "to": 446,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 376,
+   "to": 392,
+   "source": "importer",
+   "values": {
+    "food": 99.352168875,
+    "medicine": 30.610689043,
+    "chemicals": 179.605119237,
+    "apparel_household": 25.750796423000004,
+    "metals": 143.55282537199997,
+    "electronics": 569.287965571,
+    "energy": 0.28087380300000003,
+    "machinery": 166.087767465,
+    "vehicles": 5.262141704,
+    "semiconductors": 277.178537034
+   }
+  },
+  {
+   "from": 376,
+   "to": 842,
+   "source": "importer",
+   "values": {
+    "food": 501.6432640000001,
+    "chemicals": 1965.3146,
+    "apparel_household": 1576.1881999999998,
+    "metals": 6649.270068,
+    "electronics": 4660.982744999999,
+    "vehicles": 459.676306,
+    "energy": 251.761608,
+    "medicine": 1299.115879,
+    "machinery": 1703.853771,
+    "semiconductors": 2095.163021
+   }
+  },
+  {
+   "from": 376,
+   "to": 124,
+   "source": "importer",
+   "values": {
+    "food": 69.03543902800001,
+    "metals": 119.397626295,
+    "energy": 0.518032833,
+    "chemicals": 235.676034843,
+    "medicine": 52.061986733999994,
+    "apparel_household": 77.00871784099999,
+    "machinery": 196.09879887900001,
+    "electronics": 282.928167207,
+    "vehicles": 31.839888676999998,
+    "semiconductors": 6.32707556
+   }
+  },
+  {
+   "from": 376,
+   "to": 484,
+   "source": "importer",
+   "values": {
+    "medicine": 10.487296,
+    "chemicals": 196.17454700000002,
+    "apparel_household": 163.89393399999992,
+    "metals": 52.61241699999999,
+    "machinery": 141.56464,
+    "electronics": 289.046001,
+    "food": 19.986682000000002,
+    "energy": 0.417078,
+    "vehicles": 1.3463640000000001,
+    "semiconductors": 186.331071
+   }
+  },
+  {
+   "from": 376,
+   "to": 490,
+   "source": "importer",
+   "values": {
+    "food": 12.765962996999999,
+    "metals": 21.873782399,
+    "energy": 153.27517342500002,
+    "chemicals": 54.58223726,
+    "medicine": 1.442393196,
+    "apparel_household": 19.617138086999997,
+    "machinery": 86.828468915,
+    "electronics": 1054.880024909,
+    "vehicles": 1.131612286,
+    "semiconductors": 93.281907354
+   }
+  },
+  {
+   "from": 400,
+   "to": 410,
+   "source": "importer",
+   "values": {
+    "food": 0.5929169999999999,
+    "metals": 23.131549999999997,
+    "energy": 0.003257,
+    "chemicals": 28.407303,
+    "medicine": 0.024302,
+    "apparel_household": 7.778135999999999,
+    "electronics": 2.2884420000000003,
+    "machinery": 0.356915,
+    "vehicles": 0.069396
+   }
+  },
+  {
+   "from": 400,
+   "to": 156,
+   "source": "importer",
+   "values": {
+    "food": 0.5018790000000001,
+    "metals": 38.609677,
+    "energy": 0.001745,
+    "chemicals": 640.1347320000001,
+    "medicine": 0.00018,
+    "apparel_household": 26.465971,
+    "machinery": 0.020122,
+    "electronics": 0.170706,
+    "vehicles": 0.014523000000000001,
+    "semiconductors": 0.016705
+   }
+  },
+  {
+   "from": 400,
+   "to": 408,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 400,
+   "to": 344,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 400,
+   "to": 446,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 400,
+   "to": 392,
+   "source": "importer",
+   "values": {
+    "food": 0.284933305,
+    "metals": 25.799955355,
+    "chemicals": 56.517225816,
+    "apparel_household": 7.609519531,
+    "machinery": 0.009523384,
+    "electronics": 1.1346833699999999
+   }
+  },
+  {
+   "from": 400,
+   "to": 842,
+   "source": "importer",
+   "values": {
+    "food": 39.695761000000005,
+    "medicine": 79.331634,
+    "chemicals": 128.65234999999998,
+    "apparel_household": 1797.7379349999994,
+    "metals": 820.1650139999999,
+    "vehicles": 8.647321,
+    "electronics": 43.75558399999999,
+    "machinery": 78.978187,
+    "semiconductors": 0.022584
+   }
+  },
+  {
+   "from": 400,
+   "to": 124,
+   "source": "importer",
+   "values": {
+    "food": 8.784326287,
+    "metals": 2.036808942,
+    "energy": 0.00019705000000000002,
+    "chemicals": 3.3686864779999994,
+    "medicine": 0.004219545,
+    "apparel_household": 100.76996205699997,
+    "machinery": 2.492290875,
+    "electronics": 36.651656511,
+    "vehicles": 1.8133693770000001
+   }
+  },
+  {
+   "from": 400,
+   "to": 484,
+   "source": "importer",
+   "values": {
+    "chemicals": 0.484522,
+    "apparel_household": 37.274846000000004,
+    "machinery": 3.546952,
+    "vehicles": 0.018499,
+    "electronics": 0.279446
+   }
+  },
+  {
+   "from": 400,
+   "to": 490,
+   "source": "importer",
+   "values": {
+    "chemicals": 41.763792669999994,
+    "apparel_household": 6.028128891000001,
+    "electronics": 0.071484103,
+    "food": 0.006869149999999999,
+    "metals": 23.414622719,
+    "medicine": 0.492235616,
+    "machinery": 0.008955575
+   }
+  },
+  {
+   "from": 422,
+   "to": 410,
+   "source": "importer",
+   "values": {
+    "food": 0.049426000000000005,
+    "apparel_household": 0.9793700000000001,
+    "metals": 31.844295000000002,
+    "electronics": 0.178045,
+    "vehicles": 0.019539,
+    "chemicals": 0.000307,
+    "medicine": 0.002839,
+    "machinery": 0.005733,
+    "semiconductors": 0.000329
+   }
+  },
+  {
+   "from": 422,
+   "to": 156,
+   "source": "importer",
+   "values": {
+    "food": 9.678065,
+    "metals": 46.228103000000004,
+    "chemicals": 0.572554,
+    "apparel_household": 1.700976,
+    "machinery": 1.26025,
+    "electronics": 4.708104,
+    "vehicles": 0.003037
+   }
+  },
+  {
+   "from": 422,
+   "to": 408,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 422,
+   "to": 344,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 422,
+   "to": 446,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 422,
+   "to": 392,
+   "source": "importer",
+   "values": {
+    "food": 0.41040878599999997,
+    "metals": 4.786088782,
+    "chemicals": 0.015424292000000001,
+    "apparel_household": 0.374955805,
+    "machinery": 0.106906716,
+    "electronics": 0.11042940100000001,
+    "vehicles": 0.220920372
+   }
+  },
+  {
+   "from": 422,
+   "to": 842,
+   "source": "importer",
+   "values": {
+    "food": 54.84150500000001,
+    "chemicals": 16.973795,
+    "apparel_household": 37.088136000000006,
+    "metals": 84.31219399999999,
+    "electronics": 6.927586,
+    "machinery": 4.692677,
+    "vehicles": 0.324561
+   }
+  },
+  {
+   "from": 422,
+   "to": 124,
+   "source": "importer",
+   "values": {
+    "food": 27.889670996000003,
+    "chemicals": 1.822036631,
+    "apparel_household": 1.5872896339999998,
+    "metals": 2.247309853,
+    "machinery": 1.059520587,
+    "electronics": 1.571520418,
+    "medicine": 0.000845242,
+    "vehicles": 0.6615632859999999,
+    "semiconductors": 0.012176379999999999
+   }
+  },
+  {
+   "from": 422,
+   "to": 484,
+   "source": "importer",
+   "values": {
+    "chemicals": 0.001521,
+    "electronics": 2.834595,
+    "apparel_household": 0.199984
+   }
+  },
+  {
+   "from": 422,
+   "to": 490,
+   "source": "importer",
+   "values": {
+    "food": 0.315756228,
+    "apparel_household": 0.10570146000000001,
+    "metals": 1.9770634699999998,
+    "electronics": 2.269387551,
+    "chemicals": 0.032965503,
+    "machinery": 0.009501254999999998,
+    "vehicles": 0.049528500999999996
+   }
+  },
+  {
+   "from": 760,
+   "to": 410,
+   "source": "importer",
+   "values": {
+    "food": 0.06872,
+    "chemicals": 0.065602,
+    "medicine": 0.000025,
+    "apparel_household": 0.07986700000000001,
+    "metals": 0.029365,
+    "electronics": 0.000364
+   }
+  },
+  {
+   "from": 760,
+   "to": 156,
+   "source": "importer",
+   "values": {
+    "food": 0.34646000000000005,
+    "chemicals": 1.1390730000000002,
+    "apparel_household": 0.056941000000000005,
+    "metals": 0.001656,
+    "electronics": 0.009036
+   }
+  },
+  {
+   "from": 760,
+   "to": 408,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 760,
+   "to": 344,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 760,
+   "to": 446,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 760,
+   "to": 392,
+   "source": "importer",
+   "values": {
+    "food": 0.058990378,
+    "chemicals": 0.370452142,
+    "apparel_household": 0.0074282770000000005,
+    "metals": 0.004544976
+   }
+  },
+  {
+   "from": 760,
+   "to": 842,
+   "source": "importer",
+   "values": {
+    "food": 7.309234,
+    "chemicals": 0.11778499999999999,
+    "apparel_household": 1.970137,
+    "metals": 2.3357319999999997,
+    "electronics": 0.017312,
+    "vehicles": 0.002301
+   }
+  },
+  {
+   "from": 760,
+   "to": 124,
+   "source": "importer",
+   "values": {
+    "apparel_household": 0.007869422,
+    "metals": 0.0005148500000000001,
+    "machinery": 0.004240287000000001,
+    "electronics": 0.040597562,
+    "food": 3.2267576129999997,
+    "medicine": 0.00892653,
+    "chemicals": 0.040830911
+   }
+  },
+  {
+   "from": 760,
+   "to": 484,
+   "source": "importer",
+   "values": {
+    "machinery": 0.004767,
+    "apparel_household": 0.008598
+   }
+  },
+  {
+   "from": 760,
+   "to": 490,
+   "source": "importer",
+   "values": {
+    "chemicals": 0.11976074900000001,
+    "machinery": 0.0018296340000000001,
+    "vehicles": 0.000032099,
+    "apparel_household": 0.004975319000000001,
+    "food": 0.029627224
+   }
+  },
+  {
+   "from": 887,
+   "to": 410,
+   "source": "importer",
+   "values": {
+    "metals": 34.264657,
+    "machinery": 0.01212,
+    "electronics": 0.000002,
+    "food": 2.1862950000000003,
+    "chemicals": 0.00028700000000000004
+   }
+  },
+  {
+   "from": 887,
+   "to": 156,
+   "source": "importer",
+   "values": {
+    "machinery": 0.001209,
+    "electronics": 0.010805,
+    "vehicles": 0.000129,
+    "apparel_household": 0.023682,
+    "food": 0.046287,
+    "metals": 16.820541,
+    "chemicals": 0.000128
+   }
+  },
+  {
+   "from": 887,
+   "to": 408,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 887,
+   "to": 344,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 887,
+   "to": 446,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 887,
+   "to": 392,
+   "source": "importer",
+   "values": {
+    "food": 5.465747688,
+    "apparel_household": 0.0028091039999999998,
+    "metals": 0.39516656699999997,
+    "vehicles": 0.0015431289999999999
+   }
+  },
+  {
+   "from": 887,
+   "to": 842,
+   "source": "importer",
+   "values": {
+    "food": 5.384653000000001,
+    "metals": 0.13211799999999999,
+    "machinery": 0.038786,
+    "electronics": 0.032399000000000004,
+    "chemicals": 0.075654,
+    "apparel_household": 1.289835,
+    "vehicles": 0.2669,
+    "semiconductors": 0.009324
+   }
+  },
+  {
+   "from": 887,
+   "to": 124,
+   "source": "importer",
+   "values": {
+    "machinery": 0.015990712,
+    "electronics": 0.001036366,
+    "vehicles": 0.000170382,
+    "apparel_household": 0.0035720939999999996,
+    "food": 0.09975045299999998,
+    "chemicals": 0.004428448,
+    "metals": 0.051952405
+   }
+  },
+  {
+   "from": 887,
+   "to": 484,
+   "source": "importer",
+   "values": {
+    "apparel_household": 0.000529
+   }
+  },
+  {
+   "from": 887,
+   "to": 490,
+   "source": "importer",
+   "values": {
+    "food": 2.9259049980000005,
+    "machinery": 0.000385186,
+    "electronics": 0.002824697,
+    "apparel_household": 0.0023111159999999998
+   }
+  },
+  {
+   "from": 792,
+   "to": 410,
+   "source": "importer",
+   "values": {
+    "food": 186.46630400000004,
+    "metals": 173.415059,
+    "energy": 0.439382,
+    "chemicals": 78.414984,
+    "medicine": 487.653201,
+    "apparel_household": 220.130622,
+    "machinery": 194.783364,
+    "electronics": 43.431688,
+    "vehicles": 53.701041000000004,
+    "semiconductors": 0.162577
+   }
+  },
+  {
+   "from": 792,
+   "to": 156,
+   "source": "importer",
+   "values": {
+    "electronics": 123.54352999999999,
+    "apparel_household": 560.182824,
+    "machinery": 305.720336,
+    "chemicals": 547.998069,
+    "food": 303.19456800000006,
+    "metals": 2492.7165449999993,
+    "energy": 122.823146,
+    "vehicles": 65.393776,
+    "medicine": 1.074186,
+    "semiconductors": 0.214532
+   }
+  },
+  {
+   "from": 792,
+   "to": 408,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 792,
+   "to": 344,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 792,
+   "to": 446,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 792,
+   "to": 392,
+   "source": "importer",
+   "values": {
+    "food": 479.4135684260001,
+    "metals": 108.947536082,
+    "energy": 44.505095491,
+    "chemicals": 50.211021867999996,
+    "medicine": 22.231241624000003,
+    "apparel_household": 206.67174019899997,
+    "machinery": 99.393725808,
+    "electronics": 29.104166050000003,
+    "vehicles": 66.448083684,
+    "semiconductors": 0.162168754
+   }
+  },
+  {
+   "from": 792,
+   "to": 842,
+   "source": "importer",
+   "values": {
+    "food": 2045.0078019999999,
+    "metals": 4348.578299000001,
+    "energy": 670.52484,
+    "chemicals": 1184.938076,
+    "medicine": 8.746337,
+    "apparel_household": 4250.442214000001,
+    "machinery": 1794.827904,
+    "electronics": 760.8225689999999,
+    "vehicles": 1440.4730929999998,
+    "semiconductors": 15.404017
+   }
+  },
+  {
+   "from": 792,
+   "to": 124,
+   "source": "importer",
+   "values": {
+    "food": 273.0184981020001,
+    "metals": 570.2536030910001,
+    "energy": 11.172193799,
+    "chemicals": 157.57682173199998,
+    "medicine": 34.378713812,
+    "apparel_household": 492.2640085030001,
+    "machinery": 249.712500247,
+    "electronics": 74.98782923400002,
+    "vehicles": 245.89764209700002,
+    "semiconductors": 0.096990267
+   }
+  },
+  {
+   "from": 792,
+   "to": 484,
+   "source": "importer",
+   "values": {
+    "food": 22.833732,
+    "metals": 452.45053900000005,
+    "energy": 1.697346,
+    "chemicals": 167.270803,
+    "medicine": 7.330355,
+    "apparel_household": 426.197233,
+    "machinery": 351.099425,
+    "electronics": 86.367798,
+    "vehicles": 257.433273,
+    "semiconductors": 0.005977
+   }
+  },
+  {
+   "from": 792,
+   "to": 490,
+   "source": "importer",
+   "values": {
+    "food": 50.770885933,
+    "metals": 59.69895186500001,
+    "chemicals": 34.192769135,
+    "apparel_household": 70.009386175,
+    "machinery": 80.69627560500001,
+    "vehicles": 38.096179918,
+    "energy": 1.291207689,
+    "medicine": 6.957197536000001,
+    "electronics": 6.554581864999999,
+    "semiconductors": 0.061148278
+   }
+  },
+  {
+   "from": 818,
+   "to": 410,
+   "source": "importer",
+   "values": {
+    "food": 43.29833399999998,
+    "metals": 22.299961,
+    "energy": 550.024611,
+    "chemicals": 1.161591,
+    "apparel_household": 10.603746000000003,
+    "machinery": 0.241766,
+    "electronics": 1.314292,
+    "vehicles": 0.023367,
+    "medicine": 1.407612,
+    "semiconductors": 0.002825
+   }
+  },
+  {
+   "from": 818,
+   "to": 156,
+   "source": "importer",
+   "values": {
+    "electronics": 8.348556,
+    "apparel_household": 188.67833300000004,
+    "machinery": 2.181632,
+    "chemicals": 22.155164000000003,
+    "metals": 231.867174,
+    "medicine": 0.666783,
+    "food": 174.860401,
+    "vehicles": 0.093254,
+    "energy": 252.476831,
+    "semiconductors": 0.008142
+   }
+  },
+  {
+   "from": 818,
+   "to": 408,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 818,
+   "to": 344,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 818,
+   "to": 446,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 818,
+   "to": 392,
+   "source": "importer",
+   "values": {
+    "food": 33.243217864,
+    "metals": 3.268078058,
+    "energy": 174.40471216400002,
+    "chemicals": 3.831259445,
+    "apparel_household": 18.350034143000002,
+    "electronics": 7.208211129999999,
+    "vehicles": 1.8747709380000002,
+    "machinery": 0.14200770000000001
+   }
+  },
+  {
+   "from": 818,
+   "to": 842,
+   "source": "importer",
+   "values": {
+    "food": 403.68802900000003,
+    "chemicals": 177.203139,
+    "apparel_household": 1371.9363709999998,
+    "metals": 465.880737,
+    "machinery": 10.578519,
+    "vehicles": 1.513199,
+    "electronics": 13.521918000000001,
+    "medicine": 2.84786,
+    "energy": 93.561924,
+    "semiconductors": 0.028248
+   }
+  },
+  {
+   "from": 818,
+   "to": 124,
+   "source": "importer",
+   "values": {
+    "food": 61.05987784399999,
+    "metals": 475.1316913829999,
+    "energy": 0.001711227,
+    "chemicals": 33.251357524,
+    "medicine": 5.6319166670000005,
+    "apparel_household": 54.591945345000006,
+    "vehicles": 0.09214105,
+    "electronics": 0.410970773,
+    "machinery": 4.0455219079999996,
+    "semiconductors": 0.000625968
+   }
+  },
+  {
+   "from": 818,
+   "to": 484,
+   "source": "importer",
+   "values": {
+    "food": 2.963285,
+    "chemicals": 4.953807,
+    "apparel_household": 45.518356,
+    "metals": 2.402545,
+    "machinery": 27.790365,
+    "electronics": 6.603833,
+    "vehicles": 0.00166
+   }
+  },
+  {
+   "from": 818,
+   "to": 490,
+   "source": "importer",
+   "values": {
+    "apparel_household": 4.11933964,
+    "food": 14.712693068999998,
+    "metals": 3.9997714820000008,
+    "chemicals": 0.971760095,
+    "machinery": 0.012165458,
+    "vehicles": 0.018488927999999998,
+    "electronics": 2.59361787,
+    "medicine": 0.532744345,
+    "energy": 39.502911311
+   }
+  },
+  {
+   "from": 842,
+   "to": 410,
+   "source": "importer",
+   "values": {
+    "energy": 22310.370371,
+    "apparel_household": 1817.625442,
+    "electronics": 8254.122279,
+    "food": 8711.123117,
+    "metals": 3880.3377210000003,
+    "chemicals": 7129.995164999999,
+    "machinery": 9605.944597,
+    "vehicles": 5168.47548,
+    "medicine": 2363.319241,
+    "semiconductors": 2490.386101
+   }
+  },
+  {
+   "from": 842,
+   "to": 156,
+   "source": "importer",
+   "values": {
+    "electronics": 19536.121124999998,
+    "apparel_household": 8607.125789,
+    "machinery": 20058.61873,
+    "chemicals": 24145.419962,
+    "food": 30064.949991999998,
+    "metals": 11231.541748,
+    "medicine": 6578.317075,
+    "vehicles": 14190.324335,
+    "energy": 22437.874091,
+    "semiconductors": 8306.920666
+   }
+  },
+  {
+   "from": 842,
+   "to": 408,
+   "source": "exporter",
+   "values": {
+    "medicine": 0.061324,
+    "chemicals": 0.121367,
+    "vehicles": 0.00393
+   }
+  },
+  {
+   "from": 842,
+   "to": 344,
+   "source": "exporter",
+   "values": {
+    "apparel_household": 3034.8058159999996,
+    "medicine": 244.201434,
+    "chemicals": 1205.265789,
+    "food": 1518.012257,
+    "metals": 7897.749772,
+    "vehicles": 1490.5052110000001,
+    "electronics": 7517.860016999999,
+    "energy": 73.952887,
+    "machinery": 2006.105487,
+    "semiconductors": 2756.283119
+   }
+  },
+  {
+   "from": 842,
+   "to": 446,
+   "source": "exporter",
+   "values": {
+    "apparel_household": 281.64338699999996,
+    "medicine": 0.383501,
+    "chemicals": 3.738124,
+    "food": 15.418379,
+    "metals": 156.923564,
+    "energy": 0.00955,
+    "vehicles": 39.284555000000005,
+    "electronics": 21.703201,
+    "machinery": 6.381362,
+    "semiconductors": 0.573851
+   }
+  },
+  {
+   "from": 842,
+   "to": 392,
+   "source": "importer",
+   "values": {
+    "food": 13859.270377629999,
+    "metals": 5121.693551942,
+    "chemicals": 9686.060407228002,
+    "apparel_household": 4760.8166932839995,
+    "machinery": 11696.678904858,
+    "vehicles": 4116.8491444539995,
+    "electronics": 11134.094275078998,
+    "energy": 13102.441200076999,
+    "medicine": 8180.6294938109995,
+    "semiconductors": 2139.151597121
+   }
+  },
+  {
+   "from": 842,
+   "to": 682,
+   "source": "exporter",
+   "values": {
+    "food": 1450.110808,
+    "metals": 606.81283,
+    "energy": 79.024212,
+    "chemicals": 1300.803018,
+    "medicine": 502.443324,
+    "apparel_household": 1129.722374,
+    "machinery": 2470.220061,
+    "electronics": 1804.397004,
+    "vehicles": 4522.262527,
+    "semiconductors": 7.017753
+   }
+  },
+  {
+   "from": 842,
+   "to": 784,
+   "source": "exporter",
+   "values": {
+    "food": 1332.2061700000004,
+    "metals": 3359.7051440000005,
+    "energy": 236.541317,
+    "chemicals": 1551.316037,
+    "medicine": 427.38116,
+    "apparel_household": 2106.724321,
+    "machinery": 3769.999529,
+    "electronics": 4435.742938,
+    "vehicles": 7619.596883,
+    "semiconductors": 17.821672
+   }
+  },
+  {
+   "from": 842,
+   "to": 634,
+   "source": "exporter",
+   "values": {
+    "food": 152.61557800000003,
+    "chemicals": 197.32209699999999,
+    "medicine": 73.57351,
+    "apparel_household": 653.209939,
+    "metals": 256.584362,
+    "machinery": 463.012401,
+    "electronics": 371.36260699999997,
+    "energy": 17.240936,
+    "vehicles": 2471.8221999999996,
+    "semiconductors": 1.448826
+   }
+  },
+  {
+   "from": 842,
+   "to": 414,
+   "source": "exporter",
+   "values": {
+    "food": 278.114306,
+    "metals": 88.49621699999999,
+    "energy": 336.007638,
+    "chemicals": 250.41870600000001,
+    "medicine": 89.622032,
+    "apparel_household": 220.34501799999998,
+    "machinery": 286.251202,
+    "electronics": 374.417016,
+    "vehicles": 994.615048,
+    "semiconductors": 0.623665
+   }
+  },
+  {
+   "from": 842,
+   "to": 512,
+   "source": "exporter",
+   "values": {
+    "food": 84.56932400000001,
+    "metals": 214.123166,
+    "energy": 131.50429,
+    "chemicals": 195.316876,
+    "medicine": 17.813128,
+    "apparel_household": 113.480812,
+    "machinery": 203.34326,
+    "electronics": 141.73726299999998,
+    "vehicles": 760.181508,
+    "semiconductors": 0.339695
+   }
+  },
+  {
+   "from": 842,
+   "to": 48,
+   "source": "exporter",
+   "values": {
+    "food": 67.713234,
+    "metals": 76.94550600000002,
+    "energy": 15.311678,
+    "chemicals": 58.023482,
+    "medicine": 9.88019,
+    "apparel_household": 481.628204,
+    "machinery": 107.894584,
+    "electronics": 252.59867,
+    "vehicles": 605.0477079999998,
+    "semiconductors": 1.202933
+   }
+  },
+  {
+   "from": 842,
+   "to": 364,
+   "source": "exporter",
+   "values": {
+    "chemicals": 8.983453,
+    "apparel_household": 0.27206699999999995,
+    "metals": 0.12776900000000002,
+    "electronics": 35.072973,
+    "food": 4.1404309999999995,
+    "medicine": 10.021573,
+    "machinery": 0.396195
+   }
+  },
+  {
+   "from": 842,
+   "to": 368,
+   "source": "exporter",
+   "values": {
+    "food": 357.3474000000001,
+    "metals": 33.355724,
+    "energy": 15.65156,
+    "chemicals": 58.672078,
+    "medicine": 69.218802,
+    "apparel_household": 55.710028,
+    "machinery": 266.383932,
+    "electronics": 224.302851,
+    "vehicles": 1177.7408090000001,
+    "semiconductors": 0.123181
+   }
+  },
+  {
+   "from": 842,
+   "to": 376,
+   "source": "exporter",
+   "values": {
+    "chemicals": 1214.6520950000001,
+    "apparel_household": 1559.1521290000005,
+    "metals": 4132.661248,
+    "machinery": 1354.074677,
+    "electronics": 2357.319918,
+    "vehicles": 1562.162198,
+    "food": 438.887739,
+    "energy": 308.876193,
+    "medicine": 344.818986,
+    "semiconductors": 759.799083
+   }
+  },
+  {
+   "from": 842,
+   "to": 400,
+   "source": "exporter",
+   "values": {
+    "food": 235.347342,
+    "metals": 48.952016999999984,
+    "energy": 101.491232,
+    "chemicals": 62.838986000000006,
+    "medicine": 32.077098,
+    "apparel_household": 124.05322699999999,
+    "machinery": 82.323801,
+    "electronics": 105.12891400000001,
+    "vehicles": 739.7197950000001,
+    "semiconductors": 0.246494
+   }
+  },
+  {
+   "from": 842,
+   "to": 422,
+   "source": "exporter",
+   "values": {
+    "food": 74.666249,
+    "metals": 35.41561,
+    "energy": 10.185876,
+    "chemicals": 33.447558,
+    "medicine": 28.552776,
+    "apparel_household": 91.782768,
+    "machinery": 47.833584,
+    "electronics": 40.793421,
+    "vehicles": 178.931178,
+    "semiconductors": 0.140439
+   }
+  },
+  {
+   "from": 842,
+   "to": 760,
+   "source": "exporter",
+   "values": {
+    "food": 0.8968959999999999,
+    "medicine": 0.061199,
+    "machinery": 0.003007,
+    "apparel_household": 12.786903,
+    "chemicals": 0.004371,
+    "metals": 0.01554,
+    "electronics": 0.298309
+   }
+  },
+  {
+   "from": 842,
+   "to": 887,
+   "source": "exporter",
+   "values": {
+    "chemicals": 3.376585,
+    "apparel_household": 8.396124,
+    "metals": 15.330299,
+    "machinery": 3.190251,
+    "electronics": 5.202997,
+    "vehicles": 10.960805,
+    "food": 123.62293400000001,
+    "energy": 8.553177,
+    "medicine": 0.150105,
+    "semiconductors": 0.007105
+   }
+  },
+  {
+   "from": 842,
+   "to": 792,
+   "source": "exporter",
+   "values": {
+    "food": 1038.698358,
+    "chemicals": 1963.5653989999998,
+    "medicine": 363.779011,
+    "apparel_household": 1523.6376200000002,
+    "metals": 2284.7874419999994,
+    "electronics": 1045.1069109999999,
+    "vehicles": 3086.314631,
+    "energy": 2429.586513,
+    "machinery": 902.390517,
+    "semiconductors": 55.97541
+   }
+  },
+  {
+   "from": 842,
+   "to": 818,
+   "source": "exporter",
+   "values": {
+    "food": 756.461427,
+    "chemicals": 679.4432250000001,
+    "medicine": 208.544268,
+    "apparel_household": 333.04839499999986,
+    "metals": 72.163247,
+    "machinery": 419.698299,
+    "electronics": 267.752601,
+    "energy": 939.449042,
+    "vehicles": 808.666419,
+    "semiconductors": 1.744461
+   }
+  },
+  {
+   "from": 842,
+   "to": 490,
+   "source": "importer",
+   "values": {
+    "apparel_household": 2876.692992205,
+    "food": 3781.02425442,
+    "metals": 1987.8238024109996,
+    "chemicals": 3580.351750409,
+    "machinery": 7889.768389693,
+    "vehicles": 2576.556152828,
+    "electronics": 4582.904994706,
+    "medicine": 1061.543036633,
+    "energy": 7971.813394108,
+    "semiconductors": 4662.522749524001
+   }
+  },
+  {
+   "from": 124,
+   "to": 410,
+   "source": "importer",
+   "values": {
+    "food": 905.0564170000001,
+    "chemicals": 436.400181,
+    "metals": 1491.9050149999996,
+    "apparel_household": 418.201198,
+    "machinery": 228.331477,
+    "vehicles": 79.951628,
+    "electronics": 293.684623,
+    "energy": 2175.284001,
+    "medicine": 140.001946,
+    "semiconductors": 25.232554
+   }
+  },
+  {
+   "from": 124,
+   "to": 156,
+   "source": "importer",
+   "values": {
+    "electronics": 953.8831150000001,
+    "apparel_household": 3450.9994349999993,
+    "machinery": 549.695074,
+    "chemicals": 2473.285855,
+    "food": 10152.31508,
+    "medicine": 560.276776,
+    "metals": 18754.431927999998,
+    "vehicles": 551.754193,
+    "energy": 6322.431452,
+    "semiconductors": 150.831972
+   }
+  },
+  {
+   "from": 124,
+   "to": 408,
+   "source": "exporter",
+   "values": {
+    "chemicals": 0.00282908,
+    "electronics": 0.0012008219999999998
+   }
+  },
+  {
+   "from": 124,
+   "to": 344,
+   "source": "exporter",
+   "values": {
+    "metals": 2709.3510682389997,
+    "apparel_household": 169.39431474900002,
+    "chemicals": 48.371012518,
+    "food": 264.421037796,
+    "electronics": 220.73239398099997,
+    "medicine": 18.044118822,
+    "vehicles": 21.384594502,
+    "energy": 60.016807259000004,
+    "machinery": 84.806712197,
+    "semiconductors": 40.603206875
+   }
+  },
+  {
+   "from": 124,
+   "to": 446,
+   "source": "exporter",
+   "values": {
+    "apparel_household": 11.518634279999999,
+    "electronics": 6.594988503,
+    "metals": 0.9115468689999999,
+    "chemicals": 0.56471525,
+    "food": 3.7424858459999997,
+    "machinery": 0.6307552759999999,
+    "medicine": 0.000186679
+   }
+  },
+  {
+   "from": 124,
+   "to": 392,
+   "source": "importer",
+   "values": {
+    "metals": 2238.9929854519996,
+    "food": 4047.5773850779997,
+    "chemicals": 444.32764503199996,
+    "apparel_household": 1245.0183192930006,
+    "machinery": 369.68578230699995,
+    "vehicles": 145.73069683,
+    "electronics": 514.9216142079999,
+    "medicine": 905.768911718,
+    "energy": 4628.8366051269995,
+    "semiconductors": 4.637978263
+   }
+  },
+  {
+   "from": 124,
+   "to": 682,
+   "source": "exporter",
+   "values": {
+    "metals": 15.948204397999998,
+    "apparel_household": 43.617701978999996,
+    "chemicals": 43.474624887,
+    "food": 59.476138817999995,
+    "vehicles": 1166.6405790679999,
+    "electronics": 97.368373354,
+    "machinery": 125.129722333,
+    "energy": 0.44566126899999997,
+    "medicine": 52.982335681,
+    "semiconductors": 0.22497003899999998
+   }
+  },
+  {
+   "from": 124,
+   "to": 784,
+   "source": "exporter",
+   "values": {
+    "chemicals": 34.785706538,
+    "metals": 81.590164905,
+    "apparel_household": 94.54542973499998,
+    "vehicles": 370.734333489,
+    "food": 494.74343258299996,
+    "electronics": 228.47479494499996,
+    "medicine": 33.700962763999996,
+    "energy": 1.583457523,
+    "machinery": 198.91368936199999,
+    "semiconductors": 0.885942174
+   }
+  },
+  {
+   "from": 124,
+   "to": 634,
+   "source": "exporter",
+   "values": {
+    "electronics": 20.461509814,
+    "apparel_household": 9.870076055,
+    "metals": 68.75988186500001,
+    "chemicals": 4.105883771,
+    "food": 7.706348156000002,
+    "vehicles": 30.651519371000003,
+    "medicine": 5.036225986,
+    "energy": 0.145805422,
+    "machinery": 21.907201718,
+    "semiconductors": 0.056136391
+   }
+  },
+  {
+   "from": 124,
+   "to": 414,
+   "source": "exporter",
+   "values": {
+    "chemicals": 5.2519954030000005,
+    "metals": 3.16668614,
+    "apparel_household": 6.851439191,
+    "machinery": 26.334221294,
+    "food": 20.77203527,
+    "vehicles": 19.718309152000003,
+    "electronics": 18.737053861,
+    "energy": 0.0027920410000000003,
+    "medicine": 4.196480272,
+    "semiconductors": 0.010202172
+   }
+  },
+  {
+   "from": 124,
+   "to": 512,
+   "source": "exporter",
+   "values": {
+    "food": 13.99239353,
+    "energy": 0.021129578000000003,
+    "chemicals": 8.729338861999999,
+    "medicine": 4.89689878,
+    "apparel_household": 2.6590591980000005,
+    "metals": 5.014918619,
+    "machinery": 29.755741717,
+    "electronics": 19.873293712000002,
+    "vehicles": 4.866591544,
+    "semiconductors": 0.024173488
+   }
+  },
+  {
+   "from": 124,
+   "to": 48,
+   "source": "exporter",
+   "values": {
+    "food": 4.670196772,
+    "metals": 154.191999346,
+    "energy": 0.027595941,
+    "chemicals": 8.340479954000001,
+    "medicine": 3.3956231150000002,
+    "apparel_household": 3.8949969069999995,
+    "machinery": 10.233109511,
+    "electronics": 3.7227526600000003,
+    "vehicles": 6.7782194229999995,
+    "semiconductors": 0.023557889999999998
+   }
+  },
+  {
+   "from": 124,
+   "to": 364,
+   "source": "exporter",
+   "values": {
+    "apparel_household": 0.147747775,
+    "metals": 0.055325966,
+    "vehicles": 0.003483199,
+    "electronics": 1.0364619890000002,
+    "food": 333.01847385300005,
+    "chemicals": 2.773906969,
+    "medicine": 1.008134887,
+    "machinery": 0.30655481900000003
+   }
+  },
+  {
+   "from": 124,
+   "to": 368,
+   "source": "exporter",
+   "values": {
+    "food": 44.323109712000004,
+    "energy": 0.002203853,
+    "chemicals": 5.789682898000001,
+    "medicine": 20.975006044,
+    "apparel_household": 8.862795299,
+    "metals": 2.1445599360000003,
+    "machinery": 22.717200234,
+    "electronics": 6.794399776000001,
+    "vehicles": 169.44567156099998
+   }
+  },
+  {
+   "from": 124,
+   "to": 376,
+   "source": "exporter",
+   "values": {
+    "food": 96.45965260300001,
+    "metals": 5.774597431999999,
+    "energy": 0.31182554599999995,
+    "chemicals": 16.119537473999998,
+    "medicine": 20.359641439,
+    "apparel_household": 24.102915486999997,
+    "machinery": 47.386164396,
+    "electronics": 84.52630285199999,
+    "vehicles": 16.082252729,
+    "semiconductors": 7.034402684000001
+   }
+  },
+  {
+   "from": 124,
+   "to": 400,
+   "source": "exporter",
+   "values": {
+    "food": 14.954707541,
+    "metals": 0.345395225,
+    "energy": 0.036542473,
+    "chemicals": 1.906143062,
+    "medicine": 1.659938254,
+    "apparel_household": 6.305153335999999,
+    "machinery": 5.864645008,
+    "electronics": 3.615618743,
+    "vehicles": 51.469644428,
+    "semiconductors": 0.013364608
+   }
+  },
+  {
+   "from": 124,
+   "to": 422,
+   "source": "exporter",
+   "values": {
+    "food": 13.958265295000002,
+    "chemicals": 1.6588255849999998,
+    "apparel_household": 4.398141326999999,
+    "metals": 0.06677118600000001,
+    "machinery": 1.470842495,
+    "electronics": 1.943588559,
+    "energy": 0.024433505,
+    "medicine": 6.3176104749999995,
+    "vehicles": 24.245753301,
+    "semiconductors": 0.005557413
+   }
+  },
+  {
+   "from": 124,
+   "to": 760,
+   "source": "exporter",
+   "values": {
+    "food": 14.105807871,
+    "medicine": 0.012371208,
+    "chemicals": 0.073484973,
+    "apparel_household": 0.37258743499999997,
+    "metals": 0.08191665399999999,
+    "electronics": 0.015161025
+   }
+  },
+  {
+   "from": 124,
+   "to": 887,
+   "source": "exporter",
+   "values": {
+    "food": 3.259945045,
+    "chemicals": 0.26422973299999997,
+    "apparel_household": 0.071978204,
+    "metals": 0.012260089,
+    "machinery": 1.376262761,
+    "electronics": 0.051922773000000005,
+    "vehicles": 0.10371072199999999
+   }
+  },
+  {
+   "from": 124,
+   "to": 792,
+   "source": "exporter",
+   "values": {
+    "food": 450.7944326330001,
+    "metals": 121.63175822199999,
+    "energy": 44.967630363,
+    "chemicals": 26.845629975999998,
+    "medicine": 8.280775915,
+    "apparel_household": 57.67111667199998,
+    "machinery": 68.839397616,
+    "electronics": 61.615696937,
+    "vehicles": 70.29545911000001,
+    "semiconductors": 1.193905236
+   }
+  },
+  {
+   "from": 124,
+   "to": 818,
+   "source": "exporter",
+   "values": {
+    "apparel_household": 21.180125109000002,
+    "food": 84.25172204699999,
+    "medicine": 2.3756318700000003,
+    "chemicals": 6.6661548029999995,
+    "metals": 108.05041620600001,
+    "electronics": 14.564409276,
+    "machinery": 53.691780726000005,
+    "vehicles": 2.955101452,
+    "energy": 0.073630909,
+    "semiconductors": 0.015878112
+   }
+  },
+  {
+   "from": 124,
+   "to": 490,
+   "source": "importer",
+   "values": {
+    "apparel_household": 179.45270326299996,
+    "food": 334.33679863099997,
+    "vehicles": 29.960281105,
+    "electronics": 123.505495193,
+    "chemicals": 181.819992255,
+    "metals": 335.39461570000003,
+    "energy": 455.360411994,
+    "machinery": 91.339574821,
+    "medicine": 204.01164940500001,
+    "semiconductors": 55.557849215000005
+   }
+  },
+  {
+   "from": 484,
+   "to": 410,
+   "source": "importer",
+   "values": {
+    "food": 185.74826499999998,
+    "chemicals": 163.956814,
+    "metals": 1693.7740600000002,
+    "energy": 2412.138484,
+    "electronics": 1187.071616,
+    "apparel_household": 36.874408,
+    "machinery": 1099.731904,
+    "vehicles": 795.344385,
+    "medicine": 19.573176,
+    "semiconductors": 36.489333
+   }
+  },
+  {
+   "from": 484,
+   "to": 156,
+   "source": "importer",
+   "values": {
+    "electronics": 5772.550236000001,
+    "apparel_household": 285.07552899999996,
+    "machinery": 775.963617,
+    "chemicals": 435.69240199999996,
+    "medicine": 48.898373,
+    "metals": 5634.072775,
+    "food": 608.03629,
+    "vehicles": 1543.922901,
+    "energy": 896.642342,
+    "semiconductors": 2734.806724
+   }
+  },
+  {
+   "from": 484,
+   "to": 408,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 484,
+   "to": 344,
+   "source": "exporter",
+   "values": {
+    "food": 51.276908999999996,
+    "chemicals": 20.291667000000004,
+    "apparel_household": 19.072392,
+    "metals": 239.18691,
+    "electronics": 181.025113,
+    "machinery": 80.33943,
+    "vehicles": 5.991171,
+    "semiconductors": 169.565353
+   }
+  },
+  {
+   "from": 484,
+   "to": 446,
+   "source": "exporter",
+   "values": {
+    "apparel_household": 0.000844
+   }
+  },
+  {
+   "from": 484,
+   "to": 392,
+   "source": "importer",
+   "values": {
+    "metals": 612.0012569510002,
+    "vehicles": 804.516368898,
+    "apparel_household": 175.79368906599998,
+    "food": 1291.2506316610002,
+    "chemicals": 151.264505233,
+    "machinery": 579.805780314,
+    "electronics": 1960.7701425639998,
+    "medicine": 99.512983854,
+    "energy": 0.0024582280000000002,
+    "semiconductors": 14.504844254
+   }
+  },
+  {
+   "from": 484,
+   "to": 682,
+   "source": "exporter",
+   "values": {
+    "medicine": 0.189648,
+    "metals": 105.136175,
+    "food": 5.358118,
+    "chemicals": 5.35885,
+    "apparel_household": 4.862194,
+    "electronics": 61.173545000000004,
+    "machinery": 28.549819,
+    "vehicles": 334.23088
+   }
+  },
+  {
+   "from": 484,
+   "to": 784,
+   "source": "exporter",
+   "values": {
+    "medicine": 0.950537,
+    "chemicals": 19.179832,
+    "metals": 71.507742,
+    "food": 65.792765,
+    "apparel_household": 7.532299,
+    "machinery": 70.168854,
+    "vehicles": 227.006134,
+    "electronics": 49.918898000000006
+   }
+  },
+  {
+   "from": 484,
+   "to": 634,
+   "source": "exporter",
+   "values": {
+    "food": 0.307923,
+    "machinery": 0.970911,
+    "electronics": 3.427684,
+    "apparel_household": 0.67836,
+    "metals": 7.172649,
+    "vehicles": 46.638508
+   }
+  },
+  {
+   "from": 484,
+   "to": 414,
+   "source": "exporter",
+   "values": {
+    "chemicals": 0.23012200000000002,
+    "electronics": 1.685204,
+    "food": 2.737533,
+    "machinery": 26.999181,
+    "apparel_household": 2.696942,
+    "vehicles": 67.376203
+   }
+  },
+  {
+   "from": 484,
+   "to": 512,
+   "source": "exporter",
+   "values": {
+    "machinery": 1.316681,
+    "vehicles": 7.480597,
+    "chemicals": 0.03292,
+    "metals": 0.005933,
+    "electronics": 2.311411,
+    "apparel_household": 0.231722
+   }
+  },
+  {
+   "from": 484,
+   "to": 48,
+   "source": "exporter",
+   "values": {
+    "machinery": 0.602342,
+    "electronics": 1.391336,
+    "apparel_household": 0.219008,
+    "food": 1.494695,
+    "vehicles": 3.104202
+   }
+  },
+  {
+   "from": 484,
+   "to": 364,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 484,
+   "to": 368,
+   "source": "exporter",
+   "values": {
+    "machinery": 26.775053,
+    "electronics": 4.283466,
+    "apparel_household": 0.000001
+   }
+  },
+  {
+   "from": 484,
+   "to": 376,
+   "source": "exporter",
+   "values": {
+    "food": 22.005031,
+    "chemicals": 8.573481,
+    "apparel_household": 0.765361,
+    "metals": 4.588942,
+    "machinery": 32.130144,
+    "electronics": 32.819812,
+    "vehicles": 44.593247,
+    "semiconductors": 4.790176
+   }
+  },
+  {
+   "from": 484,
+   "to": 400,
+   "source": "exporter",
+   "values": {
+    "food": 1.104517,
+    "electronics": 0.115199,
+    "vehicles": 5.616485
+   }
+  },
+  {
+   "from": 484,
+   "to": 422,
+   "source": "exporter",
+   "values": {
+    "food": 1.046741,
+    "vehicles": 6.45213
+   }
+  },
+  {
+   "from": 484,
+   "to": 760,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 484,
+   "to": 887,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 484,
+   "to": 792,
+   "source": "exporter",
+   "values": {
+    "food": 44.844338,
+    "metals": 20.158260000000002,
+    "chemicals": 32.667234,
+    "medicine": 0.088227,
+    "apparel_household": 11.105687,
+    "machinery": 49.29049,
+    "electronics": 29.306417,
+    "vehicles": 25.821518
+   }
+  },
+  {
+   "from": 484,
+   "to": 818,
+   "source": "exporter",
+   "values": {
+    "apparel_household": 0.000008,
+    "chemicals": 3.785232,
+    "metals": 19.900423,
+    "machinery": 2.762216,
+    "electronics": 18.422691
+   }
+  },
+  {
+   "from": 484,
+   "to": 490,
+   "source": "importer",
+   "values": {
+    "apparel_household": 32.952309702,
+    "food": 30.685393764,
+    "metals": 100.80616288600001,
+    "vehicles": 280.233379678,
+    "chemicals": 44.82178437000001,
+    "machinery": 227.657447925,
+    "electronics": 527.7687366120001,
+    "medicine": 12.447221576999999,
+    "semiconductors": 359.874566615
+   }
+  },
+  {
+   "from": 490,
+   "to": 410,
+   "source": "importer",
+   "values": {
+    "apparel_household": 229.527953,
+    "metals": 1075.365038,
+    "chemicals": 1311.6483249999999,
+    "machinery": 1152.961593,
+    "electronics": 2828.108172,
+    "food": 258.07598,
+    "vehicles": 120.10755900000001,
+    "medicine": 22.67044,
+    "energy": 88.860298,
+    "semiconductors": 17283.31429
+   }
+  },
+  {
+   "from": 490,
+   "to": 156,
+   "source": "importer",
+   "values": {
+    "vehicles": 495.38010599999996,
+    "electronics": 23005.449519999995,
+    "apparel_household": 2412.1324549999995,
+    "food": 435.28472200000004,
+    "metals": 5568.109893000001,
+    "medicine": 220.659065,
+    "chemicals": 11905.447527,
+    "energy": 482.325814,
+    "machinery": 19952.785098,
+    "semiconductors": 134867.574923
+   }
+  },
+  {
+   "from": 490,
+   "to": 408,
+   "source": "none",
+   "values": {}
+  },
+  {
+   "from": 490,
+   "to": 344,
+   "source": "exporter",
+   "values": {
+    "food": 522.2212714459998,
+    "metals": 1765.118932695,
+    "chemicals": 923.772708629,
+    "apparel_household": 697.0087068159999,
+    "vehicles": 53.22995119600001,
+    "electronics": 6082.45587988801,
+    "medicine": 55.934574628,
+    "energy": 411.915815758,
+    "machinery": 2885.161967603,
+    "semiconductors": 43037.795261782994
+   }
+  },
+  {
+   "from": 490,
+   "to": 446,
+   "source": "exporter",
+   "values": {
+    "food": 18.907776542999997,
+    "metals": 9.847528467,
+    "chemicals": 8.769109162,
+    "apparel_household": 9.803674911,
+    "electronics": 35.00049433699999,
+    "machinery": 4.372405093,
+    "medicine": 9.166932758,
+    "energy": 0.08498230100000001,
+    "vehicles": 4.034495462,
+    "semiconductors": 3.961310025
+   }
+  },
+  {
+   "from": 490,
+   "to": 392,
+   "source": "importer",
+   "values": {
+    "chemicals": 2884.5375237640005,
+    "metals": 3313.038999418,
+    "medicine": 109.656740388,
+    "apparel_household": 3452.5723358210003,
+    "electronics": 3972.0671651030025,
+    "food": 721.0927909740001,
+    "machinery": 2878.7835852870003,
+    "vehicles": 427.75337835499994,
+    "energy": 61.337835075,
+    "semiconductors": 17832.085561960997
+   }
+  },
+  {
+   "from": 490,
+   "to": 682,
+   "source": "exporter",
+   "values": {
+    "apparel_household": 59.172781765,
+    "metals": 176.39456576199996,
+    "food": 13.087210213,
+    "chemicals": 204.02952131000004,
+    "electronics": 92.63859384100002,
+    "machinery": 100.731434948,
+    "vehicles": 350.190038732,
+    "medicine": 0.522588257,
+    "energy": 1.069763999,
+    "semiconductors": 0.20939433799999999
+   }
+  },
+  {
+   "from": 490,
+   "to": 784,
+   "source": "exporter",
+   "values": {
+    "apparel_household": 86.535928588,
+    "metals": 171.54650341299998,
+    "food": 16.272107065000004,
+    "chemicals": 249.62930568900003,
+    "vehicles": 234.181119825,
+    "medicine": 0.181216502,
+    "energy": 176.585142819,
+    "electronics": 321.437170029,
+    "machinery": 296.281735796,
+    "semiconductors": 1.140449013
+   }
+  },
+  {
+   "from": 490,
+   "to": 634,
+   "source": "exporter",
+   "values": {
+    "food": 1.616875628,
+    "chemicals": 16.189785469,
+    "apparel_household": 4.467004403,
+    "metals": 11.965546425,
+    "medicine": 0.000032057,
+    "energy": 0.005994602,
+    "machinery": 6.411852086000001,
+    "electronics": 7.885049603,
+    "vehicles": 21.951976556,
+    "semiconductors": 0.03676903
+   }
+  },
+  {
+   "from": 490,
+   "to": 414,
+   "source": "exporter",
+   "values": {
+    "food": 3.9086088180000003,
+    "chemicals": 20.916417051,
+    "apparel_household": 8.175194758,
+    "metals": 16.343882006999998,
+    "electronics": 11.966347841,
+    "machinery": 10.72177868,
+    "vehicles": 85.06539177699999,
+    "medicine": 0.05869581,
+    "semiconductors": 0.021029192999999998
+   }
+  },
+  {
+   "from": 490,
+   "to": 512,
+   "source": "exporter",
+   "values": {
+    "food": 0.357464216,
+    "chemicals": 30.538811345999996,
+    "medicine": 0.002820989,
+    "apparel_household": 3.6613555220000005,
+    "metals": 4.381028346,
+    "machinery": 8.417222812,
+    "electronics": 6.779927068999999,
+    "vehicles": 20.829254896000002,
+    "semiconductors": 0.018304373
+   }
+  },
+  {
+   "from": 490,
+   "to": 48,
+   "source": "exporter",
+   "values": {
+    "food": 0.5315000180000001,
+    "chemicals": 6.828268566000001,
+    "medicine": 0.002372195,
+    "apparel_household": 1.800464323,
+    "metals": 2.789541619,
+    "machinery": 6.638492926,
+    "electronics": 1.7582136000000002,
+    "vehicles": 21.749666748
+   }
+  },
+  {
+   "from": 490,
+   "to": 364,
+   "source": "exporter",
+   "values": {
+    "food": 0.09046399599999999,
+    "chemicals": 20.096695281000002,
+    "medicine": 0.026542944,
+    "apparel_household": 4.481429917,
+    "metals": 10.673116614,
+    "machinery": 13.538119697,
+    "electronics": 9.92154738,
+    "vehicles": 3.501264382
+   }
+  },
+  {
+   "from": 490,
+   "to": 368,
+   "source": "exporter",
+   "values": {
+    "food": 0.7686875100000001,
+    "metals": 6.438523258000001,
+    "energy": 89.74775306299999,
+    "chemicals": 9.916546535,
+    "apparel_household": 2.7074764790000003,
+    "machinery": 16.296566323,
+    "electronics": 8.278000581,
+    "vehicles": 16.547762592
+   }
+  },
+  {
+   "from": 490,
+   "to": 376,
+   "source": "exporter",
+   "values": {
+    "food": 6.125008774,
+    "metals": 83.58571880800001,
+    "energy": 0.006411339,
+    "chemicals": 115.373907817,
+    "apparel_household": 30.907399232999996,
+    "machinery": 221.119298515,
+    "electronics": 197.7375292079999,
+    "vehicles": 27.772574942,
+    "medicine": 0.600582198,
+    "semiconductors": 327.95637999
+   }
+  },
+  {
+   "from": 490,
+   "to": 400,
+   "source": "exporter",
+   "values": {
+    "food": 1.544427493,
+    "metals": 8.398437589,
+    "energy": 0.068569273,
+    "chemicals": 45.194972424999996,
+    "medicine": 0.48296617999999997,
+    "apparel_household": 134.76118841999997,
+    "machinery": 12.573726058,
+    "electronics": 6.393740052999999,
+    "vehicles": 11.040774859999999
+   }
+  },
+  {
+   "from": 490,
+   "to": 422,
+   "source": "exporter",
+   "values": {
+    "food": 3.277861269,
+    "energy": 0.024875996,
+    "chemicals": 12.132754148,
+    "medicine": 0.286618918,
+    "apparel_household": 1.762316856,
+    "metals": 8.724133618999998,
+    "machinery": 7.092768364,
+    "electronics": 3.9676572510000003,
+    "vehicles": 5.494517677,
+    "semiconductors": 0.012694452
+   }
+  },
+  {
+   "from": 490,
+   "to": 760,
+   "source": "exporter",
+   "values": {
+    "food": 1.297238313,
+    "chemicals": 3.1965654879999996,
+    "apparel_household": 0.51518316,
+    "metals": 0.412024711,
+    "machinery": 0.293895788,
+    "electronics": 0.00041673700000000003,
+    "vehicles": 0.181120332
+   }
+  },
+  {
+   "from": 490,
+   "to": 887,
+   "source": "exporter",
+   "values": {
+    "food": 0.031511732,
+    "medicine": 0.39477821,
+    "chemicals": 2.303530054,
+    "apparel_household": 0.415550949,
+    "metals": 1.6545101900000003,
+    "machinery": 2.038164725,
+    "electronics": 0.374390152,
+    "vehicles": 1.03870106
+   }
+  },
+  {
+   "from": 490,
+   "to": 792,
+   "source": "exporter",
+   "values": {
+    "chemicals": 311.983970976,
+    "apparel_household": 48.53268354600001,
+    "metals": 159.65225108300004,
+    "food": 5.847846578,
+    "energy": 2.8359276589999998,
+    "medicine": 0.187179047,
+    "machinery": 508.401822185,
+    "electronics": 194.74763323800005,
+    "vehicles": 78.416159858,
+    "semiconductors": 155.70100686
+   }
+  },
+  {
+   "from": 490,
+   "to": 818,
+   "source": "exporter",
+   "values": {
+    "metals": 49.684929423,
+    "chemicals": 119.64017319199999,
+    "apparel_household": 33.677129817,
+    "vehicles": 13.851409786,
+    "energy": 0.010386369000000001,
+    "electronics": 57.236557332,
+    "machinery": 29.457314596,
+    "food": 7.27414515,
+    "medicine": 0.48578717,
+    "semiconductors": 39.49301587
+   }
+  },
+  {
+   "from": 490,
+   "to": 842,
+   "source": "importer",
+   "values": {
+    "machinery": 34517.26982,
+    "vehicles": 3905.0650370000003,
+    "electronics": 22282.986424000002,
+    "apparel_household": 6537.736311999998,
+    "food": 918.6324230000002,
+    "metals": 8229.442079,
+    "chemicals": 4950.007446999999,
+    "energy": 602.325265,
+    "medicine": 646.564875,
+    "semiconductors": 7328.841477
+   }
+  },
+  {
+   "from": 490,
+   "to": 124,
+   "source": "importer",
+   "values": {
+    "medicine": 4.735570826,
+    "chemicals": 426.06230493499993,
+    "apparel_household": 349.398583774,
+    "food": 147.84041842599996,
+    "metals": 1445.405740121,
+    "energy": 1.806716334,
+    "machinery": 1176.940032327,
+    "vehicles": 543.142555154,
+    "electronics": 1430.2888112350001,
+    "semiconductors": 468.62678156699997
+   }
+  },
+  {
+   "from": 490,
+   "to": 484,
+   "source": "importer",
+   "values": {
+    "chemicals": 640.3170989999999,
+    "apparel_household": 895.12528,
+    "metals": 1108.248704,
+    "machinery": 3571.376965,
+    "electronics": 3660.720789,
+    "vehicles": 237.065128,
+    "food": 10.798753,
+    "medicine": 2.638599,
+    "energy": 7.61166,
+    "semiconductors": 4182.620245
+   }
+  }
+ ]
+}

@@ -1,0 +1,789 @@
+{
+ "meta": {
+  "source": "World Bank WDI API (SP.POP.TOTL, SL.TLF.TOTL.IN, NY.GDP.MKTP.CD, NE.CON.PRVT.CD, NE.GDI.TOTL.ZS, NE.EXP.GNFS.ZS, NE.IMP.GNFS.ZS); Taiwan from IMF WEO datamapper (NGDPD, LP, NID_NGDP)",
+  "year": 2023,
+  "fetched": "2026-11-05"
+ },
+ "countries": {
+  "KOR": {
+   "bloc": "A",
+   "name": "대한민국",
+   "optional": false,
+   "population": {
+    "value": 51712619,
+    "year": 2023
+   },
+   "laborForce": {
+    "value": 29587631,
+    "year": 2023
+   },
+   "gdpUsd": {
+    "value": 1844800934391.54,
+    "year": 2023
+   },
+   "householdConsumptionUsd": {
+    "value": 921453055441.203,
+    "year": 2023
+   },
+   "grossCapitalFormationPctGdp": {
+    "value": 31.8912200894147,
+    "year": 2023
+   },
+   "exportsPctGdp": {
+    "value": 41.3214807367697,
+    "year": 2023
+   },
+   "importsPctGdp": {
+    "value": 40.9365283348931,
+    "year": 2023
+   }
+  },
+  "CHN": {
+   "bloc": "B",
+   "name": "중국",
+   "optional": false,
+   "population": {
+    "value": 1410710000,
+    "year": 2023
+   },
+   "laborForce": {
+    "value": 774607590,
+    "year": 2023
+   },
+   "gdpUsd": {
+    "value": 18270356654533.2,
+    "year": 2023
+   },
+   "householdConsumptionUsd": {
+    "value": 7229259522659.38,
+    "year": 2023
+   },
+   "grossCapitalFormationPctGdp": {
+    "value": 41.1297102455381,
+    "year": 2023
+   },
+   "exportsPctGdp": {
+    "value": 19.4023091648376,
+    "year": 2023
+   },
+   "importsPctGdp": {
+    "value": 17.3368405290018,
+    "year": 2023
+   }
+  },
+  "PRK": {
+   "bloc": "B",
+   "name": "북한",
+   "optional": false,
+   "population": {
+    "value": 26418204,
+    "year": 2023
+   },
+   "laborForce": {
+    "value": 17585844,
+    "year": 2023
+   },
+   "gdpUsd": null,
+   "householdConsumptionUsd": null,
+   "grossCapitalFormationPctGdp": null,
+   "exportsPctGdp": null,
+   "importsPctGdp": null
+  },
+  "HKG": {
+   "bloc": "B",
+   "name": "홍콩",
+   "optional": false,
+   "population": {
+    "value": 7536100,
+    "year": 2023
+   },
+   "laborForce": {
+    "value": 3850529,
+    "year": 2023
+   },
+   "gdpUsd": {
+    "value": 380762296025.216,
+    "year": 2023
+   },
+   "householdConsumptionUsd": {
+    "value": 266625821579.514,
+    "year": 2023
+   },
+   "grossCapitalFormationPctGdp": {
+    "value": 16.1515290771197,
+    "year": 2023
+   },
+   "exportsPctGdp": {
+    "value": 176.854196785869,
+    "year": 2023
+   },
+   "importsPctGdp": {
+    "value": 176.340412114544,
+    "year": 2023
+   }
+  },
+  "MAC": {
+   "bloc": "B",
+   "name": "마카오",
+   "optional": false,
+   "population": {
+    "value": 678800,
+    "year": 2023
+   },
+   "laborForce": {
+    "value": 396357,
+    "year": 2023
+   },
+   "gdpUsd": {
+    "value": 45626467279.891,
+    "year": 2023
+   },
+   "householdConsumptionUsd": {
+    "value": 14543634873.1737,
+    "year": 2023
+   },
+   "grossCapitalFormationPctGdp": {
+    "value": 15.2974689049317,
+    "year": 2023
+   },
+   "exportsPctGdp": {
+    "value": 92.4170435765852,
+    "year": 2023
+   },
+   "importsPctGdp": {
+    "value": 53.4574236757415,
+    "year": 2023
+   }
+  },
+  "JPN": {
+   "bloc": "C",
+   "name": "일본",
+   "optional": false,
+   "population": {
+    "value": 124516650,
+    "year": 2023
+   },
+   "laborForce": {
+    "value": 69197135,
+    "year": 2023
+   },
+   "gdpUsd": {
+    "value": 4384854269961.93,
+    "year": 2023
+   },
+   "householdConsumptionUsd": {
+    "value": 2350182323673.81,
+    "year": 2023
+   },
+   "grossCapitalFormationPctGdp": {
+    "value": 27.7841122147677,
+    "year": 2023
+   },
+   "exportsPctGdp": {
+    "value": 21.0593101343597,
+    "year": 2023
+   },
+   "importsPctGdp": {
+    "value": 22.5357732459138,
+    "year": 2023
+   }
+  },
+  "SAU": {
+   "bloc": "D",
+   "name": "사우디아라비아",
+   "optional": false,
+   "population": {
+    "value": 33702731,
+    "year": 2023
+   },
+   "laborForce": {
+    "value": 16713756,
+    "year": 2023
+   },
+   "gdpUsd": {
+    "value": 1218584800000,
+    "year": 2023
+   },
+   "householdConsumptionUsd": {
+    "value": 531169866666.667,
+    "year": 2023
+   },
+   "grossCapitalFormationPctGdp": {
+    "value": 29.7627433615344,
+    "year": 2023
+   },
+   "exportsPctGdp": {
+    "value": 30.7559610678442,
+    "year": 2023
+   },
+   "importsPctGdp": {
+    "value": 25.0415071647045,
+    "year": 2023
+   }
+  },
+  "ARE": {
+   "bloc": "D",
+   "name": "아랍에미리트",
+   "optional": false,
+   "population": {
+    "value": 10483751,
+    "year": 2023
+   },
+   "laborForce": {
+    "value": 6873426,
+    "year": 2023
+   },
+   "gdpUsd": {
+    "value": 522622268401.125,
+    "year": 2023
+   },
+   "householdConsumptionUsd": {
+    "value": 234510006807.352,
+    "year": 2023
+   },
+   "grossCapitalFormationPctGdp": {
+    "value": 26.6386668902392,
+    "year": 2023
+   },
+   "exportsPctGdp": {
+    "value": 106.846123390953,
+    "year": 2023
+   },
+   "importsPctGdp": {
+    "value": 92.1988267361531,
+    "year": 2023
+   }
+  },
+  "QAT": {
+   "bloc": "D",
+   "name": "카타르",
+   "optional": false,
+   "population": {
+    "value": 2656032,
+    "year": 2023
+   },
+   "laborForce": {
+    "value": 1972840,
+    "year": 2023
+   },
+   "gdpUsd": {
+    "value": 213002809340.659,
+    "year": 2023
+   },
+   "householdConsumptionUsd": {
+    "value": 45955965357.1429,
+    "year": 2022
+   },
+   "grossCapitalFormationPctGdp": {
+    "value": 30.6432344815998,
+    "year": 2022
+   },
+   "exportsPctGdp": {
+    "value": 68.5984131738821,
+    "year": 2022
+   },
+   "importsPctGdp": {
+    "value": 31.6152340257357,
+    "year": 2022
+   }
+  },
+  "KWT": {
+   "bloc": "D",
+   "name": "쿠웨이트",
+   "optional": false,
+   "population": {
+    "value": 4853420,
+    "year": 2023
+   },
+   "laborForce": {
+    "value": 2922258,
+    "year": 2023
+   },
+   "gdpUsd": {
+    "value": 165462656226.772,
+    "year": 2023
+   },
+   "householdConsumptionUsd": {
+    "value": 63343944887.0661,
+    "year": 2023
+   },
+   "grossCapitalFormationPctGdp": {
+    "value": 17.7610824770708,
+    "year": 2023
+   },
+   "exportsPctGdp": {
+    "value": 57.702062317436,
+    "year": 2023
+   },
+   "importsPctGdp": {
+    "value": 38.3322886518802,
+    "year": 2023
+   }
+  },
+  "OMN": {
+   "bloc": "D",
+   "name": "오만",
+   "optional": false,
+   "population": {
+    "value": 5049269,
+    "year": 2023
+   },
+   "laborForce": {
+    "value": 2579803,
+    "year": 2023
+   },
+   "gdpUsd": {
+    "value": 106174707932.38,
+    "year": 2023
+   },
+   "householdConsumptionUsd": {
+    "value": 40100820546.1638,
+    "year": 2023
+   },
+   "grossCapitalFormationPctGdp": {
+    "value": 26.661898119622,
+    "year": 2023
+   },
+   "exportsPctGdp": {
+    "value": 61.5843427989208,
+    "year": 2023
+   },
+   "importsPctGdp": {
+    "value": 44.8623883036834,
+    "year": 2023
+   }
+  },
+  "BHR": {
+   "bloc": "D",
+   "name": "바레인",
+   "optional": false,
+   "population": {
+    "value": 1577059,
+    "year": 2023
+   },
+   "laborForce": {
+    "value": 903224,
+    "year": 2023
+   },
+   "gdpUsd": {
+    "value": 46192260638.2979,
+    "year": 2023
+   },
+   "householdConsumptionUsd": {
+    "value": 17953780585.1064,
+    "year": 2023
+   },
+   "grossCapitalFormationPctGdp": {
+    "value": 29.168098874443,
+    "year": 2023
+   },
+   "exportsPctGdp": {
+    "value": 87.351143952571,
+    "year": 2023
+   },
+   "importsPctGdp": {
+    "value": 70.0967107297264,
+    "year": 2023
+   }
+  },
+  "IRN": {
+   "bloc": "D",
+   "name": "이란",
+   "optional": false,
+   "population": {
+    "value": 90608707,
+    "year": 2023
+   },
+   "laborForce": {
+    "value": 29026520,
+    "year": 2023
+   },
+   "gdpUsd": {
+    "value": 457510482317.483,
+    "year": 2023
+   },
+   "householdConsumptionUsd": {
+    "value": 198992315958.344,
+    "year": 2023
+   },
+   "grossCapitalFormationPctGdp": {
+    "value": 43.772806898094,
+    "year": 2023
+   },
+   "exportsPctGdp": {
+    "value": 23.9216475542357,
+    "year": 2023
+   },
+   "importsPctGdp": {
+    "value": 25.4719025417845,
+    "year": 2023
+   }
+  },
+  "IRQ": {
+   "bloc": "D",
+   "name": "이라크",
+   "optional": false,
+   "population": {
+    "value": 45074049,
+    "year": 2023
+   },
+   "laborForce": {
+    "value": 11803809,
+    "year": 2023
+   },
+   "gdpUsd": {
+    "value": 268881051643.549,
+    "year": 2023
+   },
+   "householdConsumptionUsd": {
+    "value": 109980411552.347,
+    "year": 2023
+   },
+   "grossCapitalFormationPctGdp": {
+    "value": 20.2898355344199,
+    "year": 2023
+   },
+   "exportsPctGdp": {
+    "value": 39.6312322400043,
+    "year": 2023
+   },
+   "importsPctGdp": {
+    "value": 29.8300885590124,
+    "year": 2023
+   }
+  },
+  "ISR": {
+   "bloc": "D",
+   "name": "이스라엘",
+   "optional": false,
+   "population": {
+    "value": 9849000,
+    "year": 2023
+   },
+   "laborForce": {
+    "value": 4637924,
+    "year": 2023
+   },
+   "gdpUsd": {
+    "value": 513393395491.904,
+    "year": 2023
+   },
+   "householdConsumptionUsd": {
+    "value": 248124770568.002,
+    "year": 2023
+   },
+   "grossCapitalFormationPctGdp": {
+    "value": 26.4012938714102,
+    "year": 2023
+   },
+   "exportsPctGdp": {
+    "value": 30.3284744013966,
+    "year": 2023
+   },
+   "importsPctGdp": {
+    "value": 27.6493079272484,
+    "year": 2023
+   }
+  },
+  "JOR": {
+   "bloc": "D",
+   "name": "요르단",
+   "optional": false,
+   "population": {
+    "value": 11439213,
+    "year": 2023
+   },
+   "laborForce": {
+    "value": 3156548,
+    "year": 2023
+   },
+   "gdpUsd": {
+    "value": 56123472112.6761,
+    "year": 2023
+   },
+   "householdConsumptionUsd": null,
+   "grossCapitalFormationPctGdp": null,
+   "exportsPctGdp": null,
+   "importsPctGdp": null
+  },
+  "LBN": {
+   "bloc": "D",
+   "name": "레바논",
+   "optional": false,
+   "population": {
+    "value": 5773493,
+    "year": 2023
+   },
+   "laborForce": {
+    "value": 1837294,
+    "year": 2023
+   },
+   "gdpUsd": {
+    "value": 20078620356.9931,
+    "year": 2023
+   },
+   "householdConsumptionUsd": {
+    "value": 27314358309.6425,
+    "year": 2023
+   },
+   "grossCapitalFormationPctGdp": {
+    "value": 1.89754409912655,
+    "year": 2023
+   },
+   "exportsPctGdp": {
+    "value": 30.5514119674735,
+    "year": 2023
+   },
+   "importsPctGdp": {
+    "value": 73.6549981017088,
+    "year": 2023
+   }
+  },
+  "SYR": {
+   "bloc": "D",
+   "name": "시리아",
+   "optional": false,
+   "population": {
+    "value": 23594623,
+    "year": 2023
+   },
+   "laborForce": {
+    "value": 6103412,
+    "year": 2023
+   },
+   "gdpUsd": {
+    "value": 23737634644.3994,
+    "year": 2022
+   },
+   "householdConsumptionUsd": {
+    "value": 27118984509.2228,
+    "year": 2022
+   },
+   "grossCapitalFormationPctGdp": null,
+   "exportsPctGdp": {
+    "value": 6.7771895571266,
+    "year": 2022
+   },
+   "importsPctGdp": {
+    "value": 28.6600525880316,
+    "year": 2022
+   }
+  },
+  "YEM": {
+   "bloc": "D",
+   "name": "예멘",
+   "optional": false,
+   "population": {
+    "value": 39390799,
+    "year": 2023
+   },
+   "laborForce": {
+    "value": 7664536,
+    "year": 2023
+   },
+   "gdpUsd": {
+    "value": 21606160663.0318,
+    "year": 2018
+   },
+   "householdConsumptionUsd": {
+    "value": 26661519655.4294,
+    "year": 2018
+   },
+   "grossCapitalFormationPctGdp": {
+    "value": 6.17671942043548,
+    "year": 2018
+   },
+   "exportsPctGdp": {
+    "value": 8.75610238271449,
+    "year": 2018
+   },
+   "importsPctGdp": {
+    "value": 47.3217203387932,
+    "year": 2018
+   }
+  },
+  "TUR": {
+   "bloc": "D",
+   "name": "튀르키예",
+   "optional": true,
+   "population": {
+    "value": 85325965,
+    "year": 2023
+   },
+   "laborForce": {
+    "value": 35554975,
+    "year": 2023
+   },
+   "gdpUsd": {
+    "value": 1141242864657.45,
+    "year": 2023
+   },
+   "householdConsumptionUsd": {
+    "value": 616632766979.269,
+    "year": 2023
+   },
+   "grossCapitalFormationPctGdp": {
+    "value": 34.5882765114043,
+    "year": 2023
+   },
+   "exportsPctGdp": {
+    "value": 31.9135926809724,
+    "year": 2023
+   },
+   "importsPctGdp": {
+    "value": 33.7696157928943,
+    "year": 2023
+   }
+  },
+  "EGY": {
+   "bloc": "D",
+   "name": "이집트",
+   "optional": true,
+   "population": {
+    "value": 114535772,
+    "year": 2023
+   },
+   "laborForce": {
+    "value": 34567534,
+    "year": 2023
+   },
+   "gdpUsd": {
+    "value": 395926071447.591,
+    "year": 2023
+   },
+   "householdConsumptionUsd": {
+    "value": 312623076305.887,
+    "year": 2023
+   },
+   "grossCapitalFormationPctGdp": {
+    "value": 16.4907339937373,
+    "year": 2023
+   },
+   "exportsPctGdp": {
+    "value": 19.1060913405676,
+    "year": 2023
+   },
+   "importsPctGdp": {
+    "value": 21.3443094314355,
+    "year": 2023
+   }
+  },
+  "USA": {
+   "bloc": "E",
+   "name": "미국",
+   "optional": false,
+   "population": {
+    "value": 336755052,
+    "year": 2023
+   },
+   "laborForce": {
+    "value": 172274620,
+    "year": 2023
+   },
+   "gdpUsd": {
+    "value": 27811517000000,
+    "year": 2023
+   },
+   "householdConsumptionUsd": {
+    "value": 18833150000000,
+    "year": 2023
+   },
+   "grossCapitalFormationPctGdp": {
+    "value": 21.5701430454153,
+    "year": 2023
+   },
+   "exportsPctGdp": {
+    "value": 11.0506737190927,
+    "year": 2023
+   },
+   "importsPctGdp": {
+    "value": 13.878624456192,
+    "year": 2023
+   }
+  },
+  "CAN": {
+   "bloc": "E",
+   "name": "캐나다",
+   "optional": false,
+   "population": {
+    "value": 40049088,
+    "year": 2023
+   },
+   "laborForce": {
+    "value": 22170293,
+    "year": 2023
+   },
+   "gdpUsd": {
+    "value": 2196593836347.42,
+    "year": 2023
+   },
+   "householdConsumptionUsd": {
+    "value": 1220073677750.06,
+    "year": 2023
+   },
+   "grossCapitalFormationPctGdp": {
+    "value": 23.6376218677924,
+    "year": 2023
+   },
+   "exportsPctGdp": {
+    "value": 33.3416520498948,
+    "year": 2023
+   },
+   "importsPctGdp": {
+    "value": 33.2328904516085,
+    "year": 2023
+   }
+  },
+  "MEX": {
+   "bloc": "E",
+   "name": "멕시코",
+   "optional": false,
+   "population": {
+    "value": 129739759,
+    "year": 2023
+   },
+   "laborForce": {
+    "value": 60144623,
+    "year": 2023
+   },
+   "gdpUsd": {
+    "value": 1794410347718.25,
+    "year": 2023
+   },
+   "householdConsumptionUsd": {
+    "value": 1253583863518.97,
+    "year": 2023
+   },
+   "grossCapitalFormationPctGdp": {
+    "value": 23.3050041337289,
+    "year": 2023
+   },
+   "exportsPctGdp": {
+    "value": 36.1479343675069,
+    "year": 2023
+   },
+   "importsPctGdp": {
+    "value": 37.5911414580596,
+    "year": 2023
+   }
+  },
+  "TWN": {
+   "bloc": "F",
+   "name": "대만",
+   "optional": false,
+   "population": {
+    "value": 23420000,
+    "year": 2023
+   },
+   "laborForce": null,
+   "gdpUsd": {
+    "value": 757387000000,
+    "year": 2023
+   },
+   "householdConsumptionUsd": null,
+   "grossCapitalFormationPctGdp": null,
+   "exportsPctGdp": null,
+   "importsPctGdp": null
+  }
+ }
+}
