@@ -439,5 +439,139 @@
       64951,
       44247
     ]
+  },
+  {
+    "model": "claude-haiku-5-5",
+    "at": "2026-11-05T02:12:43.158Z",
+    "repeats": 3,
+    "questions": {
+      "own_control_machinery": {
+        "correct": 3,
+        "answers": [
+          1,
+          1,
+          1
+        ]
+      },
+      "rival_control_machinery": {
+        "correct": 3,
+        "answers": [
+          0,
+          0,
+          0
+        ]
+      },
+      "own_tariff_machinery": {
+        "correct": 3,
+        "answers": [
+          2.5,
+          2.5,
+          2.5
+        ]
+      },
+      "controlled_goods": {
+        "correct": 3,
+        "answers": [
+          [
+            "machinery",
+            "electronics"
+          ],
+          [
+            "machinery",
+            "electronics"
+          ],
+          [
+            "machinery",
+            "electronics"
+          ]
+        ]
+      },
+      "dir_control": {
+        "correct": 3,
+        "answers": [
+          "강화",
+          "강화",
+          "강화"
+        ]
+      },
+      "dir_tariff": {
+        "correct": 3,
+        "answers": [
+          "인상",
+          "인상",
+          "인상"
+        ]
+      },
+      "must_change_appliances": {
+        "correct": 3,
+        "answers": [
+          "아니오",
+          "아니오",
+          "아니오"
+        ]
+      },
+      "own_es_last": {
+        "correct": 3,
+        "answers": [
+          12,
+          12,
+          12
+        ]
+      },
+      "violated_id": {
+        "correct": 3,
+        "answers": [
+          "B1-1.1A",
+          "B1-1.1A",
+          "B1-1.1A"
+        ]
+      },
+      "grain_tariff_cap": {
+        "correct": 3,
+        "answers": [
+          0,
+          0,
+          0
+        ]
+      },
+      "full_ban_level": {
+        "correct": 3,
+        "answers": [
+          3,
+          3,
+          3
+        ]
+      }
+    },
+    "tasks": {
+      "ease_controls": {
+        "passed": 3,
+        "errors": [
+          [],
+          [],
+          []
+        ]
+      },
+      "comply_tariffs": {
+        "passed": 3,
+        "errors": [
+          [],
+          [],
+          []
+        ]
+      }
+    },
+    "failedCalls": 0,
+    "latencyMs": [
+      4920,
+      4792,
+      6439,
+      3846,
+      5195,
+      5958,
+      4115,
+      5958,
+      5835
+    ]
   }
 ]
