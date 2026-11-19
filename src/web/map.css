@@ -1,0 +1,169 @@
+:root {
+  --sea: #3e4d5c;
+  --ink: #e8ecef;
+  --ink-2: #a9b4be;
+  --ink-3: #74828f;
+  --panel: rgba(20, 27, 34, 0.94);
+  --line: rgba(255, 255, 255, 0.08);
+  --friend: #417f5c;
+  --friend-2: #8fc3a2;
+  --hostile: #b5485e;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html, body, #root { margin: 0; height: 100%; }
+body {
+  background: var(--sea);
+  color: var(--ink);
+  font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', system-ui, sans-serif;
+  overflow: hidden;
+}
+button, select { font: inherit; color: inherit; }
+
+.app { position: fixed; inset: 0; }
+.map-wrap { position: absolute; inset: 0; }
+.map-svg { display: block; cursor: grab; touch-action: none; }
+.map-svg:active { cursor: grabbing; }
+.land.has-data { cursor: pointer; }
+.land.has-data:hover { filter: brightness(1.22); }
+
+.badge { cursor: pointer; }
+.badge-name { fill: #f4f6f7; font-size: 11.5px; font-weight: 500; }
+.badge-value { font-size: 10.5px; font-weight: 500; }
+.badge-dot { cursor: pointer; stroke: rgba(0, 0, 0, 0.35); stroke-width: 1; }
+
+/* 영상처럼 아주 옅은 입자와 가장자리 어둡게 */
+.grain {
+  position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse at 45% 45%, transparent 55%, rgba(8, 12, 16, 0.42) 100%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.09 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+.brand {
+  position: absolute; top: 16px; left: 20px;
+  font-size: 19px; font-weight: 700; letter-spacing: 0.02em;
+  color: rgba(232, 236, 239, 0.62);
+  pointer-events: none;
+}
+
+.controls {
+  position: absolute; top: 54px; left: 20px;
+  display: flex; flex-direction: column; gap: 8px; align-items: flex-start;
+}
+.seg { display: inline-flex; background: rgba(14, 19, 25, 0.78); border-radius: 6px; padding: 3px; }
+.seg button {
+  border: 0; background: transparent; padding: 5px 14px; border-radius: 4px; cursor: pointer;
+  color: var(--ink-2); font-size: 13px;
+}
+.seg button.on { background: #e8ecef; color: #1b232c; font-weight: 500; }
+.ctl {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(14, 19, 25, 0.78); border-radius: 6px; padding: 4px 6px 4px 10px; font-size: 12.5px;
+}
+.ctl span { color: var(--ink-3); }
+.ctl select {
+  background: transparent; border: 0; padding: 3px 4px; font-size: 13px; cursor: pointer; outline: none;
+}
+.ctl select option { background: #1b232c; }
+
+.legend { background: rgba(14, 19, 25, 0.78); border-radius: 6px; padding: 8px 10px; width: 210px; font-size: 11.5px; }
+.legend-bar { display: block; height: 8px; border-radius: 2px; }
+.legend-ends { display: flex; justify-content: space-between; color: var(--ink-2); margin-top: 4px; }
+.legend-note { color: var(--ink-3); }
+
+.source {
+  position: absolute; top: 14px; max-width: 46%;
+  font-size: 11px; color: rgba(200, 208, 215, 0.55); text-align: right; line-height: 1.5;
+  pointer-events: none;
+}
+
+.subtitle {
+  position: absolute; left: 0; display: flex; justify-content: center; pointer-events: none; padding: 0 16px;
+}
+.subtitle span {
+  background: rgba(12, 16, 21, 0.84); color: #f4f6f7;
+  font-size: 16px; font-weight: 500; line-height: 1.45;
+  padding: 7px 16px; border-radius: 4px; text-align: center; max-width: 760px;
+}
+
+.tooltip {
+  position: fixed; z-index: 10; pointer-events: none;
+  background: rgba(12, 16, 21, 0.92); border-radius: 4px; padding: 6px 10px;
+  display: flex; flex-direction: column; gap: 2px; font-size: 12.5px; max-width: 260px;
+}
+.tooltip span { color: var(--ink-2); }
+
+.zoom-buttons { position: absolute; left: 20px; display: flex; flex-direction: column; gap: 4px; }
+.zoom-buttons button {
+  width: 32px; height: 32px; border: 0; border-radius: 6px; cursor: pointer;
+  background: rgba(14, 19, 25, 0.78); font-size: 17px; line-height: 1;
+}
+.zoom-buttons button:hover { background: rgba(30, 40, 50, 0.95); }
+
+/* 오른쪽 자료 패널 */
+.panel {
+  position: absolute; top: 0; right: 0; bottom: 0; width: 400px;
+  background: var(--panel); border-left: 1px solid var(--line);
+  overflow-y: auto;
+}
+.panel-inner { padding: 22px 22px 28px; }
+.panel-head { display: flex; gap: 14px; align-items: center; margin-bottom: 14px; }
+.panel-flag { width: 52px; height: 52px; border-radius: 50%; border: 2px solid var(--friend-2); object-fit: cover; }
+.panel-head h1 { font-size: 24px; font-weight: 700; margin: 0; }
+.muted { color: var(--ink-3); font-size: 12.5px; margin: 2px 0 0; }
+
+.panel-section { border-top: 1px solid var(--line); padding: 14px 0 6px; }
+.panel-section h2 { font-size: 13.5px; font-weight: 700; color: var(--friend-2); margin: 0 0 8px; letter-spacing: 0.01em; }
+.section-note { font-size: 11px; color: var(--ink-3); margin: 6px 0 4px; }
+
+.kv { display: flex; justify-content: space-between; gap: 12px; padding: 4px 0; font-size: 13.5px; }
+.kv > span:first-child { color: var(--ink-2); }
+.kv > span:last-child { text-align: right; font-weight: 500; }
+.kv.on > span { color: var(--friend-2); }
+.src { display: block; font-size: 10.5px; color: var(--ink-3); font-weight: 400; }
+
+.bar-row, .hof-row {
+  display: grid; grid-template-columns: 92px 1fr 92px; align-items: center; gap: 8px;
+  width: 100%; padding: 4px 0; font-size: 12.5px; text-align: left;
+}
+.bar-row { border: 0; background: transparent; cursor: pointer; border-radius: 3px; }
+.bar-row:hover { background: rgba(255, 255, 255, 0.04); }
+.bar-label { color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.bar-track { height: 7px; background: rgba(255, 255, 255, 0.06); border-radius: 2px; overflow: hidden; }
+.bar-fill { display: block; height: 100%; border-radius: 2px; }
+.bar-fill.export { background: #e8ecef; }
+.bar-fill.import { background: var(--hostile); }
+.bar-fill.neutral { background: var(--friend); }
+.bar-value { text-align: right; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+
+.mix-bar { display: flex; height: 10px; border-radius: 2px; overflow: hidden; margin-bottom: 8px; gap: 1px; }
+.mix-bar span { background: var(--friend-2); }
+.mix-bar span.on { background: #f4f6f7; opacity: 1 !important; }
+
+.panel-foot { border-top: 1px solid var(--line); margin-top: 10px; padding-top: 12px; font-size: 11px; color: var(--ink-3); line-height: 1.6; }
+.panel-foot p { margin: 0 0 6px; }
+.panel-foot ul { margin: 0; padding-left: 16px; }
+.panel-foot a { color: var(--ink-2); }
+
+.panel-toggle {
+  display: block; width: 100%; border: 0; padding: 10px; cursor: pointer;
+  background: rgba(255, 255, 255, 0.05); font-size: 13px; font-weight: 500;
+}
+
+/* 좁은 화면: 패널은 아래에서 올라오는 판 */
+.panel.mobile { top: auto; left: 0; width: auto; height: 45%; border-left: 0; border-top: 1px solid var(--line); }
+.panel.mobile.closed { height: auto; overflow: hidden; }
+@media (max-width: 759px) {
+  .brand { font-size: 15px; top: 12px; left: 12px; }
+  .controls { top: 38px; left: 10px; right: 10px; flex-direction: row; flex-wrap: wrap; gap: 6px; }
+  .seg button { padding: 4px 10px; font-size: 12px; }
+  .ctl { padding: 2px 4px 2px 8px; font-size: 11.5px; }
+  .ctl select { font-size: 12px; }
+  .legend { width: 170px; }
+  .source { display: none; }
+  .subtitle span { font-size: 12.5px; padding: 6px 10px; }
+  .zoom-buttons { display: none; } /* 휴대폰은 두 손가락으로 확대 */
+  .panel-inner { padding: 14px 16px 20px; }
+}

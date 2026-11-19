@@ -1,8 +1,10 @@
 # AI 무역 시뮬레이션
 
-두 나라의 대통령이 교역 정책(관세·수출 통제·투자율)과 외교만으로 겨루는 게임이론 실험입니다. 두 나라는 문화가 달라 소비 취향과 노동 인구가 다릅니다. 대통령은 LLM, 규칙, 사람 중에서 고릅니다. 전쟁은 없고, 대통령은 4년마다 바뀌며, 실시간 모드에서는 현실 10분이 가상 1년입니다.
+**웹 지도 (1단계):** 큰 세계 지도 위에 한국·중국·일본·중동·북미·대만 23개 나라의 2023년 실측 자료(GDP, 인구, 산업 구조, 나라 사이 상품 교역, 문화 지표)를 올립니다. 나라를 누르면 오른쪽에 자료가, 지도에는 교역 상대로 가는 흐름선이 뜹니다. 값마다 연도와 출처를 함께 보여 줍니다. 관세·정책 입력과 AI 대통령 리플레이는 다음 단계에서 지도에 붙입니다.
 
-설계와 근거: [docs/SPEC.md](docs/SPEC.md) · 이론 기준선: [reports/baseline.md](reports/baseline.md) · Ossa(2014) 보정: [reports/calibration.md](reports/calibration.md)
+연구 쪽은 6개 나라(블록)의 대통령이 교역 정책(관세·수출 통제·투자율)과 외교만으로 겨루는 게임이론 실험입니다. 대통령은 LLM, 규칙, 사람 중에서 고릅니다.
+
+설계와 근거: [docs/SPEC.md](docs/SPEC.md) · v2 설계: [docs/V2_DESIGN.md](docs/V2_DESIGN.md) · 이론 기준선: [reports/baseline.md](reports/baseline.md) · Ossa(2014) 보정: [reports/calibration.md](reports/calibration.md)
 
 ## 시작
 
@@ -11,7 +13,9 @@ npm install
 npm run dev
 ```
 
-브라우저에서 http://localhost:5183 을 엽니다. 나라마다 대통령(사람/규칙/LLM)과 목표(절대 이익/상대 이익)를 고르고 시작합니다.
+브라우저에서 http://localhost:5183 을 열면 지도가 뜹니다. 지도 자료는 `npm run map:data`로 다시 만듭니다 (내려받기 없이 `data/v2/`와 `data/raw/` 캐시만 읽음). `main`에 올리면 GitHub Actions가 테스트·빌드 후 GitHub Pages에 배포합니다 (`.github/workflows/pages.yml`).
+
+예전 2개국(v1) 게임 화면(`src/ui`)은 더 이상 기본 화면이 아닙니다. 코드는 git 태그 `v1-two-country`에 남아 있습니다.
 
 LLM 대통령을 쓰려면 `.env.example`을 `.env`로 복사하고 키를 직접 넣으세요. 앱은 셸 환경변수가 아니라 이 파일의 키만 읽습니다. `.env`는 git에 올라가지 않습니다.
 

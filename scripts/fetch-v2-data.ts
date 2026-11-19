@@ -10,6 +10,7 @@
 import { createHash } from 'node:crypto'
 import { mkdirSync, readFileSync, writeFileSync, existsSync } from 'node:fs'
 import { resolve } from 'node:path'
+import { GOODS_V2, goodOfChapter, type GoodV2 } from './lib/hs'
 
 const ROOT = resolve(import.meta.dirname, '..')
 const RAW = resolve(ROOT, 'data/raw')
@@ -67,22 +68,7 @@ export const BLOCS: Record<string, { name: string; members: Member[] }> = {
 }
 const REPORTERS = [410, 156, 392, 842, 124, 484, 490]
 
-// ── 물품 10개 (HS 2단위, 반도체만 HS 4단위) ──
-export const GOODS_V2 = [
-  'food', 'energy', 'medicine', 'apparel_household', 'chemicals', 'vehicles', 'metals', 'machinery', 'semiconductors', 'electronics',
-] as const
-export type GoodV2 = (typeof GOODS_V2)[number]
-export function goodOfChapter(ch: number): GoodV2 {
-  if (ch <= 24) return 'food'
-  if (ch === 27) return 'energy'
-  if (ch === 30) return 'medicine'
-  if (ch >= 28 && ch <= 40) return 'chemicals'
-  if (ch >= 86 && ch <= 89) return 'vehicles'
-  if ((ch >= 72 && ch <= 83) || [25, 26, 68, 69, 70, 71].includes(ch)) return 'metals'
-  if (ch === 84) return 'machinery'
-  if (ch === 85 || (ch >= 90 && ch <= 92)) return 'electronics' // 반도체(8542)는 따로 빼 낸다
-  return 'apparel_household' // 41–67, 93–97, 99
-}
+// 물품 10개와 HS 장 → 물품 대응은 scripts/lib/hs.ts (지도 자료 만들기와 같이 쓴다)
 
 // ── 내려받기 (캐시, 쉬어 가기, 재시도) ──
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms))

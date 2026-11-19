@@ -4,6 +4,7 @@ import { defineConfig } from 'vite'
 import { apiPlugin } from './server/vitePlugin.ts'
 
 export default defineConfig({
+  base: './', // GitHub Pages 어느 주소에 올려도 동작하게 상대 경로
   plugins: [react(), tailwindcss(), apiPlugin()],
   server: { port: 5183 },
 })
