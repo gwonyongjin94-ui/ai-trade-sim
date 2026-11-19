@@ -114,33 +114,51 @@ button, select { font: inherit; color: inherit; }
 .panel-head h1 { font-size: 24px; font-weight: 700; margin: 0; }
 .muted { color: var(--ink-3); font-size: 12.5px; margin: 2px 0 0; }
 
-.panel-section { border-top: 1px solid var(--line); padding: 14px 0 6px; }
-.panel-section h2 { font-size: 13.5px; font-weight: 700; color: var(--friend-2); margin: 0 0 8px; letter-spacing: 0.01em; }
+.panel-section { border-top: 1px solid var(--line); padding: 14px 0 8px; }
+.panel-section h2 {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 13.5px; font-weight: 700; color: var(--ink); margin: 0 0 10px; letter-spacing: 0.01em;
+}
+.panel-section h2::before {
+  content: ''; width: 4px; height: 14px; border-radius: 2px; background: var(--accent, var(--ink-3));
+}
 .section-note { font-size: 11px; color: var(--ink-3); margin: 6px 0 4px; }
 
+.tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-bottom: 8px; }
+.tiles.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.tile {
+  background: rgba(255, 255, 255, 0.045); border-top: 2px solid var(--accent); border-radius: 4px;
+  padding: 8px 10px 7px; display: flex; flex-direction: column; gap: 2px; min-width: 0;
+}
+.tile-label { font-size: 11.5px; color: var(--ink-2); }
+.tile-value { font-size: 16px; font-weight: 700; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
 .kv { display: flex; justify-content: space-between; gap: 12px; padding: 4px 0; font-size: 13.5px; }
-.kv > span:first-child { color: var(--ink-2); }
+.kv > span:first-child { color: var(--ink-2); display: inline-flex; align-items: center; gap: 7px; }
 .kv > span:last-child { text-align: right; font-weight: 500; }
-.kv.on > span { color: var(--friend-2); }
+.kv.indent > span:first-child { padding-left: 17px; color: var(--ink-3); }
+.kv.on { background: rgba(255, 255, 255, 0.06); border-radius: 3px; padding-left: 4px; padding-right: 4px; }
+.legend-row { font-size: 12.5px; padding: 3px 0; }
+.dot { width: 10px; height: 10px; border-radius: 2px; flex: none; display: inline-block; }
 .src { display: block; font-size: 10.5px; color: var(--ink-3); font-weight: 400; }
+.muted-inline { color: var(--ink-3); font-weight: 400; }
 
 .bar-row, .hof-row {
-  display: grid; grid-template-columns: 92px 1fr 92px; align-items: center; gap: 8px;
+  display: grid; grid-template-columns: 104px 1fr 92px; align-items: center; gap: 8px;
   width: 100%; padding: 4px 0; font-size: 12.5px; text-align: left;
 }
 .bar-row { border: 0; background: transparent; cursor: pointer; border-radius: 3px; }
-.bar-row:hover { background: rgba(255, 255, 255, 0.04); }
-.bar-label { color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.bar-track { height: 7px; background: rgba(255, 255, 255, 0.06); border-radius: 2px; overflow: hidden; }
+.bar-row:hover { background: rgba(255, 255, 255, 0.05); }
+.bar-label { color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: inline-flex; align-items: center; gap: 6px; }
+.mini-flag { width: 14px; height: 14px; border-radius: 50%; flex: none; }
+.bar-track { position: relative; height: 7px; background: rgba(255, 255, 255, 0.07); border-radius: 2px; overflow: hidden; }
+.bar-track.mid::after { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; background: rgba(255, 255, 255, 0.28); }
 .bar-fill { display: block; height: 100%; border-radius: 2px; }
-.bar-fill.export { background: #e8ecef; }
-.bar-fill.import { background: var(--hostile); }
-.bar-fill.neutral { background: var(--friend); }
 .bar-value { text-align: right; color: var(--ink-2); font-variant-numeric: tabular-nums; }
 
-.mix-bar { display: flex; height: 10px; border-radius: 2px; overflow: hidden; margin-bottom: 8px; gap: 1px; }
-.mix-bar span { background: var(--friend-2); }
-.mix-bar span.on { background: #f4f6f7; opacity: 1 !important; }
+.stack-bar { display: flex; height: 12px; border-radius: 3px; overflow: hidden; margin: 2px 0 10px; gap: 1px; }
+.stack-bar span { display: block; height: 100%; }
+.stack-bar span.dim { opacity: 0.28; }
 
 .panel-foot { border-top: 1px solid var(--line); margin-top: 10px; padding-top: 12px; font-size: 11px; color: var(--ink-3); line-height: 1.6; }
 .panel-foot p { margin: 0 0 6px; }

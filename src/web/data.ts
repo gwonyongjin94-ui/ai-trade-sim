@@ -49,6 +49,20 @@ export const COUNTRIES = Object.values(DATA.countries)
 export const BY_MAP_ID = new Map(COUNTRIES.map((c) => [c.mapId, c]))
 export const GOODS = DATA.meta.goods
 
+// 품목 색 (어두운 바탕에서 구별되게, 채도는 낮게)
+export const GOOD_COLOR: Record<string, string> = {
+  food: '#8BB174',
+  energy: '#D9915A',
+  medicine: '#D9798F',
+  apparel_household: '#B6A3D9',
+  chemicals: '#4FB3A6',
+  vehicles: '#5F86C9',
+  metals: '#A39E95',
+  machinery: '#C8B25C',
+  semiconductors: '#8FD3E8',
+  electronics: '#C77DBB',
+}
+
 export type Direction = 'export' | 'import'
 
 // 고른 나라의 교역 상대 (백만 달러). good이 null이면 전체 상품
