@@ -1,4 +1,4 @@
-// 물품 10개 (HS 2단위, 반도체만 HS 4단위)와 HS 장 → 물품 대응. fetch-v2-data.ts와 build-map-data.ts가 같이 쓴다
+// 물품 10개 (HS 2단위, 반도체만 HS 4단위)와 HS 장 → 물품 대응. fetch-v2-data.ts와 build-world-map.ts가 같이 쓴다
 
 export const GOODS_V2 = [
   'food', 'energy', 'medicine', 'apparel_household', 'chemicals', 'vehicles', 'metals', 'machinery', 'semiconductors', 'electronics',

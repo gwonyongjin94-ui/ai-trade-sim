@@ -1,6 +1,6 @@
 # AI 무역 시뮬레이션
 
-**웹 지도 (1단계):** 큰 세계 지도 위에 한국·중국·일본·중동·북미·대만 23개 나라의 2023년 실측 자료(GDP, 인구, 산업 구조, 나라 사이 상품 교역, 문화 지표)를 올립니다. 나라를 누르면 오른쪽에 자료가, 지도에는 교역 상대로 가는 흐름선이 뜹니다. 값마다 연도와 출처를 함께 보여 줍니다. 관세·정책 입력과 AI 대통령 리플레이는 다음 단계에서 지도에 붙입니다.
+**웹 지도 (1단계):** 큰 세계 지도 위에 전 세계 나라의 2023년 실측 자료(GDP, 인구, 산업 구조, 나라 사이 상품 교역 10개 품목, 문화 지표)를 올립니다. 나라를 누르면 오른쪽에 자료와 모든 교역 상대가, 지도에는 큰 상대 8곳으로 가는 흐름선이 뜹니다. 값마다 연도와 출처를 함께 보여 줍니다. 관세·정책 입력과 AI 대통령 리플레이는 다음 단계에서 지도에 붙입니다.
 
 연구 쪽은 6개 나라(블록)의 대통령이 교역 정책(관세·수출 통제·투자율)과 외교만으로 겨루는 게임이론 실험입니다. 대통령은 LLM, 규칙, 사람 중에서 고릅니다.
 
@@ -13,7 +13,15 @@ npm install
 npm run dev
 ```
 
-브라우저에서 http://localhost:5183 을 열면 지도가 뜹니다. 지도 자료는 `npm run map:data`로 다시 만듭니다 (내려받기 없이 `data/v2/`와 `data/raw/` 캐시만 읽음). `main`에 올리면 GitHub Actions가 테스트·빌드 후 GitHub Pages에 배포합니다 (`.github/workflows/pages.yml`).
+브라우저에서 http://localhost:5183 을 열면 지도가 뜹니다. `main`에 올리면 GitHub Actions가 테스트·빌드 후 GitHub Pages에 배포합니다 (`.github/workflows/pages.yml`).
+
+### 지도 자료 다시 만들기
+
+1. CEPII BACI(HS22, V202601) 파일을 https://www.cepii.fr/CEPII/en/bdd_modele/bdd_modele_item.asp?id=37 에서 받아 `data/raw/baci/`에 풀어 둡니다 (`BACI_HS22_Y2023_V202601.csv`, `country_codes_V202601.csv`). 약 300MB라 git에 올리지 않습니다.
+2. `npm run world:wdi` — World Bank 지표를 받아 `data/world/wdi-2023.json`으로 줄입니다 (무료 공개 API 12번 호출, 응답은 `data/raw/`에 캐시).
+3. `npm run map:data` — 둘을 합쳐 `src/web/data/world-2023.json`(나라 요약), `public/data/trade-2023/{ISO3}.json`(나라별 모든 교역 상대), `public/flags/`(국기)를 만듭니다.
+
+자료 출처: 나라 사이 교역은 CEPII BACI (Gaulier & Zignago 2010, Etalab Open License 2.0), 거시 지표는 World Bank WDI, 대만은 IMF WEO·대만 통계청, 북한 GDP는 한국은행 추정, 문화는 Hofstede (2015). 국기는 country-flag-icons (MIT).
 
 예전 2개국(v1) 게임 화면(`src/ui`)은 더 이상 기본 화면이 아닙니다. 코드는 git 태그 `v1-two-country`에 남아 있습니다.
 

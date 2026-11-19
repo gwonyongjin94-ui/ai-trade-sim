@@ -1,16 +1,21 @@
-// 지도 화면이 쓰는 자료와 숫자 표기. 자료는 scripts/build-map-data.ts가 만든 map-2023.json 하나다.
+// 지도 화면이 쓰는 자료와 숫자 표기.
+// 나라별 요약(거시 지표·수출입 총액·품목 구성)은 scripts/build-world-map.ts가 만든 world-2023.json 하나로 화면에 묶인다.
+// 나라 사이 교역(모든 상대 × 품목 10개)은 나라마다 public/data/trade-2023/{ISO3}.json으로 나뉘어 있고, 그 나라를 고를 때 내려받는다.
 
-import raw from './data/map-2023.json'
+import { useEffect, useState } from 'react'
+import raw from './data/world-2023.json'
 
 export type Val = { value: number; year: number; source: string } | null
 export type HofKey = 'pdi' | 'idv' | 'mas' | 'uai' | 'lto' | 'ivr'
 
 export type Country = {
   iso: string
-  iso2: string
-  mapId: string
+  iso2: string | null
+  flag: boolean
+  mapId: string | null
   name: string
-  bloc: string
+  region: string | null
+  income: string | null
   gdp: Val
   population: Val
   gdpPerCapita: Val
@@ -20,6 +25,10 @@ export type Country = {
   importsPct: Val
   merchExports: Val
   merchImports: Val
+  expMix: number[] | null
+  impMix: number[] | null
+  partnerCount: { export: number; import: number }
+  tradeIn: string | null // BACI가 이 곳의 교역을 합쳐 싣는 나라 (푸에르토리코 → 미국 등)
   structure: {
     agriculturePct: Val
     industryPct: Val
@@ -30,8 +39,6 @@ export type Country = {
   culture: { values: Record<HofKey, number | null>; note?: string; source: string } | null
 }
 
-export type Flow = { from: string; to: string; total: number; values: Record<string, number>; source: string }
-
 export type MapData = {
   meta: {
     year: number
@@ -39,15 +46,19 @@ export type MapData = {
     goods: { id: string; name: string }[]
     sources: { id: string; name: string; detail: string; link?: string }[]
   }
-  blocs: Record<string, { name: string; members: string[] }>
   countries: Record<string, Country>
-  flows: Flow[]
 }
 
 export const DATA = raw as unknown as MapData
 export const COUNTRIES = Object.values(DATA.countries)
-export const BY_MAP_ID = new Map(COUNTRIES.map((c) => [c.mapId, c]))
+export const BY_MAP_ID = new Map(COUNTRIES.filter((c) => c.mapId).map((c) => [c.mapId!, c]))
 export const GOODS = DATA.meta.goods
+const GOOD_INDEX = Object.fromEntries(GOODS.map((g, i) => [g.id, i])) as Record<string, number>
+
+// GDP가 큰 순서 (배지를 놓는 순서에 쓴다)
+export const GDP_RANK: Record<string, number> = Object.fromEntries(
+  [...COUNTRIES].sort((a, b) => (b.gdp?.value ?? 0) - (a.gdp?.value ?? 0)).map((c, i) => [c.iso, i]),
+)
 
 // 품목 색 (어두운 바탕에서 구별되게, 채도는 낮게)
 export const GOOD_COLOR: Record<string, string> = {
@@ -65,28 +76,54 @@ export const GOOD_COLOR: Record<string, string> = {
 
 export type Direction = 'export' | 'import'
 
-// 고른 나라의 교역 상대 (백만 달러). good이 null이면 전체 상품
-export function partners(iso: string, dir: Direction, good: string | null) {
-  const rows = DATA.flows
-    .filter((f) => (dir === 'export' ? f.from === iso : f.to === iso))
-    .map((f) => ({
-      iso: dir === 'export' ? f.to : f.from,
-      value: good ? f.values[good] ?? 0 : f.total,
-      source: f.source,
-    }))
-    .filter((r) => r.value > 0)
-  return rows.sort((a, b) => b.value - a.value)
+// ---- 나라 사이 교역 (나라마다 따로 내려받는다)
+// 한 줄 = [상대 ISO3, 합계, 품목 10개...] (백만 달러)
+export type PartnerRow = [string, number, ...number[]]
+export type TradeFile = { export: PartnerRow[]; import: PartnerRow[] }
+
+const cache = new Map<string, Promise<TradeFile>>()
+export function loadTrade(iso: string): Promise<TradeFile> {
+  let p = cache.get(iso)
+  if (!p) {
+    p = fetch(`${import.meta.env.BASE_URL}data/trade-2023/${iso}.json`).then((r) => {
+      if (!r.ok) throw new Error(`${r.status}`)
+      return r.json() as Promise<TradeFile>
+    })
+    p.catch(() => cache.delete(iso))
+    cache.set(iso, p)
+  }
+  return p
 }
 
-// 고른 나라가 지도에 있는 나라들과 주고받은 상품 구성
+// 고른 나라의 교역 자료. 내려받는 동안은 null
+export function useTrade(iso: string): { file: TradeFile | null; error: boolean } {
+  const [state, setState] = useState<{ iso: string; file: TradeFile | null; error: boolean }>({ iso, file: null, error: false })
+  useEffect(() => {
+    let live = true
+    loadTrade(iso).then(
+      (file) => live && setState({ iso, file, error: false }),
+      () => live && setState({ iso, file: null, error: true }),
+    )
+    return () => { live = false }
+  }, [iso])
+  return state.iso === iso ? state : { file: null, error: false }
+}
+
+// 교역 상대 (백만 달러, 큰 순). good이 null이면 전체 상품
+export function partners(file: TradeFile, dir: Direction, good: string | null) {
+  const gi = good ? GOOD_INDEX[good] : -1
+  return file[dir]
+    .map((r) => ({ iso: r[0], value: gi >= 0 ? (r[2 + gi] as number) : r[1] }))
+    .filter((r) => r.value > 0 && DATA.countries[r.iso])
+    .sort((a, b) => b.value - a.value)
+}
+
+// 고른 나라가 모든 상대와 주고받은 상품 구성
 export function goodsMix(iso: string, dir: Direction) {
-  const sums: Record<string, number> = {}
-  for (const f of DATA.flows) {
-    if (dir === 'export' ? f.from !== iso : f.to !== iso) continue
-    for (const [g, v] of Object.entries(f.values)) sums[g] = (sums[g] ?? 0) + v
-  }
-  const total = Object.values(sums).reduce((s, v) => s + v, 0)
-  return { total, rows: GOODS.map((g) => ({ ...g, value: sums[g.id] ?? 0 })).sort((a, b) => b.value - a.value) }
+  const c = DATA.countries[iso]
+  const mix = (dir === 'export' ? c.expMix : c.impMix) ?? []
+  const total = mix.reduce((s, v) => s + v, 0)
+  return { total, rows: GOODS.map((g, i) => ({ ...g, value: mix[i] ?? 0 })).sort((a, b) => b.value - a.value) }
 }
 
 // ---- 숫자 표기 (한국식 만·억·조)
@@ -127,7 +164,10 @@ export const METRICS: Metric[] = [
   { id: 'gdp', name: 'GDP', get: (c) => c.gdp, log: true, format: usd },
   { id: 'gdpPerCapita', name: '1인당 GDP', get: (c) => c.gdpPerCapita, log: true, format: perCapita },
   { id: 'population', name: '인구', get: (c) => c.population, log: true, format: people },
+  { id: 'merchExports', name: '상품 수출액', get: (c) => c.merchExports, log: true, format: usd },
   { id: 'exportsPct', name: '수출 / GDP', get: (c) => c.exportsPct, log: false, format: pct },
   { id: 'manufacturingPct', name: '제조업 비중', get: (c) => c.structure?.manufacturingPct ?? null, log: false, format: pct },
   { id: 'investmentPct', name: '투자율', get: (c) => c.investmentPct, log: false, format: pct },
 ]
+// 고른 나라와의 교역액으로 칠하기 (지표 목록 맨 위에 따로 둔다)
+export const PARTNER_METRIC = 'partners'

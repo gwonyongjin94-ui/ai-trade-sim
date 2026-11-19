@@ -4,8 +4,8 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import { select } from 'd3-selection'
 import { zoom, zoomIdentity, type ZoomBehavior, type ZoomTransform } from 'd3-zoom'
-import { ANCHOR, LAND, PRIORITY, makeProjection, pathFor } from './geo'
-import { BY_MAP_ID, DATA, type Direction } from './data'
+import { ANCHOR, LAND, makeProjection, pathFor, type ViewId } from './geo'
+import { BY_MAP_ID, DATA, GDP_RANK, type Direction } from './data'
 import { flagUrl } from './flags'
 
 export const COLOR = {
@@ -22,6 +22,7 @@ export type Arc = { iso: string; value: number; label: string }
 export type Hover = { x: number; y: number; iso?: string; name: string } | null
 
 type Props = {
+  view: ViewId
   selected: string
   dir: Direction
   arcs: Arc[]
@@ -32,7 +33,7 @@ type Props = {
   padBottom: number
 }
 
-export function WorldMap({ selected, dir, arcs, fillFor, onSelect, onHover, padRight, padBottom }: Props) {
+export function WorldMap({ view, selected, dir, arcs, fillFor, onSelect, onHover, padRight, padBottom }: Props) {
   const wrap = useRef<HTMLDivElement>(null)
   const svgRef = useRef<SVGSVGElement>(null)
   const zoomRef = useRef<ZoomBehavior<SVGSVGElement, unknown> | null>(null)
@@ -54,7 +55,12 @@ export function WorldMap({ selected, dir, arcs, fillFor, onSelect, onHover, padR
     select(svgRef.current!).call(z).on('dblclick.zoom', null)
   }, [])
 
-  const projection = useMemo(() => makeProjection(size.w, size.h, padRight, padBottom), [size, padRight, padBottom])
+  // 지도가 바뀌면(태평양 ↔ 대서양) 확대를 처음으로 되돌린다. 확대 값은 투영 좌표에 붙어 있어서다
+  useEffect(() => {
+    if (zoomRef.current) zoomRef.current.transform(select(svgRef.current!), zoomIdentity)
+  }, [view])
+
+  const projection = useMemo(() => makeProjection(view, size.w, size.h, padRight, padBottom), [view, size, padRight, padBottom])
   const land = useMemo(() => {
     const path = pathFor(projection)
     return LAND.map((f) => ({ id: String(f.id), name: f.properties.name, d: path(f) ?? '', c: BY_MAP_ID.get(String(f.id)) }))
@@ -72,15 +78,22 @@ export function WorldMap({ selected, dir, arcs, fillFor, onSelect, onHover, padR
   const partnerSet = new Set(arcs.map((a) => a.iso))
   const maxArc = Math.max(1, ...arcs.map((a) => a.value))
 
-  // 배지 배치: 고른 나라 → 교역 상대(큰 순) → 나머지(중요도 순).
-  // 국기 원이 앞서 놓인 것과 겹치면 점으로만 둔다. 이름표는 아래 → 위 → 오른쪽 → 왼쪽 중 빈 자리에 놓고, 없으면 뺀다
+  // 배지 배치: 고른 나라 → 교역 상대(큰 순) → 나머지(GDP 큰 순, 화면 안에 있는 나라만).
+  // 고른 나라와 교역 상대는 국기 원이 겹치면 점으로 둔다. 나머지는 겹치면 아예 빼고, 확대할수록 더 많이 놓는다.
+  // 이름표는 아래 → 위 → 오른쪽 → 왼쪽 중 빈 자리에 놓고, 없으면 뺀다
+  // 화면이 넓을수록, 확대할수록 많이 (데스크톱 처음 화면에서 GDP 상위 약 40곳)
+  const restLimit = Math.max(8, Math.round(40 * ((size.w - padRight) / 1040) * Math.pow(t.k, 1.4)))
+  const onScreen = (iso: string) => {
+    const [x, y] = screen(iso)
+    return x > -20 && x < size.w - padRight + 20 && y > -20 && y < size.h - padBottom + 20
+  }
   const order = [
     selected,
     ...arcs.map((a) => a.iso),
-    ...Object.keys(ANCHOR)
-      .filter((iso) => iso !== selected && !partnerSet.has(iso))
-      .sort((a, b) => PRIORITY[a] - PRIORITY[b]),
-  ]
+    ...Object.keys(anchors)
+      .filter((iso) => iso !== selected && !partnerSet.has(iso) && onScreen(iso))
+      .sort((a, b) => GDP_RANK[a] - GDP_RANK[b]),
+  ].filter((iso) => anchors[iso])
   // 순서: ① 고른 나라와 교역 상대의 국기 원 ② 그 이름표 ③ 나머지 나라의 원과 이름표. 그래야 교역 상대 국기가 이름표에 가리지 않는다
   type Box = { x0: number; y0: number; x1: number; y1: number }
   const placed: Box[] = []
@@ -117,7 +130,13 @@ export function WorldMap({ selected, dir, arcs, fillFor, onSelect, onHover, padR
   const rest = badges.filter((b) => !lead.includes(b))
   lead.forEach(placeCircle)
   lead.forEach(placeLabel)
-  rest.forEach((b) => { placeCircle(b); placeLabel(b) })
+  // GDP 상위 restLimit곳만 후보로 둔다. 큰 나라가 겹쳐 빠진 자리를 작은 나라가 채우지 않게
+  const candidates = rest.slice(0, restLimit)
+  for (const b of candidates) {
+    placeCircle(b)
+    if (b.full) placeLabel(b)
+  }
+  const shown = [...lead, ...candidates.filter((b) => b.full)]
 
   const zoomBy = (k: number) => zoomRef.current?.scaleBy(select(svgRef.current!), k)
   const reset = () => zoomRef.current?.transform(select(svgRef.current!), zoomIdentity)
@@ -141,11 +160,8 @@ export function WorldMap({ selected, dir, arcs, fillFor, onSelect, onHover, padR
           <marker id="head-import" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto">
             <path d="M1 1 L8 5 L1 9 Z" fill={COLOR.hostile} />
           </marker>
-          {badges.map((b) => (
-            <clipPath key={b.iso} id={`clip-${b.iso}`}>
-              <circle r={b.r} />
-            </clipPath>
-          ))}
+          <clipPath id="clip-selected"><circle r={17} /></clipPath>
+          <clipPath id="clip-badge"><circle r={11} /></clipPath>
         </defs>
 
         <g transform={t.toString()}>
@@ -187,7 +203,7 @@ export function WorldMap({ selected, dir, arcs, fillFor, onSelect, onHover, padR
         </g>
 
         <g className="badges">
-          {[...badges].reverse().map((b) =>
+          {[...shown].reverse().map((b) =>
             b.full ? (
               <g
                 key={b.iso}
@@ -199,12 +215,12 @@ export function WorldMap({ selected, dir, arcs, fillFor, onSelect, onHover, padR
               >
                 <circle r={b.r + 2} fill={b.iso === selected ? '#8FC3A2' : '#E9EDF0'} />
                 <image
-                  href={flagUrl(b.c.iso2)}
+                  href={flagUrl(b.c)}
                   x={-b.r}
                   y={-b.r}
                   width={b.r * 2}
                   height={b.r * 2}
-                  clipPath={`url(#clip-${b.iso})`}
+                  clipPath={b.iso === selected ? 'url(#clip-selected)' : 'url(#clip-badge)'}
                   preserveAspectRatio="xMidYMid slice"
                 />
                 {b.label && (

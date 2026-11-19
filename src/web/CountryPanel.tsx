@@ -1,8 +1,8 @@
 // 오른쪽 패널: 고른 나라의 2023년 자료. 값마다 연도와 출처를 함께 적는다.
 // 색: 녹색은 '고른 나라'에만 쓴다. 섹션마다 다른 강조색, 품목은 품목별 색, 산업 구조는 세 부문 색 (모두 채도를 낮춘 색).
 
-import type { CSSProperties, ReactNode } from 'react'
-import { DATA, GOODS, GOOD_COLOR, goodsMix, partners, people, pct, perCapita, usd, usdMillion, type Direction, type HofKey, type Val } from './data'
+import { useState, type CSSProperties, type ReactNode } from 'react'
+import { DATA, GOODS, GOOD_COLOR, goodsMix, people, pct, perCapita, usd, usdMillion, type Direction, type HofKey, type Val } from './data'
 import { flagUrl } from './flags'
 
 const ACCENT = {
@@ -24,13 +24,25 @@ const HOF: { key: HofKey; name: string; hint: string }[] = [
   { key: 'ivr', name: '쾌락 추구', hint: '삶을 즐기려는 욕구를 자유롭게 채우는 정도' },
 ]
 
-type Props = { iso: string; dir: Direction; good: string | null; onSelect: (iso: string) => void }
+const FIRST = 20 // 교역 상대는 처음에 20곳만 보이고 '더 보기'로 나머지를 편다
 
-export function CountryPanel({ iso, dir, good, onSelect }: Props) {
+type Props = {
+  iso: string
+  dir: Direction
+  good: string | null
+  rows: { iso: string; value: number }[] | null // 내려받는 동안은 null
+  error: boolean
+  onSelect: (iso: string) => void
+}
+
+export function CountryPanel({ iso, dir, good, rows, error, onSelect }: Props) {
   const c = DATA.countries[iso]
-  const bloc = DATA.blocs[c.bloc]
-  const rows = partners(iso, dir, good)
-  const maxRow = Math.max(1, ...rows.map((r) => r.value))
+  const [openFor, setOpenFor] = useState<string | null>(null)
+  const listKey = `${iso}/${dir}/${good}`
+  const showAll = openFor === listKey
+  const shownRows = rows ? (showAll ? rows : rows.slice(0, FIRST)) : []
+  const maxRow = Math.max(1, ...shownRows.map((r) => r.value))
+  const rowsTotal = rows ? rows.reduce((s, r) => s + r.value, 0) : 0
   const mix = goodsMix(iso, dir)
   const goodName = good ? GOODS.find((g) => g.id === good)!.name : '전체 상품'
   const word = dir === 'export' ? '수출' : '수입'
@@ -41,13 +53,10 @@ export function CountryPanel({ iso, dir, good, onSelect }: Props) {
   return (
     <div className="panel-inner">
       <header className="panel-head">
-        <img src={flagUrl(c.iso2)} alt="" className="panel-flag" />
+        <img src={flagUrl(c)} alt="" className="panel-flag" />
         <div>
           <h1>{c.name}</h1>
-          <p className="muted">
-            블록 · {bloc.name}
-            {bloc.members.length > 1 && <> ({bloc.members.map((m) => DATA.countries[m].name).join(', ')})</>}
-          </p>
+          <p className="muted">{[c.region, c.income && `${c.income} 국가`].filter(Boolean).join(' · ') || '지역 분류 없음'}</p>
         </div>
       </header>
 
@@ -79,24 +88,42 @@ export function CountryPanel({ iso, dir, good, onSelect }: Props) {
         <Row label="수입 / GDP" v={c.importsPct} f={pct} note="서비스 포함" />
       </Section>
 
-      <Section title={`${word} 상대 · ${goodName}`} accent={flowColor} note="지도에 있는 나라 사이 상품 교역 · UN Comtrade 2023">
-        {rows.length === 0 && <p className="muted">자료 없음</p>}
-        {rows.map((r) => (
-          <button key={r.iso} className="bar-row" onClick={() => onSelect(r.iso)} title={r.source}>
+      <Section
+        title={`${word} 상대 · ${goodName}`}
+        accent={flowColor}
+        note={rows && rows.length ? `상대 ${rows.length}곳, 합계 ${usdMillion(rowsTotal)} · CEPII BACI 2023` : 'CEPII BACI 2023'}
+      >
+        {!rows && <p className="muted">{error ? '교역 자료를 불러오지 못했습니다' : '불러오는 중…'}</p>}
+        {rows && rows.length === 0 && (
+          <p className="muted">
+            {c.tradeIn ? `CEPII BACI는 이 곳의 교역을 ${DATA.countries[c.tradeIn].name} 교역에 합쳐 싣습니다` : '자료 없음'}
+          </p>
+        )}
+        {shownRows.map((r, i) => (
+          <button key={r.iso} className="bar-row" onClick={() => onSelect(r.iso)}>
             <span className="bar-label">
-              <img src={flagUrl(DATA.countries[r.iso].iso2)} alt="" className="mini-flag" />
+              <span className="rank">{i + 1}</span>
+              <img src={flagUrl(DATA.countries[r.iso])} alt="" className="mini-flag" />
               {DATA.countries[r.iso].name}
             </span>
             <span className="bar-track">
               <span className="bar-fill" style={{ width: `${(r.value / maxRow) * 100}%`, background: good ? GOOD_COLOR[good] : flowColor }} />
             </span>
-            <span className="bar-value">{usdMillion(r.value)}</span>
+            <span className="bar-value">
+              {usdMillion(r.value)}
+              <span className="share">{pct((r.value / rowsTotal) * 100)}</span>
+            </span>
           </button>
         ))}
+        {rows && rows.length > FIRST && (
+          <button className="more" onClick={() => setOpenFor(showAll ? null : listKey)}>
+            {showAll ? '20곳만 보기' : `${rows.length - FIRST}곳 더 보기`}
+          </button>
+        )}
       </Section>
 
       {mix.total > 0 && (
-        <Section title={`${word} 품목 구성`} accent={GOOD_COLOR[mix.rows[0].id]} note={`지도에 있는 나라와의 ${word} ${usdMillion(mix.total)} 기준`}>
+        <Section title={`${word} 품목 구성`} accent={GOOD_COLOR[mix.rows[0].id]} note={`모든 상대와의 ${word} ${usdMillion(mix.total)} 기준 · CEPII BACI`}>
           <div className="stack-bar">
             {mix.rows.filter((g) => g.value > 0).map((g) => (
               <span

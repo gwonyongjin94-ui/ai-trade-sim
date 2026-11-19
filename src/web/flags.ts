@@ -1,7 +1,7 @@
-// 원형 국기 배지에 쓰는 정사각형 국기 (country-flag-icons, MIT)
+// 원형 국기 배지에 쓰는 정사각형 국기 (country-flag-icons, MIT). build-world-map.ts가 public/flags/에 복사해 둔다.
+// 국기 파일이 없는 곳(채널 제도 등)은 회색 원을 쓴다.
 
-import { AE, BH, CA, CN, HK, IL, IQ, IR, JO, JP, KP, KR, KW, LB, MO, MX, OM, QA, SA, SY, TW, US, YE } from 'country-flag-icons/string/1x1'
+const BLANK = `data:image/svg+xml;charset=utf-8,${encodeURIComponent("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'><rect width='10' height='10' fill='#6B7A88'/></svg>")}`
 
-const SVG: Record<string, string> = { AE, BH, CA, CN, HK, IL, IQ, IR, JO, JP, KP, KR, KW, LB, MO, MX, OM, QA, SA, SY, TW, US, YE }
-
-export const flagUrl = (iso2: string) => `data:image/svg+xml;charset=utf-8,${encodeURIComponent(SVG[iso2] ?? '')}`
+export const flagUrl = (c: { iso2: string | null; flag: boolean }) =>
+  c.flag && c.iso2 ? `${import.meta.env.BASE_URL}flags/${c.iso2}.svg` : BLANK
