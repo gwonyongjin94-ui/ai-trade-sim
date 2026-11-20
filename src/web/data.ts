@@ -151,7 +151,7 @@ export function people(v: number) {
 export const pct = (v: number) => `${n1.format(v)}%`
 export const perCapita = (v: number) => `${n0.format(v)}달러`
 
-// ---- 지도 색칠 기준
+// ---- 지도에 표시할 지표
 export type Metric = {
   id: string
   name: string

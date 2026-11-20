@@ -64,7 +64,7 @@ export function MapApp() {
   const word = view.dir === 'export' ? '수출' : '수입'
   const flowName = `${goodName ?? '상품'} ${word}`
 
-  // 지도 색칠: 나라 지표, 또는 고른 나라와의 교역액
+  // 지도에 표시: 나라 지표, 또는 고른 나라와의 교역액 (값이 클수록 밝은 녹색)
   const byPartner = useMemo(() => new Map((rows ?? []).map((r) => [r.iso, r.value])), [rows])
   const partnerMode = view.metric === PARTNER_METRIC
   const metric = METRICS.find((m) => m.id === view.metric) ?? null
@@ -147,7 +147,7 @@ export function MapApp() {
           </select>
         </label>
         <label className="ctl">
-          <span>지도 색칠</span>
+          <span>지도에 표시</span>
           <select value={view.metric ?? ''} onChange={(e) => set({ metric: e.target.value || null })}>
             <option value="">없음</option>
             <option value={PARTNER_METRIC}>{c.name}의 {word} 상대</option>
