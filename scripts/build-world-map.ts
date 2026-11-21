@@ -277,6 +277,8 @@ for (const k of isoList) {
     tradeIn: INCLUDED_IN[k] ?? null,
     structure,
     culture: hofstede(k),
+    // 적용 관세 (수입액 가중 평균, 대세계). 대만은 World Bank 자료에 없다
+    tariff: { all: wv(k, 'tariffAllPct'), manuf: wv(k, 'tariffManufPct'), primary: wv(k, 'tariffPrimaryPct') },
   }
 }
 if (missingName.length) console.warn(`  한국어 이름이 없어 영어 이름을 쓴 곳: ${missingName.join(' | ')}`)
@@ -306,7 +308,7 @@ const out = {
     goods: GOODS_V2.map((id) => ({ id, name: GOOD_NAME[id] })),
     sources: [
       { id: 'baci', name: 'CEPII BACI (HS22, V202601)', detail: '나라 사이 상품 교역, 2023년. Etalab Open License 2.0', link: 'https://www.cepii.fr/CEPII/en/bdd_modele/bdd_modele_item.asp?id=37' },
-      { id: 'wdi', name: SRC.wdi, detail: '인구·노동력·GDP·투자율·수출입 비중·산업 구성. 최신 값(2015–2023)', link: 'https://data.worldbank.org' },
+      { id: 'wdi', name: SRC.wdi, detail: '인구·노동력·GDP·투자율·수출입 비중·산업 구성·적용 관세(수입액 가중 평균, WITS 계산). 최신 값(2015–2023)', link: 'https://data.worldbank.org' },
       { id: 'imf', name: SRC.imf, detail: '대만 GDP·인구', link: 'https://www.imf.org/external/datamapper' },
       { id: 'bok', name: SRC.bok, detail: '북한 GDP (2023년 명목 GNI 44.4조 원을 원/달러 1,305.4원으로 환산)', link: 'https://www.bok.or.kr' },
       { id: 'dgbas', name: '대만 통계청·중앙은행', detail: '대만 노동력·산업 구성·투자율' },

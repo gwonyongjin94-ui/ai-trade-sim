@@ -2,9 +2,10 @@
 import { describe, expect, it } from 'vitest'
 import trade from '../../data/v2/trade-2023.json'
 import tariffsJson from '../../data/v2/tariffs.json'
+import wdi from '../../data/world/wdi-2023.json'
 import { BLOCS, REGIONS } from '../v2/regions'
 import { HOME, josa, MEMBERS, regionOf } from './blocs'
-import { DATA } from './data'
+import { COUNTRIES, DATA } from './data'
 import type { ReplayFile, ReplayIndexEntry } from './replay/types'
 import { decodeChanges, encodeChanges, policiesAt, PRESETS, simulate, type Change } from './sim/scenario'
 import { avgTariffPct, tariffPct } from './tariffs'
@@ -53,6 +54,35 @@ describe('관세', () => {
         expect(v).toBeGreaterThanOrEqual(0)
         expect(v).toBeLessThan(100)
       }
+  })
+})
+
+describe('나라별 관세 (World Bank WDI)', () => {
+  type W = { countries: Record<string, { values: Record<string, { value: number; year: number } | undefined> }> }
+  const raw = (wdi as unknown as W).countries
+
+  it('지도 자료의 관세 = 받은 WDI 값 (전 품목·공산품·1차 산품)', () => {
+    for (const iso of ['KOR', 'USA', 'CHN', 'DEU', 'IND']) {
+      const t = DATA.countries[iso].tariff
+      const v = raw[iso].values
+      expect(t.all?.value, iso).toBeCloseTo(v.tariffAllPct!.value, 6)
+      expect(t.manuf?.value, iso).toBeCloseTo(v.tariffManufPct!.value, 6)
+      expect(t.primary?.value, iso).toBeCloseTo(v.tariffPrimaryPct!.value, 6)
+      expect(t.all?.year, iso).toBe(v.tariffAllPct!.year)
+    }
+  })
+
+  it('180곳 넘게 값이 있고, 범위가 그럴듯하며, 대만은 없다', () => {
+    const has = COUNTRIES.filter((c) => c.tariff.all)
+    expect(has.length).toBeGreaterThan(180)
+    for (const c of has) {
+      expect(c.tariff.all!.value, c.iso).toBeGreaterThanOrEqual(0)
+      expect(c.tariff.all!.value, c.iso).toBeLessThan(60)
+      expect(c.tariff.all!.year, c.iso).toBeGreaterThanOrEqual(2015)
+    }
+    expect(DATA.countries.TWN.tariff.all).toBeNull()
+    // 미중 무역전쟁 추가 관세는 WDI 적용 관세에 안 들어 있다 (화면에 알림)
+    expect(DATA.countries.USA.tariff.all!.value).toBeLessThan(5)
   })
 })
 

@@ -326,3 +326,4 @@ button, select { font: inherit; color: inherit; }
 }
 .choice.static { cursor: default; }
 .fold .choice-list { margin-top: 6px; }
+.rank.wide { width: 22px; }

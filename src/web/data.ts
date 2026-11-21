@@ -37,6 +37,7 @@ export type Country = {
     resourceRentsPct: Val
   } | null
   culture: { values: Record<HofKey, number | null>; note?: string; source: string } | null
+  tariff: { all: Val; manuf: Val; primary: Val } // 적용 관세 (수입액 가중 평균, %)
 }
 
 export type MapData = {
@@ -168,6 +169,7 @@ export const METRICS: Metric[] = [
   { id: 'exportsPct', name: '수출 / GDP', get: (c) => c.exportsPct, log: false, format: pct },
   { id: 'manufacturingPct', name: '제조업 비중', get: (c) => c.structure?.manufacturingPct ?? null, log: false, format: pct },
   { id: 'investmentPct', name: '투자율', get: (c) => c.investmentPct, log: false, format: pct },
+  { id: 'tariffAll', name: '평균 관세율', get: (c) => c.tariff.all, log: false, format: pct },
 ]
 // 고른 나라와의 교역액으로 칠하기 (지표 목록 맨 위에 따로 둔다)
 export const PARTNER_METRIC = 'partners'

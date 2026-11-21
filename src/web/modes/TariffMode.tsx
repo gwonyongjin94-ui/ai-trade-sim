@@ -1,7 +1,10 @@
-// 관세 모드: 시뮬레이션 엔진이 시작점으로 쓰는 2023년 관세. 지역 단위(블록 6개 + 나머지 세계)다.
-// 나라를 누르면 그 나라가 속한 지역이 매기는 관세(또는 받는 관세)로 지도를 칠하고, 다른 블록 대표국으로 흐름선을 긋는다.
+// 관세 모드. 두 화면이 있다.
+// · 나라별 (기본): 나라마다 실제로 적용하는 평균 관세 (World Bank WDI) — CountryTariff.tsx
+// · 블록 사이: 시뮬레이션 엔진이 시작점으로 쓰는 2023년 관세. 지역 단위(블록 6개 + 나머지 세계)다.
+//   나라를 누르면 그 나라가 속한 지역이 매기는 관세(또는 받는 관세)로 지도를 칠하고, 다른 블록 대표국으로 흐름선을 긋는다.
+// 주소: #tariff/<나라>[/<품목 묶음>] · #tariff/<나라>/bloc/<방향>/<품목>
 
-import { Fragment } from 'react'
+import { Fragment, type ReactNode } from 'react'
 import type { ModeProps } from '../App'
 import { HOME, isosOf, josa, pickIso, regionMembers, regionName, regionOf, regionTitle, rname, SHORT } from '../blocs'
 import { DATA, GOODS, GOOD_COLOR } from '../data'
@@ -12,6 +15,7 @@ import { CONTROL_REASON, EXPORT_CONTROLS, flowB, REGION_LIST, TARIFF_NOTES, tari
 import { BLOCS, type RegionId } from '../../v2/regions'
 import { EXPORT_LEVEL_LABEL } from '../../v2/types'
 import type { Arc } from '../WorldMap'
+import { CountryTariffView, GROUPS, type Group } from './CountryTariff'
 
 type Side = 'imposed' | 'faced'
 const RAMP: [string, string] = ['#2F3B48', '#E3A15E']
@@ -23,6 +27,35 @@ const fmtCell = (v: number | null) => (v === null ? '' : v >= 10 ? String(Math.r
 const cell = (v: number | null) => (v === null ? { background: 'transparent' } : { background: tColor(v), color: v >= 12 ? '#10161c' : '#E8ECEF' })
 
 export function TariffMode({ iso, rest, setIso, setRest, onMode }: ModeProps) {
+  // 예전 주소 (#tariff/<나라>/imposed|faced/<품목>)는 블록 사이 화면으로 연다
+  const legacy = rest[0] === 'imposed' || rest[0] === 'faced'
+  const bloc = rest[0] === 'bloc' || legacy
+  const bRest = legacy ? rest : rest.slice(1)
+  const group: Group = GROUPS.some((g) => g.id === rest[0]) ? (rest[0] as Group) : 'all'
+
+  const scopeSeg = (
+    <div className="seg" role="group" aria-label="관세 범위">
+      <button className={bloc ? '' : 'on'} onClick={() => setRest([])} title="나라마다 실제로 적용하는 평균 관세 (World Bank)">나라별</button>
+      <button className={bloc ? 'on' : ''} onClick={() => setRest(['bloc'])} title="시뮬레이션 엔진이 쓰는 지역 사이 관세">블록 사이</button>
+    </div>
+  )
+
+  if (!bloc)
+    return (
+      <CountryTariffView
+        iso={iso}
+        group={group}
+        setIso={setIso}
+        setGroup={(g) => setRest(g === 'all' ? [] : [g])}
+        onMode={onMode}
+        scopeSeg={scopeSeg}
+        onBloc={() => setRest(['bloc'])}
+      />
+    )
+  return <BlocTariffView iso={iso} rest={bRest} setIso={setIso} setRest={(r) => setRest(['bloc', ...r])} onMode={onMode} scopeSeg={scopeSeg} />
+}
+
+function BlocTariffView({ iso, rest, setIso, setRest, onMode, scopeSeg }: ModeProps & { scopeSeg: ReactNode }) {
   const side: Side = rest[0] === 'faced' ? 'faced' : 'imposed'
   const good = GOODS.some((g) => g.id === rest[1]) ? rest[1] : null
   const set = (p: { side?: Side; good?: string | null }) => setRest([p.side ?? side, (p.good !== undefined ? p.good : good) ?? ''])
@@ -70,6 +103,7 @@ export function TariffMode({ iso, rest, setIso, setRest, onMode }: ModeProps) {
       }}
       controls={
         <>
+          {scopeSeg}
           <div className="seg" role="group" aria-label="관세 방향">
             <button className={side === 'imposed' ? 'on' : ''} onClick={() => set({ side: 'imposed' })}>매기는 관세</button>
             <button className={side === 'faced' ? 'on' : ''} onClick={() => set({ side: 'faced' })}>받는 관세</button>

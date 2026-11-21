@@ -2,7 +2,8 @@
 //   npm run world:wdi
 // 원 응답은 data/raw/에 캐시하고(커밋 안 함), 줄인 결과만 data/world/wdi-2023.json에 쓴다.
 // 2023년 값이 비어 있으면 2015~2023 중 가장 최근 값을 쓰고, 그 연도를 함께 적는다.
-// 호출: 나라 목록 1번 + 지표 11개 = 12번.
+// 호출: 나라 목록 1번 + 지표 14개 = 15번. 관세 3개는 2026-11-22에 더했다 (사용자 승인).
+// 관세는 적용 관세(AHS, FTA 특혜세율 반영)의 수입액 가중 평균이고, 해마다 늦게 나와 최신 값이 2021~2022년인 나라가 많다.
 
 import { createHash } from 'node:crypto'
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
@@ -27,6 +28,9 @@ export const WDI = {
   manufacturingPct: 'NV.IND.MANF.ZS',
   servicesPct: 'NV.SRV.TOTL.ZS',
   resourceRentsPct: 'NY.GDP.TOTL.RT.ZS',
+  tariffAllPct: 'TM.TAX.MRCH.WM.AR.ZS', // 적용 관세, 전 품목, 가중 평균 (%)
+  tariffManufPct: 'TM.TAX.MANF.WM.AR.ZS', // 적용 관세, 공산품, 가중 평균 (%)
+  tariffPrimaryPct: 'TM.TAX.TCOM.WM.AR.ZS', // 적용 관세, 1차 산품, 가중 평균 (%)
 } as const
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms))

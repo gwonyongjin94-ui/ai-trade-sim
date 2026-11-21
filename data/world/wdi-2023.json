@@ -1,7 +1,7 @@
 {
  "meta": {
   "source": "World Bank World Development Indicators (api.worldbank.org)",
-  "fetched": "2026-11-19",
+  "fetched": "2026-11-21",
   "note": "2023년 값이 없으면 2015~2023 중 가장 최근 값",
   "indicators": {
    "population": "SP.POP.TOTL",
@@ -14,7 +14,10 @@
    "industryPct": "NV.IND.TOTL.ZS",
    "manufacturingPct": "NV.IND.MANF.ZS",
    "servicesPct": "NV.SRV.TOTL.ZS",
-   "resourceRentsPct": "NY.GDP.TOTL.RT.ZS"
+   "resourceRentsPct": "NY.GDP.TOTL.RT.ZS",
+   "tariffAllPct": "TM.TAX.MRCH.WM.AR.ZS",
+   "tariffManufPct": "TM.TAX.MANF.WM.AR.ZS",
+   "tariffPrimaryPct": "TM.TAX.TCOM.WM.AR.ZS"
   }
  },
  "countries": {
@@ -63,6 +66,18 @@
     },
     "resourceRentsPct": {
      "value": 0.0020661282461218,
+     "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 9.66,
+     "year": 2021
+    },
+    "tariffManufPct": {
+     "value": 10.86,
+     "year": 2021
+    },
+    "tariffPrimaryPct": {
+     "value": 7.57,
      "year": 2021
     }
    }
@@ -116,6 +131,18 @@
     "resourceRentsPct": {
      "value": 0.428525449642917,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 5.63,
+     "year": 2018
+    },
+    "tariffManufPct": {
+     "value": 6.41,
+     "year": 2018
+    },
+    "tariffPrimaryPct": {
+     "value": 4.94,
+     "year": 2018
     }
    }
   },
@@ -168,6 +195,18 @@
     "resourceRentsPct": {
      "value": 29.9674348417559,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 8.85,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 8.5,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 9.84,
+     "year": 2022
     }
    }
   },
@@ -220,6 +259,18 @@
     "resourceRentsPct": {
      "value": 1.44260146706838,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 0.26,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 0.15,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 0.74,
+     "year": 2022
     }
    }
   },
@@ -260,7 +311,10 @@
     "resourceRentsPct": {
      "value": 0,
      "year": 2021
-    }
+    },
+    "tariffAllPct": null,
+    "tariffManufPct": null,
+    "tariffPrimaryPct": null
    }
   },
   "ARE": {
@@ -311,6 +365,18 @@
     },
     "resourceRentsPct": {
      "value": 17.634095847399,
+     "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 2.63,
+     "year": 2021
+    },
+    "tariffManufPct": {
+     "value": 2.92,
+     "year": 2021
+    },
+    "tariffPrimaryPct": {
+     "value": 5.13,
      "year": 2021
     }
    }
@@ -364,6 +430,18 @@
     "resourceRentsPct": {
      "value": 2.65308888983975,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 6.45,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 7.8,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 1.08,
+     "year": 2022
     }
    }
   },
@@ -416,6 +494,18 @@
     "resourceRentsPct": {
      "value": 7.05429982361028,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 3.61,
+     "year": 2021
+    },
+    "tariffManufPct": {
+     "value": 4.02,
+     "year": 2021
+    },
+    "tariffPrimaryPct": {
+     "value": 2.97,
+     "year": 2021
     }
    }
   },
@@ -450,7 +540,10 @@
     "resourceRentsPct": {
      "value": 0,
      "year": 2021
-    }
+    },
+    "tariffAllPct": null,
+    "tariffManufPct": null,
+    "tariffPrimaryPct": null
    }
   },
   "ATG": {
@@ -495,6 +588,18 @@
     },
     "resourceRentsPct": {
      "value": 0,
+     "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 13.07,
+     "year": 2021
+    },
+    "tariffManufPct": {
+     "value": 13.07,
+     "year": 2021
+    },
+    "tariffPrimaryPct": {
+     "value": 13.9,
      "year": 2021
     }
    }
@@ -548,6 +653,18 @@
     "resourceRentsPct": {
      "value": 13.3578752832739,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 0.99,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 1.04,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 0.8,
+     "year": 2022
     }
    }
   },
@@ -600,6 +717,18 @@
     "resourceRentsPct": {
      "value": 0.117855774382781,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 1.33,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 1.64,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 0.84,
+     "year": 2022
     }
    }
   },
@@ -652,6 +781,18 @@
     "resourceRentsPct": {
      "value": 29.9383945565987,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 5.45,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 6.03,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 3.89,
+     "year": 2022
     }
    }
   },
@@ -695,6 +836,18 @@
     "resourceRentsPct": {
      "value": 13.9570339894077,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 8.96,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 6.78,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 16.01,
+     "year": 2022
     }
    }
   },
@@ -747,6 +900,18 @@
     "resourceRentsPct": {
      "value": 0.0448914290094104,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 1.33,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 1.64,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 0.84,
+     "year": 2022
     }
    }
   },
@@ -799,6 +964,18 @@
     "resourceRentsPct": {
      "value": 2.30442028320417,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 10.16,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 8.51,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 12.27,
+     "year": 2022
     }
    }
   },
@@ -851,6 +1028,18 @@
     "resourceRentsPct": {
      "value": 20.1354014379911,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 7.25,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 7.81,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 5.64,
+     "year": 2022
     }
    }
   },
@@ -903,6 +1092,18 @@
     "resourceRentsPct": {
      "value": 0.610069177584654,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 10.56,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 12.94,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 5.31,
+     "year": 2022
     }
    }
   },
@@ -952,6 +1153,18 @@
     "resourceRentsPct": {
      "value": 0.917744335906696,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 1.33,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 1.64,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 0.84,
+     "year": 2022
     }
    }
   },
@@ -1004,6 +1217,18 @@
     "resourceRentsPct": {
      "value": 16.6400337175308,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 3.66,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 2.95,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 4.79,
+     "year": 2022
     }
    }
   },
@@ -1056,6 +1281,18 @@
     "resourceRentsPct": {
      "value": 0.0147540061086709,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 16.34,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 18.62,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 5.85,
+     "year": 2022
     }
    }
   },
@@ -1108,6 +1345,18 @@
     "resourceRentsPct": {
      "value": 0.813398711441269,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 4.04,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 2.29,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 7.41,
+     "year": 2022
     }
    }
   },
@@ -1159,6 +1408,18 @@
     },
     "resourceRentsPct": {
      "value": 1.86330240223309,
+     "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 2.27,
+     "year": 2021
+    },
+    "tariffManufPct": {
+     "value": 2.23,
+     "year": 2021
+    },
+    "tariffPrimaryPct": {
+     "value": 2.38,
      "year": 2021
     }
    }
@@ -1212,6 +1473,18 @@
     "resourceRentsPct": {
      "value": 0.523036536890701,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 18.05,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 10.93,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 38.57,
+     "year": 2022
     }
    }
   },
@@ -1261,6 +1534,18 @@
     "resourceRentsPct": {
      "value": 0,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 29.52,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 21.85,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 45.12,
+     "year": 2022
     }
    }
   },
@@ -1313,6 +1598,18 @@
     "resourceRentsPct": {
      "value": 9.46769419569564,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 5.08,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 5.33,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 3.27,
+     "year": 2022
     }
    }
   },
@@ -1365,6 +1662,18 @@
     "resourceRentsPct": {
      "value": 7.94111199933246,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 7.26,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 8.68,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 1.93,
+     "year": 2022
     }
    }
   },
@@ -1408,6 +1717,18 @@
     "resourceRentsPct": {
      "value": 0.328405869203115,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 14.58,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 11.73,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 20.19,
+     "year": 2022
     }
    }
   },
@@ -1460,6 +1781,18 @@
     "resourceRentsPct": {
      "value": 24.2800139399884,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 0.01,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 0.05,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 0,
+     "year": 2022
     }
    }
   },
@@ -1512,6 +1845,18 @@
     "resourceRentsPct": {
      "value": 2.73325446048629,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 4.79,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 4.17,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 6.2,
+     "year": 2022
     }
    }
   },
@@ -1564,6 +1909,18 @@
     "resourceRentsPct": {
      "value": 1.03853443914101,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 3.23,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 2.16,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 7.68,
+     "year": 2022
     }
    }
   },
@@ -1616,6 +1973,18 @@
     "resourceRentsPct": {
      "value": 10.2601957578803,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 14.48,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 12.57,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 20.06,
+     "year": 2022
     }
    }
   },
@@ -1668,6 +2037,18 @@
     "resourceRentsPct": {
      "value": 4.94905581435186,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 1.37,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 0.76,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 4.06,
+     "year": 2022
     }
    }
   },
@@ -1720,6 +2101,18 @@
     "resourceRentsPct": {
      "value": 0.00910740311945595,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 1.3,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 0.12,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 9.44,
+     "year": 2022
     }
    }
   },
@@ -1760,7 +2153,10 @@
      "value": 91.1810100411747,
      "year": 2023
     },
-    "resourceRentsPct": null
+    "resourceRentsPct": null,
+    "tariffAllPct": null,
+    "tariffManufPct": null,
+    "tariffPrimaryPct": null
    }
   },
   "CHL": {
@@ -1812,6 +2208,18 @@
     "resourceRentsPct": {
      "value": 16.9044168802743,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 0.46,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 0.48,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 0.38,
+     "year": 2022
     }
    }
   },
@@ -1864,6 +2272,18 @@
     "resourceRentsPct": {
      "value": 1.70756488252672,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 2.18,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 2.45,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 2,
+     "year": 2022
     }
    }
   },
@@ -1916,6 +2336,18 @@
     "resourceRentsPct": {
      "value": 4.73502206212113,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 7.25,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 8.33,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 5.64,
+     "year": 2022
     }
    }
   },
@@ -1968,6 +2400,18 @@
     "resourceRentsPct": {
      "value": 5.52598268395679,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 18.08,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 17.52,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 19.92,
+     "year": 2022
     }
    }
   },
@@ -2020,6 +2464,18 @@
     "resourceRentsPct": {
      "value": 38.8272665239082,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 8.4,
+     "year": 2020
+    },
+    "tariffManufPct": {
+     "value": 8.39,
+     "year": 2020
+    },
+    "tariffPrimaryPct": {
+     "value": 8.45,
+     "year": 2020
     }
    }
   },
@@ -2072,6 +2528,18 @@
     "resourceRentsPct": {
      "value": 37.7125480946685,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 18.18,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 17.9,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 18.83,
+     "year": 2022
     }
    }
   },
@@ -2124,6 +2592,18 @@
     "resourceRentsPct": {
      "value": 5.32396445388134,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 2.83,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 2.98,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 2.26,
+     "year": 2022
     }
    }
   },
@@ -2175,6 +2655,18 @@
     },
     "resourceRentsPct": {
      "value": 1.62843413378353,
+     "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 4.34,
+     "year": 2021
+    },
+    "tariffManufPct": {
+     "value": 4.76,
+     "year": 2021
+    },
+    "tariffPrimaryPct": {
+     "value": 3.92,
      "year": 2021
     }
    }
@@ -2228,6 +2720,18 @@
     "resourceRentsPct": {
      "value": 17.6577234520724,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 12.56,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 10.72,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 14.73,
+     "year": 2022
     }
    }
   },
@@ -2280,6 +2784,18 @@
     "resourceRentsPct": {
      "value": 0.763407374189705,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 1.3,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 0.83,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 3.34,
+     "year": 2022
     }
    }
   },
@@ -2332,6 +2848,18 @@
     "resourceRentsPct": {
      "value": 0.565351678337536,
      "year": 2020
+    },
+    "tariffAllPct": {
+     "value": 9.16,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 10.06,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 8,
+     "year": 2022
     }
    }
   },
@@ -2381,7 +2909,10 @@
     "resourceRentsPct": {
      "value": 0,
      "year": 2021
-    }
+    },
+    "tariffAllPct": null,
+    "tariffManufPct": null,
+    "tariffPrimaryPct": null
    }
   },
   "CYM": {
@@ -2426,6 +2957,18 @@
     },
     "resourceRentsPct": {
      "value": 0,
+     "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 20.39,
+     "year": 2021
+    },
+    "tariffManufPct": {
+     "value": 19.66,
+     "year": 2021
+    },
+    "tariffPrimaryPct": {
+     "value": 23.29,
      "year": 2021
     }
    }
@@ -2479,6 +3022,18 @@
     "resourceRentsPct": {
      "value": 0.0127645649104764,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 1.33,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 1.64,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 0.84,
+     "year": 2022
     }
    }
   },
@@ -2531,6 +3086,18 @@
     "resourceRentsPct": {
      "value": 0.394999591152656,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 1.33,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 1.64,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 0.84,
+     "year": 2022
     }
    }
   },
@@ -2583,6 +3150,18 @@
     "resourceRentsPct": {
      "value": 0.0770848993139744,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 1.33,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 1.64,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 0.84,
+     "year": 2022
     }
    }
   },
@@ -2635,7 +3214,10 @@
     "resourceRentsPct": {
      "value": 0.277110490356489,
      "year": 2021
-    }
+    },
+    "tariffAllPct": null,
+    "tariffManufPct": null,
+    "tariffPrimaryPct": null
    }
   },
   "DMA": {
@@ -2675,6 +3257,18 @@
     "resourceRentsPct": {
      "value": 0.0330678676450178,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 7.84,
+     "year": 2020
+    },
+    "tariffManufPct": {
+     "value": 9.97,
+     "year": 2020
+    },
+    "tariffPrimaryPct": {
+     "value": 5.36,
+     "year": 2020
     }
    }
   },
@@ -2727,6 +3321,18 @@
     "resourceRentsPct": {
      "value": 0.33866438619955,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 1.33,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 1.64,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 0.84,
+     "year": 2022
     }
    }
   },
@@ -2779,6 +3385,18 @@
     "resourceRentsPct": {
      "value": 2.07711318519727,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 3.97,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 4.2,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 3.56,
+     "year": 2022
     }
    }
   },
@@ -2831,6 +3449,18 @@
     "resourceRentsPct": {
      "value": 22.5902703479201,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 9.25,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 9.95,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 7.95,
+     "year": 2022
     }
    }
   },
@@ -2883,6 +3513,18 @@
     "resourceRentsPct": {
      "value": 6.69943720189179,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 5.19,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 6.59,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 1.99,
+     "year": 2022
     }
    }
   },
@@ -2935,6 +3577,18 @@
     "resourceRentsPct": {
      "value": 5.1391200748227,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 10.43,
+     "year": 2019
+    },
+    "tariffManufPct": {
+     "value": 6.07,
+     "year": 2019
+    },
+    "tariffPrimaryPct": {
+     "value": 19.5,
+     "year": 2019
     }
    }
   },
@@ -2960,7 +3614,10 @@
     "industryPct": null,
     "manufacturingPct": null,
     "servicesPct": null,
-    "resourceRentsPct": null
+    "resourceRentsPct": null,
+    "tariffAllPct": null,
+    "tariffManufPct": null,
+    "tariffPrimaryPct": null
    }
   },
   "ESP": {
@@ -3012,6 +3669,18 @@
     "resourceRentsPct": {
      "value": 0.115181021827658,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 1.33,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 1.64,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 0.84,
+     "year": 2022
     }
    }
   },
@@ -3064,6 +3733,18 @@
     "resourceRentsPct": {
      "value": 1.72122598420606,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 1.33,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 1.64,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 0.84,
+     "year": 2022
     }
    }
   },
@@ -3115,6 +3796,18 @@
     },
     "resourceRentsPct": {
      "value": 5.86707347361267,
+     "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 12.66,
+     "year": 2021
+    },
+    "tariffManufPct": {
+     "value": 12.86,
+     "year": 2021
+    },
+    "tariffPrimaryPct": {
+     "value": 12.06,
      "year": 2021
     }
    }
@@ -3168,6 +3861,18 @@
     "resourceRentsPct": {
      "value": 0.448312840515242,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 1.33,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 1.64,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 0.84,
+     "year": 2022
     }
    }
   },
@@ -3219,6 +3924,18 @@
     },
     "resourceRentsPct": {
      "value": 2.25290361305504,
+     "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 8.35,
+     "year": 2021
+    },
+    "tariffManufPct": {
+     "value": 4.86,
+     "year": 2021
+    },
+    "tariffPrimaryPct": {
+     "value": 17.59,
      "year": 2021
     }
    }
@@ -3272,6 +3989,18 @@
     "resourceRentsPct": {
      "value": 0.0325366370984223,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 1.33,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 1.64,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 0.84,
+     "year": 2022
     }
    }
   },
@@ -3321,7 +4050,10 @@
     "resourceRentsPct": {
      "value": 0,
      "year": 2021
-    }
+    },
+    "tariffAllPct": null,
+    "tariffManufPct": null,
+    "tariffPrimaryPct": null
    }
   },
   "FSM": {
@@ -3367,7 +4099,10 @@
     "resourceRentsPct": {
      "value": 0.0178477556025635,
      "year": 2021
-    }
+    },
+    "tariffAllPct": null,
+    "tariffManufPct": null,
+    "tariffPrimaryPct": null
    }
   },
   "GAB": {
@@ -3419,6 +4154,18 @@
     "resourceRentsPct": {
      "value": 18.4933440925176,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 16.57,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 15.64,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 19.28,
+     "year": 2022
     }
    }
   },
@@ -3471,6 +4218,18 @@
     "resourceRentsPct": {
      "value": 0.588544260440276,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 1,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 0.71,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 1.81,
+     "year": 2022
     }
    }
   },
@@ -3523,6 +4282,18 @@
     "resourceRentsPct": {
      "value": 1.38946631019879,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 0.42,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 0.19,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 0.86,
+     "year": 2022
     }
    }
   },
@@ -3575,6 +4346,18 @@
     "resourceRentsPct": {
      "value": 13.3474845007777,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 12.51,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 11.69,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 15.89,
+     "year": 2022
     }
    }
   },
@@ -3597,7 +4380,10 @@
     "industryPct": null,
     "manufacturingPct": null,
     "servicesPct": null,
-    "resourceRentsPct": null
+    "resourceRentsPct": null,
+    "tariffAllPct": null,
+    "tariffManufPct": null,
+    "tariffPrimaryPct": null
    }
   },
   "GIN": {
@@ -3649,6 +4435,18 @@
     "resourceRentsPct": {
      "value": 4.51955879028644,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 12.6,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 11.72,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 15.18,
+     "year": 2022
     }
    }
   },
@@ -3701,6 +4499,18 @@
     "resourceRentsPct": {
      "value": 2.85673041093642,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 16.44,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 15.33,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 18.13,
+     "year": 2022
     }
    }
   },
@@ -3753,6 +4563,18 @@
     "resourceRentsPct": {
      "value": 10.4285037712862,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 11.7,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 9.12,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 15.02,
+     "year": 2022
     }
    }
   },
@@ -3805,6 +4627,18 @@
     "resourceRentsPct": {
      "value": 23.500064053404,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 18.18,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 16.32,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 22.68,
+     "year": 2022
     }
    }
   },
@@ -3857,6 +4691,18 @@
     "resourceRentsPct": {
      "value": 0.0875219452812631,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 1.33,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 1.64,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 0.84,
+     "year": 2022
     }
    }
   },
@@ -3897,6 +4743,18 @@
     "resourceRentsPct": {
      "value": 0,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 12.98,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 12.04,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 14,
+     "year": 2022
     }
    }
   },
@@ -3946,7 +4804,10 @@
     "resourceRentsPct": {
      "value": 0,
      "year": 2020
-    }
+    },
+    "tariffAllPct": null,
+    "tariffManufPct": null,
+    "tariffPrimaryPct": null
    }
   },
   "GTM": {
@@ -3998,6 +4859,18 @@
     "resourceRentsPct": {
      "value": 1.92928512463796,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 2.39,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 1.98,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 3.51,
+     "year": 2022
     }
    }
   },
@@ -4035,7 +4908,10 @@
     "resourceRentsPct": {
      "value": 0,
      "year": 2021
-    }
+    },
+    "tariffAllPct": null,
+    "tariffManufPct": null,
+    "tariffPrimaryPct": null
    }
   },
   "GUY": {
@@ -4078,6 +4954,18 @@
     "resourceRentsPct": {
      "value": 33.6832711741997,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 9.27,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 8.25,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 13.38,
+     "year": 2022
     }
    }
   },
@@ -4130,6 +5018,18 @@
     "resourceRentsPct": {
      "value": 0.000992608591579756,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 0,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 0,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 0,
+     "year": 2022
     }
    }
   },
@@ -4182,6 +5082,18 @@
     "resourceRentsPct": {
      "value": 1.22455313744521,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 2.11,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 1.71,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 3.32,
+     "year": 2022
     }
    }
   },
@@ -4234,6 +5146,18 @@
     "resourceRentsPct": {
      "value": 0.681198197003712,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 1.33,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 1.64,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 0.84,
+     "year": 2022
     }
    }
   },
@@ -4286,6 +5210,18 @@
     "resourceRentsPct": {
      "value": 0.327641965983974,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 6.76,
+     "year": 2020
+    },
+    "tariffManufPct": {
+     "value": 6.41,
+     "year": 2020
+    },
+    "tariffPrimaryPct": {
+     "value": 7.34,
+     "year": 2020
     }
    }
   },
@@ -4338,6 +5274,18 @@
     "resourceRentsPct": {
      "value": 0.402362635857113,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 1.33,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 1.64,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 0.84,
+     "year": 2022
     }
    }
   },
@@ -4390,6 +5338,18 @@
     "resourceRentsPct": {
      "value": 5.15704008451705,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 1.83,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 1.74,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 2.13,
+     "year": 2022
     }
    }
   },
@@ -4430,7 +5390,10 @@
     "resourceRentsPct": {
      "value": 0,
      "year": 2019
-    }
+    },
+    "tariffAllPct": null,
+    "tariffManufPct": null,
+    "tariffPrimaryPct": null
    }
   },
   "IND": {
@@ -4482,6 +5445,18 @@
     "resourceRentsPct": {
      "value": 3.15934537555664,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 4.59,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 6.22,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 2.49,
+     "year": 2022
     }
    }
   },
@@ -4534,6 +5509,18 @@
     "resourceRentsPct": {
      "value": 0.10098823103923,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 1.33,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 1.64,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 0.84,
+     "year": 2022
     }
    }
   },
@@ -4586,6 +5573,18 @@
     "resourceRentsPct": {
      "value": 30.4480600937139,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 12.09,
+     "year": 2020
+    },
+    "tariffManufPct": {
+     "value": 12.83,
+     "year": 2020
+    },
+    "tariffPrimaryPct": {
+     "value": 10.63,
+     "year": 2020
     }
    }
   },
@@ -4638,7 +5637,10 @@
     "resourceRentsPct": {
      "value": 43.4458576871878,
      "year": 2021
-    }
+    },
+    "tariffAllPct": null,
+    "tariffManufPct": null,
+    "tariffPrimaryPct": null
    }
   },
   "ISL": {
@@ -4690,6 +5692,18 @@
     "resourceRentsPct": {
      "value": 0.000106967737793307,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 1.63,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 0,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 6.03,
+     "year": 2022
     }
    }
   },
@@ -4742,6 +5756,18 @@
     "resourceRentsPct": {
      "value": 0.441424749575518,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 2.62,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 1.78,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 5.13,
+     "year": 2022
     }
    }
   },
@@ -4794,6 +5820,18 @@
     "resourceRentsPct": {
      "value": 0.112009125283042,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 1.33,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 1.64,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 0.84,
+     "year": 2022
     }
    }
   },
@@ -4837,6 +5875,18 @@
     "resourceRentsPct": {
      "value": 0.457652062306756,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 9.24,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 9.28,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 9.2,
+     "year": 2022
     }
    }
   },
@@ -4880,6 +5930,18 @@
     "resourceRentsPct": {
      "value": 0.0776640966166585,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 3.2,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 3.4,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 3.71,
+     "year": 2022
     }
    }
   },
@@ -4932,6 +5994,18 @@
     "resourceRentsPct": {
      "value": 0.0473044627668744,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 1.64,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 0.85,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 2.53,
+     "year": 2022
     }
    }
   },
@@ -4984,6 +6058,18 @@
     "resourceRentsPct": {
      "value": 26.8423173327291,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 2.9,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 3.09,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 2.15,
+     "year": 2022
     }
    }
   },
@@ -5036,6 +6122,18 @@
     "resourceRentsPct": {
      "value": 1.22792857770901,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 11.7,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 9.07,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 17.73,
+     "year": 2022
     }
    }
   },
@@ -5087,6 +6185,18 @@
     },
     "resourceRentsPct": {
      "value": 11.5065410174076,
+     "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 3.01,
+     "year": 2021
+    },
+    "tariffManufPct": {
+     "value": 3.45,
+     "year": 2021
+    },
+    "tariffPrimaryPct": {
+     "value": 1.39,
      "year": 2021
     }
    }
@@ -5140,6 +6250,18 @@
     "resourceRentsPct": {
      "value": 0.835283715830679,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 7.2,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 9.16,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 6.44,
+     "year": 2022
     }
    }
   },
@@ -5189,7 +6311,10 @@
     "resourceRentsPct": {
      "value": 0.043500143330191,
      "year": 2021
-    }
+    },
+    "tariffAllPct": null,
+    "tariffManufPct": null,
+    "tariffPrimaryPct": null
    }
   },
   "KNA": {
@@ -5229,6 +6354,18 @@
     "resourceRentsPct": {
      "value": 0,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 8.84,
+     "year": 2020
+    },
+    "tariffManufPct": {
+     "value": 8.85,
+     "year": 2020
+    },
+    "tariffPrimaryPct": {
+     "value": 8.93,
+     "year": 2020
     }
    }
   },
@@ -5281,6 +6418,18 @@
     "resourceRentsPct": {
      "value": 0.049812574781783,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 5.66,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 1.79,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 10.89,
+     "year": 2022
     }
    }
   },
@@ -5333,6 +6482,18 @@
     "resourceRentsPct": {
      "value": 29.2848672951013,
      "year": 2020
+    },
+    "tariffAllPct": {
+     "value": 4.01,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 4.21,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 3.89,
+     "year": 2022
     }
    }
   },
@@ -5385,6 +6546,18 @@
     "resourceRentsPct": {
      "value": 5.38276112647354,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 1.41,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 1.03,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 1.67,
+     "year": 2022
     }
    }
   },
@@ -5437,6 +6610,18 @@
     "resourceRentsPct": {
      "value": 0.00276403839242888,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 2.83,
+     "year": 2020
+    },
+    "tariffManufPct": {
+     "value": 2.7,
+     "year": 2020
+    },
+    "tariffPrimaryPct": {
+     "value": 3.69,
+     "year": 2020
     }
    }
   },
@@ -5477,6 +6662,18 @@
     "resourceRentsPct": {
      "value": 21.9156000871056,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 6.22,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 5.78,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 19.13,
+     "year": 2022
     }
    }
   },
@@ -5529,6 +6726,18 @@
     "resourceRentsPct": {
      "value": 61.0347089411103,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 4.03,
+     "year": 2021
+    },
+    "tariffManufPct": {
+     "value": 4.26,
+     "year": 2021
+    },
+    "tariffPrimaryPct": {
+     "value": 3.56,
+     "year": 2021
     }
    }
   },
@@ -5572,6 +6781,18 @@
     "resourceRentsPct": {
      "value": 0.0134294898917373,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 9.08,
+     "year": 2020
+    },
+    "tariffManufPct": {
+     "value": 9.61,
+     "year": 2020
+    },
+    "tariffPrimaryPct": {
+     "value": 8.43,
+     "year": 2020
     }
    }
   },
@@ -5612,7 +6833,10 @@
     "resourceRentsPct": {
      "value": 0.00147146668515006,
      "year": 2020
-    }
+    },
+    "tariffAllPct": null,
+    "tariffManufPct": null,
+    "tariffPrimaryPct": null
    }
   },
   "LKA": {
@@ -5663,6 +6887,18 @@
     },
     "resourceRentsPct": {
      "value": 0.0832444969793704,
+     "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 4.36,
+     "year": 2021
+    },
+    "tariffManufPct": {
+     "value": 2,
+     "year": 2021
+    },
+    "tariffPrimaryPct": {
+     "value": 11.03,
      "year": 2021
     }
    }
@@ -5716,6 +6952,18 @@
     "resourceRentsPct": {
      "value": 4.31788190525398,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 3.36,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 4.19,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 2.19,
+     "year": 2022
     }
    }
   },
@@ -5768,6 +7016,18 @@
     "resourceRentsPct": {
      "value": 0.28612663033099,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 1.33,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 1.64,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 0.84,
+     "year": 2022
     }
    }
   },
@@ -5820,7 +7080,10 @@
     "resourceRentsPct": {
      "value": 0.00475136757511518,
      "year": 2021
-    }
+    },
+    "tariffAllPct": null,
+    "tariffManufPct": null,
+    "tariffPrimaryPct": null
    }
   },
   "LVA": {
@@ -5872,6 +7135,18 @@
     "resourceRentsPct": {
      "value": 1.16511975350878,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 1.33,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 1.64,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 0.84,
+     "year": 2022
     }
    }
   },
@@ -5921,6 +7196,18 @@
     "resourceRentsPct": {
      "value": 0.000724556273813068,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 0,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 0,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 0,
+     "year": 2022
     }
    }
   },
@@ -5946,7 +7233,10 @@
     "industryPct": null,
     "manufacturingPct": null,
     "servicesPct": null,
-    "resourceRentsPct": null
+    "resourceRentsPct": null,
+    "tariffAllPct": null,
+    "tariffManufPct": null,
+    "tariffPrimaryPct": null
    }
   },
   "MAR": {
@@ -5998,6 +7288,18 @@
     "resourceRentsPct": {
      "value": 0.391702933228196,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 4.23,
+     "year": 2021
+    },
+    "tariffManufPct": {
+     "value": 3.07,
+     "year": 2021
+    },
+    "tariffPrimaryPct": {
+     "value": 7.37,
+     "year": 2021
     }
    }
   },
@@ -6032,7 +7334,10 @@
     "resourceRentsPct": {
      "value": 0,
      "year": 2021
-    }
+    },
+    "tariffAllPct": null,
+    "tariffManufPct": null,
+    "tariffPrimaryPct": null
    }
   },
   "MDA": {
@@ -6084,6 +7389,18 @@
     "resourceRentsPct": {
      "value": 0.235942049452034,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 1.16,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 1.14,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 1.19,
+     "year": 2022
     }
    }
   },
@@ -6136,6 +7453,18 @@
     "resourceRentsPct": {
      "value": 5.5311886434036,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 8.74,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 9.8,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 6.63,
+     "year": 2022
     }
    }
   },
@@ -6188,6 +7517,18 @@
     "resourceRentsPct": {
      "value": 0.00370182242347212,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 11.12,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 12.57,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 7.98,
+     "year": 2022
     }
    }
   },
@@ -6240,6 +7581,18 @@
     "resourceRentsPct": {
      "value": 3.64307338835023,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 1.62,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 1.78,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 0.65,
+     "year": 2022
     }
    }
   },
@@ -6289,7 +7642,10 @@
     "resourceRentsPct": {
      "value": 0,
      "year": 2021
-    }
+    },
+    "tariffAllPct": null,
+    "tariffManufPct": null,
+    "tariffPrimaryPct": null
    }
   },
   "MKD": {
@@ -6341,6 +7697,18 @@
     "resourceRentsPct": {
      "value": 0.136921063560563,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 2.34,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 1.48,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 3.84,
+     "year": 2022
     }
    }
   },
@@ -6393,6 +7761,18 @@
     "resourceRentsPct": {
      "value": 18.4178821970492,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 8.9,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 9.19,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 9.72,
+     "year": 2022
     }
    }
   },
@@ -6445,6 +7825,18 @@
     "resourceRentsPct": {
      "value": 0,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 1.33,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 1.64,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 0.84,
+     "year": 2022
     }
    }
   },
@@ -6488,6 +7880,18 @@
     "resourceRentsPct": {
      "value": 8.6785038087485,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 0.82,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 0.66,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 1.41,
+     "year": 2022
     }
    }
   },
@@ -6540,6 +7944,18 @@
     "resourceRentsPct": {
      "value": 0.637197671980386,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 2.9,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 1.24,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 5.52,
+     "year": 2022
     }
    }
   },
@@ -6592,6 +8008,18 @@
     "resourceRentsPct": {
      "value": 33.1372162654312,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 5.35,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 4.7,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 7.7,
+     "year": 2022
     }
    }
   },
@@ -6626,7 +8054,10 @@
     "resourceRentsPct": {
      "value": 0,
      "year": 2019
-    }
+    },
+    "tariffAllPct": null,
+    "tariffManufPct": null,
+    "tariffPrimaryPct": null
    }
   },
   "MOZ": {
@@ -6677,6 +8108,18 @@
     },
     "resourceRentsPct": {
      "value": 14.9074768559672,
+     "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 4.19,
+     "year": 2021
+    },
+    "tariffManufPct": {
+     "value": 4.38,
+     "year": 2021
+    },
+    "tariffPrimaryPct": {
+     "value": 3.75,
      "year": 2021
     }
    }
@@ -6730,6 +8173,18 @@
     "resourceRentsPct": {
      "value": 11.4487520863931,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 8.68,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 9.5,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 7.57,
+     "year": 2022
     }
    }
   },
@@ -6782,6 +8237,18 @@
     "resourceRentsPct": {
      "value": 0.00271526913227865,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 1.2,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 0.79,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 1.95,
+     "year": 2022
     }
    }
   },
@@ -6833,6 +8300,18 @@
     },
     "resourceRentsPct": {
      "value": 4.22250421289741,
+     "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 5.95,
+     "year": 2021
+    },
+    "tariffManufPct": {
+     "value": 5.12,
+     "year": 2021
+    },
+    "tariffPrimaryPct": {
+     "value": 9.04,
      "year": 2021
     }
    }
@@ -6886,6 +8365,18 @@
     "resourceRentsPct": {
      "value": 6.92196634868479,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 3.42,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 3.64,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 3.03,
+     "year": 2022
     }
    }
   },
@@ -6938,6 +8429,18 @@
     "resourceRentsPct": {
      "value": 4.03058059383138,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 3.58,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 3.81,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 3.05,
+     "year": 2022
     }
    }
   },
@@ -6990,7 +8493,10 @@
     "resourceRentsPct": {
      "value": 16.7918673249355,
      "year": 2021
-    }
+    },
+    "tariffAllPct": null,
+    "tariffManufPct": null,
+    "tariffPrimaryPct": null
    }
   },
   "NER": {
@@ -7042,6 +8548,18 @@
     "resourceRentsPct": {
      "value": 6.40907047167716,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 8.36,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 7.79,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 8.85,
+     "year": 2022
     }
    }
   },
@@ -7085,6 +8603,18 @@
     "resourceRentsPct": {
      "value": 8.55295423830806,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 9.34,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 9.21,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 9.62,
+     "year": 2022
     }
    }
   },
@@ -7137,6 +8667,18 @@
     "resourceRentsPct": {
      "value": 3.84080893833151,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 2.04,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 2.34,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 1.2,
+     "year": 2022
     }
    }
   },
@@ -7189,6 +8731,18 @@
     "resourceRentsPct": {
      "value": 0.340536679351668,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 1.33,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 1.64,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 0.84,
+     "year": 2022
     }
    }
   },
@@ -7241,6 +8795,18 @@
     "resourceRentsPct": {
      "value": 10.0482763904291,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 2.31,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 0.23,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 8.33,
+     "year": 2022
     }
    }
   },
@@ -7293,6 +8859,18 @@
     "resourceRentsPct": {
      "value": 0.498936909947826,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 11.2,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 11.07,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 10.83,
+     "year": 2022
     }
    }
   },
@@ -7326,6 +8904,18 @@
     "servicesPct": null,
     "resourceRentsPct": {
      "value": 0,
+     "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 14.07,
+     "year": 2021
+    },
+    "tariffManufPct": {
+     "value": 13.27,
+     "year": 2021
+    },
+    "tariffPrimaryPct": {
+     "value": 16,
      "year": 2021
     }
    }
@@ -7379,6 +8969,18 @@
     "resourceRentsPct": {
      "value": 1.49411356490814,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 1.7,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 1.81,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 1.24,
+     "year": 2022
     }
    }
   },
@@ -7431,6 +9033,18 @@
     "resourceRentsPct": {
      "value": 29.2115792686173,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 2.14,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 2.14,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 2.3,
+     "year": 2022
     }
    }
   },
@@ -7483,6 +9097,18 @@
     "resourceRentsPct": {
      "value": 1.43561633294011,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 7.61,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 10.51,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 4.95,
+     "year": 2022
     }
    }
   },
@@ -7535,6 +9161,18 @@
     "resourceRentsPct": {
      "value": 3.6647948599442,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 5.93,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 4.12,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 11.19,
+     "year": 2022
     }
    }
   },
@@ -7587,6 +9225,18 @@
     "resourceRentsPct": {
      "value": 12.7247082349187,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 0.66,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 0.83,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 0.11,
+     "year": 2022
     }
    }
   },
@@ -7639,6 +9289,18 @@
     "resourceRentsPct": {
      "value": 1.97263339590791,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 1.76,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 0.9,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 3.88,
+     "year": 2022
     }
    }
   },
@@ -7688,6 +9350,18 @@
     "resourceRentsPct": {
      "value": 0,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 9.49,
+     "year": 2021
+    },
+    "tariffManufPct": {
+     "value": 4.2,
+     "year": 2021
+    },
+    "tariffPrimaryPct": {
+     "value": 20.27,
+     "year": 2021
     }
    }
   },
@@ -7730,6 +9404,18 @@
     },
     "resourceRentsPct": {
      "value": 27.3866812481734,
+     "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 3.58,
+     "year": 2021
+    },
+    "tariffManufPct": {
+     "value": 2.24,
+     "year": 2021
+    },
+    "tariffPrimaryPct": {
+     "value": 7.73,
      "year": 2021
     }
    }
@@ -7783,6 +9469,18 @@
     "resourceRentsPct": {
      "value": 1.03024380772929,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 1.33,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 1.64,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 0.84,
+     "year": 2022
     }
    }
   },
@@ -7835,7 +9533,10 @@
     "resourceRentsPct": {
      "value": 0,
      "year": 2021
-    }
+    },
+    "tariffAllPct": null,
+    "tariffManufPct": null,
+    "tariffPrimaryPct": null
    }
   },
   "PRK": {
@@ -7860,7 +9561,10 @@
     "industryPct": null,
     "manufacturingPct": null,
     "servicesPct": null,
-    "resourceRentsPct": null
+    "resourceRentsPct": null,
+    "tariffAllPct": null,
+    "tariffManufPct": null,
+    "tariffPrimaryPct": null
    }
   },
   "PRT": {
@@ -7912,6 +9616,18 @@
     "resourceRentsPct": {
      "value": 0.291415692065373,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 1.33,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 1.64,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 0.84,
+     "year": 2022
     }
    }
   },
@@ -7964,6 +9680,18 @@
     "resourceRentsPct": {
      "value": 1.34701587848651,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 4.63,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 4.93,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 2.62,
+     "year": 2022
     }
    }
   },
@@ -8016,6 +9744,18 @@
     "resourceRentsPct": {
      "value": 0,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 2.18,
+     "year": 2017
+    },
+    "tariffManufPct": {
+     "value": 1.49,
+     "year": 2017
+    },
+    "tariffPrimaryPct": {
+     "value": 3.79,
+     "year": 2017
     }
    }
   },
@@ -8067,6 +9807,18 @@
     },
     "resourceRentsPct": {
      "value": 0.00357012625688161,
+     "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 5.75,
+     "year": 2021
+    },
+    "tariffManufPct": {
+     "value": 6.76,
+     "year": 2021
+    },
+    "tariffPrimaryPct": {
+     "value": 3.41,
      "year": 2021
     }
    }
@@ -8120,6 +9872,18 @@
     "resourceRentsPct": {
      "value": 27.2897873992471,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 3.69,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 3.85,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 3.36,
+     "year": 2022
     }
    }
   },
@@ -8172,6 +9936,18 @@
     "resourceRentsPct": {
      "value": 1.144376067244,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 1.33,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 1.64,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 0.84,
+     "year": 2022
     }
    }
   },
@@ -8223,6 +9999,18 @@
     },
     "resourceRentsPct": {
      "value": 18.5109394363314,
+     "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 4.17,
+     "year": 2021
+    },
+    "tariffManufPct": {
+     "value": 4.16,
+     "year": 2021
+    },
+    "tariffPrimaryPct": {
+     "value": 4.23,
      "year": 2021
     }
    }
@@ -8276,6 +10064,18 @@
     "resourceRentsPct": {
      "value": 4.01723634071877,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 11.11,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 6.23,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 24.06,
+     "year": 2022
     }
    }
   },
@@ -8328,6 +10128,18 @@
     "resourceRentsPct": {
      "value": 25.5652418188141,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 5.4,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 5.56,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 5.76,
+     "year": 2022
     }
    }
   },
@@ -8376,6 +10188,18 @@
     },
     "resourceRentsPct": {
      "value": 12.7502116848016,
+     "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 0,
+     "year": 2021
+    },
+    "tariffManufPct": {
+     "value": 0,
+     "year": 2021
+    },
+    "tariffPrimaryPct": {
+     "value": 0,
      "year": 2021
     }
    }
@@ -8429,6 +10253,18 @@
     "resourceRentsPct": {
      "value": 4.40159712005452,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 8.4,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 8.83,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 7.75,
+     "year": 2022
     }
    }
   },
@@ -8481,6 +10317,18 @@
     "resourceRentsPct": {
      "value": 0.000180989109199595,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 0,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 0,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 0,
+     "year": 2022
     }
    }
   },
@@ -8533,6 +10381,18 @@
     "resourceRentsPct": {
      "value": 18.395048524098,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 20.66,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 12.15,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 48.84,
+     "year": 2022
     }
    }
   },
@@ -8585,6 +10445,18 @@
     "resourceRentsPct": {
      "value": 9.03701414128967,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 13.65,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 11.97,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 17.74,
+     "year": 2022
     }
    }
   },
@@ -8637,6 +10509,18 @@
     "resourceRentsPct": {
      "value": 0.535264947589614,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 2.16,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 2.3,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 1.77,
+     "year": 2022
     }
    }
   },
@@ -8686,7 +10570,10 @@
     "resourceRentsPct": {
      "value": 0,
      "year": 2020
-    }
+    },
+    "tariffAllPct": null,
+    "tariffManufPct": null,
+    "tariffPrimaryPct": null
    }
   },
   "SOM": {
@@ -8726,7 +10613,10 @@
     "resourceRentsPct": {
      "value": 11.2356934915275,
      "year": 2021
-    }
+    },
+    "tariffAllPct": null,
+    "tariffManufPct": null,
+    "tariffPrimaryPct": null
    }
   },
   "SRB": {
@@ -8777,6 +10667,18 @@
     },
     "resourceRentsPct": {
      "value": 1.74631766481948,
+     "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 1.72,
+     "year": 2021
+    },
+    "tariffManufPct": {
+     "value": 1.72,
+     "year": 2021
+    },
+    "tariffPrimaryPct": {
+     "value": 1.72,
      "year": 2021
     }
    }
@@ -8830,7 +10732,10 @@
     "resourceRentsPct": {
      "value": 13.0532234224485,
      "year": 2015
-    }
+    },
+    "tariffAllPct": null,
+    "tariffManufPct": null,
+    "tariffPrimaryPct": null
    }
   },
   "STP": {
@@ -8882,6 +10787,18 @@
     "resourceRentsPct": {
      "value": 1.88439596006627,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 9.97,
+     "year": 2019
+    },
+    "tariffManufPct": {
+     "value": 10.63,
+     "year": 2019
+    },
+    "tariffPrimaryPct": {
+     "value": 9.2,
+     "year": 2019
     }
    }
   },
@@ -8925,6 +10842,18 @@
     "resourceRentsPct": {
      "value": 9.59272209392741,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 7.8,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 6.86,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 10.43,
+     "year": 2022
     }
    }
   },
@@ -8977,6 +10906,18 @@
     "resourceRentsPct": {
      "value": 0.226150293544136,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 1.33,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 1.64,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 0.84,
+     "year": 2022
     }
    }
   },
@@ -9029,6 +10970,18 @@
     "resourceRentsPct": {
      "value": 0.189323915465621,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 1.33,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 1.64,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 0.84,
+     "year": 2022
     }
    }
   },
@@ -9081,6 +11034,18 @@
     "resourceRentsPct": {
      "value": 1.20827979934218,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 1.33,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 1.64,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 0.84,
+     "year": 2022
     }
    }
   },
@@ -9133,6 +11098,18 @@
     "resourceRentsPct": {
      "value": 2.99915237990705,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 2.98,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 3.36,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 2.31,
+     "year": 2022
     }
    }
   },
@@ -9170,7 +11147,10 @@
     "resourceRentsPct": {
      "value": 0,
      "year": 2018
-    }
+    },
+    "tariffAllPct": null,
+    "tariffManufPct": null,
+    "tariffPrimaryPct": null
    }
   },
   "SYC": {
@@ -9219,6 +11199,18 @@
     "resourceRentsPct": {
      "value": 0.120645132507182,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 1.27,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 0.17,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 5.97,
+     "year": 2022
     }
    }
   },
@@ -9265,6 +11257,18 @@
     "resourceRentsPct": {
      "value": 6.37482598047532,
      "year": 2020
+    },
+    "tariffAllPct": {
+     "value": 9.21,
+     "year": 2020
+    },
+    "tariffManufPct": {
+     "value": 9.18,
+     "year": 2020
+    },
+    "tariffPrimaryPct": {
+     "value": 9.25,
+     "year": 2020
     }
    }
   },
@@ -9305,7 +11309,10 @@
     "resourceRentsPct": {
      "value": 0.00326750077470616,
      "year": 2021
-    }
+    },
+    "tariffAllPct": null,
+    "tariffManufPct": null,
+    "tariffPrimaryPct": null
    }
   },
   "TCD": {
@@ -9357,6 +11364,18 @@
     "resourceRentsPct": {
      "value": 21.3429312625159,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 16.8,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 15.52,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 23.79,
+     "year": 2022
     }
    }
   },
@@ -9409,6 +11428,18 @@
     "resourceRentsPct": {
      "value": 7.86417419787513,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 13.56,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 14.74,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 11.15,
+     "year": 2022
     }
    }
   },
@@ -9461,6 +11492,18 @@
     "resourceRentsPct": {
      "value": 1.8170265297611,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 3.67,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 3.4,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 4.59,
+     "year": 2022
     }
    }
   },
@@ -9513,6 +11556,18 @@
     "resourceRentsPct": {
      "value": 9.04634759702914,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 2.31,
+     "year": 2021
+    },
+    "tariffManufPct": {
+     "value": 3.79,
+     "year": 2021
+    },
+    "tariffPrimaryPct": {
+     "value": 0.78,
+     "year": 2021
     }
    }
   },
@@ -9559,7 +11614,10 @@
     "resourceRentsPct": {
      "value": 13.4925127713072,
      "year": 2019
-    }
+    },
+    "tariffAllPct": null,
+    "tariffManufPct": null,
+    "tariffPrimaryPct": null
    }
   },
   "TLS": {
@@ -9610,6 +11668,18 @@
     },
     "resourceRentsPct": {
      "value": 34.7297460391742,
+     "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 2.53,
+     "year": 2021
+    },
+    "tariffManufPct": {
+     "value": 2.52,
+     "year": 2021
+    },
+    "tariffPrimaryPct": {
+     "value": 2.55,
      "year": 2021
     }
    }
@@ -9663,6 +11733,18 @@
     "resourceRentsPct": {
      "value": 0.0407524657583253,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 6.44,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 7.85,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 4.03,
+     "year": 2022
     }
    }
   },
@@ -9709,6 +11791,18 @@
     "resourceRentsPct": {
      "value": 7.85936855870429,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 7.51,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 6.1,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 10.81,
+     "year": 2022
     }
    }
   },
@@ -9761,6 +11855,18 @@
     "resourceRentsPct": {
      "value": 2.24923087429424,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 9.35,
+     "year": 2016
+    },
+    "tariffManufPct": {
+     "value": 9.46,
+     "year": 2016
+    },
+    "tariffPrimaryPct": {
+     "value": 9.07,
+     "year": 2016
     }
    }
   },
@@ -9813,6 +11919,18 @@
     "resourceRentsPct": {
      "value": 0.827048726504594,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 4.31,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 3.33,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 7.85,
+     "year": 2022
     }
    }
   },
@@ -9847,6 +11965,18 @@
     "resourceRentsPct": {
      "value": 0,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 2.43,
+     "year": 2017
+    },
+    "tariffManufPct": {
+     "value": 1.42,
+     "year": 2017
+    },
+    "tariffPrimaryPct": {
+     "value": 7.24,
+     "year": 2017
     }
    }
   },
@@ -9899,6 +12029,18 @@
     "resourceRentsPct": {
      "value": 6.69370906979479,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 8.64,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 6.16,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 22.36,
+     "year": 2022
     }
    }
   },
@@ -9951,6 +12093,18 @@
     "resourceRentsPct": {
      "value": 7.47552032336567,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 7.86,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 6.17,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 14.16,
+     "year": 2022
     }
    }
   },
@@ -10003,6 +12157,18 @@
     "resourceRentsPct": {
      "value": 7.5129023639251,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 1.86,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 2.08,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 1.24,
+     "year": 2022
     }
    }
   },
@@ -10055,6 +12221,18 @@
     "resourceRentsPct": {
      "value": 1.92773520463627,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 4.85,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 6.62,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 1.18,
+     "year": 2022
     }
    }
   },
@@ -10107,6 +12285,18 @@
     "resourceRentsPct": {
      "value": 1.27994423022721,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 1.49,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 1.61,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 1,
+     "year": 2022
     }
    }
   },
@@ -10159,6 +12349,18 @@
     "resourceRentsPct": {
      "value": 20.46516083278,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 2.56,
+     "year": 2021
+    },
+    "tariffManufPct": {
+     "value": 2.93,
+     "year": 2021
+    },
+    "tariffPrimaryPct": {
+     "value": 1.31,
+     "year": 2021
     }
    }
   },
@@ -10202,6 +12404,18 @@
     "resourceRentsPct": {
      "value": 0.0193291690653381,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 9.17,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 9.46,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 8.8,
+     "year": 2022
     }
    }
   },
@@ -10239,7 +12453,19 @@
     "industryPct": null,
     "manufacturingPct": null,
     "servicesPct": null,
-    "resourceRentsPct": null
+    "resourceRentsPct": null,
+    "tariffAllPct": {
+     "value": 12.84,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 13.81,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 11.09,
+     "year": 2022
+    }
    }
   },
   "VGB": {
@@ -10261,7 +12487,10 @@
     "industryPct": null,
     "manufacturingPct": null,
     "servicesPct": null,
-    "resourceRentsPct": null
+    "resourceRentsPct": null,
+    "tariffAllPct": null,
+    "tariffManufPct": null,
+    "tariffPrimaryPct": null
    }
   },
   "VIR": {
@@ -10298,7 +12527,10 @@
     "resourceRentsPct": {
      "value": 0.205447216042101,
      "year": 2020
-    }
+    },
+    "tariffAllPct": null,
+    "tariffManufPct": null,
+    "tariffPrimaryPct": null
    }
   },
   "VNM": {
@@ -10350,6 +12582,18 @@
     "resourceRentsPct": {
      "value": 2.54701708790768,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 1.07,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 0.82,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 2.03,
+     "year": 2022
     }
    }
   },
@@ -10402,6 +12646,18 @@
     "resourceRentsPct": {
      "value": 0.568069760913224,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 11.48,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 9.11,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 17.47,
+     "year": 2022
     }
    }
   },
@@ -10454,6 +12710,18 @@
     "resourceRentsPct": {
      "value": 0.280275449205485,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 10.38,
+     "year": 2020
+    },
+    "tariffManufPct": {
+     "value": 9.04,
+     "year": 2020
+    },
+    "tariffPrimaryPct": {
+     "value": 12.95,
+     "year": 2020
     }
    }
   },
@@ -10503,7 +12771,10 @@
     "resourceRentsPct": {
      "value": 0.928898942515976,
      "year": 2021
-    }
+    },
+    "tariffAllPct": null,
+    "tariffManufPct": null,
+    "tariffPrimaryPct": null
    }
   },
   "YEM": {
@@ -10552,6 +12823,18 @@
     "resourceRentsPct": {
      "value": 4.87867391772049,
      "year": 2018
+    },
+    "tariffAllPct": {
+     "value": 5.03,
+     "year": 2017
+    },
+    "tariffManufPct": {
+     "value": 6,
+     "year": 2017
+    },
+    "tariffPrimaryPct": {
+     "value": 4.3,
+     "year": 2017
     }
    }
   },
@@ -10604,6 +12887,18 @@
     "resourceRentsPct": {
      "value": 7.32857859192335,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 4.66,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 5.31,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 2.4,
+     "year": 2022
     }
    }
   },
@@ -10656,6 +12951,18 @@
     "resourceRentsPct": {
      "value": 35.2641479964325,
      "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 4.08,
+     "year": 2022
+    },
+    "tariffManufPct": {
+     "value": 4.43,
+     "year": 2022
+    },
+    "tariffPrimaryPct": {
+     "value": 2.76,
+     "year": 2022
     }
    }
   },
@@ -10707,6 +13014,18 @@
     },
     "resourceRentsPct": {
      "value": 6.39845161112644,
+     "year": 2021
+    },
+    "tariffAllPct": {
+     "value": 11.37,
+     "year": 2021
+    },
+    "tariffManufPct": {
+     "value": 12.38,
+     "year": 2021
+    },
+    "tariffPrimaryPct": {
+     "value": 9,
      "year": 2021
     }
    }
