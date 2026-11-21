@@ -1,7 +1,7 @@
 // 큰 세계 지도: 나라 모양, 교역 흐름선, 원형 국기 배지. 확대·이동은 d3-zoom.
 // 나라 모양만 지도 좌표로 그리고 확대는 transform으로 한다. 선과 배지는 화면 좌표로 다시 계산해 확대해도 크기가 그대로다.
 
-import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useLayoutEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import { select } from 'd3-selection'
 import { zoom, zoomIdentity, type ZoomBehavior, type ZoomTransform } from 'd3-zoom'
 import { ANCHOR, LAND, makeProjection, pathFor, type ViewId } from './geo'
@@ -20,6 +20,9 @@ export const COLOR = {
 
 export type Arc = { iso: string; value: number; label: string }
 export type Hover = { x: number; y: number; iso?: string; name: string } | null
+// 두 나라를 잇는 일반 선 (리플레이의 확전·약속·메시지 등). 화면 좌표로 그려 확대해도 굵기가 그대로다
+export type Link = { from: string; to: string; color: string; width: number; dashed?: string; arrow?: boolean; bend?: number; opacity?: number; key?: string }
+export type ScreenOf = (iso: string) => [number, number] | null
 
 type Props = {
   view: ViewId
@@ -31,9 +34,15 @@ type Props = {
   onHover: (h: Hover) => void
   padRight: number
   padBottom: number
+  highlight?: Set<string> // 고른 나라처럼 녹색으로 칠할 나라 (같은 블록의 회원국)
+  lead?: string[] // 배지를 먼저 놓을 나라 (흐름선 상대 다음)
+  labelFor?: (iso: string) => string // 배지 이름표 (기본: 나라 이름)
+  subLabelFor?: (iso: string) => { text: string; color: string } | null // 이름표 둘째 줄
+  links?: Link[]
+  overlay?: (screen: ScreenOf) => ReactNode // 배지 위에 그리는 것 (말풍선 등)
 }
 
-export function WorldMap({ view, selected, dir, arcs, fillFor, onSelect, onHover, padRight, padBottom }: Props) {
+export function WorldMap({ view, selected, dir, arcs, fillFor, onSelect, onHover, padRight, padBottom, highlight, lead: leadIsos = [], labelFor, subLabelFor, links = [], overlay }: Props) {
   const wrap = useRef<HTMLDivElement>(null)
   const svgRef = useRef<SVGSVGElement>(null)
   const zoomRef = useRef<ZoomBehavior<SVGSVGElement, unknown> | null>(null)
@@ -87,12 +96,16 @@ export function WorldMap({ view, selected, dir, arcs, fillFor, onSelect, onHover
     const [x, y] = screen(iso)
     return x > -20 && x < size.w - padRight + 20 && y > -20 && y < size.h - padBottom + 20
   }
+  const leadSet = new Set(leadIsos)
   const order = [
-    selected,
-    ...arcs.map((a) => a.iso),
-    ...Object.keys(anchors)
-      .filter((iso) => iso !== selected && !partnerSet.has(iso) && onScreen(iso))
-      .sort((a, b) => GDP_RANK[a] - GDP_RANK[b]),
+    ...new Set([
+      selected,
+      ...arcs.map((a) => a.iso),
+      ...leadIsos,
+      ...Object.keys(anchors)
+        .filter((iso) => iso !== selected && !partnerSet.has(iso) && !leadSet.has(iso) && onScreen(iso))
+        .sort((a, b) => GDP_RANK[a] - GDP_RANK[b]),
+    ]),
   ].filter((iso) => anchors[iso])
   // 순서: ① 고른 나라와 교역 상대의 국기 원 ② 그 이름표 ③ 나머지 나라의 원과 이름표. 그래야 교역 상대 국기가 이름표에 가리지 않는다
   type Box = { x0: number; y0: number; x1: number; y1: number }
@@ -103,10 +116,12 @@ export function WorldMap({ view, selected, dir, arcs, fillFor, onSelect, onHover
     const c = DATA.countries[iso]
     const arc = arcs.find((a) => a.iso === iso)
     const r = iso === selected ? 17 : 11
-    const textW = Math.max(c.name.length * 11.5, arc ? arc.label.length * 6.6 : 0) + 12
-    const textH = arc ? 30 : 17
+    const name = labelFor?.(iso) ?? c.name
+    const sub = arc ? { text: arc.label, color: dir === 'export' ? '#DDE3E8' : '#F0A3B0' } : (subLabelFor?.(iso) ?? null)
+    const textW = Math.max(name.length * 11.5, sub ? sub.text.length * 6.6 : 0) + 12
+    const textH = sub ? 30 : 17
     const circle = { x0: x - r - 1, y0: y - r - 1, x1: x + r + 1, y1: y + r + 1 }
-    return { iso, x, y, r, c, arc, circle, full: false, label: null as { lx: number; ly: number } | null, textW, textH }
+    return { iso, x, y, r, c, name, sub, circle, full: false, label: null as { lx: number; ly: number } | null, textW, textH }
   })
   const placeCircle = (b: (typeof badges)[number]) => {
     b.full = b.iso === selected || free(b.circle)
@@ -126,7 +141,7 @@ export function WorldMap({ view, selected, dir, arcs, fillFor, onSelect, onHover
     }
     if (b.iso === selected) b.label = slots[0]
   }
-  const lead = badges.filter((b) => b.iso === selected || partnerSet.has(b.iso))
+  const lead = badges.filter((b) => b.iso === selected || partnerSet.has(b.iso) || leadSet.has(b.iso))
   const rest = badges.filter((b) => !lead.includes(b))
   lead.forEach(placeCircle)
   lead.forEach(placeLabel)
@@ -145,7 +160,7 @@ export function WorldMap({ view, selected, dir, arcs, fillFor, onSelect, onHover
     if (!iso) return COLOR.land
     const f = fillFor?.(iso)
     if (f) return f
-    if (iso === selected) return COLOR.friend
+    if (iso === selected || highlight?.has(iso)) return COLOR.friend
     if (partnerSet.has(iso)) return COLOR.partner
     return COLOR.landData
   }
@@ -202,6 +217,36 @@ export function WorldMap({ view, selected, dir, arcs, fillFor, onSelect, onHover
           })}
         </g>
 
+        <g className="links" pointerEvents="none">
+          {links.map((l, i) => {
+            const a = anchors[l.from] && screen(l.from)
+            const b = anchors[l.to] && screen(l.to)
+            if (!a || !b) return null
+            const id = `link-head-${i}`
+            return (
+              <g key={l.key ?? `${l.from}-${l.to}-${i}`}>
+                {l.arrow && (
+                  <defs>
+                    <marker id={id} viewBox="0 0 10 10" refX="7" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto">
+                      <path d="M1 1 L8 5 L1 9 Z" fill={l.color} />
+                    </marker>
+                  </defs>
+                )}
+                <path
+                  d={arcPath(a[0], a[1], b[0], b[1], 16, 16, l.bend ?? 1)}
+                  fill="none"
+                  stroke={l.color}
+                  strokeWidth={l.width}
+                  strokeDasharray={l.dashed}
+                  strokeLinecap="round"
+                  opacity={l.opacity ?? 0.92}
+                  markerEnd={l.arrow ? `url(#${id})` : undefined}
+                />
+              </g>
+            )
+          })}
+        </g>
+
         <g className="badges">
           {[...shown].reverse().map((b) =>
             b.full ? (
@@ -226,10 +271,10 @@ export function WorldMap({ view, selected, dir, arcs, fillFor, onSelect, onHover
                 {b.label && (
                   <g transform={`translate(${b.label.lx},${b.label.ly})`}>
                     <rect x={-b.textW / 2} y={0} width={b.textW} height={b.textH} rx={3} fill="rgba(14,19,25,0.86)" />
-                    <text y={12.5} textAnchor="middle" className="badge-name">{b.c.name}</text>
-                    {b.arc && (
-                      <text y={26} textAnchor="middle" className="badge-value" fill={dir === 'export' ? '#DDE3E8' : '#F0A3B0'}>
-                        {b.arc.label}
+                    <text y={12.5} textAnchor="middle" className="badge-name">{b.name}</text>
+                    {b.sub && (
+                      <text y={26} textAnchor="middle" className="badge-value" fill={b.sub.color}>
+                        {b.sub.text}
                       </text>
                     )}
                   </g>
@@ -250,9 +295,10 @@ export function WorldMap({ view, selected, dir, arcs, fillFor, onSelect, onHover
             ),
           )}
         </g>
+        {overlay && <g className="overlay">{overlay((iso) => (anchors[iso] ? screen(iso) : null))}</g>}
       </svg>
 
-      <div className="zoom-buttons" style={{ bottom: padBottom + 20 }}>
+      <div className="zoom-buttons" style={{ bottom: padBottom + 88 }}>
         <button onClick={() => zoomBy(1.6)} aria-label="확대">+</button>
         <button onClick={() => zoomBy(1 / 1.6)} aria-label="축소">−</button>
         <button onClick={reset} aria-label="처음 보기로">⟲</button>
@@ -262,14 +308,14 @@ export function WorldMap({ view, selected, dir, arcs, fillFor, onSelect, onHover
 }
 
 // 두 점을 잇는 완만한 곡선. 위쪽으로 휘고, 양 끝은 배지에 가리지 않게 조금 줄인다
-function arcPath(x0: number, y0: number, x1: number, y1: number, trimStart: number, trimEnd: number) {
+function arcPath(x0: number, y0: number, x1: number, y1: number, trimStart: number, trimEnd: number, bendScale = 1) {
   const dx = x1 - x0
   const dy = y1 - y0
   const dist = Math.hypot(dx, dy) || 1
   let nx = -dy / dist
   let ny = dx / dist
   if (ny > 0) { nx = -nx; ny = -ny }
-  const bend = Math.min(0.28 * dist, 160)
+  const bend = Math.min(0.28 * dist, 160) * bendScale
   const cx = (x0 + x1) / 2 + nx * bend
   const cy = (y0 + y1) / 2 + ny * bend
   const a = trimToward(x0, y0, cx, cy, trimStart)

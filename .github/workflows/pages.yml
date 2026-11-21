@@ -29,6 +29,8 @@ jobs:
       - run: npm run build
       - name: 배포본에 키 문자열이 없는지 확인
         run: "! grep -rlE 'sk-ant|ANTHROPIC|x-api-key|/api/llm' dist"
+      - name: 리플레이 목록과 계산 스레드가 배포본에 있는지 확인
+        run: test -s dist/replays/index.json && ls dist/assets | grep -q '^worker-'
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
