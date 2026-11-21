@@ -327,3 +327,5 @@ button, select { font: inherit; color: inherit; }
 .choice.static { cursor: default; }
 .fold .choice-list { margin-top: 6px; }
 .rank.wide { width: 22px; }
+.btn-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.bar-value .share.warn { color: #E3A15E; }

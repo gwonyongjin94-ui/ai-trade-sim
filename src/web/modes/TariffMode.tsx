@@ -1,8 +1,8 @@
 // 관세 모드. 두 화면이 있다.
-// · 나라별 (기본): 나라마다 실제로 적용하는 평균 관세 (World Bank WDI) — CountryTariff.tsx
+// · 나라별 (기본): 실제 적용 관세 — CountryTariff.tsx. 나라 평균(World Bank WDI) · 매기는 관세 · 받는 관세(WITS 나라 쌍)
 // · 블록 사이: 시뮬레이션 엔진이 시작점으로 쓰는 2023년 관세. 지역 단위(블록 6개 + 나머지 세계)다.
 //   나라를 누르면 그 나라가 속한 지역이 매기는 관세(또는 받는 관세)로 지도를 칠하고, 다른 블록 대표국으로 흐름선을 긋는다.
-// 주소: #tariff/<나라>[/<품목 묶음>] · #tariff/<나라>/bloc/<방향>/<품목>
+// 주소: #tariff/<나라>[/<품목 묶음>] (나라 평균) · #tariff/<나라>/imposes|faces[/<품목 묶음>] · #tariff/<나라>/bloc/<방향>/<품목>
 
 import { Fragment, type ReactNode } from 'react'
 import type { ModeProps } from '../App'
@@ -15,7 +15,7 @@ import { CONTROL_REASON, EXPORT_CONTROLS, flowB, REGION_LIST, TARIFF_NOTES, tari
 import { BLOCS, type RegionId } from '../../v2/regions'
 import { EXPORT_LEVEL_LABEL } from '../../v2/types'
 import type { Arc } from '../WorldMap'
-import { CountryTariffView, GROUPS, type Group } from './CountryTariff'
+import { CountryTariffView, GROUPS, type Group, type View } from './CountryTariff'
 
 type Side = 'imposed' | 'faced'
 const RAMP: [string, string] = ['#2F3B48', '#E3A15E']
@@ -31,11 +31,14 @@ export function TariffMode({ iso, rest, setIso, setRest, onMode }: ModeProps) {
   const legacy = rest[0] === 'imposed' || rest[0] === 'faced'
   const bloc = rest[0] === 'bloc' || legacy
   const bRest = legacy ? rest : rest.slice(1)
-  const group: Group = GROUPS.some((g) => g.id === rest[0]) ? (rest[0] as Group) : 'all'
+  const view: View = rest[0] === 'imposes' || rest[0] === 'faces' ? rest[0] : 'avg'
+  const gRaw = view === 'avg' ? rest[0] : rest[1]
+  const group: Group = GROUPS.some((g) => g.id === gRaw) ? (gRaw as Group) : 'all'
+  const setCountry = (v: View, g: Group) => setRest([...(v === 'avg' ? [] : [v]), ...(g === 'all' ? [] : [g])])
 
   const scopeSeg = (
     <div className="seg" role="group" aria-label="관세 범위">
-      <button className={bloc ? '' : 'on'} onClick={() => setRest([])} title="나라마다 실제로 적용하는 평균 관세 (World Bank)">나라별</button>
+      <button className={bloc ? '' : 'on'} onClick={() => setRest([])} title="나라마다 실제로 적용하는 관세 (World Bank)">나라별</button>
       <button className={bloc ? 'on' : ''} onClick={() => setRest(['bloc'])} title="시뮬레이션 엔진이 쓰는 지역 사이 관세">블록 사이</button>
     </div>
   )
@@ -44,9 +47,11 @@ export function TariffMode({ iso, rest, setIso, setRest, onMode }: ModeProps) {
     return (
       <CountryTariffView
         iso={iso}
+        view={view}
         group={group}
         setIso={setIso}
-        setGroup={(g) => setRest(g === 'all' ? [] : [g])}
+        setView={(v) => setCountry(v, group)}
+        setGroup={(g) => setCountry(view, g)}
         onMode={onMode}
         scopeSeg={scopeSeg}
         onBloc={() => setRest(['bloc'])}

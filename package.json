@@ -23,6 +23,7 @@
     "quiz:v2": "tsx scripts/quiz-v2.ts",
     "map:data": "tsx scripts/build-world-map.ts",
     "world:wdi": "tsx scripts/fetch-world-data.ts",
+    "world:tariffs": "tsx scripts/fetch-world-tariffs.ts",
     "replay:export": "tsx scripts/export-replay.ts"
   },
   "dependencies": {

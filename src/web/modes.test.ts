@@ -3,16 +3,20 @@ import { describe, expect, it } from 'vitest'
 import trade from '../../data/v2/trade-2023.json'
 import tariffsJson from '../../data/v2/tariffs.json'
 import wdi from '../../data/world/wdi-2023.json'
+import bilateralJson from '../../data/world/tariffs-bilateral.json'
 import { BLOCS, REGIONS } from '../v2/regions'
 import { HOME, josa, MEMBERS, regionOf } from './blocs'
 import { COUNTRIES, DATA } from './data'
 import type { ReplayFile, ReplayIndexEntry } from './replay/types'
 import { decodeChanges, encodeChanges, policiesAt, PRESETS, simulate, type Change } from './sim/scenario'
 import { avgTariffPct, tariffPct } from './tariffs'
+import { partnerOf, rateOf, tradeOf, weighted, yearOf, type TariffFile } from './bilateral'
 
 const REPLAYS = import.meta.glob<ReplayFile>('/public/replays/*.json', { eager: true, import: 'default' })
 const INDEX = REPLAYS['/public/replays/index.json'] as unknown as ReplayIndexEntry[]
 const replay = (id: string) => REPLAYS[`/public/replays/${id}.json`]
+const TFILES = import.meta.glob<TariffFile>('/public/data/tariffs/{KOR,USA,CHN,JPN,DEU,TWN,VNM}.json', { eager: true, import: 'default' })
+const tfile = (iso: string) => TFILES[`/public/data/tariffs/${iso}.json`]
 const preset = (id: string) => PRESETS.find((p) => p.id === id)!.changes
 
 describe('블록과 지도', () => {
@@ -83,6 +87,58 @@ describe('나라별 관세 (World Bank WDI)', () => {
     expect(DATA.countries.TWN.tariff.all).toBeNull()
     // 미중 무역전쟁 추가 관세는 WDI 적용 관세에 안 들어 있다 (화면에 알림)
     expect(DATA.countries.USA.tariff.all!.value).toBeLessThan(5)
+  })
+})
+
+describe('상대국별 관세 (WITS)', () => {
+  type B = { reporters: Record<string, { year: number; world: (number | null)[]; partners: Record<string, (number | null)[]> }> }
+  const bil = (bilateralJson as unknown as B).reporters
+  const row = (file: TariffFile, side: 'imposed' | 'faced', p: string) => file[side].find((r) => partnerOf(r) === p)
+
+  it('수입국이 160곳 넘고, 대부분 2022년 자료다', () => {
+    const reps = Object.values(bil)
+    expect(reps.length).toBeGreaterThan(160)
+    expect(reps.filter((r) => r.year === 2022).length).toBeGreaterThan(reps.length * 0.6)
+    expect(DATA.meta.pairTariffs.reporters.KOR).toBe(bil.KOR.year)
+  })
+
+  it('A가 B에 매기는 관세 = B 파일의 받는 관세 (같은 값을 두 파일에 나눠 씀)', () => {
+    for (const [a, b] of [['KOR', 'USA'], ['USA', 'CHN'], ['CHN', 'JPN'], ['DEU', 'VNM'], ['JPN', 'KOR']]) {
+      const imp = row(tfile(a), 'imposed', b)!
+      const fac = row(tfile(b), 'faced', a)!
+      expect(imp, `${a}>${b}`).toBeDefined()
+      expect(partnerOf(fac)).toBe(a)
+      expect(fac.slice(1, 7), `${a}>${b}`).toEqual(imp.slice(1))
+      expect(yearOf(fac)).toBe(bil[a].year)
+    }
+  })
+
+  it('FTA가 보인다: 한국이 미국산 공산품에 매기는 관세는 거의 0, 중국산에는 그보다 높다', () => {
+    const k = tfile('KOR')
+    expect(rateOf(row(k, 'imposed', 'USA')!, 1)!).toBeLessThan(0.5)
+    expect(rateOf(row(k, 'imposed', 'CHN')!, 1)!).toBeGreaterThan(rateOf(row(k, 'imposed', 'USA')!, 1)!)
+    // 미중 추가 관세는 TRAINS에 없어서, 미국이 중국산에 매기는 관세도 낮게 나온다 (화면에 알림)
+    expect(rateOf(row(tfile('USA'), 'imposed', 'CHN')!, 0)!).toBeLessThan(10)
+  })
+
+  it('상대국별 값을 수입액으로 가중하면 WITS 대세계 값과 거의 같다', () => {
+    for (const iso of ['KOR', 'USA', 'CHN', 'JPN', 'DEU']) {
+      const f = tfile(iso)
+      for (const gi of [0, 1, 2]) {
+        const w = weighted(f.imposed, gi)!
+        expect(Math.abs(w.value - (f.world![gi] as number)), `${iso} ${gi}`).toBeLessThan(0.5)
+        // 빠지는 몫: 자기 나라에서 되들여온 것(중국 약 13%), 상대 '미상'(독일 1차 산품의 33%, 에너지 등 기밀), 자유무역지대 등
+        expect(w.trade / (f.world![3 + gi] as number), `${iso} ${gi}`).toBeGreaterThan(0.6)
+      }
+    }
+  })
+
+  it('대만은 WITS TradeStats에 없어 두 쪽 모두 비어 있고, 다른 파일의 수입액은 모두 양수다', () => {
+    const t = tfile('TWN')
+    expect(t.year).toBeNull()
+    expect(t.imposed).toEqual([])
+    expect(t.faced).toEqual([])
+    for (const iso of ['KOR', 'USA', 'CHN']) expect(tfile(iso).imposed.every((r) => tradeOf(r, 0) > 0)).toBe(true)
   })
 })
 

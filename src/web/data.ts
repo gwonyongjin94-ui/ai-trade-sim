@@ -46,6 +46,7 @@ export type MapData = {
     flowNote: string
     goods: { id: string; name: string }[]
     sources: { id: string; name: string; detail: string; link?: string }[]
+    pairTariffs: { note: string; reporters: Record<string, number> } // 상대국별 관세를 신고한 수입국과 그 연도 (WITS)
   }
   countries: Record<string, Country>
 }

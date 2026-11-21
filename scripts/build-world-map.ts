@@ -6,9 +6,11 @@
 //   data/world/wdi-2023.json                    World Bank 지표 (npm run world:wdi)
 //   data/v2/macro-2023.json, manual-2023.json   대만·북한처럼 World Bank에 없는 값
 //   data/raw/hofstede/…csv                      Hofstede 문화 지표
+//   data/world/tariffs-bilateral.json           나라 쌍 적용 관세 (npm run world:tariffs, WITS)
 // 쓰는 것:
 //   src/web/data/world-2023.json                나라마다 거시 지표 + 수출입 총액·품목 구성 (화면에 같이 묶인다)
 //   public/data/trade-2023/{ISO3}.json          나라마다 모든 교역 상대와 품목별 교역액 (고를 때 내려받는다)
+//   public/data/tariffs/{ISO3}.json             나라마다 상대국에 매기는 관세와 받는 관세 (관세 화면에서 고를 때 내려받는다)
 //   public/flags/{ISO2}.svg                     원형 배지에 쓰는 정사각형 국기 (country-flag-icons, MIT)
 //
 // BACI는 수출국 신고와 수입국 신고를 맞춰 한 값으로 만든 자료다(FOB). 그래서 A→B 수출과 B의 A로부터 수입은 같은 값이다.
@@ -27,6 +29,7 @@ const BACI_CSV = resolve(BACI_DIR, 'BACI_HS22_Y2023_V202601.csv')
 const BACI_CODES = resolve(BACI_DIR, 'country_codes_V202601.csv')
 const OUT_SUMMARY = resolve(ROOT, 'src/web/data/world-2023.json')
 const OUT_TRADE = resolve(ROOT, 'public/data/trade-2023')
+const OUT_TARIFF = resolve(ROOT, 'public/data/tariffs')
 const OUT_FLAGS = resolve(ROOT, 'public/flags')
 const FLAG_SRC = resolve(ROOT, 'node_modules/country-flag-icons/1x1')
 const YEAR = 2023
@@ -294,6 +297,35 @@ for (const k of isoList) {
   bytes += body.length
 }
 
+// ── 나라 쌍 관세 (WITS): 나라마다 매기는 관세(imposed)와 받는 관세(faced, 각 수입국의 신고와 그 연도)
+type BRow = (number | null)[]
+const bil = read('data/world/tariffs-bilateral.json') as {
+  meta: { note: string }
+  reporters: Record<string, { year: number; world: BRow; partners: Record<string, BRow> }>
+}
+const faced = new Map<string, (string | number | null)[][]>()
+for (const [rep, r] of Object.entries(bil.reporters))
+  for (const [par, row] of Object.entries(r.partners)) {
+    if (!faced.has(par)) faced.set(par, [])
+    faced.get(par)!.push([rep, ...row, r.year])
+  }
+rmSync(OUT_TARIFF, { recursive: true, force: true })
+mkdirSync(OUT_TARIFF, { recursive: true })
+let tariffBytes = 0
+const byImport = (a: (string | number | null)[], b: (string | number | null)[]) => ((b[4] as number) ?? 0) - ((a[4] as number) ?? 0)
+for (const k of isoList) {
+  const r = bil.reporters[k]
+  const body = JSON.stringify({
+    year: r?.year ?? null,
+    world: r?.world ?? null,
+    imposed: r ? Object.entries(r.partners).map(([p, row]) => [p, ...row]).sort(byImport) : [],
+    faced: (faced.get(k) ?? []).sort(byImport),
+  })
+  writeFileSync(resolve(OUT_TARIFF, `${k}.json`), body)
+  tariffBytes += body.length
+}
+const pairTariffs = { note: bil.meta.note, reporters: Object.fromEntries(Object.entries(bil.reporters).map(([k, r]) => [k, r.year])) }
+
 const GOOD_NAME: Record<string, string> = {
   food: '식품', energy: '에너지', medicine: '의약품', apparel_household: '의류·생활용품', chemicals: '화학·플라스틱',
   vehicles: '자동차·운송장비', metals: '금속·광물', machinery: '기계', semiconductors: '반도체', electronics: '전자·정밀기기',
@@ -312,8 +344,10 @@ const out = {
       { id: 'imf', name: SRC.imf, detail: '대만 GDP·인구', link: 'https://www.imf.org/external/datamapper' },
       { id: 'bok', name: SRC.bok, detail: '북한 GDP (2023년 명목 GNI 44.4조 원을 원/달러 1,305.4원으로 환산)', link: 'https://www.bok.or.kr' },
       { id: 'dgbas', name: '대만 통계청·중앙은행', detail: '대만 노동력·산업 구성·투자율' },
+      { id: 'wits', name: 'World Bank WITS TradeStats-Tariff', detail: '나라 쌍 적용 관세(수입액 가중 평균, UNCTAD TRAINS 바탕). 대부분 2022년', link: 'https://wits.worldbank.org' },
       { id: 'hofstede', name: SRC.hofstede, detail: '문화 6개 지표 (Cultures and Organizations 3판, 2015년판 자료)', link: 'https://geerthofstede.com/research-and-vsm/dimension-data-matrix/' },
     ],
+    pairTariffs,
   },
   countries,
 }
@@ -323,7 +357,7 @@ writeFileSync(OUT_SUMMARY, JSON.stringify(out))
 const onMap = Object.values(countries).filter((c) => (c as { mapId: string | null }).mapId).length
 console.log(
   `나라 ${isoList.length}곳 (지도에 모양이 있는 곳 ${onMap}), 국기 ${flagFiles.size}개, ` +
-    `교역 상대 파일 ${isoList.length}개 ${(bytes / 1e6).toFixed(1)}MB → ${OUT_SUMMARY}`,
+    `교역 상대 파일 ${isoList.length}개 ${(bytes / 1e6).toFixed(1)}MB, 관세 파일 ${(tariffBytes / 1e6).toFixed(1)}MB (수입국 ${Object.keys(bil.reporters).length}곳) → ${OUT_SUMMARY}`,
 )
 
 function splitCsv(line: string): string[] {
